@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import '../sass/components/Partners.scss'
+import '@/sass/components/Partners.scss'
 
 export const Partners = ({ partners }) => {
     return (

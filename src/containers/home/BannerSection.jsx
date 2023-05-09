@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../sass/containers/home/BannerSection.scss'
+import '@/sass/containers/home/BannerSection.scss'
 import { ServiceIcon } from '@/components/ServiceIcon'
 import Image from 'next/image'
 import { Partners } from '@/components/Partners'

@@ -1,4 +1,4 @@
-import '../sass/components/ServiceIcon.scss'
+import '@/sass/components/ServiceIcon.scss'
 export const ServiceIcon = ({ icon }) => {
     return (
         <div className="Service-icon">
