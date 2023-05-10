@@ -4,6 +4,7 @@
 section.Banner-container {
     @include laptop {
         max-width: 120rem;
+        height: 100vh;
         width: 95%;
         margin: 0 auto;
         display: grid;
