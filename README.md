@@ -13,7 +13,7 @@ Install colraices-sie with npm
   git clone https://github.com/GrupoColraices/colraices-site.git
 
   # Go to the project dir
-  cd colraices-sie
+  cd colraices-site
 
   # Install node depencies
   npm install
