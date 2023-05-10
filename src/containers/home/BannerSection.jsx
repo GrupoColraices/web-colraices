@@ -11,9 +11,24 @@ const iconsData = [
     { id: 5, icon: '/icons/client_portal_icon.svg', label: 'Portal Cliente' },
 ]
 const partners = [
-    { id: 1, icon: '/icons/bancolombia_icon.svg', name: 'Bancolombia' },
-    { id: 2, icon: '/icons/davivienda_icon.svg', name: 'Davivienda' },
-    { id: 3, icon: '/icons/bancounion_icon.svg', name: 'Banco Unión' },
+    {
+        id: 1,
+        icon: '/icons/bancolombia_gray_icon.svg',
+        hover: '/icons/bancolombia_icon.svg',
+        name: 'Bancolombia',
+    },
+    {
+        id: 2,
+        icon: '/icons/davivienda_gray_icon.svg',
+        hover: '/icons/davivienda_icon.svg',
+        name: 'Davivienda',
+    },
+    {
+        id: 3,
+        icon: '/icons/bancounion_gray_icon.svg',
+        hover: '/icons/bancounion_icon.svg',
+        name: 'Banco Unión',
+    },
 ]
 export const BannerSection = () => {
     return (
