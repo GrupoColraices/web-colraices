@@ -1,0 +1,28 @@
+'use client'
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper";
+
+import '@/sass/components/Slider.scss'
+import Image from "next/image";
+
+export const Slider = () => {
+    return (
+        <Swiper
+            pagination={{
+                type: "fraction",
+            }}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            className="mySwiper"
+        >
+            <SwiperSlide><div className="Slider-content"><Image src='/imageProperty1.webp' width={500} height={410} alt="image"></Image><div><h4>Nombre</h4></div></div></SwiperSlide>
+            <SwiperSlide><Image src='/imageProperty2.webp' width={500} height={410} alt="image"></Image></SwiperSlide>
+
+
+        </Swiper>
+    )
+}
