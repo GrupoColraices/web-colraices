@@ -18,7 +18,7 @@ export const Header = () => {
             <Image src="/logo.webp" alt="Logo Colraices" width={160} height={40} />
 
             <nav ref={navRef}>
-                <button onClick={showNavBar}>
+                <button className="Header-btn-close" onClick={showNavBar}>
                     <Image src="/icons/close_icon.svg" alt="Close icon" width={17} height={17} />
                 </button>
                 <Link href="/">
@@ -32,7 +32,7 @@ export const Header = () => {
             </nav>
 
             <input type="text" placeholder="Buscar" />
-            <button onClick={showNavBar}>
+            <button className="Header-btn-open" onClick={showNavBar}>
                 <Image
                     src="/icons/hamburguer_icon.svg"
                     alt="Hamburgures icon"
