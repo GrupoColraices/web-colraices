@@ -3,15 +3,18 @@ html {
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+
 *,
 *::before,
 *::after {
     box-sizing: inherit;
 }
+
 *::selection {
     background-color: $primary;
     color: $white;
 }
+
 body {
     font-family: $font;
     font-size: 1.6rem;
@@ -22,65 +25,81 @@ body {
         overflow: hidden;
     }
 }
+
 p {
     font-size: 1.8rem;
     color: $gray;
 }
+
 .container {
     max-width: 120rem;
     width: 95%;
     margin: 0 auto;
 }
+
 a {
     text-decoration: none;
 }
+
 img {
     max-width: 100%;
 }
+
 h1,
 h2,
 h3 {
     margin: 0;
     color: $secondary;
 }
+
 h1 {
     font-size: 3.8rem;
 }
+
 h2 {
     font-size: 3.5rem;
 }
+
 h3 {
     font-size: 3rem;
 }
+
 ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
+
 li {
     padding: 0;
     margin: 0;
 }
+
 .title {
     text-align: center;
     color: $primary;
     margin: 2rem auto;
+
     span {
         color: $secondary;
     }
 }
+
 .space {
     margin-top: 2.4rem;
+
     @include laptop {
-        margin-top: $space;
+        margin: $space auto 0 auto;
     }
 }
+
 button {
     background: none;
     outline: none;
     border: none;
     cursor: pointer;
 }
+
 .shodow_top {
     filter: drop-shadow(0px -1px 8px rgba(0, 0, 0, 0.75));
 }
