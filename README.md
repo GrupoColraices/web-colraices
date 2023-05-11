@@ -21,3 +21,7 @@ Install colraices-sie with npm
   # run server development
   npm run dev
 ```
+
+## Preview
+
+![Preview](https://i.ibb.co/dj6fLtC/home.png)
