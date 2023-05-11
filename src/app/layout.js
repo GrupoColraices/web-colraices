@@ -1,9 +1,13 @@
+import { Header } from '@/components/Header'
 import '../sass/main.scss'
 
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body>{children}</body>
+            <body>
+                <Header />
+                {children}
+            </body>
         </html>
     )
 }
