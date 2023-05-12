@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import '@/sass/components/PartnerImage.scss'
 import Image from 'next/image'
 
-export const PartnerImage = ({ partner, hover = false }) => {
+export const PartnerImage = ({ partner, hover }) => {
     const [image, setImage] = useState(partner.icon)
 
     const imageOnHover = (image) => {

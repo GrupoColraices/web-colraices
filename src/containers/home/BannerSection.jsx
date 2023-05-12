@@ -54,7 +54,7 @@ export const BannerSection = () => {
                     />
                 </section>
             </article>
-            <Partners partners={partners} />
+            <Partners partners={partners} hover={true} />
         </section>
     )
 }
