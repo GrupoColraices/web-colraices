@@ -3,6 +3,7 @@
 
 section.Property-container {
   position: relative;
+
   h2 {
     font-weight: 700;
     font-size: 1.5rem;
@@ -23,7 +24,7 @@ section.Property-container {
     background: $secondary;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
     border-radius: 0px 8px 8px 8px;
-    margin: 0 auto 1.5rem auto;
+    margin: 0 auto 3rem auto;
     grid-area: title;
 
     h3 {
@@ -126,7 +127,7 @@ section.Property-container {
 
   @include laptop {
     div.Property-border {
-      padding: 2rem 0 7rem 0;
+      padding: 5rem 0 6rem 0;
       box-shadow: 3.18px 3.18px 10.58px rgba(102, 101, 101, 0.58);
     }
 

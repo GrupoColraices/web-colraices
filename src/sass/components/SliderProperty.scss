@@ -1,7 +1,7 @@
 @import "../base/variables";
 @import "../base/mixins";
 
-div.swiper {
+div.Property-slider {
     position: relative;
     width: 100%;
     height: 100%;
@@ -22,15 +22,17 @@ div.swiper {
                 justify-content: center;
                 width: 14rem;
                 height: 3.5rem;
-                bottom: 1.8rem;
-                left: 2.2rem;
+                bottom: 0.5rem;
+                left: 0rem;
                 background: $secondary;
-                mix-blend-mode: normal;
                 border-radius: 0px 0px 2rem 0px;
 
                 h4 {
                     font-style: normal;
                     font-weight: 700;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
                     color: $white;
                     text-align: center;
                 }
@@ -38,8 +40,11 @@ div.swiper {
         }
 
         img {
-            width: 29rem;
-            height: 20.9rem;
+            width: 25rem;
+            height: 18rem;
+            object-fit: cover;
+            box-shadow: 4px 3px 5px 1px rgba(0, 0, 0, 0.2);
+            border-radius: 2rem 0rem 2rem 2rem;
         }
 
     }
@@ -51,7 +56,7 @@ div.swiper {
 
     .swiper-button-prev,
     .swiper-button-next {
-        top: 23.2rem;
+        top: 20.5rem;
     }
 
     .swiper-button-prev {
@@ -104,20 +109,23 @@ div.swiper {
             justify-content: start;
 
             img {
-                width: 53rem;
-                height: 41rem;
+                width: 47rem;
+                height: 34rem;
+                margin: 0rem 0 2rem 0;
+                border-radius: 3rem 0 3rem 3rem;
             }
 
             div.Slider-content {
                 div {
                     width: 25.8rem;
                     height: 5rem;
-                    left: 4.2rem;
-                    bottom: 3.2rem;
+                    left: 0rem;
+                    bottom: 2.4rem;
 
                     h4 {
                         font-size: 3.8rem;
-                        line-height: 52.4rem;
+
+
                     }
                 }
             }
@@ -125,17 +133,17 @@ div.swiper {
 
         .swiper-button-prev,
         .swiper-button-next {
-            top: 42.7rem;
+            top: 37.5rem;
         }
 
         .swiper-button-prev {
             width: 5rem;
-            left: 18rem;
+            left: 19rem;
         }
 
         .swiper-button-next {
             width: 5rem;
-            right: 18rem;
+            right: 19rem;
         }
 
         .swiper-pagination-fraction {
