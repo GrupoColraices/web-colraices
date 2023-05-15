@@ -24,6 +24,7 @@ export const Slider = ({ immovables }) => {
 
                 <SwiperSlide key={immovable.id}>
                     <div className="Slider-content">
+                    <Image className="Slider-isotype" src={'/icons/isotipoIcon.svg'} width={178} height={172} alt="Icon"></Image>
                         <Image src={immovable.thumbnail
                         } width={500} height={410} alt="image"></Image>
                         <div>
