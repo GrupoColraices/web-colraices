@@ -1,0 +1,98 @@
+@import '../../base/mixins';
+
+section.Service-container {
+    max-width: 120rem;
+    width: 95%;
+    margin: 0 auto;
+    padding: 4rem 0;
+    @include laptop {
+        padding-bottom: 8rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+        color: $primary;
+        text-align: center;
+        span {
+            color: $secondary;
+            display: block;
+        }
+        @include tablet {
+            font-size: 3.5rem;
+            margin: 4rem auto;
+        }
+    }
+    div.Service-cards-container {
+        article {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 3rem;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+
+                border-radius: 0 0 0 1.2rem;
+                @include laptop {
+                    grid-area: service_image;
+                    border-radius: 0 0 0 3rem;
+                }
+            }
+            div {
+                padding: 1.3rem 1.6rem 1.3rem 1.6rem;
+                border-radius: 0 1.2rem 0 0;
+                box-shadow: -3px -3px 4px rgba(0, 0, 0, 0.15), 3px 3px 4px rgba(94, 94, 94, 0.15);
+
+                @include tablet {
+                    padding: 2rem 3rem;
+                }
+                @include laptop {
+                    grid-area: service_content;
+                    border-radius: 0 3rem 0 0;
+                }
+
+                img {
+                    width: 2.8rem;
+                    height: 2.8rem;
+                    border-radius: 0;
+                    @include tablet {
+                        width: 4rem;
+                        height: 4rem;
+                    }
+                    object-fit: contain;
+                }
+
+                h1 {
+                    font-size: 1.8rem;
+                    @include tablet {
+                        font-size: 3rem;
+                    }
+                    color: $primary;
+                    font-weight: bold;
+                    margin: 0 0 1rem;
+                }
+                p {
+                    font-size: 1.2rem;
+                    @include tablet {
+                        font-size: 1.6rem;
+                    }
+                    margin: 0;
+                    text-align: justify;
+                }
+            }
+        }
+        @include laptop {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            article {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+                grid-template-areas:
+                    'service_content'
+                    'service_image';
+                gap: 1.2rem;
+            }
+        }
+    }
+}
