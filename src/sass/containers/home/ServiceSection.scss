@@ -54,6 +54,7 @@ section.Service-container {
                 img {
                     width: 2.8rem;
                     height: 2.8rem;
+                    border-radius: 0;
                     @include tablet {
                         width: 4rem;
                         height: 4rem;
