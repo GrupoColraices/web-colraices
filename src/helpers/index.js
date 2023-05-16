@@ -85,3 +85,26 @@ export const historyData = [
     },
     { id: 3, title: '11 mil', span: 'negocios', image: 'icons/negociosIcon.svg' },
 ]
+
+//! Home testimonials section cards
+
+export const testimonialsData = [
+    {
+        id: 1,
+        title: 'Testimoio de cliente',
+        content:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus lacus, molestie vitae pretium at, gravida sit amet dui. Morbi ut tempus ante, vel mattis lorem. Proin vel',
+    },
+    {
+        id: 2,
+        title: 'Testimoio de cliente',
+        content:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus lacus, molestie vitae pretium at, gravida sit amet dui. Morbi ut tempus ante, vel mattis lorem. Proin vel',
+    },
+    {
+        id: 3,
+        title: 'Testimoio de cliente',
+        content:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus lacus, molestie vitae pretium at, gravida sit amet dui. Morbi ut tempus ante, vel mattis lorem. Proin vel',
+    },
+]
