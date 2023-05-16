@@ -10,9 +10,9 @@ export const PropertySection = async () => {
         { id: 2, icon: '/icons/bolivarIcon.svg', name: 'Bolivar', hover: '/icons/bolivarIcon.svg' },
         { id: 3, icon: '/icons/contexIcon.svg', name: 'Contex', hover: '/icons/contexIcon.svg' },
     ]
-    const response = await fetch('https://vc.colraices.com/api/v1/likes');
-    const {data} = await response.json();
-    
+    const response = await fetch('https://vc.colraices.com/api/v1/likes', { cache: 'no-cache' });
+    const { data } = await response.json();
+
     return (
         <section className='Property-container'>
             <h2>Financiación con <span>bancos colombianos</span></h2>

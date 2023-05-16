@@ -15,6 +15,15 @@ div.Property-slider {
             position: relative;
             display: inline-block;
 
+            img.Slider-isotype {
+                position: absolute;
+                width: 3.5rem;
+                height: 4.5rem;
+                right: 0;
+                box-shadow: none;
+                margin: 0;
+            }
+
             div {
                 position: absolute;
                 display: flex;
@@ -22,7 +31,7 @@ div.Property-slider {
                 justify-content: center;
                 width: 14rem;
                 height: 3.5rem;
-                bottom: 0.5rem;
+                bottom: 0.4rem;
                 left: 0rem;
                 background: $secondary;
                 border-radius: 0px 0px 2rem 0px;
@@ -36,6 +45,7 @@ div.Property-slider {
                     color: $white;
                     text-align: center;
                 }
+
             }
         }
 
@@ -116,6 +126,11 @@ div.Property-slider {
             }
 
             div.Slider-content {
+                img.Slider-isotype {
+                    width: 8rem;
+                    height: 9.5rem;
+                }
+
                 div {
                     width: 25.8rem;
                     height: 5rem;
