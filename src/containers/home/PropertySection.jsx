@@ -1,21 +1,12 @@
-import { Partners } from '@/components/Partners'
-import { Slider } from '@/components/SliderProperty'
-import { TitleLine } from '@/components/TitleLine'
-
-import '@/sass/containers/home/PropertySection.scss'
-import Image from 'next/image'
 import Link from 'next/link'
+import Image from 'next/image'
+
+import { TitleLine } from '@/components/TitleLine'
+import { Slider } from '@/components/SliderProperty'
+import { Partners } from '@/components/Partners'
+import '@/sass/containers/home/PropertySection.scss'
+import { constructionCompany } from '@/helpers'
 export const PropertySection = async () => {
-    const constructionCompany = [
-        {
-            id: 1,
-            icon: '/icons/jaramilloIcon.svg',
-            name: 'Jaramillo',
-            hover: '/icons/jaramilloIcon.svg',
-        },
-        { id: 2, icon: '/icons/bolivarIcon.svg', name: 'Bolivar', hover: '/icons/bolivarIcon.svg' },
-        { id: 3, icon: '/icons/contexIcon.svg', name: 'Contex', hover: '/icons/contexIcon.svg' },
-    ]
     const response = await fetch('https://vc.colraices.com/api/v1/likes', { cache: 'no-cache' })
     const { data } = await response.json()
 

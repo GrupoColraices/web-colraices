@@ -4,16 +4,16 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
-import Image from "next/image";
+
 
 import '@/sass/components/SliderHistory.scss'
+import { CardHistory } from "./molecules/CardHistory";
 
 export const SliderHistory = () => {
     const historyData = [
-        { id: 1, image: '/imageHistory1.svg' },
-        { id: 2, image: '/imageHistory2.svg' },
-        { id: 3, image: '/imageHistory3.svg' },
-        // { id: 4, image: '/prueba.png' },
+        { id: 1, title: '18 años', span: 'de experiencia', image: 'icons/experienciaIcon.svg' },
+        { id: 2, title: '83 mil colombianos', span: 'atendidos en todo el mundo', image: 'icons/colombianosIcon.svg' },
+        { id: 3, title: '11 mil', span: 'negocios', image: 'icons/negociosIcon.svg' },
     ]
     return (
 
@@ -25,7 +25,7 @@ export const SliderHistory = () => {
                     spaceBetween: 2,
                 },
             }} modules={[Navigation]} className="History-slider">
-            {historyData?.map((card) => (<SwiperSlide key={card.id}><Image src={card.image} width={313} height={377} quality={100} alt="Historicos" ></Image></SwiperSlide>))}
+            {historyData?.map((card) => (<SwiperSlide key={card.id}><CardHistory data={card}></CardHistory></SwiperSlide>))}
 
         </Swiper>
     );

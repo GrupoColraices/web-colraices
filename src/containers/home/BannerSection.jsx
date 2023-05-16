@@ -3,33 +3,7 @@ import '@/sass/containers/home/BannerSection.scss'
 import { ServiceIcon } from '@/components/ServiceIcon'
 import Image from 'next/image'
 import { Partners } from '@/components/Partners'
-const iconsData = [
-    { id: 1, icon: '/icons/online_credit_icon.svg', label: 'Crédito en línea' },
-    { id: 2, icon: '/icons/datacredito_icon.svg', label: 'Elimina tus reportes en Datacredito' },
-    { id: 3, icon: '/icons/steps_icon.svg', label: 'El paso a paso' },
-    { id: 4, icon: '/icons/pension_icon.svg', label: 'Pensiones' },
-    { id: 5, icon: '/icons/client_portal_icon.svg', label: 'Portal Cliente' },
-]
-const partners = [
-    {
-        id: 1,
-        icon: '/icons/bancolombia_gray_icon.svg',
-        hover: '/icons/bancolombia_icon.svg',
-        name: 'Bancolombia',
-    },
-    {
-        id: 2,
-        icon: '/icons/davivienda_gray_icon.svg',
-        hover: '/icons/davivienda_icon.svg',
-        name: 'Davivienda',
-    },
-    {
-        id: 3,
-        icon: '/icons/bancounion_gray_icon.svg',
-        hover: '/icons/bancounion_icon.svg',
-        name: 'Banco Unión',
-    },
-]
+import { iconsData, partners } from '@/helpers'
 export const BannerSection = () => {
     return (
         <section className="Banner-container ">
