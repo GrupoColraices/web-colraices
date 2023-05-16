@@ -1,4 +1,4 @@
-import { CardTestimonial } from '@/components/CardTestimonial'
+import { CardTestimonial } from '@/components/molecules/CardTestimonial'
 import Link from 'next/link'
 import React from 'react'
 import '@/sass/containers/home/TestimonialSection.scss'
