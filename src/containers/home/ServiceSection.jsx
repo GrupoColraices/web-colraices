@@ -1,11 +1,14 @@
 import '@/sass/containers/home/ServiceSection.scss'
 import Image from 'next/image'
+import { TitleLine } from '../../components/TitleLine'
 
 export const ServiceSection = () => {
     return (
         <section className="Service-container">
             <h2>
+                <TitleLine left={true} top={35} />
                 Ven y conoce los nuevos servicios <span>para colombianos en el exterior</span>
+                <TitleLine right={true} top={35} />
             </h2>
             <div className="Service-cards-container">
                 <article>
