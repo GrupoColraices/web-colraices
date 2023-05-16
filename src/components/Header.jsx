@@ -2,10 +2,11 @@
 
 import { useRef } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import '@/sass/components/Header.scss'
 import { NavLink } from './NavLink'
-import Link from 'next/link'
+import { navbarLinks } from '@/helpers'
 
 export const Header = () => {
     const navRef = useRef()
@@ -24,11 +25,9 @@ export const Header = () => {
                 <Link href="/">
                     <Image src="/logo.webp" alt="Logo Colraices" width={160} height={40} />
                 </Link>
-
-                <NavLink label="Inmuebles" href="#" onClick={showNavBar} />
-                <NavLink label="Crédito" href="#" onClick={showNavBar} />
-                <NavLink label="Contacto" href="/contacto" onClick={showNavBar} />
-                <NavLink label="Blog" href="/blog" onClick={showNavBar} />
+                {navbarLinks.map((link) => (
+                    <NavLink key={link.href} label={link.label} href={link.href} />
+                ))}
             </nav>
 
             <input type="text" placeholder="Buscar" />
