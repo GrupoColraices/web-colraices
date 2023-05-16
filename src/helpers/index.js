@@ -73,3 +73,15 @@ export const servicesCards = [
         icon: '/icons/credit_icon.svg',
     },
 ]
+
+//! Home history section cards
+export const historyData = [
+    { id: 1, title: '18 años', span: 'de experiencia', image: 'icons/experienciaIcon.svg' },
+    {
+        id: 2,
+        title: '83 mil colombianos',
+        span: 'atendidos en todo el mundo',
+        image: 'icons/colombianosIcon.svg',
+    },
+    { id: 3, title: '11 mil', span: 'negocios', image: 'icons/negociosIcon.svg' },
+]
