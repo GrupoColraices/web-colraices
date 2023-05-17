@@ -18,7 +18,7 @@ export const Footer = () => {
                             <li>Oficina Madrid, España</li>
                             <li>{data.addressMadrid}</li>
 
-                            <li>Oficina Mühldorf , Alemania</li>
+                            <li>Oficina Mühl, Alemania</li>
                             <li>{data.addressAlemania}</li>
                         </ul>
                     ))}
@@ -48,19 +48,19 @@ export const Footer = () => {
                 </div>
                 <div className='Redes-icons'>
                     <Link href={'https://www.facebook.com/colraices'} target='_blank'>
-                        <Image src='icons/facebookIcon.svg' width={36} height={36} alt='Icon'></Image>
+                        <Image src='icons/facebook.svg' width={36} height={36} alt='Icon'></Image>
                     </Link>
                     <Link href={'https://www.instagram.com/colraices/'} target='_blank'>
-                        <Image src='icons/instagramIcon.svg' width={36} height={36} alt='Icon'></Image>
+                        <Image src='icons/instagram.svg' width={36} height={36} alt='Icon'></Image>
                     </Link>
                     <Link href={'https://www.linkedin.com/company/colraices/mycompany'} target='_blank'>
-                        <Image src='icons/linkedinIcon.svg' width={36} height={36} alt='Icon'></Image>
+                        <Image src='icons/linkedin.svg' width={36} height={36} alt='Icon'></Image>
                     </Link>
                     <Link href={'https://api.whatsapp.com/send/?phone=15136479405'} target='_blank'>
-                        <Image src='icons/whatsappIcon.svg' width={36} height={36} alt='Icon'></Image>
+                        <Image src='icons/whatsapp.svg' width={36} height={36} alt='Icon'></Image>
                     </Link>
                     <Link href={'https://www.youtube.com/c/Colraicesserviciosinmobiliariosfinancieros'} target='_blank'>
-                        <Image src='icons/youtubeIcon.svg' width={36} height={36} alt='Icon'></Image>
+                        <Image src='icons/youtube.svg' width={36} height={36} alt='Icon'></Image>
                     </Link>
                 </div>
             </section>
