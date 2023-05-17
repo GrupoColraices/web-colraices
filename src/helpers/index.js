@@ -91,20 +91,35 @@ export const historyData = [
 export const testimonialsData = [
     {
         id: 1,
-        title: 'Testimoio de cliente',
+        title: 'Testimonio de cliente',
         content:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus lacus, molestie vitae pretium at, gravida sit amet dui. Morbi ut tempus ante, vel mattis lorem. Proin vel',
     },
     {
         id: 2,
-        title: 'Testimoio de cliente',
+        title: 'Testimonio de cliente',
         content:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus lacus, molestie vitae pretium at, gravida sit amet dui. Morbi ut tempus ante, vel mattis lorem. Proin vel',
     },
     {
         id: 3,
-        title: 'Testimoio de cliente',
+        title: 'Testimonio de cliente',
         content:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus lacus, molestie vitae pretium at, gravida sit amet dui. Morbi ut tempus ante, vel mattis lorem. Proin vel',
     },
+]
+
+
+export const infoContact = [
+    {
+        id: 1,
+        office: 'Colraices - Oficina principal Ibagué, Colombia',
+        address: 'Calle 47 # 4-61',
+        addressMadrid: 'Av Mediterráneo 5, 1G, Madrid, Spain 28007',
+        addressAlemania: 'Katharinenplatz 57, Muhldorf Alemania.',
+        phoneNumber: '(57) 601 328 8939',
+        whatsapp: '15136479405',
+        email: 'info@colraices.co',
+        
+    }
 ]

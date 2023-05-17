@@ -1,0 +1,210 @@
+@import '../base/mixins';
+
+footer.Footer-container {
+    width: 100%;
+    height: 43.6rem;
+    background-image: url('../../../public/FooterMovil.svg');
+    background-size: cover;
+    padding: 4rem 1rem 1rem 3.2rem;
+
+    section {
+        display: grid;
+        justify-items: center;
+        grid-template-areas:
+            'left right'
+            'redes redes';
+        column-gap: 3.2rem;
+
+        li {
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.4rem;
+            color: $white;
+            margin-bottom: 0.5rem;
+
+            a {
+                color: $white;
+            }
+        }
+
+        div.Content-left {
+            grid-area: left;
+
+            img[src="logoWhite.svg"] {
+                margin: 3rem 0 2rem 0;
+            }
+
+            ul {
+
+                li:nth-child(2) {
+                    max-width: 14rem;
+
+                    &::first-line {
+                        line-height: 3rem;
+                    }
+                }
+
+                li:nth-child(3),
+                li:nth-child(5) {
+                    margin-bottom: 2rem;
+                }
+
+                li:nth-child(5),
+                li:nth-child(7) {
+                    font-weight: 400;
+                }
+
+            }
+
+        }
+
+        div.Content-right {
+            grid-area: right;
+            grid-column: 2;
+            grid-row: 1;
+
+            ul {
+                margin-top: 4rem;
+
+                li {
+                    font-weight: 500;
+                    line-height: 1.2rem;
+                    margin: 0;
+                }
+
+                li:nth-child(2) {
+                    max-width: 13rem;
+                }
+            }
+
+            ul:last-of-type {
+                li {
+                    margin-bottom: 0.72rem;
+                }
+            }
+        }
+
+        .Redes-icons {
+            justify-self: start;
+            grid-column: 1/3;
+
+            a:not(:first-child) {
+                margin-left: 2rem;
+            }
+        }
+
+    }
+
+
+
+    @include laptop {
+        width: 100%;
+        height: 71rem;
+        background-image: url('../../../public/FooterDesktop.svg');
+        padding: 14rem 1rem 1rem 3.2rem;
+
+        section {
+            grid-template-areas:
+                'left right'
+                'redes redes';
+            justify-items: start;
+            gap: 0;
+
+            li {
+                font-size: 1.6rem;
+                line-height: 1.5rem;
+                text-align: justify;
+                margin: 0;
+            }
+
+            div.Content-left {
+                justify-self: center;
+
+                img[src="logoWhite.svg"] {
+                    width: 32.6rem;
+                    height: 14.9rem;
+                    margin: 2rem 0;
+                }
+
+                ul {
+                    li:nth-child(2) {
+                        max-width: none;
+                    }
+
+                    li:nth-child(3),
+                    li:nth-child(5) {
+                        margin-bottom: 2.5rem;
+                    }
+
+                    li:nth-child(5),
+                    li:nth-child(7) {
+                        line-height: 2.5rem;
+                    }
+                }
+            }
+
+            div.Content-right {
+                ul {
+                    margin-top: 5rem;
+
+                    li {
+                        font-size: 2.4rem;
+                        line-height: 2.9rem;
+                    }
+
+                    li:nth-child(2) {
+                        max-width: none;
+                    }
+                }
+
+                ul:last-of-type {
+                    display: flex;
+                    justify-content: space-between;
+                    max-width: 40rem;
+                    margin-top: 10rem;
+
+                    div:last-child {
+                        align-self: end;
+                    }
+
+                    li {
+                        font-size: 1.7rem;
+                        line-height: 3.3rem;
+                        margin: 0;
+                    }
+
+                }
+
+            }
+
+            .Redes-icons {
+                justify-self: center;
+                margin-top: -6rem;
+                grid-column: 1/2;
+
+                img {
+                    width: 5.7rem;
+                    height: 5.5rem;
+                }
+            }
+        }
+    }
+
+    @include phone {
+        height: 46rem;
+        padding-top: 6rem;
+
+        section {
+            max-width: 46rem;
+            margin: auto;
+
+            li {
+                font-size: 1.4rem;
+            }
+
+
+        }
+
+
+    }
+}
