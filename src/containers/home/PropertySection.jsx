@@ -6,6 +6,7 @@ import { Slider } from '@/components/SliderProperty'
 import { Partners } from '@/components/Partners'
 import '@/sass/containers/home/PropertySection.scss'
 import { constructionCompany } from '@/helpers'
+import { CircleDecorator } from '@/components/molecules/CircleDecorator'
 export const PropertySection = async () => {
     const response = await fetch('https://vc.colraices.com/api/v1/likes', { cache: 'no-cache' })
     const { data } = await response.json()
@@ -13,13 +14,13 @@ export const PropertySection = async () => {
     return (
         <section className="Property-container">
             <h2>
-                <TitleLine left={true} top={40} width={7.5} />
+                <TitleLine left={true} top={50} width={7.5} />
                 Financiación con <span>bancos colombianos</span>
-                <TitleLine right={true} top={40} width={7.5} />
+                <TitleLine right={true} top={50} width={7.5} />
             </h2>
             <div className="Property-border">
-                {/* <Image className='Figure-left' src={'/circleLeft.svg'} width={43} height={144} alt='image circle'></Image>
-                <Image className='Figure-right' src={'/circleRight.svg'} width={39} height={122} alt='image circle'></Image> */}
+                <CircleDecorator />
+                <CircleDecorator right={true} />
                 <div className="Property-slider">
                     <div className="Property-title">
                         <h3>Inmueble Destacado</h3>

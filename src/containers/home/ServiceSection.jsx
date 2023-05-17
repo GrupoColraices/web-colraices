@@ -7,9 +7,9 @@ export const ServiceSection = () => {
     return (
         <section className="Service-container">
             <h2>
-                <TitleLine left={true} top={35} />
+                <TitleLine left={true} top={50} />
                 Ven y conoce los nuevos servicios <span>para colombianos en el exterior</span>
-                <TitleLine right={true} top={35} />
+                <TitleLine right={true} top={50} />
             </h2>
             <div className="Service-cards-container">
                 {servicesCards.map((service) => (

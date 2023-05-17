@@ -109,7 +109,7 @@ export const testimonialsData = [
     },
 ]
 
-
+//! Footer section data
 export const infoContact = [
     {
         id: 1,
@@ -120,6 +120,5 @@ export const infoContact = [
         phoneNumber: '(57) 601 328 8939',
         whatsapp: '15136479405',
         email: 'info@colraices.co',
-        
-    }
+    },
 ]

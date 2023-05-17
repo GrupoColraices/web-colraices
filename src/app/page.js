@@ -3,7 +3,6 @@ import { HistorySection } from '@/containers/home/HistorySection'
 import { PropertySection } from '@/containers/home/PropertySection'
 import { ServiceSection } from '@/containers/home/ServiceSection'
 import { TestimonialSection } from '@/containers/home/TestimonialSection'
-import { Footer } from '../components/Footer'
 
 export const metadata = {
     title: 'Comprar casa en Colombia desde el exterior | Colraices',
@@ -18,7 +17,6 @@ export default function HomePage() {
             <ServiceSection />
             <HistorySection />
             <TestimonialSection />
-            <Footer></Footer>
         </>
     )
 }
