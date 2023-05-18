@@ -21,8 +21,8 @@ header.Header-container {
     }
 
     img {
-        width: 14rem;
-        height: 3.4rem;
+        width: 15rem;
+        height: 4rem;
 
         @include laptop {
             display: none;
@@ -115,8 +115,8 @@ header.Header-container {
 
         img {
             margin-top: 10rem;
-            width: 17rem;
-            height: 3.8rem;
+            width: 20rem;
+            height: 6rem;
             @include laptop {
                 display: block;
                 margin-top: 0;
