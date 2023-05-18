@@ -16,14 +16,14 @@ export const Header = () => {
     }
     return (
         <header className="Header-container">
-            <Image src="/logo.webp" alt="Logo Colraices" width={160} height={40} />
+            <Image src="/logo.svg" alt="Logo Colraices" width={160} height={40} />
 
             <nav ref={navRef}>
                 <button className="Header-btn-close" onClick={showNavBar}>
                     <Image src="/icons/close_icon.svg" alt="Close icon" width={17} height={17} />
                 </button>
                 <Link href="/">
-                    <Image src="/logo.webp" alt="Logo Colraices" width={160} height={40} />
+                    <Image src="/logo.svg" alt="Logo Colraices" width={160} height={40} />
                 </Link>
                 {navbarLinks.map((link) => (
                     <NavLink key={link.href} label={link.label} href={link.href} />
