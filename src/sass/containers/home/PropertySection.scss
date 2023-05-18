@@ -113,9 +113,13 @@ section.Property-container {
     }
 
     @include laptop {
+        padding: 5rem 0 6rem 0;
+        box-shadow: 3.18px 3.18px 10.58px rgba(102, 101, 101, 0.58);
+
         div.Property-border {
-            padding: 5rem 0 6rem 0;
-            box-shadow: 3.18px 3.18px 10.58px rgba(102, 101, 101, 0.58);
+            max-width: 110rem;
+            width: 95%;
+            margin: 0 auto;
         }
 
         h2 {
@@ -136,22 +140,7 @@ section.Property-container {
             }
         }
 
-        .Figure-left {
-            width: 17.5rem;
-            height: 54.3rem;
-            top: 3rem;
-            left: 0;
-        }
-
-        .Figure-right {
-            width: 15.9rem;
-            height: 49.2rem;
-            top: 31rem;
-            right: 0;
-        }
-
         div.Property-slider {
-            max-width: 105rem;
             margin: 0 auto;
             grid-template-areas:
                 'slider title'

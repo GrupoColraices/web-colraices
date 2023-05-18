@@ -4,6 +4,7 @@ header.Header-container {
     position: sticky;
     top: 0;
     height: 8rem;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,14 +13,16 @@ header.Header-container {
     z-index: 9999;
 
     @include laptop {
-        width: 100%;
-        max-width: 125rem;
-        width: 95%;
         margin: 0 auto;
+        padding: 0 6%;
+    }
+    @include desktop {
+        padding: 0 12%;
     }
 
     img {
         width: 14rem;
+        height: 3.4rem;
 
         @include laptop {
             display: none;
@@ -53,7 +56,7 @@ header.Header-container {
             left: auto;
             display: grid;
             grid-template-columns: 2fr repeat(3, 1fr) 2fr;
-            gap: 3rem;
+            gap: 1rem;
             transform: none;
             width: 87%;
         }
@@ -66,10 +69,11 @@ header.Header-container {
             font-weight: 600;
             color: $primary;
             transition: all 0.5s ease;
-            min-width: 12rem;
+            min-width: 10rem;
+            font-size: 1.4rem;
 
             @include laptop {
-                max-width: 14rem;
+                max-width: 12rem;
             }
 
             text-align: center;
@@ -111,7 +115,8 @@ header.Header-container {
 
         img {
             margin-top: 10rem;
-
+            width: 17rem;
+            height: 3.8rem;
             @include laptop {
                 display: block;
                 margin-top: 0;
@@ -126,7 +131,7 @@ header.Header-container {
         border: 1px solid #caa55e;
         box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
         border-radius: 8px;
-        padding: 0.5rem 0.6rem;
+        padding: 0.4rem 0.5rem;
         text-align: center;
 
         &::placeholder {
@@ -135,7 +140,8 @@ header.Header-container {
 
         @include laptop {
             position: inherit;
-            max-width: 14rem;
+            max-width: 12rem;
+            margin-left: 2rem;
         }
     }
 
