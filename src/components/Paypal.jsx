@@ -12,15 +12,17 @@ export const Paypal = ({ totalValue, description }) => {
     const onApprove = (data, actions) => {
         return actions.order.capture().then(function (details) {
             const { payer } = details
-            console.log(payer)
+            console.log('payer', payer)
             setSuccess(true)
         })
     }
 
+    const onError = (data, actions) => {
+        router.push('/pagos/confirmacion?message=DECLINED')
+    }
     useEffect(() => {
         if (success) {
-            router.push('/')
-            console.log('Order successful . Your order id is--', orderID)
+            router.push('/pagos/confirmacion?message=APPROVED')
         }
     }, [success, orderID, router])
     return (
@@ -47,6 +49,7 @@ export const Paypal = ({ totalValue, description }) => {
                         })
                 }}
                 onApprove={onApprove}
+                onError={onError}
             />
         </>
     )

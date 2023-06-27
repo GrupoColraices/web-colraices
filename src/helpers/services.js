@@ -16,3 +16,10 @@ export const services = [
     ],
     [{ id: 12, name: 'Reserva de inmueble', price: 10, quantity: 1, additional: false }],
 ]
+
+export const payU = {
+    apiKey: '4Vj8eK4rloUd272L48hsrarnUA',
+    merchantId: '508029',
+    accountId: '512321',
+    referenceCode: `ServiciosColraices${Date.now()}`,
+}

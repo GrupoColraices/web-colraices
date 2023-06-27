@@ -1,0 +1,37 @@
+@import '../../base/mixins';
+
+section.Confirmation-container {
+    height: 80vh;
+    display: grid;
+    place-items: center;
+    h1 {
+        color: $primary;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    p {
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        max-width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .Confirmation-cta {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+        gap: 2rem;
+        a {
+            font-weight: bold;
+            color: $primary;
+            transition: all 0.5s ease;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        a:last-of-type {
+            color: $secondary;
+        }
+    }
+}
