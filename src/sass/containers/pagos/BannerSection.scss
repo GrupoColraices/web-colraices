@@ -40,6 +40,7 @@ section.Pagos-banner {
             h4 {
                 color: $primary;
                 font-size: 1.5rem;
+                margin: 1.4rem 0;
             }
             @include laptop {
                 display: none;
@@ -55,6 +56,7 @@ section.Pagos-banner {
             padding: 4rem 2rem;
             display: grid;
             transform: translateX(-100%);
+            z-index: 9;
             @include laptop {
                 transform: translateX(0);
                 display: flex;
@@ -135,6 +137,7 @@ section.Pagos-banner {
                             @include laptop {
                                 font-size: 1.6rem;
                             }
+                            cursor: pointer;
                         }
                     }
                     &[open] {

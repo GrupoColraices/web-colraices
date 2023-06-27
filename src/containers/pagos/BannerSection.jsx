@@ -1,25 +1,20 @@
 'use client'
 import '@/sass/containers/pagos/BannerSection.scss'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Image from 'next/image'
-const services = [
-    [
-        { name: 'Cupo crédio', price: 10 },
-        { name: 'Cupo crédito pro', price: 9 },
-        { name: 'Pre-aprobado', price: 8 },
-        { name: 'Crédito', price: 8 },
-        { name: 'Cuenta ahorro', price: 8 },
-        { name: 'Monetización', price: 8 },
-    ],
-    [
-        { name: 'Básico', price: 10 },
-        { name: 'Estandar', price: 9 },
-        { name: 'Premium', price: 8 },
-    ],
-    [{ name: 'Resera de inmueble', price: 10 }],
-]
-export const BannerSection = () => {
+import { services } from '@/helpers/services'
+
+export const BannerSection = ({ handleAddToCard }) => {
     const [isOpen, setIsOpen] = useState(false)
+    const financierosList = useRef()
+    const buenaDataList = useRef()
+    const inmobiliariosList = useRef()
+
+    const addToCart = (service, list) => {
+        handleAddToCard(service)
+        list.current.removeAttribute('open')
+    }
+
     return (
         <section className="Pagos-banner">
             <h1>
@@ -42,34 +37,40 @@ export const BannerSection = () => {
                         </button>
                     </div>
                     <div className="Services-group container">
-                        <details>
+                        <details ref={financierosList}>
                             <summary>
                                 Servicios financieros{' '}
                                 <Image src="/icons/drop-down.svg" alt="Icon" width={16} height={16} />
                             </summary>
                             <ul>
                                 {services[0].map((service) => (
-                                    <li key={service.name}>{service.name}</li>
+                                    <li key={service.name} onClick={() => addToCart(service, financierosList)}>
+                                        {service.name}
+                                    </li>
                                 ))}
                             </ul>
                         </details>
-                        <details>
+                        <details ref={buenaDataList}>
                             <summary>
-                                Buena Data <Image src="/icons/drop-down.svg" alt="Icon" width={16} height={16} />
+                                Otros servicios <Image src="/icons/drop-down.svg" alt="Icon" width={16} height={16} />
                             </summary>
                             <ul>
                                 {services[1].map((service) => (
-                                    <li key={service.name}>{service.name}</li>
+                                    <li key={service.name} onClick={() => addToCart(service, buenaDataList)}>
+                                        {service.name}
+                                    </li>
                                 ))}
                             </ul>
                         </details>
-                        <details>
+                        <details ref={inmobiliariosList}>
                             <summary>
                                 Inmobiliarios <Image src="/icons/drop-down.svg" alt="Icon" width={16} height={16} />
                             </summary>
                             <ul>
                                 {services[2].map((service) => (
-                                    <li key={service.name}>{service.name}</li>
+                                    <li key={service.name} onClick={() => addToCart(service, inmobiliariosList)}>
+                                        {service.name}
+                                    </li>
                                 ))}
                             </ul>
                         </details>
