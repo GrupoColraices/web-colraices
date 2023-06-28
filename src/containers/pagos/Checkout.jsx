@@ -5,7 +5,7 @@ import Image from 'next/image'
 import '@/sass/containers/pagos/Checkout.scss'
 import { Paypal } from '@/components/Paypal'
 import { useState } from 'react'
-import { payU } from '@/helpers/services'
+import { BASE_URL, payU } from '@/helpers/services'
 const CLIENT_ID = 'AWXeQTn3YEZJw_thO8-XrQgcwiMuqz1u_RQYf8nysU_aQY0uyNgClyEEESZklGd8CSHW7LAQCytmCaKt'
 
 export const Checkout = ({ cart, removeFromCart, addQuantity, subQuantity, totalAmount }) => {
@@ -104,7 +104,7 @@ export const Checkout = ({ cart, removeFromCart, addQuantity, subQuantity, total
                     />
                     <input name="test" type="hidden" value="0" />
                     <input name="buyerEmail" type="hidden" value={buyer.email} />
-                    <input name="responseUrl" type="hidden" value="http://localhost:3000/pagos/confirmacion" />
+                    <input name="responseUrl" type="hidden" value={`${BASE_URL}/pagos/confirmacion`} />
                 </fieldset>
                 <aside>
                     <div className="Payment-method">

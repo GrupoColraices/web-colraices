@@ -23,3 +23,6 @@ export const payU = {
     accountId: '512321',
     referenceCode: `ServiciosColraices${Date.now()}`,
 }
+
+//export const BASE_URL = 'http://localhost:3000'
+export const BASE_URL = 'https://colraices-site.vercel.app'
