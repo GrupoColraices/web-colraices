@@ -26,3 +26,21 @@ export const payU = {
 
 //export const BASE_URL = 'http://localhost:3000'
 export const BASE_URL = 'https://colraices-site.vercel.app'
+
+export const toSheets = (scriptURL, data, amount, method) => {
+    const clientData = new FormData()
+    clientData.append('name', data.name)
+    clientData.append('address', data.address)
+    clientData.append('country', data.country)
+    clientData.append('email', data.email)
+    clientData.append('document_type', data.document_type)
+    clientData.append('document', data.document)
+    clientData.append('amount', amount)
+    clientData.append('payment_method', method)
+    fetch(scriptURL, { method: 'POST', body: clientData }).then((response) => {
+        const r = response
+        if (r.status === 200) {
+            console.log('Guardado con éxito.')
+        }
+    })
+}
