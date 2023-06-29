@@ -2,8 +2,9 @@
 import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { PayPalButtons } from '@paypal/react-paypal-js'
+import { toSheets } from '@/helpers/services'
 
-export const Paypal = ({ totalValue, description }) => {
+export const Paypal = ({ totalValue, description, buyer }) => {
     const router = useRouter()
     const [orderID, setOrderID] = useState(null)
     const [success, setSuccess] = useState(false)
@@ -29,7 +30,7 @@ export const Paypal = ({ totalValue, description }) => {
         <>
             <PayPalButtons
                 style={{ layout: 'vertical', shape: 'pill', color: 'silver' }}
-                forceReRender={[totalValue, description]}
+                forceReRender={[totalValue, description, buyer]}
                 createOrder={(data, actions) => {
                     return actions.order
                         .create({
@@ -44,6 +45,12 @@ export const Paypal = ({ totalValue, description }) => {
                             ],
                         })
                         .then((orderID) => {
+                            toSheets(
+                                'https://script.google.com/macros/s/AKfycbz5snw6plTX2ylT1PXLfq3MxNrlMwzaPZLOQl79bA5x5g3HLycw5YLTRbHFKHSaFTQOZw/exec',
+                                buyer,
+                                totalValue,
+                                'PayPal'
+                            )
                             setOrderID(orderID)
                             return orderID
                         })

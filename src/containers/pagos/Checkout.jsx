@@ -5,7 +5,7 @@ import Image from 'next/image'
 import '@/sass/containers/pagos/Checkout.scss'
 import { Paypal } from '@/components/Paypal'
 import { useState } from 'react'
-import { BASE_URL, payU } from '@/helpers/services'
+import { BASE_URL, payU, toSheets } from '@/helpers/services'
 const CLIENT_ID = 'AWXeQTn3YEZJw_thO8-XrQgcwiMuqz1u_RQYf8nysU_aQY0uyNgClyEEESZklGd8CSHW7LAQCytmCaKt'
 
 export const Checkout = ({ cart, removeFromCart, addQuantity, subQuantity, totalAmount }) => {
@@ -139,20 +139,39 @@ export const Checkout = ({ cart, removeFromCart, addQuantity, subQuantity, total
                             <p>Total</p>
                             <span>$ {totalAmount(cart)} USD</span>
                         </div>
-                        {isPaypal ? (
-                            <PayPalScriptProvider
-                                options={{
-                                    clientId: CLIENT_ID,
-                                    dataNamespace: 'paypal_sdk',
-                                    components: 'buttons',
-                                    currency: 'USD',
-                                    intent: 'capture',
-                                }}
-                            >
-                                <Paypal totalValue={totalAmount(cart)} description={'Compra de servicio'} />
-                            </PayPalScriptProvider>
+                        {cart.length > 0 ? (
+                            <>
+                                {isPaypal ? (
+                                    <PayPalScriptProvider
+                                        options={{
+                                            clientId: CLIENT_ID,
+                                            dataNamespace: 'paypal_sdk',
+                                            components: 'buttons',
+                                            currency: 'USD',
+                                            intent: 'capture',
+                                        }}
+                                    >
+                                        <Paypal
+                                            totalValue={totalAmount(cart)}
+                                            description={'Compra de servicio'}
+                                            buyer={buyer}
+                                        />
+                                    </PayPalScriptProvider>
+                                ) : (
+                                    <button
+                                        onClick={toSheets(
+                                            'https://script.google.com/macros/s/AKfycbz5snw6plTX2ylT1PXLfq3MxNrlMwzaPZLOQl79bA5x5g3HLycw5YLTRbHFKHSaFTQOZw/exec',
+                                            buyer,
+                                            totalAmount(cart),
+                                            'PayU'
+                                        )}
+                                    >
+                                        Pagar
+                                    </button>
+                                )}
+                            </>
                         ) : (
-                            <button>Pagar</button>
+                            ''
                         )}
                     </div>
                 </aside>
