@@ -1,36 +1,27 @@
 'use client'
-import { infoContact } from '@/helpers'
-import Link from 'next/link'
-import '@/sass/components/Footer.scss'
 import Image from 'next/image'
+import Link from 'next/link'
+import { infoContact } from '@/helpers'
+import '@/sass/components/Footer.scss'
+
 export const Footer = () => {
     return (
         <footer className="Footer-container">
             <section>
                 <div className="Content-left">
                     <Image src="logoWhite.svg" width={125} height={56} alt="Logo" quality={100}></Image>
+
+                    <p>Broker autorizado Bancolombia, Davivienda y Banco Unión para América, Europa, Asia, Oceanía.</p>
+
                     {infoContact.map((data) => (
                         <ul key={data.id}>
-                            <li>{data.office}</li>
-                            <li>
-                                {data.address} Teléfono: <a href={'tel:' + data.phoneNumber}> {data.phoneNumber}</a>{' '}
-                            </li>
-                            <li>{data.email}</li>
-
-                            <li>Oficina Madrid, España</li>
-                            <li>{data.addressMadrid}</li>
-
-                            <li>Oficina Mühl, Alemania</li>
-                            <li>{data.addressAlemania}</li>
+                            <li>{data.address}</li>
+                            <li>{data.city}</li>
+                            <li>Tel. <a href={'tel:' + data.phoneNumber}> {data.phoneNumber}</a></li>
                         </ul>
                     ))}
                 </div>
                 <div className="Content-right">
-                    <ul>
-                        <li>Broker autorizado Bancolombia, </li>
-                        <li>Davivienda y Banco Unión para América,</li>
-                        <li>Europa, Asia, Oceanía.</li>
-                    </ul>
                     <ul>
                         <div>
                             <li>Inmuebles</li>

@@ -1,11 +1,10 @@
 @import '../base/mixins';
 
 footer.Footer-container {
-    width: 100%;
-    height: 43.6rem;
+    width: 100%;   
     background-image: url('../../../public/FooterMovil.svg');
     background-size: cover;
-    padding: 4rem 1rem 1rem 3.2rem;
+    padding: 4rem 1rem 1rem 1rem;
 
     section {
         display: grid;
@@ -13,7 +12,7 @@ footer.Footer-container {
         grid-template-areas:
             'left right'
             'redes redes';
-        column-gap: 3.2rem;
+        column-gap: 0.5rem;
 
         li {
             font-weight: 600;
@@ -31,29 +30,21 @@ footer.Footer-container {
             grid-area: left;
 
             img[src="logoWhite.svg"] {
-                margin: 3rem 0 2rem 0;
+                margin: 3rem 0 16px 0;
             }
 
-            ul {
+            p{
+                color: #FFF;
+                font-family: Montserrat;
+                font-size: 11px;
+                font-style: normal;
+                font-weight: 500;
+                width: 125px;
+                margin: 0 0 38px 0;
+            }
 
-                li:nth-child(2) {
-                    max-width: 14rem;
-
-                    &::first-line {
-                        line-height: 3rem;
-                    }
-                }
-
-                li:nth-child(3),
-                li:nth-child(5) {
-                    margin-bottom: 2rem;
-                }
-
-                li:nth-child(5),
-                li:nth-child(7) {
-                    font-weight: 400;
-                }
-
+            ul{
+                margin-bottom: 3rem;
             }
 
         }
@@ -64,8 +55,7 @@ footer.Footer-container {
             grid-row: 1;
 
             ul {
-                margin-top: 4rem;
-
+                margin-top: 6rem;
                 li {
                     font-weight: 500;
                     line-height: 1.2rem;
@@ -87,9 +77,9 @@ footer.Footer-container {
         .Redes-icons {
             justify-self: start;
             grid-column: 1/3;
-
+            padding-left: 2rem;
             a:not(:first-child) {
-                margin-left: 2rem;
+                margin-left: 18px;
             }
         }
 
