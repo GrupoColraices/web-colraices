@@ -1,16 +1,13 @@
 @import '../base/mixins';
 
 header.Header-container {
-    position: sticky;
-    top: 0;
-    height: 8rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
     background-color: $white;
     z-index: 9999;
+    padding: 32px 11px 23px 11px;
 
     @include laptop {
         margin: 0 auto;
@@ -141,7 +138,7 @@ header.Header-container {
     }
 
     button.Header-btn-open {
-        margin-left: -3rem;
+        padding-right: 23px;
 
         img {
             width: 2.4rem;

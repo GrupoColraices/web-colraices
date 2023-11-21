@@ -1,9 +1,7 @@
 'use client'
-
 import { useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-
 import '@/sass/components/Header.scss'
 import { NavLink } from './NavLink'
 import { navbarLinks } from '@/helpers'
@@ -36,7 +34,6 @@ export const Header = () => {
                 ))}
             </nav>
 
-            <input type="text" placeholder="Buscar" />
             <button className="Header-btn-open" onClick={showNavBar}>
                 <Image
                     src="/icons/hamburguer_icon.svg"

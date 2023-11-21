@@ -2,20 +2,21 @@
 
 section.Service-container {
     max-width: 110rem;
-    width: 95%;
     margin: 0 auto;
-    padding: 4rem 0;
+    padding: 2rem 30px 4rem 30px;
+    background: #f9f9f9;
     @include laptop {
         padding-bottom: 8rem;
     }
     h2 {
         position: relative;
-        font-size: 1.5rem;
+        font-size: 20px;
         color: $primary;
         text-align: center;
         span {
             color: $secondary;
             display: block;
+            font-size: 16px;
         }
         @include tablet {
             font-size: 3.7rem;
@@ -23,7 +24,18 @@ section.Service-container {
             width: 80%;
         }
     }
+
+    div.register{
+        margin: 68px auto 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 70px;
+        align-items: center;
+    }
+
     div.Service-cards-container {
+        padding-top: 1rem;
         article {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -40,10 +52,11 @@ section.Service-container {
                     border-radius: 0 0 0 3rem;
                 }
             }
-            div {
+            div.container-content {
                 padding: 1.3rem 1.6rem 1.3rem 1.6rem;
-                border-radius: 0 1.2rem 0 0;
-                box-shadow: -3px -3px 4px rgba(0, 0, 0, 0.15), 3px 3px 4px rgba(94, 94, 94, 0.15);
+                border-radius: 0px 30px 0px 0px;
+                background: var(--Blanco, #FFF);
+                box-shadow: 3px 3px 4px 0px rgba(94, 94, 94, 0.15), -3px -3px 4px 0px rgba(0, 0, 0, 0.15);
 
                 @include tablet {
                     padding: 2rem 3rem;
@@ -54,8 +67,8 @@ section.Service-container {
                 }
 
                 img {
-                    width: 2.8rem;
-                    height: 2.8rem;
+                    width: 17px;
+                    height: 17px;
                     border-radius: 0;
                     @include tablet {
                         width: 4rem;
@@ -65,21 +78,30 @@ section.Service-container {
                 }
 
                 h1 {
-                    font-size: 1.8rem;
                     @include tablet {
                         font-size: 3rem;
                     }
-                    color: $primary;
-                    font-weight: bold;
                     margin: 0 0 1rem;
+
+                    color: var(--Azul-Colraices, #2A3F77);
+                    font-family: Montserrat;
+                    font-size: 10px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
                 }
                 p {
-                    font-size: 1.2rem;
                     @include tablet {
                         font-size: 1.6rem;
                     }
                     margin: 0;
                     text-align: justify;
+                    color: #000;
+                    font-family: Montserrat;
+                    font-size: 9px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 143%; /* 12.87px */
                 }
             }
         }
@@ -97,4 +119,10 @@ section.Service-container {
             }
         }
     }
+}
+
+.container-icons{
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }

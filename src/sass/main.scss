@@ -4,3 +4,57 @@
 @import 'base/variables';
 @import 'base/mixins';
 @import 'base/globals';
+
+// Button gray component
+.btn-gray{
+    background: rgba(147, 146, 146, 0.72);
+    padding: 7px 15px;
+    border-radius: 26px;
+    color: white;
+    border: 1px solid var(--BLANCO, #FFF);
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+// Button blue component
+.btn-blue{
+    padding: 7px 15px;
+    border-radius: 26px;
+    color: white;
+    border: 1px solid var(--BLANCO, #FFF);
+    background: var(--Azul-Colraices, #2A3F77);
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+// button blue component xl
+.btn-blue-xl{
+    color: white;
+    border-radius: 26px;
+    color: var(--BLANCO, #FFF);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 237px;
+    height: 37px;
+    border: 1px solid var(--BLANCO, #FFF);
+    background: var(--Azul-Colraices, #2A3F77);
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+// button gold component rounded
+.btn-gold-rounded{
+    border-radius: 0px 8px 8px 8px;
+    background: var(--DORADO-COLRAICES, #CAA55E);
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.25);
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 193px;
+    height: 27px;
+}

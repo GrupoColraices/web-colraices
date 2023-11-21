@@ -6,15 +6,6 @@ export const navbarLinks = [
     { label: 'Blog', href: '/blog' },
 ]
 
-//!Home banner icons
-export const iconsData = [
-    { id: 1, icon: '/icons/online_credit_icon.svg', label: 'Crédito en línea' },
-    { id: 2, icon: '/icons/datacredito_icon.svg', label: 'Elimina tus reportes en Datacredito' },
-    { id: 3, icon: '/icons/steps_icon.svg', label: 'El paso a paso' },
-    { id: 4, icon: '/icons/pension_icon.svg', label: 'Pensiones' },
-    { id: 5, icon: '/icons/client_portal_icon.svg', label: 'Portal Cliente' },
-]
-
 //!Home banner section partners logos
 export const partners = [
     {
@@ -53,24 +44,24 @@ export const constructionCompany = [
 export const servicesCards = [
     {
         image: '/buena-data.jpg',
-        title: 'Buena Data',
+        title: 'Gestionamos tu crédito',
         content:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, recusandae eaque excepturi.',
-        icon: '/icons/datacredito_icon.svg',
+            '¿Quieres una casa en Colombia? Te decimos cuánto te prestan, ¡gratis y sin esperas!',
+        icon: '/icons/credit_world.svg',
     },
     {
         image: '/pensiones.jpg',
-        title: 'Pensiones',
+        title: 'Encontramos tu inmueble',
         content:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, recusandae eaque excepturi.',
-        icon: '/icons/pension_icon.svg',
+            '¡Tienes un pie dentro de tu casa en Colombia! Te decimos si cumples con los requisitos para tu crédito ¡gratis!.',
+        icon: '/icons/credit_icon.svg',
     },
     {
         image: '/credito.jpg',
-        title: 'Crédito',
+        title: 'Monetizacion',
         content:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, recusandae eaque excepturi.',
-        icon: '/icons/credit_icon.svg',
+            'Redactar.',
+        icon: '/icons/credit_doc.svg',
     },
 ]
 
