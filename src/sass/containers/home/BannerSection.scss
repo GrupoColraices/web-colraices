@@ -2,20 +2,29 @@
 @import '../../base/mixins';
 
 section.Banner-container {
+
     @include laptop {
-        max-width: 110rem;
-        height: 100vh;
-        width: 95%;
-        margin: 0 auto;
+        width: 100%;
+        padding: 0 20px 0 20px;
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
+
+    @include desktop {
+        width: 100%;
+        padding: 0 84px 0 144px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
     div.Banner-title {
+
         h1 {
             width: 230px;
             font-size: 24px;
             margin: auto;
         }
+
         p {
             font-weight: 700;
             text-align: center;
@@ -23,17 +32,47 @@ section.Banner-container {
             margin: 0;
             color: $secondary;
         }
+
+        
+        div.container-buttons-desktop{
+            display: none;
+        }
+
         @include laptop {
-            align-self: center;
-            justify-self: center;
-            h1 {
-                font-size: 4.6rem;
+            padding-top: 84px;
+            h1{
+                width: 461px;
+                color: var(--AZUL-COLRAICES, #2A3F77);
+                font-family: Montserrat;
+                font-size: 48px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                margin: 0;
+                text-align: start;
                 span {
                     font-size: 4.9rem;
                 }
             }
-            p {
-                font-size: 2.6rem;
+
+            p{
+                font-size: 50px;
+                margin: 0;
+                width: 628px;
+                text-align: start;
+                color: var(--SUBITULO-HOME, #CAA55E);
+                font-family: Montserrat;
+                font-size: 50px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+
+            div.container-buttons-desktop{
+                display: flex;
+                margin-top: 50px;
+                gap: 24px;
+                padding-bottom: 49px;
             }
         }
     }
@@ -42,23 +81,46 @@ section.Banner-container {
         justify-content: center;
         flex-direction: column;
         padding: 41px 0 3rem 0;
+
         div.container-buttons{
             display: flex;
             justify-content: center;
             gap: 24px;
             padding-bottom: 49px;
+
+            @include laptop{
+                display: none;
+            }
         }
+
         section {
             place-self: center;
             grid-area: picture;
-            img {
+            .bannerMobile {
                 width: 276px;
                 height: 349px;
             }
+            .bannerDesktop {
+                display: none;
+            }
         }
+
         @include laptop {
             grid-template-areas: 'picture icons';
             grid-template-columns: 3fr 1fr;
+            padding: 0;
+            margin-bottom: 20px;
+
+            section {
+                .bannerMobile {
+                    display: none;
+                }
+                .bannerDesktop {
+                    width: 530px;
+                    height: 603px;
+                    display: block;
+                }
+            }
         }
     }
 }

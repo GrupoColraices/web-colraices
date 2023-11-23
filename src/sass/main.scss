@@ -27,7 +27,6 @@
 
 // button blue component xl
 .btn-blue-xl{
-    color: white;
     border-radius: 26px;
     color: var(--BLANCO, #FFF);
     text-align: center;
@@ -37,6 +36,40 @@
     font-weight: 700;
     line-height: normal;
     width: 237px;
+    height: 37px;
+    border: 1px solid var(--BLANCO, #FFF);
+    background: var(--Azul-Colraices, #2A3F77);
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+// Button gray xl component
+.btn-gray-xl{
+    background: rgba(147, 146, 146, 0.72);
+    border: 1px solid var(--BLANCO, #FFF);
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 26px;
+    color: var(--BLANCO, #FFF);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    padding: 6px 36px;
+    line-height: normal;
+}
+
+// button blue component desktop
+.btn-blue-desktop{
+    border-radius: 26px;
+    color: var(--BLANCO, #FFF);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 6px 36px;
+    width: 241px;
     height: 37px;
     border: 1px solid var(--BLANCO, #FFF);
     background: var(--Azul-Colraices, #2A3F77);

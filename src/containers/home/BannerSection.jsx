@@ -5,26 +5,39 @@ import { partners } from '@/helpers'
 
 export const BannerSection = () => {
     return (
-        <section className="Banner-container ">
-            <div className="Banner-title container">
-                <h1 className="title">¡Compra tu casa en Colombia</h1>
-                <p>desde el exterior!</p>
-            </div>
-            <article>
-                <div className="container-buttons">
-                    <button className="btn-gray">La buscamos por ti</button>
-                    <button className="btn-blue">Buscar mi casa</button>
+        <div>
+            <section className="Banner-container ">
+                <div className="Banner-title container">
+                    <h1 className="title">¡Compra tu casa en Colombia</h1>
+                    <p>desde el exterior!</p>
+
+                    <div className="container-buttons-desktop">
+                        <button className="btn-blue-xl">Buscar mi casa</button>
+                        <button className="btn-gray-xl">La buscamos por ti</button>
+                    </div>
                 </div>
-                <section>
-                    <Image
-                        src="/bannerMobile.svg"
-                        width={500}
-                        height={500}
-                        alt="Comprar casa en Colombia desde el exterior."
-                    />
-                </section>
-            </article>
-            <Partners partners={partners} hover={true} />
-        </section>
+                <article>
+                    <div className="container-buttons">
+                        <button className="btn-gray">La buscamos por ti</button>
+                        <button className="btn-blue">Buscar mi casa</button>
+                    </div>
+                    <section>
+                        <Image className='bannerMobile'
+                            src="/bannerMobile.svg"
+                            width={500}
+                            height={500}
+                            alt="Comprar casa en Colombia desde el exterior."
+                        />
+                        <Image className='bannerDesktop'
+                            src="/banner.svg"
+                            width={500}
+                            height={500}
+                            alt="Comprar casa en Colombia desde el exterior."
+                        />
+                    </section>
+                </article>
+                <Partners partners={partners} hover={true} />
+            </section>
+        </div>
     )
 }
