@@ -1,9 +1,8 @@
 //?Navbar links
 export const navbarLinks = [
-    { label: 'Inmuebles', href: 'https://colraices.com/vitrina-colombia' },
-    { label: 'Crédito', href: '/credito' },
-    { label: 'Contacto', href: '/contacto' },
-    { label: 'Blog', href: '/blog' },
+    { label: 'Encuentra tu casa', href: 'https://colraices.com/vitrina-colombia' },
+    { label: 'Financia tu casa', href: '/credito' },
+    { label: 'Guía para comprar tu casa', href: '/contacto' },
 ]
 
 //!Home banner section partners logos

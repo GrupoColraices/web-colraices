@@ -29,9 +29,11 @@ export const Header = () => {
                         quality={100}
                     />
                 </Link>
-                {navbarLinks.map((link) => (
-                    <NavLink key={link.href} label={link.label} href={link.href} />
-                ))}
+                <div className='navbar-links'>
+                    {navbarLinks.map((link) => (
+                        <NavLink key={link.href} label={link.label} href={link.href} />
+                    ))}
+                </div>
             </nav>
 
             <button className="Header-btn-open" onClick={showNavBar}>
