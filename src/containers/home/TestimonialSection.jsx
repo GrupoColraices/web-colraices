@@ -1,5 +1,3 @@
-import Link from 'next/link'
-import React from 'react'
 import { CardTestimonial } from '@/components/molecules/CardTestimonial'
 import '@/sass/containers/home/TestimonialSection.scss'
 import { testimonialsData } from '@/helpers'
@@ -16,6 +14,8 @@ export const TestimonialSection = () => {
                         <TitleLine right={true} top={50} width={7.5} />
                     </div>
                     <span>alcanzamos tu meta</span>
+
+                    <p>Desde el inicio de tu búsqueda hasta la emoción de recibir las llaves, Colraices hace posible tu sueño de casa en Colombia.</p>
                 </div>
             </div>
             <div>

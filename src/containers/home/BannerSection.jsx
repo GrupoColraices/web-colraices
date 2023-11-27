@@ -5,9 +5,9 @@ import { partners } from '@/helpers'
 
 export const BannerSection = () => {
     return (
-        <div>
+        <div className='container-flex'>
             <section className="Banner-container ">
-                <div className="Banner-title container">
+                <div className="Banner-title">
                     <h1 className="title">¡Compra tu casa en Colombia</h1>
                     <p>desde el exterior!</p>
 
@@ -36,8 +36,13 @@ export const BannerSection = () => {
                         />
                     </section>
                 </article>
-                <Partners partners={partners} hover={true} />
+                <div className='partners'>
+                    <Partners partners={partners} hover={true} />
+                </div>
             </section>
+            <div className='partners-desktop'>
+                <Partners partners={partners} hover={true} />
+            </div>
         </div>
     )
 }

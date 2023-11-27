@@ -5,18 +5,25 @@ section.Property-container {
     position: relative;
     padding-top: 25px;
     padding-bottom: 30px;
+
     h2 {
         position: relative;
         font-weight: 700;
         font-size: 20px;
         text-align: center;
         max-width: 100rem;
+        @include laptop{
+            .timeline{
+                display: none;
+            }
+        }
     }
 
     div.title-container{
         display: flex;
         flex-direction: column;
         gap: 5px;
+
         p{
             color: var(--AZUL-COLRAICES, #2A3F77);
             text-align: center;
@@ -25,6 +32,35 @@ section.Property-container {
             font-style: normal;
             font-weight: 600;
             line-height: normal;
+        }
+
+        .timeline-desktop{
+            display: none;
+        }
+
+        @include laptop{
+            padding: 65px 84px 26px 144px;
+            justify-content: center;
+            align-items: center;
+            gap: 22px;
+            p{
+                font-size: 35px;
+                margin: 0;
+                width: 100%;
+            }
+            
+            .container-timeline{
+                display: flex;
+                justify-content: center;
+                gap: 80px;
+            }
+            
+            .timeline-desktop{
+                position: relative;
+                width: 130px;
+                display: block;
+            }
+
         }
     }
 
@@ -52,13 +88,14 @@ section.Property-container {
 
 
     @include laptop {
-        padding: 5rem 0 6rem 0;
-        box-shadow: 3.18px 3.18px 10.58px rgba(102, 101, 101, 0.58);
-
+        // padding: 5rem 0 6rem 0;
+        // box-shadow: 3.18px 3.18px 10.58px rgba(102, 101, 101, 0.58);
+        padding: 0;
         h2 {
-            font-size: 3.5rem;
+            display: flex;
+            font-size: 48px;
             line-height: 4.3rem;
-            margin: 5rem auto 7rem auto;
+            margin: 0;
         }
 
         div.Property-title {
@@ -71,7 +108,7 @@ section.Property-container {
         p {
             font-size: 2.4rem;
             line-height: 3rem;
-            max-width: 47rem;
+            max-width: fit-content;
         }
 
     }

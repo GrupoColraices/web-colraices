@@ -14,14 +14,39 @@ export const Footer = () => {
                     <p>Broker autorizado Bancolombia, Davivienda y Banco Unión para América, Europa, Asia, Oceanía.</p>
 
                     {infoContact.map((data) => (
-                        <ul key={data.id}>
+                        <ul className='infoMobile' key={data.id}>
                             <li>{data.address}</li>
                             <li>{data.city}</li>
                             <li>Tel. <a href={'tel:' + data.phoneNumber}> {data.phoneNumber}</a></li>
                         </ul>
                     ))}
+
+                    <div className='infoDesktopContainer'>
+                        {infoContact.map((data) => (
+                            <ul className='infoDesktop' key={data.id}>
+                                <li>{data.office}</li>
+                                <li>{data.address} Teléfono: {data.phoneNumber}</li>
+                                <li>{data.email}</li>
+                            </ul>
+                        ))}
+
+                        {infoContact.map((data) => (
+                            <ul className='infoDesktopAddress' key={data.id}>
+                                <li>Oficina Madrid, España</li>
+                                <li className='title'>{data.addressMadrid}</li>
+                            </ul>
+                        ))}
+
+                        {infoContact.map((data) => (
+                            <ul className='infoDesktopAddress' key={data.id}>
+                                <li>Oficina Mühldorf , Alemania</li>
+                                <li className='title'>{data.addressAlemania}</li>
+                            </ul>
+                        ))}
+                    </div>
                 </div>
                 <div className="Content-right">
+                    <p>Broker autorizado Bancolombia, Davivienda y Banco Unión para América, Europa, Asia, Oceanía.</p>
                     <ul>
                         <div>
                             <li>Inmuebles</li>

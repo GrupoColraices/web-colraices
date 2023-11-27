@@ -3,11 +3,8 @@
 section.Service-container {
     max-width: 110rem;
     margin: 0 auto;
-    padding: 2rem 30px 4rem 30px;
-    background: #f9f9f9;
-    @include laptop {
-        padding-bottom: 8rem;
-    }
+    padding: 2rem 30px 0 30px;
+    
     h2 {
         position: relative;
         font-size: 20px;
@@ -25,12 +22,33 @@ section.Service-container {
         }
     }
 
+    @include desktop {
+        padding: 0 0 8rem 0;
+        max-width: none;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            gap: 20px;
+            margin: 4rem auto 80px auto;
+            span {
+                color: $secondary;
+                display: block;
+                font-size: 35px;
+            }
+        }
+    }
+
     div.register{
         margin: 68px auto 15px auto;
         display: flex;
         justify-content: center;
-        flex-direction: column;
-        gap: 70px;
         align-items: center;
     }
 
@@ -45,9 +63,8 @@ section.Service-container {
                 height: 100%;
                 object-fit: cover;
                 object-position: center;
-
                 border-radius: 0 0 0 1.2rem;
-                @include laptop {
+                @include desktop {
                     grid-area: service_image;
                     border-radius: 0 0 0 3rem;
                 }
@@ -56,12 +73,12 @@ section.Service-container {
                 padding: 1.3rem 1.6rem 1.3rem 1.6rem;
                 border-radius: 0px 30px 0px 0px;
                 background: var(--Blanco, #FFF);
-                box-shadow: 3px 3px 4px 0px rgba(94, 94, 94, 0.15), -3px -3px 4px 0px rgba(0, 0, 0, 0.15);
+                box-shadow: 3px 3px 4px 0px rgba(192, 192, 192, 0.15), -3px -3px 4px 0px rgba(218, 218, 218, 0.15);
 
                 @include tablet {
                     padding: 2rem 3rem;
                 }
-                @include laptop {
+                @include desktop {
                     grid-area: service_content;
                     border-radius: 0 3rem 0 0;
                 }
@@ -105,18 +122,26 @@ section.Service-container {
                 }
             }
         }
-        @include laptop {
+        @include desktop {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 3rem;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
             article {
+                width: 348px;
                 grid-template-columns: 1fr;
-                grid-template-rows: 1fr 1fr;
+                grid-template-rows: 230px 1fr;
                 grid-template-areas:
                     'service_content'
                     'service_image';
-                gap: 1.2rem;
+                gap: 0.5rem;
             }
+        }
+
+        @include desktop{
+            padding: 0 84px 0 84px;
         }
     }
 }
@@ -125,132 +150,4 @@ section.Service-container {
     display: flex;
     align-items: center;
     gap: 5px;
-}
-
-.recommendedProjects{
-    position: relative;
-
-    .circle1{
-        position: absolute;
-        width: 43px;
-        height: 134px;
-        left: -23px;
-    }
-
-    .circle2{
-        position: absolute;
-        width: 43px;
-        height: 134px;
-        right: -25px;
-        top: 140px;
-    }
-
-    .container-projects {
-        margin: 0 auto;
-        height: 210px;
-        text-align: center;
-        position: relative;
-        display: flex;
-        overflow: hidden;
-    
-        article {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: all 0.3s linear;
-        }
-          
-        article.activeSlide {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        article.lastSlide {
-            transform: translateX(-100%);
-        }
-        
-        article.nextSlide {
-            transform: translateX(100%);
-        }
-          
-        .project-img {
-            width: 290px;
-            height: 210px;
-        }
-    }
-}
-  
-
-div.slider-button{
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    align-items: center;
-
-    span{
-        color: var(--DORADO-COLRAICES, #CAA55E);
-        text-align: justify;
-        font-family: Montserrat;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 30px; /* 166.667% */
-        span{
-            color: var(--DORADO-COLRAICES, #CAA55E);
-            font-family: Montserrat;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 30px;
-        }
-    }
-}
-
-div.container-texts{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 5px;
-    p{
-        margin: 0;
-        color: #4D4D4D;
-        text-align: justify;
-        font-family: Montserrat;
-        font-size: 13px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 18px;
-    }
-
-    span{
-        color: #4D4D4D;
-        font-family: Montserrat;
-        font-size: 13px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 18px;
-    }
-}
-
-.offer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 26px;
-    button{
-        border-radius: 49px;
-        border: 1px solid #FFF;
-        color: white;
-        width: 193px;
-        padding: 5px 0;
-        display: flex;
-        justify-content: center;
-        gap: 5px;
-        align-items: center;
-        background: var(--AZUL-COLRAICES, #2A3F77);
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    }
 }

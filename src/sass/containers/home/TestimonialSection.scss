@@ -6,10 +6,12 @@ section.Testimonial-container {
     margin: 4rem auto 0rem auto;
     position: relative;
     background: #FFFF;
+
     .testimonial-texts {
         display: flex;
         flex-direction: column;
         margin-bottom: 47px;
+
         .text-title{
             display: flex;
             flex-direction: column;
@@ -35,6 +37,39 @@ section.Testimonial-container {
                 font-style: normal;
                 font-weight: 700;
                 line-height: normal;
+            }
+            p{
+                display: none;
+            }
+
+            @include laptop{
+                div div{
+                    display: none;
+                }
+
+                h2{
+                    font-size: 60px;
+                    text-align: start;
+                    margin: 0;
+                }
+
+                span{
+                    font-size: 60px;
+                    text-align: start;
+                }
+
+                p{
+                    display: block;
+                    color: #000;
+                    text-align: justify;
+                    font-family: Montserrat;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    width: 466px;
+                    max-width: none;
+                }
             }
         }
     }

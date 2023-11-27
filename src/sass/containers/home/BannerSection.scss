@@ -1,21 +1,48 @@
 @import '../../base/variables';
 @import '../../base/mixins';
 
+.container-flex{
+    display: flex;
+    flex-direction: column;
+
+    .partners-desktop{
+        display: none;
+    }
+
+    @include laptop{
+        .partners-desktop{
+            display: block;
+            padding: 0 84px 0 144px;
+        }
+    }
+}
+
 section.Banner-container {
 
     @include laptop {
         width: 100%;
         padding: 0 20px 0 20px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        // gap: 129px;
+        .partners{
+            display: none;
+        }
     }
 
     @include desktop {
         width: 100%;
         padding: 0 84px 0 144px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        gap: 1rem;
     }
+
+    @include desktopxl {
+        width: 100%;
+        padding: 0 84px 0 144px;
+        display: flex;
+        gap: 119px;
+    }
+    
 
     div.Banner-title {
 

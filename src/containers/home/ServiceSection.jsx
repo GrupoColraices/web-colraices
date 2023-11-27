@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import '@/sass/containers/home/ServiceSection.scss'
 import { servicesCards } from '@/helpers'
-import RecommendedProjects from '@/components/RecommendedProjects'
 
 export const ServiceSection = () => {
     return (
@@ -23,11 +22,7 @@ export const ServiceSection = () => {
             </div>
             <div className="register">
                 <button className='btn-blue-xl'>Regístrate</button>
-                <button className='btn-gold-rounded'>Inmueble Destacado</button>
             </div>
-
-            <RecommendedProjects/>
-
         </section>
     )
 }
