@@ -77,6 +77,10 @@ section.Service-container {
 
                 @include tablet {
                     padding: 2rem 3rem;
+                    display: flex;
+                    flex-direction: column;
+                    // justify-content: space-between;
+                    gap: 15px;
                 }
                 @include desktop {
                     grid-area: service_content;
@@ -98,7 +102,6 @@ section.Service-container {
                     @include tablet {
                         font-size: 3rem;
                     }
-                    margin: 0 0 1rem;
 
                     color: var(--Azul-Colraices, #2A3F77);
                     font-family: Montserrat;
@@ -132,7 +135,7 @@ section.Service-container {
             article {
                 width: 348px;
                 grid-template-columns: 1fr;
-                grid-template-rows: 230px 1fr;
+                grid-template-rows: 250px 1fr;
                 grid-template-areas:
                     'service_content'
                     'service_image';
@@ -150,4 +153,11 @@ section.Service-container {
     display: flex;
     align-items: center;
     gap: 5px;
+    margin: 0 0 0.5rem;
+
+    @include laptop {
+        flex-direction: column;
+        align-items: start;
+        margin: 0;
+    }
 }

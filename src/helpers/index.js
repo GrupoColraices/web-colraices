@@ -57,9 +57,9 @@ export const servicesCards = [
     },
     {
         image: '/credito.jpg',
-        title: 'Monetizacion',
+        title: 'Monetizamos tu dinero',
         content:
-            'Redactar.',
+            'Te acompañamos y asesoramos en el envío de tus divisas a Colombia. Para que puedas invertirlas en el inmueble que elijas.',
         icon: '/icons/credit_doc.svg',
     },
 ]
@@ -94,7 +94,7 @@ export const historyData = [
         span: 'atendidos en todo el mundo',
         image: 'icons/colombianosIcon.svg',
     },
-    { id: 3, title: '11 mil', span: 'negocios', image: 'icons/negociosIcon.svg' },
+    { id: 3, title: '11 mil', span: 'negocios concretados', image: 'icons/negociosIcon.svg' },
 ]
 
 //! Home testimonials section cards
@@ -133,4 +133,19 @@ export const infoContact = [
         whatsapp: '15136479405',
         email: 'info@colraices.co',
     },
+]
+
+export const linksFooter = [
+    { id: 1, name: 'Inmuebles', url: '' },
+    { id: 2, name: 'Favoritos', url: '/favoritos' },
+    { id: 3, name: 'Contacto', url: '' }
+]
+
+export const socialNetworks = [
+    { id: 1, name: 'facebook', url: 'https://www.facebook.com/colraices', src: '/img/colraicesInmobiliario/icons/facebook.svg' },
+    { id: 2, name: 'instagram', url: 'https://www.instagram.com/colraices', src: '/img/colraicesInmobiliario/icons/instagram.svg' },
+    { id: 3, name: 'linkedin', url: 'https://www.linkedin.com/company/colraices/mycompany', src: '/img/colraicesInmobiliario/icons/linkedin.svg' },
+    { id: 4, name: 'whatsapp', url: 'https://api.whatsapp.com/send/?phone=15136479405', src: '/img/colraicesInmobiliario/icons/whatsapp.svg' },
+    { id: 5, name: 'youtube', url: 'https://www.youtube.com/c/Colraicesserviciosinmobiliariosfinancieros', src: '/img/colraicesInmobiliario/icons/youtube.svg' },
+  
 ]

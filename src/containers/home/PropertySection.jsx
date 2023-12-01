@@ -15,7 +15,7 @@ export const PropertySection = async () => {
                         <div className='timeline'>
                             <TitleLine left={true} top={50} width={7.5} />
                         </div>
-                        No estás solo.
+                        No estás solo
                         <div className='timeline'>
                             <TitleLine right={true} top={50} width={7.5} />
                         </div>
