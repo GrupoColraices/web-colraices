@@ -6,7 +6,7 @@ export const Footer = () => {
     return (
         <footer id='contact'>
             <section>
-                <img className='logo' src="/img/colraicesInmobiliario/home/logo.svg" alt="logo" />
+                <img className='logo' src="/logoWhite.svg" alt="logo" />
                 {infoContact?.map((item) =>
                     <p key={item.id}>
                         <a href={item.map} target='_blank'>

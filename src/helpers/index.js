@@ -123,16 +123,26 @@ export const testimonialsData = [
 //! Footer section data
 export const infoContact = [
     {
-        id: 1,
-        office: 'Colraices - Oficina principal Ibagué, Colombia',
-        address: 'Calle 47 # 4 - 61',
-        city: 'Ibague - Tolima',
-        addressMadrid: 'Av Mediterráneo 5, 1G, Madrid, Spain 28007',
-        addressAlemania: 'Katharinenplatz 57, Muhldorf Alemania.',
-        phoneNumber: '(+57 1) 3288939',
-        whatsapp: '15136479405',
-        email: 'info@colraices.co',
+      id: 1,
+      office: 'Colraices - Oficina principal Ibagué, Colombia',
+      address: 'Calle 47 # 4-61 ',
+      phoneNumber: '(57) 601 328 8939',
+      whatsapp: '15136479405',
+      email: 'info@colraices.co',
+      map: 'https://maps.app.goo.gl/yJqorhEuqYRg6SR79'
     },
+    {
+      id: 2,
+      office: 'Oficina Madrid, España',
+      address: 'Av Mediterráneo 5, 1G, Madrid, Spain 28007',
+      map: ''
+    },
+    {
+      id: 3,
+      office: 'Oficina Mühldorf, Alemania',
+      address: 'Katharinenplatz 57, Muhldorf Alemania.',
+      map: 'https://maps.app.goo.gl/419cNsRz3jsedZsN7'
+    }
 ]
 
 export const linksFooter = [
@@ -142,10 +152,10 @@ export const linksFooter = [
 ]
 
 export const socialNetworks = [
-    { id: 1, name: 'facebook', url: 'https://www.facebook.com/colraices', src: '/img/colraicesInmobiliario/icons/facebook.svg' },
-    { id: 2, name: 'instagram', url: 'https://www.instagram.com/colraices', src: '/img/colraicesInmobiliario/icons/instagram.svg' },
-    { id: 3, name: 'linkedin', url: 'https://www.linkedin.com/company/colraices/mycompany', src: '/img/colraicesInmobiliario/icons/linkedin.svg' },
-    { id: 4, name: 'whatsapp', url: 'https://api.whatsapp.com/send/?phone=15136479405', src: '/img/colraicesInmobiliario/icons/whatsapp.svg' },
-    { id: 5, name: 'youtube', url: 'https://www.youtube.com/c/Colraicesserviciosinmobiliariosfinancieros', src: '/img/colraicesInmobiliario/icons/youtube.svg' },
+    { id: 1, name: 'facebook', url: 'https://www.facebook.com/colraices', src: '/icons/facebook.svg' },
+    { id: 2, name: 'instagram', url: 'https://www.instagram.com/colraices', src: '/icons/instagram.svg' },
+    { id: 3, name: 'linkedin', url: 'https://www.linkedin.com/company/colraices/mycompany', src: '/icons/linkedin.svg' },
+    { id: 4, name: 'whatsapp', url: 'https://api.whatsapp.com/send/?phone=15136479405', src: '/icons/whatsapp.svg' },
+    { id: 5, name: 'youtube', url: 'https://www.youtube.com/c/Colraicesserviciosinmobiliariosfinancieros', src: '/icons/youtube.svg' },
   
 ]
