@@ -24,22 +24,12 @@
         line-height: normal;
     }
 
-    // .input-search-blog{
-    //     display: flex;
-    //     align-items: center;
-    //     position: relative;
-    //     z-index: 0;
+}
 
-    //     svg{
-    //         position: absolute;
-    //         padding-right: 20px;
-    //         top: 0;
-    //         z-index: 100;
-    //     }
-
-    //     input{
-    //         z-index: 0;
-    //     }
-    // }
+.container-search-blog{
+    padding: 30px 4rem 0 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
