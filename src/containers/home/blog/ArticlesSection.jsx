@@ -1,6 +1,7 @@
 'use client'
 import Line from '@/components/Line';
 import CardArticleLarge from '@/components/blog/CardArticleLarge';
+import CardArticleMedium from '@/components/blog/CardArticleMedium';
 import '@/sass/containers/blog/ArticlesSection.scss';
 
 const ArticlesSection = () => {
@@ -13,8 +14,9 @@ const ArticlesSection = () => {
             <div>
                 <CardArticleLarge/>
             </div>
-            <div>
-                {/* <CardArticleLarge/> */}
+            <div className='container-cards-medium'>
+                <CardArticleMedium />
+                <CardArticleMedium />
             </div>
         </div>
     </section>

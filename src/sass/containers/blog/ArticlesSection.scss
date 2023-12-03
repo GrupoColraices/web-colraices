@@ -10,5 +10,14 @@ section{
 
     .container-cards-article{
         padding-top: 38px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .container-cards-medium{
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
     }
 }
