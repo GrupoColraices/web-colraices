@@ -1,4 +1,5 @@
 import { Partners } from "@/components/Partners";
+import CardArticleSm from "@/components/blog/CardArticleSm";
 import ArticlesSection from "@/containers/home/blog/ArticlesSection";
 import BannerSectionBlog from "@/containers/home/blog/BannerSectionBlog";
 import { partners } from "@/helpers";
@@ -13,6 +14,9 @@ export default function BlogPage() {
             </div>
             <div className="article-container">
                 <ArticlesSection/>
+            </div>
+            <div className='container-cards-sm'>
+                <CardArticleSm />
             </div>
         </main>
     )
