@@ -1,6 +1,7 @@
 import { Partners } from "@/components/Partners";
 import CardArticleSm from "@/components/blog/CardArticleSm";
 import Pagination from "@/components/blog/Pagination";
+import Top from "@/components/blog/Top";
 import ArticlesSection from "@/containers/blog/ArticlesSection";
 import BannerSectionBlog from "@/containers/blog/BannerSectionBlog";
 import RecommendedSection from "@/containers/blog/RecommendedSection";
@@ -30,6 +31,10 @@ export default function BlogPage() {
 
             <div className="recommended">
                 <RecommendedSection/>
+            </div>
+
+            <div className="top-container">
+                <Top/>
             </div>
         </main>
     )
