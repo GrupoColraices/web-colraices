@@ -4,7 +4,7 @@ import '@/sass/containers/blog/BannerSectionBlog.scss';
 
 const BannerSectionBlog = () => {
   return (
-    <section>
+    <section className='section-blog'>
       <div className="banner-blog">
         <h1>¡Llegaste al blog de la vivienda en Colombia!</h1>
         <span>¿Qué quieres saber?.</span>

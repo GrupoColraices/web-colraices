@@ -1,5 +1,6 @@
 import { Partners } from "@/components/Partners";
 import CardArticleSm from "@/components/blog/CardArticleSm";
+import Pagination from "@/components/blog/Pagination";
 import ArticlesSection from "@/containers/home/blog/ArticlesSection";
 import BannerSectionBlog from "@/containers/home/blog/BannerSectionBlog";
 import { partners } from "@/helpers";
@@ -17,6 +18,9 @@ export default function BlogPage() {
             </div>
             <div className='container-cards-sm'>
                 <CardArticleSm />
+            </div>
+            <div className="container-pagination">
+                <Pagination/>
             </div>
         </main>
     )
