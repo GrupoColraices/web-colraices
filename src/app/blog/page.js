@@ -1,6 +1,7 @@
 import { Partners } from "@/components/Partners";
 import CardArticleSm from "@/components/blog/CardArticleSm";
 import Pagination from "@/components/blog/Pagination";
+import Podcast from "@/components/blog/Podcast";
 import Top from "@/components/blog/Top";
 import ArticlesSection from "@/containers/blog/ArticlesSection";
 import BannerSectionBlog from "@/containers/blog/BannerSectionBlog";
@@ -35,6 +36,10 @@ export default function BlogPage() {
 
             <div className="top-container">
                 <Top/>
+            </div>
+
+            <div className="podcast-container">
+                <Podcast/>
             </div>
         </main>
     )

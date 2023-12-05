@@ -1,0 +1,20 @@
+.podcast{
+    .title-podcast{
+        color: var(--Azul-Colraices, #2A3F77);
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .podcast-content{
+        padding-top: 30px;
+        display: flex;
+        justify-content: center;
+        
+        img{
+            width: 262px;
+            height: 262px;
+        }
+    }
+}
