@@ -1,5 +1,6 @@
 'use client'
 import Line from '@/components/Line';
+import Top from '@/components/blog/Top';
 import CardVideoLg from '@/components/blog/video/CardVideoLg';
 import '@/sass/containers/blog/RecommendedSection.scss';
 
@@ -13,9 +14,17 @@ const RecommendedSection = () => {
           <Line width='20' />
         </div>
 
-        <div className='video-cards'>
-          <CardVideoLg/>
-          <CardVideoLg/>
+        <div className='container-video-cards'>
+          <div className='video-cards'>
+            <CardVideoLg/>
+            <CardVideoLg/>
+            <CardVideoLg/>
+            <CardVideoLg/>
+          </div>
+
+          <div className='container-top-desktop'>
+            <Top/>
+          </div>
         </div>
 
     </section>

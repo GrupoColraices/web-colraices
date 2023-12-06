@@ -24,6 +24,24 @@
 
 }
 
+.recommended{
+    padding-top: 77px;
+}
+
+.top-container{
+    padding: 33px 36px 0 36px;
+}
+
+.podcast-container{
+    padding: 33px 36px 0 36px;
+}
+
+.container-partners{
+    @include laptop{
+        display: none;
+    }
+}
+
 @include laptop{
     .articles{
         max-width: 1238px;
@@ -39,22 +57,8 @@
         padding: 50px 0 0 0;
     
     }
-}
 
-.recommended{
-    padding-top: 77px;
-}
-
-.top-container{
-    padding: 33px 36px 0 36px;
-}
-
-.podcast-container{
-    padding: 33px 36px 0 36px;
-}
-
-.container-partners{
-    @include laptop{
+    .top-container{
         display: none;
     }
 }
