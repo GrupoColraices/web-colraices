@@ -1,3 +1,5 @@
+@import '../../base/mixins';
+
 .card-article-small{
     display: flex;
     gap: 15px;
@@ -8,6 +10,13 @@
         border-radius: 10px;
         background: var(--Gris, #F2F2F2);
         margin-bottom: 8px;
+    }
+
+    @include laptop{
+        .image{
+            min-width: 128px;
+            min-height: 117px;
+        }
     }
 
     .texts{

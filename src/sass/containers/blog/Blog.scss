@@ -26,10 +26,19 @@
 
 @include laptop{
     .articles{
-        max-width: 1138px;
-        padding: 0 10rem;
+        max-width: 1238px;
+        // padding: 0 10rem;
         margin: auto;
+
+        .container-cards-sm{
+            display: none;
+        }
     }   
+
+    .article-container{
+        padding: 50px 0 0 0;
+    
+    }
 }
 
 .recommended{

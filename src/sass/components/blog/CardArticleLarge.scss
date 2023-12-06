@@ -1,3 +1,5 @@
+@import '../../base/mixins';
+
 .card-article-large{
     display: flex;
     flex-direction: column;
@@ -37,5 +39,14 @@
         font-weight: 500;
         line-height: normal;
         margin: 0;
+    }
+
+    @include laptop{
+        max-width: 322px;
+
+        .image{
+            min-width: 322px;
+            min-height: 175px;
+        }
     }
 }

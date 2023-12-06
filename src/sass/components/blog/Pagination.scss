@@ -1,3 +1,5 @@
+@import '../../base/mixins';
+
 .pagination-blog{
     display: flex;
     gap: 9px;
@@ -36,5 +38,14 @@
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+    }
+
+    @include laptop{
+        .item-pagination-blog-active, .item-pagination-blog{
+            width: 43px;
+            height: 37px;
+            font-size: 22px;
+            cursor: pointer;
+        }
     }
 }
