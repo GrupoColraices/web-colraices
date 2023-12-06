@@ -14,8 +14,10 @@ export default function BlogPage() {
         <main>
             <BannerSectionBlog/>
 
-            <div className='partners'>
-                <Partners partners={partners} hover={true} />
+            <div className="container-partners">
+                <div className='partners'>
+                    <Partners partners={partners} hover={true} />
+                </div>
             </div>
 
             <div className="articles">
@@ -23,6 +25,8 @@ export default function BlogPage() {
                     <ArticlesSection/>
                 </div>
                 <div className='container-cards-sm'>
+                    <CardArticleSm />
+                    <CardArticleSm />
                     <CardArticleSm />
                 </div>
                 <div className="container-pagination">

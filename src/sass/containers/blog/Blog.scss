@@ -1,4 +1,7 @@
+@import '../../base/mixins';
+
 .articles{
+
     .article-container{
         padding: 50px 33px 0 33px;
     
@@ -21,6 +24,14 @@
 
 }
 
+@include laptop{
+    .articles{
+        max-width: 1138px;
+        padding: 0 10rem;
+        margin: auto;
+    }   
+}
+
 .recommended{
     padding-top: 77px;
 }
@@ -31,4 +42,10 @@
 
 .podcast-container{
     padding: 33px 36px 0 36px;
+}
+
+.container-partners{
+    @include laptop{
+        display: none;
+    }
 }
