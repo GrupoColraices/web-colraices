@@ -32,7 +32,7 @@ section.Testimonial-container {
                 color: $secondary;
                 color: var(--DORADO-COLRAICES, #CAA55E);
                 text-align: center;
-                font-family: Montserrat;
+            
                 font-size: 24px;
                 font-style: normal;
                 font-weight: 700;
@@ -62,7 +62,7 @@ section.Testimonial-container {
                     display: block;
                     color: #000;
                     text-align: justify;
-                    font-family: Montserrat;
+                
                     font-size: 18px;
                     font-style: normal;
                     font-weight: 400;
@@ -81,7 +81,7 @@ section.Testimonial-container {
     @include laptop {
         display: flex;
         justify-content: space-evenly;
-        align-items: start;
+        align-items: flex-start;
         margin-top: 15rem;
 
         div {
