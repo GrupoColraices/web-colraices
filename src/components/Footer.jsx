@@ -1,12 +1,13 @@
 import { infoContact, linksFooter, socialNetworks } from "@/helpers"
 import '@/sass/components/Footer.scss'
+import Image from "next/image"
 
 export const Footer = () => {
 
     return (
         <footer id='contact'>
             <section>
-                <img className='logo' src="/logoWhite.svg" alt="logo" />
+                <Image className='logo' src="/logoWhite.svg" alt="logo" />
                 {infoContact?.map((item) =>
                     <p key={item.id}>
                         <a href={item.map} target='_blank'>
@@ -35,13 +36,13 @@ export const Footer = () => {
                 <div className="social-networks">
                     {socialNetworks?.map((item) =>
                         <a key={item.id} href={item.url} target='_blank'>
-                            <img src={item.src} alt="Icon" />
+                            <Image src={item.src} alt="Icon" />
                         </a>
                     )}
 
                 </div>
             </section>
-            <a id="whatsapp-widget" href="https://wa.me/+15136479405" target="_blank"><img src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="WhatsApp Logo" /></a>
+            <a id="whatsapp-widget" href="https://wa.me/+15136479405" target="_blank"><Image src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="WhatsApp Logo" /></a>
         </footer>
 
     )

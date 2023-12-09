@@ -26,7 +26,7 @@ const RecommendedProjects = () => {
             if (idx === index - 1 ||(index === 0 && idx === projects.length - 1)) position = "lastSlide";
             return (
               <article className={position} key={idx}>
-                <img src={image} alt={image} className="project-img" />
+                <Image src={image} alt={image} className="project-img" />
                 <button className='name-project'>Lórient</button>
               </article>
             );
