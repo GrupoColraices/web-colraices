@@ -46,21 +46,20 @@ export const servicesCards = [
         title: 'Gestionamos tu crédito',
         content:
             '¿Quieres una casa en Colombia? Te decimos cuánto te prestan, ¡gratis y sin esperas!',
-        icon: '/icons/credit_world.svg',
+        icon: '/icons/credit_icon.svg',
     },
     {
         image: '/pensiones.jpg',
         title: 'Encontramos tu inmueble',
-        content:
-            '¡Tienes un pie dentro de tu casa en Colombia! Te decimos si cumples con los requisitos para tu crédito ¡gratis!.',
-        icon: '/icons/credit_icon.svg',
+        content: 'Te escuchamos y asesoramos en la forma más rentable de invertir y encontramos para ti el inmueble ideal.',
+        icon: '/icons/casa.png',
     },
     {
         image: '/credito.jpg',
         title: 'Monetizamos tu dinero',
         content:
             'Te acompañamos y asesoramos en el envío de tus divisas a Colombia. Para que puedas invertirlas en el inmueble que elijas.',
-        icon: '/icons/credit_doc.svg',
+        icon: '/icons/credit_world.svg',
     },
 ]
 
