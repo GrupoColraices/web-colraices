@@ -21,7 +21,7 @@ export const ServiceSection = () => {
                 ))}
             </div>
             <div className="register">
-                <button className='btn-blue-xl'>Regístrate</button>
+                <button className='btn-blue-xl'>Continuar</button>
             </div>
         </section>
     )

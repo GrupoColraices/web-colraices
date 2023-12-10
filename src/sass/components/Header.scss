@@ -63,6 +63,16 @@ header.Header-container {
             transition: all 0.5s ease;
             width: fit-content;
             font-size: 16px;
+
+            @include laptop{
+                cursor: pointer;
+                // background-color: $primary;
+                // color: $white;
+                &:hover {
+                    background-color: $primary;
+                    color: $white;
+                }
+            }
         }
         
     }

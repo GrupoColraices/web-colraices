@@ -1,38 +1,49 @@
-@import '../base/mixins';
+@import '../base/mixins' ;
 
-footer.Footer-container {
-    width: 100%;   
-    background-image: url('../../../public/FooterMovil.svg');
-    background-size: cover;
-    padding: 4rem 1rem 1rem 1rem;
+footer {
+    display: flex;
+    align-items: center;
+    margin-top: 7rem;
 
-    section {
-        display: grid;
-        justify-items: center;
-        grid-template-areas:
-            'left right'
-            'redes redes';
-        column-gap: 0.5rem;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        min-height: 51rem;
+        background-image: url('../../../public/FooterMovil.svg');
+        background-size: cover;
+        z-index: 0;
 
-        li {
-            font-weight: 600;
-            font-size: 1rem;
-            line-height: 1.4rem;
-            color: $white;
-            margin-bottom: 0.5rem;
-
-            a {
-                color: $white;
-            }
+        @include phone {
+            min-height: 52rem;
         }
 
-        div.Content-left {
-            grid-area: left;
-            .infoDesktopAddress{
-                display: none;
-            }
-            img[src="logoWhite.svg"] {
-                margin: 3rem 0 16px 0;
+    }
+
+    section {
+        width: 100%;
+        position: relative;
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: repeat(5, auto);
+        row-gap: 2rem;
+        column-gap: 1rem;
+        padding: 6rem 1rem 0 3rem;
+        z-index: 1;
+
+        img.logo{
+            max-width: 70%;
+            min-width: 60%;
+        }
+
+        p {
+            font-size: 13px;
+            color: $blanco;
+            white-space: pre-line;
+            line-height: 2rem;
+            margin: 0;
+            a{
+                color: $blanco;
             }
 
             p{
@@ -45,63 +56,64 @@ footer.Footer-container {
                 margin: 0 0 38px 0;
             }
 
-            .infoMobile{
-                margin-bottom: 3rem;
-            }        
-            
-            .infoDesktop{
-                display: none;
-            }    
+            &:nth-child(3) {
+                grid-area: 3/1;
+            }
 
+            &:nth-child(4) {
+                grid-area: 4/1;
+            }
         }
 
-        div.Content-right {
-            grid-area: right;
-            grid-column: 2;
-            grid-row: 1;
+        nav.side-links {
+            grid-row: 3/5;
+            max-width: fit-content;
 
             ul {
-                margin-top: 8rem;
-                li {
-                    font-weight: 500;
-                    line-height: 1.2rem;
-                    margin: 0;
-                }
+                display: flex;
+                flex-direction: column;
+                row-gap: 0.5rem;
+                margin-right: 1rem;
 
-                li:nth-child(2) {
-                    max-width: 13rem;
+                li {
+                    font-size: 13px;
+                    line-height: 2rem;
+                    color: $blanco;
                 }
             }
 
-            ul:last-of-type {
-                li {
-                    margin-bottom: 0.72rem;
-                }
-            }
-   
-            p{
-                display: none;
-            }
         }
 
-        .Redes-icons {
-            justify-self: start;
+        div.social-networks {
+            grid-row: 5;
             grid-column: 1/3;
-            padding-left: 2rem;
-            a:not(:first-child) {
-                margin-left: 18px;
-            }
-        }
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 32rem;
 
+            img {
+                width: 45px;
+                height: 45px;
+            }
+
+            @include phone {
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+        }
     }
 
+    @include tablet {
+        justify-content: center;
 
-
-    @include laptop {
-        width: 100%;
-        height: 71rem;
-        background-image: url('../../../public/FooterDesktop.svg');
-        padding: 14rem 1rem 1rem 3.2rem;
+        &::before {
+            min-height: 773px;
+            background-image: url('../../../public/FooterDesktop.svg');
+        }
 
         section {
             grid-template-areas:
@@ -201,51 +213,22 @@ footer.Footer-container {
                 ul:last-of-type {
                     display: flex;
                     justify-content: space-between;
-                    max-width: 40rem;
-                    margin-top: 10rem;
-
-                    div:last-child {
-                        align-self: end;
-                    }
+                    flex-direction: row;
+                    padding-right: 5rem;
+                    column-gap: 1rem;
 
                     li {
-                        font-size: 1.7rem;
-                        line-height: 3.3rem;
-                        margin: 0;
+                        font-size: 20px;
+                        line-height: 4rem;
                     }
-
-                }
-
-            }
-
-            .Redes-icons {
-                justify-self: center;
-                margin-top: -5rem;
-                grid-column: 1/2;
-                padding-left: 0;
-                img {
-                    width: 5.7rem;
-                    height: 5.5rem;
                 }
             }
-        }
-    }
 
-    @include phone {
-        height: 46rem;
-        padding-top: 6rem;
-
-        section {
-            max-width: 46rem;
-            margin: auto;
-
-            li {
-                font-size: 1.4rem;
+            div.social-networks {
+                max-width: 40rem;
+                grid-row: 3;
+                align-self: self-end;
             }
-
-
         }
-
-
     }
 }

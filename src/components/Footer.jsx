@@ -1,87 +1,49 @@
-'use client'
-import Image from 'next/image'
-import Link from 'next/link'
-import { infoContact } from '@/helpers'
+import { infoContact, linksFooter, socialNetworks } from "@/helpers"
 import '@/sass/components/Footer.scss'
+import Image from "next/image"
 
 export const Footer = () => {
+
     return (
-        <footer className="Footer-container">
+        <footer id='contact'>
             <section>
-                <div className="Content-left">
-                    <Image src="logoWhite.svg" width={125} height={56} alt="Logo" quality={100}></Image>
+                <Image className='logo' src="/logoWhite.svg" alt="logo" />
+                {infoContact?.map((item) =>
+                    <p key={item.id}>
+                        <a href={item.map} target='_blank'>
+                            <strong> {item.office} </strong>
+                            {item.address}
+                        </a>
+                        <span> {item.phoneNumber && 'Teléfono:'} {item.phoneNumber} </span>
+                        <a href={`mailto:${item.email}`}>{item.email}</a>
+                    </p>
+                )}
 
-                    <p>Broker autorizado Bancolombia, Davivienda y Banco Unión para América, Europa, Asia, Oceanía.</p>
-
-                    {infoContact.map((data) => (
-                        <ul className='infoMobile' key={data.id}>
-                            <li>{data.address}</li>
-                            <li>{data.city}</li>
-                            <li>Tel. <a href={'tel:' + data.phoneNumber}> {data.phoneNumber}</a></li>
-                        </ul>
-                    ))}
-
-                    <div className='infoDesktopContainer'>
-                        {infoContact.map((data) => (
-                            <ul className='infoDesktop' key={data.id}>
-                                <li>{data.office}</li>
-                                <li>{data.address} Teléfono: {data.phoneNumber}</li>
-                                <li>{data.email}</li>
-                            </ul>
-                        ))}
-
-                        {infoContact.map((data) => (
-                            <ul className='infoDesktopAddress' key={data.id}>
-                                <li>Oficina Madrid, España</li>
-                                <li className='title'>{data.addressMadrid}</li>
-                            </ul>
-                        ))}
-
-                        {infoContact.map((data) => (
-                            <ul className='infoDesktopAddress' key={data.id}>
-                                <li>Oficina Mühldorf , Alemania</li>
-                                <li className='title'>{data.addressAlemania}</li>
-                            </ul>
-                        ))}
-                    </div>
-                </div>
-                <div className="Content-right">
-                    <p>Broker autorizado Bancolombia, Davivienda y Banco Unión para América, Europa, Asia, Oceanía.</p>
+                <nav className="side-links">
                     <ul>
                         <div>
-                            <li>Inmuebles</li>
-                            <li>Crédito</li>
-                            <li>Contacto</li>
-                            <li>Buena Data</li>
-                            <li>Paso a Paso</li>
-                            <li>Pensiones</li>
-                            <li>Portal Cliente</li>
+                            {linksFooter?.map((item) =>
+                                <a key={item.id} href={item.url} target='_blank'><li>{item.name}</li></a>
+                            )}
                         </div>
                         <div>
                             <li>Política de privacidad</li>
-                            <li>Mapa del sitio </li>
-                            <li>{new Date().getFullYear()} Momentum</li>
+                            <li>Mapa del sitio</li>
+                            <a href="https://momentumdigital.com.co/" target="_blank"><li>{new Date().getFullYear()} Momentum</li></a>
                         </div>
                     </ul>
-                </div>
-                <div className="Redes-icons">
-                    <Link href={'https://www.facebook.com/colraices'} target="_blank">
-                        <Image src="icons/facebook.svg" width={36} height={36} alt="Icon"></Image>
-                    </Link>
-                    <Link href={'https://www.instagram.com/colraices/'} target="_blank">
-                        <Image src="icons/instagram.svg" width={36} height={36} alt="Icon"></Image>
-                    </Link>
-                    <Link href={'https://www.linkedin.com/company/colraices/mycompany'} target="_blank">
-                        <Image src="icons/linkedin.svg" width={36} height={36} alt="Icon"></Image>
-                    </Link>
-                    <Link href={'https://api.whatsapp.com/send/?phone=15136479405'} target="_blank">
-                        <Image src="icons/whatsapp.svg" width={36} height={36} alt="Icon"></Image>
-                    </Link>
-                    <Link href={'https://www.youtube.com/c/Colraicesserviciosinmobiliariosfinancieros'} target="_blank">
-                        <Image src="icons/youtube.svg" width={36} height={36} alt="Icon"></Image>
-                    </Link>
+                </nav>
+                <div className="social-networks">
+                    {socialNetworks?.map((item) =>
+                        <a key={item.id} href={item.url} target='_blank'>
+                            <Image src={item.src} alt="Icon" />
+                        </a>
+                    )}
+
                 </div>
             </section>
+            <a id="whatsapp-widget" href="https://wa.me/+15136479405" target="_blank"><Image src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="WhatsApp Logo" /></a>
         </footer>
+
     )
 }

@@ -1,0 +1,50 @@
+@import '../../base/mixins';
+
+.podcast{
+    .title-podcast{
+        color: var(--Azul-Colraices, #2A3F77);
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .podcast-content{
+        padding-top: 30px;
+        display: flex;
+        justify-content: center;
+        
+        .podcast-image{
+            width: 262px;
+            height: 262px;
+        }
+
+        .podcast-image-desktop{
+            display: none;
+        }
+    }
+}
+
+@include laptop{
+    .podcast{
+        padding-bottom: 122px;
+        .podcast-content{
+            padding-top: 91px;
+            .podcast-image{
+                display: none;
+            }
+
+            .podcast-image-desktop{
+                cursor: pointer;
+                display: block;
+                width: 1145px;
+                height: 286px;
+            }
+        }
+
+        .title-podcast{
+            font-size: 22px;
+            padding-bottom: 10px;
+        }
+    }
+}

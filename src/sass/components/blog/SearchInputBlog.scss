@@ -1,0 +1,27 @@
+.input-search-blog{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-radius: 30px;
+    border: 2px solid var(--gris-fondos-cards-2, #EBEBEB);
+    background: var(--BLANCO, #FFF);
+    padding: 12px;
+
+    svg{
+        position: absolute;
+        margin-left: 5px;
+    }
+
+    input{
+        width: 100%;
+        outline: none;
+        border: none;
+        padding-left: 30px;
+        color: var(--gris-textos, #4D4D4D);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 200;
+        line-height: normal;
+    }
+}
