@@ -16,7 +16,6 @@ html {
 }
 
 body {
-    font-family: $font;
     font-size: 1.6rem;
     background-color: #ffffff;
     margin: 0;
@@ -91,6 +90,12 @@ li {
     @include laptop {
         margin: $space auto 0 auto;
     }
+}
+
+button,
+input,
+textarea {
+    font-family: var(--font-montserrat);
 }
 
 button {

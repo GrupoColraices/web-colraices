@@ -1,0 +1,11 @@
+.inmSimilares {
+    margin: 0rem auto 3rem;
+    display: flex;
+    justify-content: space-around;
+
+    @include tabletinvert {
+        flex-wrap: wrap;
+        align-items: center;
+        row-gap: 3rem;
+    }
+}
