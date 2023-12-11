@@ -12,6 +12,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { useCurrency } from "../hooks/useCurrency";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { ContextLike } from "../Context/Like";
+import 'swiper/css';
 
 export const ItemInmueble = ({ dataInmueble, Elim }) => {
     const router = useRouter();
@@ -78,7 +79,7 @@ export const ItemInmueble = ({ dataInmueble, Elim }) => {
                     </div>
 
                     <Swiper className="mySwiper swiper_img" modules={[Autoplay]} autoplay={{ display: 2000 }} speed={1000} loop={true}>
-                        {imagenes.map((image, index) => (
+                        {imagenes?.map((image, index) => (
                             <SwiperSlide key={`image${index}`}>
                                 <div className="itemReciente__img--img">
                                     <img src={`${image}`} alt={titulo} />
