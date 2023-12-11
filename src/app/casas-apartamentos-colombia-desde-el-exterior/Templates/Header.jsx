@@ -20,7 +20,7 @@ export const Header = () => {
 
     return (
         
-        <header className={`wrapper ${route !== '/portal-inmobiliario/favoritos' ? 'custom-position' : 'fav-position'}`}>
+        <header className={`wrapper ${route !== '/casas-apartamentos-colombia-desde-el-exterior/favoritos' ? 'custom-position' : 'fav-position'}`}>
             <nav className="dropdown" data-open={isOpen}>
                 <label htmlFor="dropdown__toggle" className="dropdown__active">
                     <span id="dropdown__selected">{selectedOption}</span>

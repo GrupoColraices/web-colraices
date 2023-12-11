@@ -1,5 +1,4 @@
-@import '../base/mixins' ;
-
+@import '../base/mixins';
 footer {
     display: flex;
     align-items: center;
@@ -10,7 +9,7 @@ footer {
         content: "";
         width: 100%;
         min-height: 51rem;
-        background-image: url('../../../public/FooterMovil.svg');
+        background-image: url('/portal-inmobiliario/img/colraicesInmobiliario/home/background_footer.svg');
         background-size: cover;
         z-index: 0;
 
@@ -45,15 +44,17 @@ footer {
             a{
                 color: $blanco;
             }
+            span,
+            strong {
+                display: block;
+            }
 
-            p{
-                color: #FFF;
-                
-                font-size: 11px;
-                font-style: normal;
-                font-weight: 500;
-                width: 125px;
-                margin: 0 0 38px 0;
+            &:nth-child(1) {
+                grid-area: 1/1;
+            }
+
+            &:nth-child(2) {
+                grid-area: 2/1;
             }
 
             &:nth-child(3) {
@@ -112,106 +113,48 @@ footer {
 
         &::before {
             min-height: 773px;
-            background-image: url('../../../public/FooterDesktop.svg');
+            background-image: url('/portal-inmobiliario/img/colraicesInmobiliario/home/background_footer-big.svg');
         }
 
         section {
-            grid-template-areas:
-                'left right'
-                'redes redes';
-            justify-items: start;
-            gap: 0;
+            max-width: 122rem;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, auto);
+            column-gap: 15rem;
+            padding: 10rem 1rem 0 10rem;
 
-            li {
-                font-size: 1.6rem;
-                line-height: 1.5rem;
-                text-align: justify;
-                margin: 0;
+            img.logo {
+                grid-area: 1/1;
+                max-width: 40rem;
+                margin-bottom: 1rem;
             }
 
-            div.Content-left {
-                justify-self: center;
-
-                img[src="logoWhite.svg"] {
-                    width: 32.6rem;
-                    height: 14.9rem;
-                    margin: 2rem 0;
-                }
-
-                ul {
-                    li:nth-child(2) {
-                        max-width: none;
-                    }
-
-                    li:nth-child(5),
-                    li:nth-child(7) {
-                        line-height: 2.5rem;
-                    }
-                }
-
-                .infoMobile{
-                    display: none;
-                }
-
-                .infoDesktopContainer{
-                    display: flex;
-                    flex-direction: column;
-                    gap: 30px;
-
-                    .infoDesktopAddress{
-                        display: block;
-                        display: flex;
-                        flex-direction: column;
-                        gap: 3px;
-                        .title{
-                            font-size: 16px;
-                            font-style: normal;
-                            font-weight: 400;
-                            line-height: 137.9%;
-                        }
-                    }
-                }
-
-                .infoDesktop{
-                    display: block;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 8px;
-                }
-
-                p{
-                    display: none;
-                }
+            p {
+                font-size: 20px;
+                line-height: 3.2rem;
             }
 
-            div.Content-right {
-                padding-top: 3rem;
-                p{
-                    display: block;
-                    width: 494px;
-                    color: #FFF;
-                    
-                    font-size: 24px;
-                    font-style: normal;
-                    font-weight: 500;
-                    line-height: normal;
-                }
-                
+            p:nth-child(2) {
+                grid-area: 2/1;
+                margin-top: 3rem;
+            }
+
+            p:nth-child(3) {
+                grid-area: 1/2;
+                align-self: end;
+            }
+
+            p:nth-child(4) {
+                grid-area: 2/2;
+                align-self: start;
+            }
+
+            nav.side-links {
+                grid-area: 3/2;
+                margin-top: -3rem;
+                max-width: 100%;
+
                 ul {
-                    margin-top: 5rem;
-
-                    li {
-                        font-size: 2.4rem;
-                        line-height: 2.9rem;
-                    }
-
-                    li:nth-child(2) {
-                        max-width: none;
-                    }
-                }
-
-                ul:last-of-type {
-                    display: flex;
                     justify-content: space-between;
                     flex-direction: row;
                     padding-right: 5rem;

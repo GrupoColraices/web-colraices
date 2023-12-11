@@ -48,9 +48,9 @@ export const Banner = (props) => {
 
                 <div className='banner-content'>
                     <div className='banner__text'>
-                    <Link href={'/portal-inmobiliario'}>
-                        <img src="/portal-inmobiliario/img/colraicesInmobiliario/home/logo.svg" alt="colraices logo" />
-                    </Link>
+                        <Link href={'/'}>
+                            <img src="/portal-inmobiliario/img/colraicesInmobiliario/home/logo.svg" alt="colraices logo" />
+                        </Link>
                     </div>
                     {!width && <BarSearch />}
                 </div>

@@ -1,13 +1,16 @@
-import { infoContact, linksFooter, socialNetworks } from "@/helpers"
+'use client'
+import { infoContact, linksFooter, socialNetworks } from '../app/casas-apartamentos-colombia-desde-el-exterior/helpers/options';
+import Link from 'next/link';
 import '@/sass/components/Footer.scss'
-import Image from "next/image"
 
 export const Footer = () => {
 
     return (
         <footer id='contact'>
             <section>
-                <Image className='logo' src="/logoWhite.svg" alt="logo" />
+            <Link href={'/'}>
+                <img className='logo' src="/portal-inmobiliario/img/colraicesInmobiliario/home/logo.svg" alt="logo" />
+                </Link>
                 {infoContact?.map((item) =>
                     <p key={item.id}>
                         <a href={item.map} target='_blank'>
@@ -36,13 +39,13 @@ export const Footer = () => {
                 <div className="social-networks">
                     {socialNetworks?.map((item) =>
                         <a key={item.id} href={item.url} target='_blank'>
-                            <Image src={item.src} alt="Icon" />
+                            <img src={item.src} alt="Icon" />
                         </a>
                     )}
 
                 </div>
             </section>
-            <a id="whatsapp-widget" href="https://wa.me/+15136479405" target="_blank"><Image src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="WhatsApp Logo" /></a>
+            <a id="whatsapp-widget" href="https://wa.me/+15136479405" target="_blank"><img src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="WhatsApp Logo" /></a>
         </footer>
 
     )

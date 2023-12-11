@@ -55,13 +55,13 @@ export const socialNetworks = [
 
 export const linksFooter = [
   { id: 1, name: 'Inmuebles', url: '' },
-  { id: 2, name: 'Favoritos', url: '/portal-inmobiliario/favoritos' },
+  { id: 2, name: 'Favoritos', url: '/casas-apartamentos-colombia-desde-el-exterior/favoritos' },
   { id: 3, name: 'Contacto', url: '' }
 ]
 export const links = [
   { id: 1, label: "Menú", url: "" },
-  { id: 2, label: "Home", url: "/portal-inmobiliario" },
-  { id: 3, label: "Mis favoritos", url: "/portal-inmobiliario/favoritos" },
+  { id: 2, label: "Home", url: "/casas-apartamentos-colombia-desde-el-exterior" },
+  { id: 3, label: "Mis favoritos", url: "/casas-apartamentos-colombia-desde-el-exterior/favoritos" },
   // { id: 4, label: "Contactos", url: "#contact" }
 ]
 export const itemsEligenos = [

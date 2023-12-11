@@ -1,5 +1,5 @@
 import React from 'react'
-import { Footer } from './Footer'
+import { Footer } from '../../../components/Footer'
 import { Header } from './Header'
 
 export const Layout = ({ children }) => {

@@ -5,7 +5,7 @@ import { isNull } from 'lodash';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
-import { LayoutInmuebles } from '../../portal-inmobiliario/Templates/LayoutInmuebles';
+import { LayoutInmuebles } from '../../casas-apartamentos-colombia-desde-el-exterior/Templates/LayoutInmuebles';
 
 export default function InmFavoritos() {
     const router = useRouter();

@@ -59,7 +59,7 @@ export const ItemInmueble = ({ dataInmueble, Elim }) => {
     }
     return (
         <article className="itemReciente__main" data-aos="fade-zoom-in" data-aos-offset="0">
-            <Link href={`/portal-inmobiliario/inmueble/${slug}`}>
+            <Link href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${slug}`}>
                 <div className="itemReciente__img">
                     <div className="itemReciente__img--header">
                         <div className="itemReciente__img--header--content">
@@ -100,7 +100,7 @@ export const ItemInmueble = ({ dataInmueble, Elim }) => {
             <div className="itemReciente__content">
 
                 <div className="itemReciente__content--main">
-                    <Link href={`/portal-inmobiliario/inmueble/${slug}`}><h3 className="itemReciente__content--main--title">{titulo}</h3></Link>
+                    <Link href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${slug}`}><h3 className="itemReciente__content--main--title">{titulo}</h3></Link>
                     <h2 className="itemReciente__content--main--subtitle">{tipo} en venta en {ciudad}</h2>
                     <p className="itemReciente__content--main--precio"><span>Desde:</span> {formatePrice(precio)}</p>
                     <div className="itemReciente__content--main--description" ><p>{descripcion.replace(/(<([^>]+)>)/ig, '')}</p></div>

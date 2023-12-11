@@ -1,10 +1,8 @@
-import { ContextLikeProvider } from '../portal-inmobiliario/Context/Like';
-import { FiltroContextProvider } from '../portal-inmobiliario/Context/Filtro';
-import { Header } from '../portal-inmobiliario/Templates/Header';
-import { Footer } from '../portal-inmobiliario/Templates/Footer';
-import { Animation } from '../portal-inmobiliario/molecules/Animation';
-import HeadScript from '../portal-inmobiliario/components/HeadScript';
-import '../portal-inmobiliario/sass/app.scss'
+import { ContextLikeProvider } from '../casas-apartamentos-colombia-desde-el-exterior/Context/Like';
+import { FiltroContextProvider } from '../casas-apartamentos-colombia-desde-el-exterior/Context/Filtro';
+import { Header } from '../casas-apartamentos-colombia-desde-el-exterior/Templates/Header';
+import { Animation } from '../casas-apartamentos-colombia-desde-el-exterior/molecules/Animation';
+import '../casas-apartamentos-colombia-desde-el-exterior/sass/app.scss'
 import { Toaster } from 'react-hot-toast';
 
 
@@ -23,14 +21,12 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
     <>
-      <HeadScript />
       <ContextLikeProvider>
         <FiltroContextProvider>
           <Animation>
             <Toaster containerStyle={{ zIndex: 10000000 }} position="top-right" />
             <Header />
             {children}
-            <Footer />
           </Animation>
         </FiltroContextProvider>
       </ContextLikeProvider>

@@ -1,6 +1,5 @@
 import { Partners } from '@/components/Partners'
 import { Header } from '@/components/Header'
-import { Footer } from '@/components/Footer'
 import RecommendedProjects from '@/containers/home/RecommendedProjects'
 import { BannerSection } from '@/containers/home/BannerSection'
 import { HistorySection } from '@/containers/home/HistorySection'
@@ -28,7 +27,6 @@ export default function HomePage() {
             </div>
             <HistorySection />
             <TestimonialSection />
-            <Footer />
         </>
     )
 }

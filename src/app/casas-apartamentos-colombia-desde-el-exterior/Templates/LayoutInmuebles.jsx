@@ -3,17 +3,17 @@ import { useState, useEffect, useRef } from 'react'
 import Image from "next/image"
 import Link from "next/link"
 import PropTypes from 'prop-types';
-import { Banner } from '../../portal-inmobiliario/Templates/Banner';
-import { TitleSection } from '../../portal-inmobiliario/components/TitleSection';
-import Navbar from '../../portal-inmobiliario/components/Navbar';
-import { TitleNavbar } from '../../portal-inmobiliario/components/TitleNavbar';
-import ItemFavorite from '../../portal-inmobiliario/molecules/ItemFavorite';
-import Pagination from '../../portal-inmobiliario/components/Pagination';
-import { usePagination } from '../../portal-inmobiliario/hooks/usePagination';
-import { ItemInmueble } from '../../portal-inmobiliario/molecules/ItemInmueble';
-import { ItemFormResultado } from '../../portal-inmobiliario/molecules/ItemFormResultado';
+import { Banner } from '../../casas-apartamentos-colombia-desde-el-exterior/Templates/Banner';
+import { TitleSection } from '../../casas-apartamentos-colombia-desde-el-exterior/components/TitleSection';
+import Navbar from '../../casas-apartamentos-colombia-desde-el-exterior/components/Navbar';
+import { TitleNavbar } from '../../casas-apartamentos-colombia-desde-el-exterior/components/TitleNavbar';
+import ItemFavorite from '../../casas-apartamentos-colombia-desde-el-exterior/molecules/ItemFavorite';
+import Pagination from '../../casas-apartamentos-colombia-desde-el-exterior/components/Pagination';
+import { usePagination } from '../../casas-apartamentos-colombia-desde-el-exterior/hooks/usePagination';
+import { ItemInmueble } from '../../casas-apartamentos-colombia-desde-el-exterior/molecules/ItemInmueble';
+import { ItemFormResultado } from '../../casas-apartamentos-colombia-desde-el-exterior/molecules/ItemFormResultado';
 import { scrollSection } from '../helpers/actionScroll';
-import { BarSearch } from '../../portal-inmobiliario/molecules/BarSearch';
+import { BarSearch } from '../../casas-apartamentos-colombia-desde-el-exterior/molecules/BarSearch';
 import medal from '../../../../public/portal-inmobiliario/img/colraicesInmobiliario/icons/medal.svg';
 import heart from '../../../../public/portal-inmobiliario/img/colraicesInmobiliario/icons/heart.svg';
 import AB from '../../../../public/portal-inmobiliario/img/colraicesInmobiliario/icons/AB.svg';

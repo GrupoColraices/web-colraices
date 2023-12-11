@@ -15,7 +15,7 @@ export default function ItemFeatured({ itemProperty }) {
                 <p className='price'>Desde {formatePrice(precio)} COP</p>
                 <p className='ubication'><MdLocationOn className="icon" />{ciudad} - {region}</p>
                 <ul className='information'><li>Desde {area_const}m²</li> <li>{habitaciones} Hab</li> <li>{baños} Baños</li></ul>
-                <button className='btn-view' type='button'><Link href={`/portal-inmobiliario/inmueble/${slug}`}>Ver Proyecto</Link></button>
+                <button className='btn-view' type='button'><Link href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${slug}`}>Ver Proyecto</Link></button>
             </article>
         </div>
     )
