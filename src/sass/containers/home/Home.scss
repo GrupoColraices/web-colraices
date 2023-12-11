@@ -1,0 +1,10 @@
+@import '../../base/variables';
+@import '../../base/mixins';
+
+.container-partners-responsive{
+
+    @include laptop{
+        display: block;
+        padding: 0 84px 0 144px;
+    }
+}

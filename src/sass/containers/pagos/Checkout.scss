@@ -1,0 +1,298 @@
+@import '../../base/mixins';
+
+section.Checkout-container {
+    padding: 3.4rem 0;
+    h1 {
+        font-size: 1.9rem;
+        color: $primary;
+        text-align: center;
+        span {
+            color: $secondary;
+        }
+        @include laptop {
+            text-align: left;
+            font-size: 2.1rem;
+            margin-left: 3rem;
+        }
+    }
+    div.Service-info {
+        background: #ffffff;
+        box-shadow: -3px 3px 6px 2px rgba(0, 0, 0, 0.16), 3px 3px 6px 2px rgba(0, 0, 0, 0.12);
+        width: 90%;
+        margin: 3rem auto;
+        @include laptop {
+            margin: 3rem 0;
+            width: 80rem;
+            padding: 1rem 2rem;
+        }
+        border-radius: 10px;
+        padding: 1rem;
+        .Service-info-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            .Service-info-name {
+                margin-top: 0.6rem;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 80%;
+
+                .Service-info-logo {
+                    min-width: 3rem;
+                    height: 3rem;
+                    position: relative;
+                    z-index: 0;
+                    display: none;
+                    @include laptop {
+                        display: inline-block;
+                    }
+                }
+                p {
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    color: $primary;
+                    margin: 0;
+                    width: 70%;
+                }
+                span {
+                    color: $secondary;
+                    margin-left: 3rem;
+                    font-weight: bold;
+                    width: 30%;
+                    @include laptop {
+                        width: unset;
+                        margin: 0 2rem 0 auto;
+                    }
+
+                    button {
+                        background-color: rgba(177, 177, 177, 0.192);
+                        border-radius: 0.6rem;
+                        width: 2rem;
+                        height: 2rem;
+                        animation: all 0.5s ease;
+                        &:hover {
+                            background-color: rgba(177, 177, 177, 0.315);
+                        }
+                        &:disabled {
+                            opacity: 0.7;
+                            cursor: not-allowed;
+                            &:hover {
+                                background-color: rgba(177, 177, 177, 0.192);
+                            }
+                        }
+                    }
+                }
+                @include laptop {
+                    p {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+            .Service-info-value {
+                justify-self: flex-end;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 30%;
+                @include laptop {
+                    width: 20%;
+                }
+
+                p {
+                    font-weight: bold;
+                    font-size: 1.4rem;
+                    margin: 0;
+                    color: $primary;
+                    width: 80%;
+
+                    span {
+                        display: none;
+                        color: $secondary;
+                    }
+                    @include laptop {
+                        font-size: 1.6rem;
+
+                        span {
+                            display: inline-block;
+                        }
+                    }
+                }
+                button {
+                    width: 2rem;
+                    height: 2rem;
+                    background-color: rgba(255, 0, 0, 0.705);
+                    color: #ffffff;
+                    border-radius: 0.6rem;
+                    &:hover {
+                        background-color: rgba(255, 0, 0, 0.877);
+                    }
+                }
+            }
+        }
+    }
+    form {
+        margin-bottom: 6rem;
+        @include laptop {
+            display: grid;
+            grid-template-columns: 3fr 1.3fr;
+            gap: 5rem;
+            margin-bottom: 3rem;
+        }
+
+        fieldset {
+            border: none;
+            box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.14), -2px 2px 6px 2px rgba(0, 0, 0, 0.12);
+            border-radius: 1.2rem;
+            padding: 1rem 2rem 2rem;
+            width: 90%;
+            margin: 3rem auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            @include laptop {
+                width: 100%;
+                height: fit-content;
+                gap: 2rem;
+                padding: 2rem 4rem 6rem;
+            }
+            p {
+                color: $primary;
+                font-weight: bold;
+                margin: 0 0 0.6rem;
+                font-size: 1.5rem;
+                @include laptop {
+                    font-size: 1.8rem;
+                }
+            }
+            input,
+            select {
+                width: 100%;
+                border-radius: 0.9rem;
+                border: 1px solid #caa55e;
+                padding: 1rem 1.4rem;
+                &::placeholder {
+                    color: $gray;
+                }
+                max-height: 4rem;
+            }
+            select {
+                color: $gray;
+            }
+            .Input-group {
+                display: grid;
+                gap: 1rem;
+                @include laptop {
+                    grid-template-columns: repeat(2, 1fr);
+                    row-gap: 2rem;
+                }
+            }
+        }
+        aside {
+            .Payment-method {
+                box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.14), -2px 2px 6px 2px rgba(0, 0, 0, 0.12);
+                border-radius: 1.2rem;
+                padding: 1.4rem 2rem 2rem;
+                width: 90%;
+                @include laptop {
+                    width: 100%;
+                }
+                margin: 3rem auto;
+                p {
+                    color: $primary;
+                    font-weight: bold;
+                    margin: 0 0 1.3rem;
+                    font-size: 1.5rem;
+                }
+                label {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 1rem;
+                    padding: 0.6rem 0;
+                    cursor: pointer;
+                }
+                label:first-of-type {
+                    border-bottom: solid 1px $gray;
+                }
+            }
+            .Payment-resume {
+                box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.14), -2px 2px 6px 2px rgba(0, 0, 0, 0.12);
+                border-radius: 1.2rem;
+                padding: 1.4rem 2rem 2rem;
+                width: 90%;
+                @include laptop {
+                    width: 100%;
+                }
+                margin: 3rem auto;
+                p.title {
+                    color: $primary;
+                    font-weight: bold;
+                    margin: 0 0 1.3rem;
+                    font-size: 1.5rem;
+                    text-align: left;
+                }
+                .Resume-info {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    p,
+                    span {
+                        font-weight: 600;
+                        color: $gray-alt;
+                        margin: 0.4rem 0;
+                        font-size: 1.5rem;
+                    }
+                    p {
+                        width: 70%;
+                    }
+                }
+                .Resume-info-total {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-top: solid 1px gray;
+                    margin-top: 1rem;
+                    p,
+                    span {
+                        font-weight: bold;
+                        color: $gray-alt;
+                        font-size: 1.8rem;
+                        margin: 1rem 0;
+                    }
+                }
+                button {
+                    border: 1px solid #caa55e;
+                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+                    border-radius: 26px;
+                    background: $primary;
+                    color: white;
+                    font-size: 2rem;
+                    font-weight: bold;
+                    padding: 0.6rem 2.2rem;
+                    transition: all 0.5s ease;
+                    &:hover {
+                        background: $secondary;
+                    }
+                    display: flex;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+    .Go-back {
+        font-weight: bold;
+        color: $primary;
+        font-size: 2.2rem;
+        transition: all 0.5s ease;
+        display: flex;
+        justify-content: center;
+        &:hover {
+            color: #caa55e;
+        }
+        @include laptop {
+            justify-content: flex-start;
+        }
+    }
+}

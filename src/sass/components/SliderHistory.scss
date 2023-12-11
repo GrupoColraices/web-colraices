@@ -1,0 +1,42 @@
+@import "../base/variables";
+@import "../base/mixins";
+
+div.History-slider {
+    div.swiper-slide {
+        text-align: center;
+    }
+
+    .swiper-button-prev {
+        width: 2.3rem;
+        background-image: url("../../../public/icons/historyArrowLeft.svg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        left: 6rem;
+
+    }
+
+    .swiper-button-next {
+        width: 2.3rem;
+        background-image: url("../../../public/icons/historyArrowRight.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        right: 6rem;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        display: none;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        top: 11rem;
+    }
+
+    @include laptop {
+        max-width: 110rem;
+    }
+
+}

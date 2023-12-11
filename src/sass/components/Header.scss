@@ -1,0 +1,209 @@
+@import '../base/mixins';
+
+header.Header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white;
+    z-index: 9999;
+    padding: 32px 11px 23px 11px;
+    position: relative;
+
+    @include laptop {
+        margin: 0 auto;
+        padding: 4% 0 20px 20px;
+        gap: 79px;
+        justify-content: start;
+    }
+
+    @include desktop {
+        margin: 0 auto;
+        padding: 6% 0 43px 144px;
+    }
+
+    img {
+        @include laptop {
+            // display: none;
+            width: 237px;
+            height: 81px;
+        }
+
+        @include desktop {
+            // display: none;
+            width: 287px;
+            height: 81px;
+        }
+    }
+
+    .responsive_nav {
+        display: none;
+    }
+
+    .navbar-links-desktop{
+        display: none;
+        width: 100%;
+
+        @include laptop{
+            display: flex;
+            gap: 1rem;
+        }
+
+        @include desktop{
+            gap: 85px;
+        }
+
+        a.NavLink{
+            background: $white;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+            border-radius: 8px 0px 8px 8px;
+            padding: 0.7rem 2rem;
+            font-weight: 600;
+            color: $primary;
+            transition: all 0.5s ease;
+            width: fit-content;
+            font-size: 16px;
+
+            @include laptop{
+                cursor: pointer;
+                // background-color: $primary;
+                // color: $white;
+                &:hover {
+                    background-color: $primary;
+                    color: $white;
+                }
+            }
+        }
+        
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $white;
+        z-index: 100000;
+
+        @include laptop {
+            position: inherit;
+            height: auto;
+            width: auto;
+            top: auto;
+            left: auto;
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr) 2fr;
+            gap: 1rem;
+            transform: none;
+            width: 87%;
+        }
+
+        .navbar-links{
+            margin-top: 86px;
+            display: flex;
+            gap: 37px;
+            flex-direction: column;
+        }
+
+        a.NavLink {
+            background: $white;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+            border-radius: 8px 0px 8px 8px;
+            padding: 0.7rem 2rem;
+            margin: auto;
+            font-weight: 600;
+            color: $primary;
+            transition: all 0.5s ease;
+            // min-width: 10rem;
+            width: fit-content;
+            font-size: 16px;
+
+            @include laptop {
+                max-width: 12rem;
+            }
+
+            text-align: center;
+
+            &:hover {
+                background-color: $primary;
+                color: $white;
+            }
+
+            // &:last-child {
+            //     justify-self: flex-end;
+            //     color: $secondary;
+
+            //     &:hover {
+            //         background-color: $white-alt;
+            //     }
+            // }
+
+            // &.active {
+            //     background-color: $primary;
+            //     color: $white;
+            // }
+        }
+
+        button.Header-btn-close {
+            position: absolute;
+            top: -10px;
+            right: 3rem;
+
+            img {
+                width: 15px;
+                height: 15px;
+            }
+
+            @include laptop {
+                display: none;
+            }
+        }
+
+        img {
+            margin-top: 61px;
+            @include laptop {
+                display: block;
+                margin-top: 0;
+            }
+        }
+    }
+
+    input {
+        max-width: 10rem;
+        position: absolute;
+        right: 7rem;
+        border: 1px solid #caa55e;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+        padding: 0.4rem 0.5rem;
+        text-align: center;
+
+        &::placeholder {
+            color: $gray;
+        }
+
+        @include laptop {
+            position: inherit;
+            max-width: 12rem;
+            margin-left: 2rem;
+        }
+    }
+
+    button.Header-btn-open {
+        padding-right: 23px;
+
+        img {
+            width: 2.4rem;
+            height: 2.4rem;
+            margin-top: 0.4rem;
+        }
+
+        @include laptop {
+            display: none;
+        }
+    }
+}

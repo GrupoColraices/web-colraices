@@ -1,0 +1,100 @@
+.container-price {
+    padding-bottom: 3rem;
+
+    h2.title-price {
+        font-size: clamp(1.5625rem, 1.4554rem + 0.4762vw, 2rem);
+        font-weight: 500;
+    }
+
+    div.container-currency {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem 0 3rem;
+
+        select {
+            font-size: clamp(1.375rem, 1.1667rem + 0.9259vw, 1.7rem);
+            font-weight: 600;
+            color: $primario;
+            cursor: pointer;
+            padding: 0.8rem 3rem 0.8rem 1rem;
+            border: none;
+            border-radius: 40px;
+            border-right: 8px solid transparent;
+            background-color: rgba(238, 238, 238, 0.70);
+            box-shadow: -2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+            background-size: 15px;
+            background-image: url('/portal-inmobiliario/img/colraicesInmobiliario/icons/arrow_down.svg');
+            background-position: 77px center;
+            background-repeat: no-repeat;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+
+            &:focus {
+                outline: none;
+            }
+
+        }
+
+        p {
+            font-size: clamp(2.3125rem, 2.0982rem + 0.9524vw, 2.8125rem);
+            color: $secundario;
+            margin: 0
+        }
+
+        @include tablet {
+            justify-content: flex-start;
+            column-gap: 3rem;
+
+            select {
+                padding-right: 4rem;
+                background-position: 90px center;
+            }
+        }
+
+    }
+
+    a.action-link {
+        position: relative;
+        max-width: 360px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: clamp(1.75rem, 1.6667rem + 0.3704vw, 2rem);
+        text-decoration: none;
+        color: $blanco;
+        border: 1px solid $secundario;
+        border-radius: 14px;
+        padding: 1rem 3rem;
+        background-color: $primario;
+        overflow: hidden;
+        z-index: 0;
+
+        &:hover {
+            color: $blanco;
+        }
+
+        &::before {
+            height: 100%;
+            width: 100%;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateX(-100%);
+            transition: all .3s;
+            background-color: $secundario;
+            z-index: -1;
+
+        }
+
+        &:hover:before {
+            transform: translateX(0);
+        }
+    }
+
+    @include tablet {
+        padding: 0;
+    }
+}

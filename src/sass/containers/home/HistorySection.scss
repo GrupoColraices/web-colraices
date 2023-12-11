@@ -1,0 +1,61 @@
+@import '../../base/variables';
+@import '../../base/mixins';
+
+section.History-container {
+    max-width: 120rem;
+    width: 95%;
+    margin: 63px auto 0 auto;
+    a {
+        position: relative;
+        @include laptop {
+            display: block;
+            width: 60%;
+            margin: 0 auto;
+        }
+    }
+    div.History-button {
+        width: 25.8rem;
+        margin: 1.5rem auto 60px auto;
+        padding: 5px 0;
+        border-radius: 12px 0px 12px 12px;
+        background: #FFF;
+        box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.25), 0px 2px 4px 0px rgba(0, 0, 0, 0.16) inset;
+
+        &:hover {
+            box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.16);
+            filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.25));
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+            border: 0px solid #caa55e;
+        }
+
+        h2 {
+            font-weight: 700;
+            font-size: 2.8rem;
+            line-height: 3.4rem;
+            text-align: center;
+            color: $primary;
+
+            &:hover {
+                color: rgba(42, 63, 119, 0.9);
+                text-shadow: 1px 1px rgba(255, 255, 255, 0.466), -1px -1px #2b2a2a;
+            }
+
+            span {
+                color: $secondary;
+            }
+        }
+    }
+
+    @include laptop {
+        div.History-button {
+            width: 40.4rem;
+            height: 5.8rem;
+            margin-bottom: 9rem;
+
+            h2 {
+                font-size: 4rem;
+                line-height: 4.9rem;
+            }
+        }
+    }
+}

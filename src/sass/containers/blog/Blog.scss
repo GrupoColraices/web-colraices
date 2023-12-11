@@ -1,0 +1,70 @@
+@import '../../base/mixins';
+
+.articles{
+
+    .article-container{
+        padding: 50px 33px 0 33px;
+    
+    }
+    
+    .container-cards-sm{
+        padding: 20px 30px 5px 33px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        background: rgba(242, 242, 242, 0.30);
+        box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.15), -2px -2px 6px 0px rgba(0, 0, 0, 0.15);
+    }
+    
+    .container-pagination{
+        padding-top: 77px;
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+.recommended{
+    padding-top: 77px;
+}
+
+.top-container{
+    padding: 33px 36px 0 36px;
+}
+
+.podcast-container{
+    padding: 33px 36px 0 36px;
+}
+
+.container-partners{
+    @include laptop{
+        display: none;
+    }
+}
+
+@include laptop{
+    .articles{
+        max-width: 1238px;
+        // padding: 0 10rem;
+        margin: auto;
+
+        .container-cards-sm{
+            display: none;
+        }
+    }   
+
+    .article-container{
+        padding: 50px 0 0 0;
+    
+    }
+
+    .top-container{
+        display: none;
+    }
+
+    .podcast-container{
+        padding-top: 172px;
+        max-width: 1238px;
+        margin: auto;
+    }
+}

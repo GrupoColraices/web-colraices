@@ -1,17 +1,11 @@
-import Image from 'next/image'
 import '@/sass/components/Partners.scss'
+import { PartnerImage } from './PartnerImage'
 
-export const Partners = ({ partners }) => {
+export const Partners = ({ partners, hover = false }) => {
     return (
-        <section className="Partners-container space">
+        <section className="Partners-container">
             {partners.map((partner) => (
-                <Image
-                    key={partner.id}
-                    src={partner.icon}
-                    width={111}
-                    height={61}
-                    alt={partner.name}
-                />
+                <PartnerImage key={partner.id} partner={partner} hover={hover} />
             ))}
         </section>
     )

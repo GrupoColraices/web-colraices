@@ -1,45 +1,48 @@
-import React from 'react'
-import '@/sass/containers/home/BannerSection.scss'
-import { ServiceIcon } from '@/components/ServiceIcon'
 import Image from 'next/image'
+import '@/sass/containers/home/BannerSection.scss'
 import { Partners } from '@/components/Partners'
-const iconsData = [
-    { id: 1, icon: '/icons/online_credit_icon.svg', label: 'Crédito en línea' },
-    { id: 2, icon: '/icons/datacredito_icon.svg', label: 'Elimina tus reportes en Datacredito' },
-    { id: 3, icon: '/icons/steps_icon.svg', label: 'El paso a paso' },
-    { id: 4, icon: '/icons/pension_icon.svg', label: 'Pensiones' },
-    { id: 5, icon: '/icons/client_portal_icon.svg', label: 'Portal Cliente' },
-]
-const partners = [
-    { id: 1, icon: '/icons/bancolombia_icon.svg', name: 'Bancolombia' },
-    { id: 2, icon: '/icons/davivienda_icon.svg', name: 'Davivienda' },
-    { id: 3, icon: '/icons/bancounion_icon.svg', name: 'Banco Unión' },
-]
+import { partners } from '@/helpers'
+
 export const BannerSection = () => {
     return (
-        <section className="Banner-container ">
-            <div className="Banner-title container">
-                <h1 className="title">
-                    Sí, puedes comprar <span>casa en Colombia</span> desde el exterior
-                </h1>
-                <p>Y es el momento para hacerlo.</p>
-            </div>
-            <article className="space container">
-                <div className="Banner-icons-container">
-                    {iconsData.map((icon) => (
-                        <ServiceIcon key={icon.id} icon={icon} />
-                    ))}
+        <div className='container-flex'>
+            <section className="Banner-container ">
+                <div className="Banner-title">
+                    <h1 className="title">¡Compra tu casa en Colombia</h1>
+                    <p>desde el exterior!</p>
+
+                    <div className="container-buttons-desktop">
+                        <button className="btn-blue-xl">Buscar mi casa</button>
+                        <button className="btn-gray-xl">La buscamos por ti</button>
+                    </div>
                 </div>
-                <section>
-                    <Image
-                        src="/banner.svg"
-                        width={500}
-                        height={500}
-                        alt="Comprar casa en Colombia desde el exterior."
-                    />
-                </section>
-            </article>
-            <Partners partners={partners} />
-        </section>
+                <article>
+                    <div className="container-buttons">
+                        <button className="btn-gray">La buscamos por ti</button>
+                        <button className="btn-blue">Buscar mi casa</button>
+                    </div>
+                    <section>
+                        <Image className='bannerMobile'
+                            src="/bannerMobile.svg"
+                            width={500}
+                            height={500}
+                            alt="Comprar casa en Colombia desde el exterior."
+                        />
+                        <Image className='bannerDesktop'
+                            src="/banner.svg"
+                            width={500}
+                            height={500}
+                            alt="Comprar casa en Colombia desde el exterior."
+                        />
+                    </section>
+                </article>
+                <div className='partners'>
+                    <Partners partners={partners} hover={true} />
+                </div>
+            </section>
+            <div className='partners-desktop'>
+                <Partners partners={partners} hover={true} />
+            </div>
+        </div>
     )
 }

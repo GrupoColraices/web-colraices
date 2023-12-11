@@ -1,5 +1,6 @@
+@import '../base/variables';
 @mixin phone {
-    @media (min-width: $telefono) {
+    @media (min-width: $phone) and (max-width:$laptop) {
         @content;
     }
 }
@@ -24,6 +25,12 @@
 
 @mixin desktop {
     @media (min-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin desktopxl {
+    @media (min-width: $desktopxl) {
         @content;
     }
 }
