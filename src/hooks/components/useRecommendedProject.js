@@ -7,14 +7,7 @@ export const useRecommendedProject = (data) =>{
     const [ index, setIndex ] = useState(0);
     const [ projectsApi, setProjectsApi ] = useState([])
 
-    const getRecommendedProjects = async () =>{
-      const response = await fetch(`${APIURL}/likes`)
-      const data = await response.json()
-      setProjectsApi(data)
-    }
-  
-    useEffect(() => {
-
+    useEffect(()=>{
       const fetchData = async () => {
         try {
           const response = await fetch(`${APIURL}/likes`)
@@ -30,8 +23,9 @@ export const useRecommendedProject = (data) =>{
       };
   
       fetchData();
-      console.log(projectsApi)
-
+    }, [])
+  
+    useEffect(() => {
       const lastIndex = projects.length - 1;
       if (index < 0) {
         setIndex(lastIndex);

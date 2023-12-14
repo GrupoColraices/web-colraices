@@ -3,9 +3,13 @@ import Image from 'next/image';
 import { useRecommendedProject } from '@/hooks/components/useRecommendedProject';
 import { recommendedProjects } from '@/helpers';
 import '@/sass/components/RecommendedProjects.scss';
+import Link from 'next/link';
 
 const RecommendedProjects = () => {
   const { projectsApi, projects, index, setIndex } = useRecommendedProject(recommendedProjects)
+  const currentProject = projectsApi[index];
+
+  console.log(currentProject);
 
   return (
     <section className="recommendedProjects">
@@ -25,17 +29,16 @@ const RecommendedProjects = () => {
             if (idx === index - 1 ||(index === 0 && idx === projectsApi.length - 1)) position = "lastSlide";
             return (
               <article className={position} key={idx}>
-                <img src={item?.imagenes[0]} alt={item?.imagenes[0]} className="project-img" />
-                <button className='name-project'>{item?.titulo}</button>
+                <Link target='_blank' href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${currentProject?.slug}`}>
+                  <img src={item?.imagenes[0]} alt={item?.imagenes[0]} className="project-img" />
+                  <button className='name-project'>{item?.titulo}</button>
+                </Link>
               </article>
             );
           })}
         </div>
 
         <div className='slider-button-desktop'>
-          {/* <svg onClick={() => setIndex(index - 1)} xmlns="http://www.w3.org/2000/svg" width="51" height="9" viewBox="0 0 32 9" fill="none">
-            <path d="M0.646446 4.29134C0.451183 4.48661 0.451183 4.80319 0.646446 4.99845L3.82843 8.18043C4.02369 8.37569 4.34027 8.37569 4.53553 8.18043C4.73079 7.98517 4.73079 7.66859 4.53553 7.47332L1.70711 4.6449L4.53553 1.81647C4.73079 1.62121 4.73079 1.30463 4.53553 1.10936C4.34027 0.914101 4.02369 0.914101 3.82843 1.10936L0.646446 4.29134ZM32 4.1449L0.999998 4.1449V5.1449L32 5.1449V4.1449Z" fill="#CAA55E"/>
-          </svg> */}
           <svg onClick={() => setIndex(index - 1)} xmlns="http://www.w3.org/2000/svg" width="52" height="8" viewBox="0 0 52 8" fill="none">
             <path d="M0.646446 3.64645C0.451183 3.84171 0.451183 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646446 3.64645ZM52 3.5L1 3.5V4.5L52 4.5V3.5Z" fill="#CAA55E"/>
           </svg>
@@ -59,9 +62,9 @@ const RecommendedProjects = () => {
 
       <div className='container-text-btn'>
 
-        <div className='btn-recommended-desktop'>
+        <Link target='_blank' href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${currentProject?.slug}`} className='btn-recommended-desktop'>
           <button className='btn-gold-rounded-desktop'>Inmueble Destacado</button>
-        </div>
+        </Link>
 
         <div className='container-texts'>
           <p className='p-mobile'>Entra y visita Vitrina Colombia, el portal inmobiliario pensado especialmente para los colombianos en el exterior.</p>
@@ -70,19 +73,23 @@ const RecommendedProjects = () => {
         </div>
 
         <div className='offer'>
-          <button className='offer-btn'>
-            Ofertas del mes
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
-              <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="white"/>
-            </svg>
-          </button>
+          <Link target='_blank' href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${currentProject?.slug}`} >
+            <button className='offer-btn'>
+              Ofertas del mes
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
+                <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="white"/>
+              </svg>
+            </button>
+          </Link>
 
-          <button className='star-btn'>
-            Inmueble Estrella
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
-              <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="white"/>
-            </svg>
-          </button>
+          <Link target='_blank' href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${currentProject?.slug}`} >
+            <button className='star-btn'>
+              Inmueble Estrella
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
+                <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="white"/>
+              </svg>
+            </button>
+          </Link>
         </div>
       </div>
 
