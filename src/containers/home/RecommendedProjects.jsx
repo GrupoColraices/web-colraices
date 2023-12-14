@@ -5,7 +5,7 @@ import { recommendedProjects } from '@/helpers';
 import '@/sass/components/RecommendedProjects.scss';
 
 const RecommendedProjects = () => {
-  const { projects, index, setIndex } = useRecommendedProject(recommendedProjects)
+  const { projectsApi, projects, index, setIndex } = useRecommendedProject(recommendedProjects)
 
   return (
     <section className="recommendedProjects">
@@ -19,27 +19,29 @@ const RecommendedProjects = () => {
       
       <div className='container-projects-btn'>
         <div className="container-projects">
-          {projects.map((item, idx) => {
-            const { image } = item;
+          {projectsApi.map((item, idx) => {
             let position = "nextSlide";
             if (idx === index) position = "activeSlide";
-            if (idx === index - 1 ||(index === 0 && idx === projects.length - 1)) position = "lastSlide";
+            if (idx === index - 1 ||(index === 0 && idx === projectsApi.length - 1)) position = "lastSlide";
             return (
               <article className={position} key={idx}>
-                <img src={image} alt={image} className="project-img" />
-                <button className='name-project'>Lórient</button>
+                <img src={item?.imagenes[0]} alt={item?.imagenes[0]} className="project-img" />
+                <button className='name-project'>{item?.titulo}</button>
               </article>
             );
           })}
         </div>
 
         <div className='slider-button-desktop'>
-          <svg onClick={() => setIndex(index - 1)} xmlns="http://www.w3.org/2000/svg" width="32" height="9" viewBox="0 0 32 9" fill="none">
+          {/* <svg onClick={() => setIndex(index - 1)} xmlns="http://www.w3.org/2000/svg" width="51" height="9" viewBox="0 0 32 9" fill="none">
             <path d="M0.646446 4.29134C0.451183 4.48661 0.451183 4.80319 0.646446 4.99845L3.82843 8.18043C4.02369 8.37569 4.34027 8.37569 4.53553 8.18043C4.73079 7.98517 4.73079 7.66859 4.53553 7.47332L1.70711 4.6449L4.53553 1.81647C4.73079 1.62121 4.73079 1.30463 4.53553 1.10936C4.34027 0.914101 4.02369 0.914101 3.82843 1.10936L0.646446 4.29134ZM32 4.1449L0.999998 4.1449V5.1449L32 5.1449V4.1449Z" fill="#CAA55E"/>
+          </svg> */}
+          <svg onClick={() => setIndex(index - 1)} xmlns="http://www.w3.org/2000/svg" width="52" height="8" viewBox="0 0 52 8" fill="none">
+            <path d="M0.646446 3.64645C0.451183 3.84171 0.451183 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646446 3.64645ZM52 3.5L1 3.5V4.5L52 4.5V3.5Z" fill="#CAA55E"/>
           </svg>
           <span>{index+1} / <span>{projects?.length}</span></span>
-          <svg onClick={() => setIndex(index + 1)} xmlns="http://www.w3.org/2000/svg" width="32" height="8" viewBox="0 0 32 8" fill="none">
-            <path d="M31.3536 4.42167C31.5488 4.22641 31.5488 3.90982 31.3536 3.71456L28.1716 0.532581C27.9763 0.337319 27.6597 0.337319 27.4645 0.532581C27.2692 0.727844 27.2692 1.04443 27.4645 1.23969L30.2929 4.06812L27.4645 6.89654C27.2692 7.0918 27.2692 7.40839 27.4645 7.60365C27.6597 7.79891 27.9763 7.79891 28.1716 7.60365L31.3536 4.42167ZM31 3.56812L-1.90735e-06 3.56812V4.56812L31 4.56812V3.56812Z" fill="#CAA55E"/>
+          <svg onClick={() => setIndex(index + 1)} xmlns="http://www.w3.org/2000/svg" width="52" height="9" viewBox="0 0 52 9" fill="none">
+            <path d="M51.3536 4.85355C51.5488 4.65829 51.5488 4.34171 51.3536 4.14645L48.1716 0.964466C47.9763 0.769204 47.6597 0.769204 47.4645 0.964466C47.2692 1.15973 47.2692 1.47631 47.4645 1.67157L50.2929 4.5L47.4645 7.32843C47.2692 7.52369 47.2692 7.84027 47.4645 8.03553C47.6597 8.2308 47.9763 8.2308 48.1716 8.03553L51.3536 4.85355ZM51 4L0 4V5L51 5V4Z" fill="#CAA55E"/>
           </svg>
         </div>
 

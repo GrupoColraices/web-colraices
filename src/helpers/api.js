@@ -1,0 +1,1 @@
+export const APIURL = 'https://vc.colraices.com/api/v1'
