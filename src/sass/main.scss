@@ -1,11 +1,10 @@
-
 @import 'base/normalize';
 @import 'base/variables';
 @import 'base/mixins';
 @import 'base/globals';
 
 // Button gray component
-.btn-gray{
+.btn-gray {
     background: rgba(147, 146, 146, 0.72);
     padding: 7px 15px;
     border-radius: 26px;
@@ -15,7 +14,7 @@
 }
 
 // Button blue component
-.btn-blue{
+.btn-blue {
     padding: 7px 15px;
     border-radius: 26px;
     color: white;
@@ -24,11 +23,13 @@
 }
 
 // button blue component xl
-.btn-blue-xl{
+.btn-blue-xl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 26px;
     color: var(--BLANCO, #FFF);
     text-align: center;
-    
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
@@ -37,8 +38,9 @@
     height: 37px;
     background: var(--Azul-Colraices, #2A3F77);
     box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
 
-    &:hover{
+    &:hover {
         color: var(--SUBITULO-HOME, #CAA55E);
         border-radius: 26px;
         border: 1px solid var(--SUBITULO-HOME, #CAA55E);
@@ -48,21 +50,21 @@
 }
 
 // Button gray xl component
-.btn-gray-xl{
+.btn-gray-xl {
     background: rgba(147, 146, 146, 0.72);
     border: 1px solid var(--BLANCO, #FFF);
     box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.15);
     border-radius: 26px;
     color: var(--BLANCO, #FFF);
     text-align: center;
-    
+
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
     padding: 6px 36px;
     line-height: normal;
 
-    &:hover{
+    &:hover {
         color: var(--SUBITULO-HOME, #CAA55E);
         border-radius: 26px;
         border: 1px solid var(--SUBITULO-HOME, #CAA55E);
@@ -72,11 +74,11 @@
 }
 
 // button blue component desktop
-.btn-blue-desktop{
+.btn-blue-desktop {
     border-radius: 26px;
     color: var(--BLANCO, #FFF);
     text-align: center;
-    
+
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
@@ -89,13 +91,13 @@
 }
 
 // button gold component rounded
-.btn-gold-rounded{
+.btn-gold-rounded {
     border-radius: 0px 8px 8px 8px;
     background: var(--DORADO-COLRAICES, #CAA55E);
     box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.25);
     color: #FFF;
     text-align: center;
-    
+
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
@@ -103,6 +105,7 @@
     width: 193px;
     height: 27px;
 }
+
 /* Estilos generales del widget */
 #whatsapp-widget {
     position: fixed;
