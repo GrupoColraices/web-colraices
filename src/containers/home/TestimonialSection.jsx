@@ -1,6 +1,6 @@
 import { CardTestimonial } from '@/components/molecules/CardTestimonial'
 import '@/sass/containers/home/TestimonialSection.scss'
-import { testimonialsData } from '@/helpers'
+import { testimonios } from '@/app/casas-apartamentos-colombia-desde-el-exterior/helpers/options'
 import { TitleLine } from '@/components/TitleLine'
 
 export const TestimonialSection = () => {
@@ -19,11 +19,11 @@ export const TestimonialSection = () => {
                 </div>
             </div>
             <div>
-                {testimonialsData.map((testimonial) => (
+                {testimonios?.map((testimonial) => (
                     <CardTestimonial
                         key={testimonial.id}
-                        title={testimonial.title}
-                        paragraph={testimonial.content}
+                        title={testimonial.nombre}
+                        paragraph={testimonial.testimonio}
                     />
                 ))}
             </div>
