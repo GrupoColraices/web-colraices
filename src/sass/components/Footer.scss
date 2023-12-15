@@ -70,12 +70,14 @@ footer {
             grid-row: 3/5;
             max-width: fit-content;
 
-            ul {
+            div.container-list-link {
                 display: flex;
                 flex-direction: column;
                 row-gap: 0.5rem;
                 margin-right: 1rem;
-
+                div.list-links{
+                    
+                }
                 li {
                     font-size: 13px;
                     line-height: 2rem;
@@ -154,7 +156,7 @@ footer {
                 margin-top: -3rem;
                 max-width: 100%;
 
-                ul {
+                div.container-list-link {
                     justify-content: space-between;
                     flex-direction: row;
                     padding-right: 5rem;
