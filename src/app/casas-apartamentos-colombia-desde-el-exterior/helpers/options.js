@@ -54,9 +54,9 @@ export const socialNetworks = [
 ]
 
 export const linksFooter = [
-  { id: 1, name: 'Inmuebles', url: '' },
+  { id: 1, name: 'Inmuebles', url: '/casas-apartamentos-colombia-desde-el-exterior' },
   { id: 2, name: 'Favoritos', url: '/casas-apartamentos-colombia-desde-el-exterior/favoritos' },
-  { id: 3, name: 'Contacto', url: '' }
+  { id: 3, name: 'Contacto', url: '/' }
 ]
 export const links = [
   { id: 1, label: "Menú", url: "" },
