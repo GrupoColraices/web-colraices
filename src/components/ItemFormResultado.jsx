@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BsQuestionCircle } from 'react-icons/bs';
 import { useForm, Controller } from "react-hook-form"
 import { PhoneInput } from 'react-international-phone';
@@ -23,6 +23,7 @@ export const ItemFormResultado = () => {
     const { register, formState: { errors }, handleSubmit, control, reset, resetField } = useForm();
     const [fields, setFields] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [width, setWidth] = useState(false)
     const theme = createTheme({
         palette: {
             primary: {
@@ -105,6 +106,11 @@ export const ItemFormResultado = () => {
         }
 
     }
+    useEffect(() => {
+        if (window.innerWidth < 930) {
+            setWidth(true)
+        }
+    },[])
     return (
 
         <section className='form-container' id='form-container'>
@@ -132,8 +138,8 @@ export const ItemFormResultado = () => {
                 <form onSubmit={handleSubmit(onSubmit)} id='form'>
                     <div className='container-fields'>
                         <TitleSection
-                            title={screen.width < 930 ? "Me interesa este proyecto" : "Te ayudamos a encontrar"}
-                            span={screen.width < 930 ? "Quiero más información" : "el hogar ideal"} />
+                            title={width ? "Me interesa este proyecto" : "Te ayudamos a encontrar"}
+                            span={width ? "Quiero más información" : "el hogar ideal"} />
                         <fieldset>
                             <input type="text" placeholder="Nombre Completo" {...register("name", { required: true })} />
                             {errors?.name && <p className='message-error'> Este campo es requerido</p>}
