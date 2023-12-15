@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from 'next/image'
 import '@/sass/containers/home/BannerSection.scss'
 import { Partners } from '@/components/Partners'
@@ -12,14 +13,14 @@ export const BannerSection = () => {
                     <p>desde el exterior!</p>
 
                     <div className="container-buttons-desktop">
-                        <button className="btn-blue-xl">Buscar mi casa</button>
-                        <button className="btn-gray-xl">La buscamos por ti</button>
+                        <Link href={'/casas-apartamentos-colombia-desde-el-exterior'} target="_blank" className="btn-blue-xl">Buscar mi casa</Link>
+                        <Link href={'/busqueda-asistida'} target="_blank" className="btn-gray-xl">La buscamos por ti</Link>
                     </div>
                 </div>
                 <article>
                     <div className="container-buttons">
-                        <button className="btn-gray">La buscamos por ti</button>
-                        <button className="btn-blue">Buscar mi casa</button>
+                        <Link href={'/busqueda-asistida'} target="_blank" className="btn-gray">La buscamos por ti</Link>
+                        <Link href={'/casas-apartamentos-colombia-desde-el-exterior'} target="_blank" className="btn-blue">Buscar mi casa</Link>
                     </div>
                     <section>
                         <Image className='bannerMobile'
