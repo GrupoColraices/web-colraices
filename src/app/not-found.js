@@ -1,9 +1,10 @@
-import Link from "next/link"
+import { ButtonBack } from "@/components/ButtonBack";
+
 export default function NotFound() {
   return (
     <div className="container-not-found">
       <img src='/not-found-404.webp' />
-      <Link  href={'/'}>Volver al Inicio</Link>
+      <ButtonBack />
     </div>
   )
 }
