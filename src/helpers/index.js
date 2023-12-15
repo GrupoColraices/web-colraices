@@ -1,8 +1,8 @@
 //?Navbar links
 export const navbarLinks = [
     { label: 'Encuentra tu casa', href: '/casas-apartamentos-colombia-desde-el-exterior' },
-    { label: 'Financia tu casa', href: '/credito' },
-    { label: 'Guía para comprar tu casa', href: '/contacto' },
+    { label: 'Financia tu casa', href: 'https://financiatucasa.carrd.co' },
+    { label: 'Guía para comprar tu casa', href: '/proximamente' },
 ]
 
 //!Home banner section partners logos
