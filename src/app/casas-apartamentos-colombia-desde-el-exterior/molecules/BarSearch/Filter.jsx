@@ -61,7 +61,7 @@ export default function Filter({
                     {validateField && labelFilter.length === 0 ?
                         <span className="message-error">Este campo es requerido</span>
                         : validateSearch &&
-                        <span className="message-error">No hay inmuebles en esta zona</span>
+                        <span className="message-error">Intenta nuevamente con otra ubicación</span>
                     }
                     <Tippy
                         animation="scale"
