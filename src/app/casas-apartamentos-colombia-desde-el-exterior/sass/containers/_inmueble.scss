@@ -6,12 +6,11 @@
     background-color: $blanco;
 
     @include tablet {
-        padding: 2rem 0;
+        padding: 5rem 0;
 
         .barSearch {
             justify-content: flex-start;
             z-index: 10;
-
 
             .container__list {
                 left: 26%;

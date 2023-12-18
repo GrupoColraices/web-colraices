@@ -44,7 +44,7 @@ section.banner-inmueble-container {
         @include tablet {
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: 30.2rem 29.5rem 0;
-            height: 60rem;
+            height: 54rem;
 
             iframe {
                 height: 600px;
