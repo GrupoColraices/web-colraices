@@ -9,8 +9,6 @@ const RecommendedProjects = () => {
   const { projectsApi, projects, index, setIndex } = useRecommendedProject(recommendedProjects)
   const currentProject = projectsApi[index];
 
-  console.log(currentProject);
-
   return (
     <section className="recommendedProjects">
 
