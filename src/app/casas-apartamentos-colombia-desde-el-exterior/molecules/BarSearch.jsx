@@ -43,7 +43,7 @@ export const BarSearch = ({ visibility = false, scrolling = 100 }) => {
         };
     });
 
-    const isFound = (optionsSearch?.some((item) => item.label === labelFilter));
+    const isFound = (optionsSearch?.some((item) => item.label === labelFilter.replace(/, Colombia$/, '')));
     const setData = (e) => {
         e.preventDefault();
         if (inputs.city != "0" && labelFilter.length > 0 && isFound) {
