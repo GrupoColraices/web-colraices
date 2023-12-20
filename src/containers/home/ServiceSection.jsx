@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import '@/sass/containers/home/ServiceSection.scss'
 import { servicesCards } from '@/helpers'
+import Link from 'next/link'
 
 export const ServiceSection = () => {
     return (
@@ -21,7 +22,7 @@ export const ServiceSection = () => {
                 ))}
             </div>
             <div className="register">
-                <button className='btn-blue-xl'>Continuar</button>
+                <Link href={'/busqueda-asistida'} target="_blank" className='btn-blue-xl'>Continuar</Link>
             </div>
         </section>
     )

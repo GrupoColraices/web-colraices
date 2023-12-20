@@ -26,7 +26,7 @@ export const Inmueble = ({ inmueble, response }) => {
         observar.current = new IntersectionObserver(function (entries) {
             setFid(entries[0].isIntersecting);
         }, { root: null });
-        observar.current.observe(document.querySelector('.banner-inmueble-container'));
+        observar.current.observe(document.querySelector('.sticky-barSearch'));
 
         const bar = document.querySelector('.barSearch');
         const containerFilter = document.querySelector('.container__filter');
@@ -43,13 +43,16 @@ export const Inmueble = ({ inmueble, response }) => {
             observar.current && observar.current.disconnect();
         }
 
+
     }, [fid]);
     return (
         <>
             <BannerInmueble imagenes={imagenes} numberImages={num_img} video={url} />
             <section className='inmueblee'>
                 <FilterSmall inmueble={inmueble} />
-                <BarSearch visibility={true} scrolling={400} />
+                <div className='sticky-barSearch'>
+                    <BarSearch visibility={true} scrolling={400} />
+                </div>
                 <div className='inmueble__grid'>
                     <main className='inmueble__main'>
                         <TitleInmueble

@@ -13,7 +13,7 @@ export const HistorySection = () => {
                 </div>
             </Link>
 
-            <SliderHistory></SliderHistory>
+            <SliderHistory />
         </section>
     )
 }

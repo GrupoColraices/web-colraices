@@ -8,8 +8,8 @@ export const Footer = () => {
     return (
         <footer id='contact'>
             <section>
-            <Link href={'/'}>
-                <img className='logo' src="/portal-inmobiliario/img/colraicesInmobiliario/home/logo.svg" alt="logo" />
+                <Link href={'/'}>
+                    <img className='logo' src="/portal-inmobiliario/img/colraicesInmobiliario/home/logo.svg" alt="logo" />
                 </Link>
                 {infoContact?.map((item) =>
                     <p key={item.id}>
@@ -23,18 +23,18 @@ export const Footer = () => {
                 )}
 
                 <nav className="side-links">
-                    <ul>
-                        <div>
+                    <div className='container-list-link'>
+                        <ul>
                             {linksFooter?.map((item) =>
                                 <a key={item.id} href={item.url} target='_blank'><li>{item.name}</li></a>
                             )}
-                        </div>
-                        <div>
+                        </ul>
+                        <ul>
                             <li>Política de privacidad</li>
                             <li>Mapa del sitio</li>
-                            <a href="https://momentumdigital.com.co/" target="_blank"><li>{new Date().getFullYear()} Momentum</li></a>
-                        </div>
-                    </ul>
+                            <a href="https://agenciamomentum.co/" target="_blank"><li>{new Date().getFullYear()} Momentum</li></a>
+                        </ul>
+                    </div>
                 </nav>
                 <div className="social-networks">
                     {socialNetworks?.map((item) =>

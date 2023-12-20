@@ -67,7 +67,7 @@ export default function ItemFavorite({ itemProperty, setUpdateFavorites }) {
                     <p>{ciudad} - {region}</p>
                 </div>
                 <ul className='information'><li>Desde {area_const}m²</li> <li>{habitaciones} Hab</li> <li>{baños} Baños</li></ul>
-                <Link href={`/portal-inmobiliario/inmueble/${slug}`}>
+                <Link href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${slug}`}>
                     <button className='btn-view' type='button'>Ver Proyecto</button>
                 </Link>
             </article>

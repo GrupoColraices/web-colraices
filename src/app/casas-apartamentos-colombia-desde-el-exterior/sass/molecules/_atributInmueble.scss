@@ -56,30 +56,34 @@
         }
     }
 
-    .atributosInmueble__icon {
-        column-gap: 8rem;
+    .atributosInmueble__icon,
+    .atributosInmueble__icon--no {
+        column-gap: 6rem;
 
-        .atributosInmueble__icon__item {
-            i {
-                font-size: 2.5rem;
-                color: $primario;
-            }
+    .atributosInmueble__icon__item {
+        i {
+            font-size: 2.5rem;
+            color: $primario;
+        }
 
-            p {
-                color: $gris;
-            }
+        p {
+            color: $gris;
         }
     }
+}
 
+
+
+@include tablet {
+    padding: 1rem auto;
+
+    .atributosInmueble__titel {
+        margin: 0 0 3rem;
+    }
+
+    .atributosInmueble__icon,
     .atributosInmueble__icon--no {
         column-gap: 8rem;
     }
-
-    @include tablet {
-        padding: 1rem auto;
-
-        .atributosInmueble__titel {
-            margin: 0 0 3rem;
-        }
-    }
+}
 }

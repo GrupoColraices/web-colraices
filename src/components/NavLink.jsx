@@ -9,6 +9,7 @@ export const NavLink = ({ label, href, onClick }) => {
             className={`NavLink ${activeRoute === href ? 'active' : ''}`}
             href={href}
             onClick={onClick}
+            target="_blank"
         >
             {label}
         </Link>

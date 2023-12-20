@@ -85,15 +85,15 @@ export const LayoutInmuebles = ({ loading, inmuebles, Notion, Elim, inm, fav, se
                     {fav ?
                         <div className="favSection-menu">
                             <div className="container-leftBar">
-                                <Link href={'/'} className="item-rightBar">
+                                <Link href={'/casas-apartamentos-colombia-desde-el-exterior'} className="item-rightBar">
                                     <Image src={medal} alt="rocket" width={40} height={40} />
                                     <p>Para ti</p>
                                 </Link>
-                                <Link href={'/favoritos'} className="item-rightBar">
+                                <Link href={'casas-apartamentos-colombia-desde-el-exterior/favoritos'} className="item-rightBar">
                                     <Image src={heart} alt="rocket" width={40} height={40} />
                                     <p>Mis inmuebles favoritos</p>
                                 </Link>
-                                <Link href={'/'} className="item-rightBar">
+                                <Link href={'/casas-apartamentos-colombia-desde-el-exterior/favoritos'} className="item-rightBar">
                                     <Image src={AB} alt="rocket" width={40} height={40} />
                                     <p>Comparar propiedades</p>
                                 </Link>
