@@ -18,6 +18,7 @@
 @import "components/paginationBasic";
 @import "components/titleNavbar";
 @import "components/rightBar";
+@import "components/sideMenuFavorites";
 
 
 //Molecules
@@ -63,3 +64,4 @@
 @import "containers/inmueble";
 @import "containers/inmRegion";
 @import "containers/favSection";
+@import "containers/compareProperties"
