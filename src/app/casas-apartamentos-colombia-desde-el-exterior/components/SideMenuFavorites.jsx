@@ -13,7 +13,7 @@ export const SideMenuFavorites = () => {
                 <Image src={medal} alt="rocket" width={40} height={40} />
                 <p>Para ti</p>
             </Link>
-            <Link href={'casas-apartamentos-colombia-desde-el-exterior/favoritos'} className="item-rightBar">
+            <Link href={'/casas-apartamentos-colombia-desde-el-exterior/favoritos'} className="item-rightBar">
                 <Image src={heart} alt="rocket" width={40} height={40} />
                 <p>Mis inmuebles favoritos</p>
             </Link>
