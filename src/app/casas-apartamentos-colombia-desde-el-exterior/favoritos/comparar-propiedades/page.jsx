@@ -4,7 +4,6 @@ import Navbar from '../../components/Navbar'
 import { TitleSection } from '../../components/TitleSection'
 import { SideMenuFavorites } from '../../components/SideMenuFavorites'
 import { useCurrency } from '../../hooks/useCurrency'
-import Link from 'next/link'
 import { CompareFavorites } from '../../Templates/CompareFavorites'
 
 
@@ -25,11 +24,8 @@ export default function CompareProperties() {
     const handleCheckboxChange = (selectedItem) => {
         setSelectedItems((items) => {
             if (items.find((item) => item.id === selectedItem.id)) {
-                // Si el elemento ya está seleccionado, lo eliminamos de la lista
                 return items.filter((item) => item.id !== selectedItem.id);
             }
-
-            // Si el elemento no está seleccionado y aún no hemos alcanzado el límite de 3, lo agregamos a la lista
             return items.length < 3 ? [...items, selectedItem] : items;
         });
     }
