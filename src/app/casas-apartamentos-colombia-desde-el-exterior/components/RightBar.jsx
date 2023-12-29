@@ -20,7 +20,7 @@ const RightBar = ({ closeRightBar }) => {
                 <p>Para ti</p>
             </Link>
 
-            <Link href={'casas-apartamentos-colombia-desde-el-exterior/favoritos'} className="item-rightBar">
+            <Link href={'/casas-apartamentos-colombia-desde-el-exterior/favoritos/'} className="item-rightBar">
                 <Image src={heart} alt="rocket" width={40} height={40} />
                 <p>Mis inmuebles favoritos</p>
             </Link>
@@ -30,7 +30,7 @@ const RightBar = ({ closeRightBar }) => {
         <p>Contacto</p>
     </Link> */}
 
-            <Link href={'/casas-apartamentos-colombia-desde-el-exterior/favoritos'} className="item-rightBar">
+            <Link href={'/casas-apartamentos-colombia-desde-el-exterior/favoritos/comparar-propiedades'} className="item-rightBar">
                 <Image src={AB} alt="rocket" width={40} height={40} />
                 <p>Comparar propiedades</p>
             </Link>
