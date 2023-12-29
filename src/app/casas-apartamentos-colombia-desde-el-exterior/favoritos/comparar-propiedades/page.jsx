@@ -5,11 +5,14 @@ import { TitleSection } from '../../components/TitleSection'
 import { SideMenuFavorites } from '../../components/SideMenuFavorites'
 import { useCurrency } from '../../hooks/useCurrency'
 import Link from 'next/link'
+import { CompareFavorites } from '../../Templates/CompareFavorites'
 
 
 export default function CompareProperties() {
     const [width, setWidth] = useState(false)
     const [favorites, setFavorites] = useState([])
+    const [compare, setCompare] = useState(false);
+    const [selectedItems, setSelectedItems] = useState([]);
     const [formatePrice] = useCurrency();
     useEffect(() => {
         if (window.innerWidth < 930) {
@@ -18,6 +21,19 @@ export default function CompareProperties() {
         const response = localStorage?.getItem('favoritos');
         setFavorites(JSON.parse(response));
     }, [setWidth])
+
+    const handleCheckboxChange = (selectedItem) => {
+        setSelectedItems((items) => {
+            if (items.find((item) => item.id === selectedItem.id)) {
+                // Si el elemento ya está seleccionado, lo eliminamos de la lista
+                return items.filter((item) => item.id !== selectedItem.id);
+            }
+
+            // Si el elemento no está seleccionado y aún no hemos alcanzado el límite de 3, lo agregamos a la lista
+            return items.length < 3 ? [...items, selectedItem] : items;
+        });
+    }
+    console.log(selectedItems);
     return (
         <>
 
@@ -28,26 +44,29 @@ export default function CompareProperties() {
                 </TitleSection>
                 <section className='compare-properties-content'>
                     <SideMenuFavorites />
-                    <div className='container-selectable-properties'>
-                        <h2>Comparar <span>propiedades</span></h2>
-                        <p>Selecciona entre 2 o 3 propiedades para comparar</p>
-                        <div className='selectable-properties'>
-                            {favorites?.map((item) =>
-                                <div className='property-attributes' key={item.id}>
-                                    <div className='image-container'>
-                                        <img src={item.thumbnail} alt="image properties" />
+                    {!compare ?
+                        <div className='container-selectable-properties'>
+                            <h2>Comparar <span>propiedades</span></h2>
+                            <p>Selecciona entre 2 o 3 propiedades para comparar</p>
+                            <div className='selectable-properties'>
+                                {favorites?.map((item) =>
+                                    <div className='property-attributes' key={item.id}>
+                                        <div className='image-container'>
+                                            <img src={item.thumbnail} alt="image properties" />
+                                        </div>
+                                        <div>
+                                            <h3>{item.titulo}</h3>
+                                            <p>{item.region}</p>
+                                            <p>{formatePrice(item.precio)}</p>
+                                        </div>
+                                        <input type="checkbox"
+                                            checked={selectedItems.some((selectedItem) => selectedItem.id === item.id)}
+                                            onChange={() => handleCheckboxChange(item)} />
                                     </div>
-                                    <div>
-                                        <h3>{item.titulo}</h3>
-                                        <p>{item.region}</p>
-                                        <p>{formatePrice(item.precio)}</p>
-                                    </div>
-                                    <input type="checkbox" />
-                                </div>
-                            )}
-                        </div>
-                        <Link href='/casas-apartamentos-colombia-desde-el-exterior/favoritos/comparar-propiedades/comparacion' onClick={() => { console.log('click') }}>Comparar</Link>
-                    </div>
+                                )}
+                            </div>
+                            <button type="button" onClick={() => setCompare(true)}>Comparar</button>
+                        </div> : <CompareFavorites selectedItems={selectedItems} />}
                 </section>
             </section>
         </>
