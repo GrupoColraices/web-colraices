@@ -2,6 +2,8 @@
 import React, { useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { TitleSection } from "../components/TitleSection";
+import { usePathname } from "next/navigation";
+
 
 export const ItemFormulario = () => {
     const scriptURL =
@@ -9,7 +11,7 @@ export const ItemFormulario = () => {
 
     const [menssage, setMenssage] = useState("");
     const men = useRef(null);
-
+    const pathname = usePathname()
     const handleMessage = () => {
         setMenssage(men.current.value);
     };
@@ -26,6 +28,7 @@ export const ItemFormulario = () => {
         formData.append("mensaje", e.target.mensaje.value);
         formData.append("fecha", new Date().toLocaleString());
         formData.append("tipo", "contacto");
+        formData.append("enlace", `colraices.com${pathname}`);
 
         fetch(scriptURL, { method: "POST", body: formData }).then(
             (response) => {
@@ -46,6 +49,7 @@ export const ItemFormulario = () => {
         );
     };
 
+    console.log(pathname)
     return (
         <section className="itemFormulario">
             <Toaster
