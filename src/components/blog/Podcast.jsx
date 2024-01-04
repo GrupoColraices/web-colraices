@@ -2,8 +2,8 @@
 import Image from "next/image";
 import Line from "../Line"
 import '@/sass/components/blog/Podcast.scss';
-import podcast from '../../../public/podcast.svg';
-import podcastDesktop from '../../../public/podcast-desktop.svg';
+import podcast from '../../../public/Podcast.svg';
+import podcastDesktop from '../../../public/Podcast-desktop.svg';
 
 const Podcast = () => {
   return (
