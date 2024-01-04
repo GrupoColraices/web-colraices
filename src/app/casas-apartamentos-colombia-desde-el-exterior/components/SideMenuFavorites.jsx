@@ -9,7 +9,7 @@ import billetera from '../../../../public/portal-inmobiliario/img/colraicesInmob
 export const SideMenuFavorites = () => {
     return (
         <div className="container-leftBar">
-            <Link href={'/casas-apartamentos-colombia-desde-el-exterior'} className="item-rightBar">
+            <Link href={'/casas-apartamentos-colombia-desde-el-exterior/favoritos/para-ti'} className="item-rightBar">
                 <Image src={medal} alt="rocket" width={40} height={40} />
                 <p>Para ti</p>
             </Link>
