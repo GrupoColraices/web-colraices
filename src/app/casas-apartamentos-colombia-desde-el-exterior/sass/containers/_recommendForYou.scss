@@ -1,0 +1,32 @@
+section.container-for-you {
+    margin: 0 auto;
+
+
+    section.content-for-you {
+        margin: 1rem auto;
+
+        div.container-inmuebles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(26rem, 100%), 1fr));
+            row-gap: 5rem;
+            place-items: center;
+        }
+
+        @include tablet {
+            display: grid;
+            grid-template-columns: 30% 70%;
+            margin: 5rem 0 15rem;
+        }
+    }
+    @include tablet{
+        max-width: 122rem;
+        margin: 5rem 0;
+        .title-section{
+            margin: 0 auto 0 20%;
+
+        }
+    }
+    @include hyperDesktop{
+        margin: 5rem auto;
+    }
+}
