@@ -29,7 +29,6 @@ export default function CompareProperties() {
             return items.length < 3 ? [...items, selectedItem] : items;
         });
     }
-    console.log(selectedItems);
     return (
         <>
 
@@ -61,7 +60,7 @@ export default function CompareProperties() {
                                     </div>
                                 )}
                             </div>
-                            <button type="button" onClick={() => setCompare(true)}>Comparar</button>
+                            <button className='button-compare' type="button" onClick={() => setCompare(true)} disabled={selectedItems.length < 2}>Comparar</button>
                         </div> : <CompareFavorites selectedItems={selectedItems} />}
                 </section>
             </section>
