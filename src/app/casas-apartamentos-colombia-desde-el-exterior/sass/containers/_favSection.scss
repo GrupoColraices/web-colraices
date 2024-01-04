@@ -1,62 +1,25 @@
-.favSection{
+.favSection {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
     margin-top: 3rem;
 
-    .container-barSearch{
+    .container-barSearch {
         margin-bottom: 12rem;
     }
 
-    .favSection__flex{
+    .favSection__flex {
         display: grid;
         margin: 0 auto;
 
-        @include tablet{
+        @include tablet {
             width: 100%;
         }
 
-        .favSection-menu{
+        .favSection-menu {
             display: flex;
             gap: 100px;
-            
-            .container-leftBar{
-                display: none;
-                flex-direction: column;
-                gap: 10px;
-                margin-top: 1rem;
-
-                @include tablet{
-                    display: flex;
-                }
-            }
-
-            a.item-rightBar{
-                width: 273px;
-                height: 79px;
-                border-radius: 0 22px 22px 0;
-                background: #FFF;
-                box-shadow: 1px 1px 9px 0px rgb(0 0 0 / 11%);
-                display: flex;
-                align-items: center;
-                gap: 18px;
-                padding-left: 20px;
-                padding-right: 10px;
-        
-                img{
-                    width: 23px;
-                    height: 23px;
-                }
-        
-                p{
-                    color: #2A3F77;
-                    font-size: 20px;
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: normal;
-                }
-            }
         }
 
         .favSection__grid__inm {
@@ -79,18 +42,18 @@
             display: grid;
             margin: 0 auto;
             gap: 2rem;
-    
+
             @include tablet {
                 grid-template-columns: auto;
                 width: clamp(100rem, 100%, 122rem);
-    
+
                 .title-section {
                     margin: 4rem 8rem;
-    
+
                     .title-section-title {
                         font-size: 32px;
                         max-width: 80%;
-    
+
                         &::after,
                         &::before {
                             top: 1.8rem;
@@ -98,9 +61,9 @@
                         }
                     }
                 }
-    
+
             }
-    
+
 
         }
 

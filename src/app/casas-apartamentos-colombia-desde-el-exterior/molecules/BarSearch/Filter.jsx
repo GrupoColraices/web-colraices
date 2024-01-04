@@ -5,6 +5,11 @@ import { Select } from '../../components/Select'
 import { optionsTipo, optionsEstado, optionsBaths, optionsRooms } from "../../helpers/options";
 import { actionScroll } from "../../helpers/actionScroll";
 import { onlyNumbers, peso, reverseFormat } from "../../helpers/formatCurrency";
+
+import { AiOutlineInfoCircle } from "react-icons/ai";
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/animations/scale.css';
 export default function Filter({
     filterCl,
     setFilterCl,
@@ -22,6 +27,18 @@ export default function Filter({
     const [isDropdownProperty, setIsDropwnProperty] = useState(false);
     const [isDropdownState, setIsDropdownState] = useState(false);
 
+    /**
+     * Filters an array of options based on a search criteria.
+     *
+     * @param {Array} optionsSearch - The array of options to be filtered.
+     * @param {string} labelFilter - The search criteria to filter options by.
+     * @returns {Array} - An array containing the filtered options.
+     */
+    const filtered = optionsSearch?.filter((item) => {
+        const search = labelFilter.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        const name = item.label.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        return (search && name.startsWith(search) || name === search);
+    })
     return (
         <>
             <div className="container__filter">
@@ -33,7 +50,10 @@ export default function Filter({
                         value={labelFilter}
                         placeholder='Ciudad o departamento'
                         autoComplete="off"
-                        onChange={(e) => { setLabel(e.target.value); setIsNotFound(false); setValidateField(false) }}
+                        onChange={(e) => {
+                            setLabel(e.target.value);
+                            setIsNotFound(false); setValidateField(false)
+                        }}
                     />
                     <input type="hidden"
                         value={inputs.city}
@@ -41,9 +61,17 @@ export default function Filter({
                     {validateField && labelFilter.length === 0 ?
                         <span className="message-error">Este campo es requerido</span>
                         : validateSearch &&
-                        <span className="message-error">No hay inmuebles en esta zona</span>
+                        <span className="message-error">Intenta nuevamente con otra ubicación</span>
                     }
-
+                    <Tippy
+                        animation="scale"
+                        theme={'dark'}
+                        content="Escriba y seleccione la ciudad o departamento de la lista"
+                    >
+                        <p className="tippy-field-cities">
+                            <AiOutlineInfoCircle />
+                        </p>
+                    </Tippy>
                 </div>
                 <Select
                     name={'typeProperty'}
@@ -65,8 +93,10 @@ export default function Filter({
                         type="button"
                         className="button__filter"
                         onClick={() => {
-                            actionScroll(scrolling);
-                            setFilterCl(!filterCl);
+                            if (labelFilter.length !== 0) {
+                                setFilterCl(!filterCl);
+                                actionScroll(scrolling);
+                            }
                         }}
                     >
                         <img src="/portal-inmobiliario/img/colraicesInmobiliario/icons/filter_small.svg" alt="Icon" />
@@ -75,20 +105,21 @@ export default function Filter({
             </div>
             <div className="container__search">
                 <ul className={"list__options"}>
-                    {optionsSearch?.filter((item) => {
-                        const search = labelFilter.toLowerCase();
-                        const name = item.label.toLowerCase();
-                        return (search && name.startsWith(search) && name !== search);
-                    }).map((item) => (
-                        <li key={item.label}
-                            onClick={() => {
-                                setInputs({ ...inputs, city: item.slug });
-                                setLabel(item.label);
-                            }}
-                        >
-                            {item.label}
-                        </li>
-                    ))}
+                    {filtered.length === 0 && labelFilter.length !== 0 && !labelFilter.includes(',') ?
+                        <li>No se encontraron resultados</li>
+                        :
+                        filtered.map((item) => (
+                            <li key={item.label}
+                                onClick={() => {
+                                    setInputs({ ...inputs, city: item.slug });
+                                    setLabel(`${item.label}, Colombia`);
+                                }}
+
+                            >
+                                {item.label}
+
+                            </li>
+                        ))}
                 </ul>
             </div>
 
@@ -135,7 +166,9 @@ export default function Filter({
             <div className={`advanced__filter ${filterCl && 'open'}`}>
                 <img src="/portal-inmobiliario/img/colraicesInmobiliario/icons/arrow_up.svg"
                     onClick={() => {
-                        setFilterCl(!filterCl);
+                        if (labelFilter.length > 0) {
+                            setFilterCl(!filterCl);
+                        }
                     }} alt="Icon" />
                 <div className="container__inputs">
                     <h2>Precio</h2>

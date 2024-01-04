@@ -18,6 +18,8 @@
 @import "components/paginationBasic";
 @import "components/titleNavbar";
 @import "components/rightBar";
+@import "components/sideMenuFavorites";
+@import "components/summaryFavorites";
 
 
 //Molecules
@@ -57,9 +59,12 @@
 @import "templates/inmSimilaresReg";
 @import "templates/header";
 @import "templates/featuredProperties";
+@import "templates/compareFavorites";
 
 
 //Containers
 @import "containers/inmueble";
 @import "containers/inmRegion";
 @import "containers/favSection";
+@import "containers/compareProperties";
+@import "containers/recommendForYou"

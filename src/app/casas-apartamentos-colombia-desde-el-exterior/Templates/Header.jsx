@@ -8,6 +8,7 @@ export const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(links[0].label);
     const route = usePathname();
+    const pathName = '/casas-apartamentos-colombia-desde-el-exterior/'
 
     const handleToggle = () => {
         setIsOpen(!isOpen);
@@ -19,8 +20,7 @@ export const Header = () => {
     };
 
     return (
-        
-        <header className={`wrapper ${route !== '/casas-apartamentos-colombia-desde-el-exterior/favoritos' ? 'custom-position' : 'fav-position'}`}>
+        <header className={`wrapper ${route === `${pathName}favoritos` || route === `${pathName}favoritos/para-ti`  ? 'fav-position' : 'custom-position'}`}>
             <nav className="dropdown" data-open={isOpen}>
                 <label htmlFor="dropdown__toggle" className="dropdown__active">
                     <span id="dropdown__selected">{selectedOption}</span>

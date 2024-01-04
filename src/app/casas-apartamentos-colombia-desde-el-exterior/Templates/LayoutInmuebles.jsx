@@ -1,7 +1,5 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
-import Image from "next/image"
-import Link from "next/link"
 import PropTypes from 'prop-types';
 import { Banner } from '../../casas-apartamentos-colombia-desde-el-exterior/Templates/Banner';
 import { TitleSection } from '../../casas-apartamentos-colombia-desde-el-exterior/components/TitleSection';
@@ -14,10 +12,8 @@ import { ItemInmueble } from '../../casas-apartamentos-colombia-desde-el-exterio
 import { ItemFormResultado } from '../../casas-apartamentos-colombia-desde-el-exterior/molecules/ItemFormResultado';
 import { scrollSection } from '../helpers/actionScroll';
 import { BarSearch } from '../../casas-apartamentos-colombia-desde-el-exterior/molecules/BarSearch';
-import medal from '../../../../public/portal-inmobiliario/img/colraicesInmobiliario/icons/medal.svg';
-import heart from '../../../../public/portal-inmobiliario/img/colraicesInmobiliario/icons/heart.svg';
-import AB from '../../../../public/portal-inmobiliario/img/colraicesInmobiliario/icons/AB.svg';
-import billetera from '../../../../public/portal-inmobiliario/img/colraicesInmobiliario/icons/billetera.svg';
+import { SideMenuFavorites } from '../components/SideMenuFavorites';
+
 
 export const LayoutInmuebles = ({ loading, inmuebles, Notion, Elim, inm, fav, setUpdateFavorites }) => {
     const { currentItems, currentPage, handleNextPage, handlePrevPage, totalPages } = usePagination(3, inmuebles)
@@ -84,24 +80,7 @@ export const LayoutInmuebles = ({ loading, inmuebles, Notion, Elim, inm, fav, se
 
                     {fav ?
                         <div className="favSection-menu">
-                            <div className="container-leftBar">
-                                <Link href={'/casas-apartamentos-colombia-desde-el-exterior'} className="item-rightBar">
-                                    <Image src={medal} alt="rocket" width={40} height={40} />
-                                    <p>Para ti</p>
-                                </Link>
-                                <Link href={'casas-apartamentos-colombia-desde-el-exterior/favoritos'} className="item-rightBar">
-                                    <Image src={heart} alt="rocket" width={40} height={40} />
-                                    <p>Mis inmuebles favoritos</p>
-                                </Link>
-                                <Link href={'/casas-apartamentos-colombia-desde-el-exterior/favoritos'} className="item-rightBar">
-                                    <Image src={AB} alt="rocket" width={40} height={40} />
-                                    <p>Comparar propiedades</p>
-                                </Link>
-                                <Link href={'https://colraices.com/cupocreditoalinstante/'} target="_blank" className="item-rightBar">
-                                    <Image src={billetera} alt="rocket" width={40} height={40} />
-                                    <p>Simulación de cuota</p>
-                                </Link>
-                            </div>
+                            <SideMenuFavorites />
                             <section className='only-desktop-flex favSection__grid__inm'>
                                 {inmuebles?.map(inmueble => (
                                     <ItemFavorite key={inmueble.id} itemProperty={inmueble} setUpdateFavorites={setUpdateFavorites} />
