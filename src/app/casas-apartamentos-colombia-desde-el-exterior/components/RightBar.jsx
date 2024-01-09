@@ -15,7 +15,7 @@ const RightBar = ({ closeRightBar }) => {
             <Image onClick={closeRightBar} className="closeIcon" src={close} alt="rocket" width={40} height={40} />
 
 
-            <Link href={'/casas-apartamentos-colombia-desde-el-exterior'} className="item-rightBar">
+            <Link href={'/casas-apartamentos-colombia-desde-el-exterior/favoritos/para-ti'} className="item-rightBar">
                 <Image src={medal} alt="rocket" width={40} height={40} />
                 <p>Para ti</p>
             </Link>
