@@ -93,12 +93,12 @@ export default function RecommendedForYou() {
     <>
       <Navbar />
       <section className='container-for-you'>
-        <TitleSection title={`Recomendaciones`} span={`para ti`} >
-          Recomendaciones de propiedades que se ajustan a tu búsqueda
-        </TitleSection>
-
+        <SideMenuFavorites />
         <section className='content-for-you'>
-          <SideMenuFavorites />
+          <TitleSection title={`Recomendaciones`} span={`para ti`} >
+            Recomendaciones de propiedades que se ajustan a tu búsqueda
+
+          </TitleSection>
           <div className='container-inmuebles'>
             {inmuebles?.map(inmueble => (
               <ItemFavorite key={inmueble.id} itemProperty={inmueble} setUpdateFavorites={setUpdateFavorites} />
