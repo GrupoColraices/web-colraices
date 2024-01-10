@@ -1,113 +1,96 @@
-"use client"
-import { useEffect, useState } from 'react';
-import ItemFavorite from '../../molecules/ItemFavorite';
-import { APIURL } from '../../config';
-import Navbar from '../../components/Navbar';
-import { SideMenuFavorites } from '../../components/SideMenuFavorites';
-import { TitleSection } from '../../components/TitleSection';
-
-const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
-const fetchDataWithRetry = async (url, maxRetries = 3) => {
-  for (let attempt = 1; attempt <= maxRetries; attempt++) {
-    try {
-      const resp = await fetch(url);
-      if (resp.status === 429) {
-
-        await delay(1000);
-      }
-      const data = await resp.json();
-      return data;
-    } catch (error) {
-      if (attempt === maxRetries) {
-        throw error;
-      }
-
-      await delay(Math.pow(2, attempt) * 1000);
-    }
-  }
-};
+'use client'
+import { useEffect, useState } from 'react'
+import useSWR from 'swr'
+import ItemFavorite from '../../molecules/ItemFavorite'
+import { APIURL } from '../../config'
+import Navbar from '../../components/Navbar'
+import { SideMenuFavorites } from '../../components/SideMenuFavorites'
+import { TitleSection } from '../../components/TitleSection'
+import { finalFilteredProperties, getMaxPrice, mostFrequent, mostFrequentType } from '../../helpers/filterFavorite'
 
 export default function RecommendedForYou() {
-  const [inmuebles, setInmuebles] = useState([]);
-  const [updateFavorites, setUpdateFavorites] = useState(false);
+    const [properties, setProperties] = useState([])
+    const [updateFavorites, setUpdateFavorites] = useState(false)
+    const [favorites, setFavorites] = useState([])
+    const [frequency, setFrequency] = useState([])
 
-  useEffect(() => {
-    const fetchCityData = async (city) => {
-      const url = `${APIURL}filtro?city=${city}`;
-      return await fetchDataWithRetry(url);
-    };
+    const { data: propertiesData } = useSWR(`${APIURL}filtro-region`, async (url) => {
+        const response = await fetch(url)
+        const data = await response.json()
+        return data.data
+    })
+    useEffect(() => {
+        const fetchData = () => {
+            try {
+                const storedFavorites = localStorage?.getItem('favoritos')
+                const parsedFavorites = JSON.parse(storedFavorites)
+                setFavorites(parsedFavorites)
 
-    const processResults = (results) => {
-      let combinedInmuebles = results.reduce((combined, result) => {
-        const slicedData = result.data.slice(0, 3);
-        return combined.concat(slicedData);
-      }, []);
-      setInmuebles(combinedInmuebles);
-    };
+                const countFrequency = (favorites, key) => {
+                    return favorites?.reduce((count, property) => {
+                        const propertyKey = property[key]
+                        count[propertyKey] = (count[propertyKey] || 0) + 1
+                        return count
+                    }, {})
+                }
 
-    const fetchData = async () => {
-      try {
-        const response = localStorage?.getItem('favoritos');
-        const favorites = JSON.parse(response);
+                const getMaxFrequency = (frequencyCounting) => Math.max(...Object.values(frequencyCounting))
 
-        const countFrequency = (favorites, key) => {
-          return favorites?.reduce((count, property) => {
-            const propertyKey = property[key].toLowerCase().replace(/\s+/g, '-');
-            count[propertyKey] = (count[propertyKey] || 0) + 1;
-            return count;
-          }, {});
-        };
+                const getLargestItems = (frequencyCounting, maxFrequency, limit) => {
+                    const allLargestItems = Object.keys(frequencyCounting).filter(
+                        (key) => frequencyCounting[key] === maxFrequency
+                    )
+                    return allLargestItems.slice(0, limit)
+                }
 
-        const getMaxFrequency = (frequencyCounting) => Math.max(...Object.values(frequencyCounting));
+                const regionFrequencyCounting = countFrequency(parsedFavorites, 'region')
+                const cityFrequencyCounting = countFrequency(parsedFavorites, 'ciudad')
 
-        const getLargestItems = (frequencyCounting, maxFrequency, limit) => {
-          const allLargestItems = Object.keys(frequencyCounting)
-            .filter((key) => frequencyCounting[key] === maxFrequency);
-          return allLargestItems.slice(0, limit);
-        };
+                const maxRegionFrequency = getMaxFrequency(regionFrequencyCounting)
+                const maxCityFrequency = getMaxFrequency(cityFrequencyCounting)
 
-        const regionFrequencyCounting = countFrequency(favorites, 'region');
-        const cityFrequencyCounting = countFrequency(favorites, 'ciudad');
+                const frequencies =
+                    maxRegionFrequency > maxCityFrequency
+                        ? getLargestItems(regionFrequencyCounting, maxRegionFrequency, 2)
+                        : getLargestItems(cityFrequencyCounting, maxCityFrequency, 2)
+                setFrequency(frequencies)
 
-        const maxRegionFrequency = getMaxFrequency(regionFrequencyCounting);
-        const maxCityFrequency = getMaxFrequency(cityFrequencyCounting);
+                const filteredProperties = propertiesData?.filter(
+                    (property) => frequencies.includes(property.ciudad) || frequencies.includes(property.region)
+                )
+                setProperties(filteredProperties || [])
+            } catch (error) {
+                console.error('Error:', error)
+            }
+        }
 
-        const frequency = maxRegionFrequency > maxCityFrequency
-          ? getLargestItems(regionFrequencyCounting, maxRegionFrequency, 2)
-          : getLargestItems(cityFrequencyCounting, maxCityFrequency, 2);
+        fetchData()
+    }, [propertiesData])
+    const state = mostFrequent(favorites, 'estado')
+    const propertyType = mostFrequent(favorites, 'tipo')
+    const maxPrice = getMaxPrice(favorites)
+    const result = finalFilteredProperties(properties, state, propertyType, maxPrice, favorites, frequency)
 
-        const resultPromises = frequency.map(city => fetchCityData(city));
-        const results = await Promise.all(resultPromises);
-
-        processResults(results);
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  return (
-    <>
-      <Navbar />
-      <section className='container-for-you'>
-        <SideMenuFavorites />
-        <section className='content-for-you'>
-          <TitleSection title={`Recomendaciones`} span={`para ti`} >
-            Recomendaciones de propiedades que se ajustan a tu búsqueda
-
-          </TitleSection>
-          <div className='container-inmuebles'>
-            {inmuebles?.map(inmueble => (
-              <ItemFavorite key={inmueble.id} itemProperty={inmueble} setUpdateFavorites={setUpdateFavorites} />
-            ))}
-
-          </div>
-        </section>
-
-      </section>
-    </>
-  );
+    return (
+        <>
+            <Navbar />
+            <section className="container-for-you">
+                <SideMenuFavorites />
+                <section className="content-for-you">
+                    <TitleSection title={`Recomendaciones`} span={`para ti`}>
+                        Recomendaciones de propiedades que se ajustan a tu búsqueda
+                    </TitleSection>
+                    <div className="container-inmuebles">
+                        {result?.map((inmueble) => (
+                            <ItemFavorite
+                                key={inmueble?.id}
+                                itemProperty={inmueble}
+                                setUpdateFavorites={setUpdateFavorites}
+                            />
+                        ))}
+                    </div>
+                </section>
+            </section>
+        </>
+    )
 }
