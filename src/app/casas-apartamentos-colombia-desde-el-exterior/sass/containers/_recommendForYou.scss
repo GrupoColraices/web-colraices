@@ -1,32 +1,38 @@
 section.container-for-you {
     margin: 0 auto;
 
-
     section.content-for-you {
         margin: 1rem auto;
 
         div.container-inmuebles {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(min(26rem, 100%), 1fr));
-            row-gap: 5rem;
             place-items: center;
         }
 
         @include tablet {
-            display: grid;
-            grid-template-columns: 30% 70%;
-            margin: 5rem 0 15rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin: 0 auto 15rem;
         }
     }
     @include tablet{
-        max-width: 122rem;
-        margin: 5rem 0;
+        display: flex;
+        align-items: flex-start;
+        height: 100%;
+        margin: 3rem 0 25rem;
+        div.container-leftBar{
+            margin-top: 16.5rem;
+        }
+
         .title-section{
-            margin: 0 auto 0 20%;
+            padding:  0 12rem;
+            margin: 0 auto 5rem;
 
         }
     }
     @include hyperDesktop{
-        margin: 5rem auto;
+        margin: 5rem 0;
     }
 }

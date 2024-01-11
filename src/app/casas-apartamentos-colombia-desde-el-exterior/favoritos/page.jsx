@@ -1,7 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation';
-import { isNull } from 'lodash';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
@@ -26,17 +25,18 @@ export default function InmFavoritos() {
     useEffect(() => {
         const dataInmFavoritos = () => {
             const response = localStorage?.getItem('favoritos');
-            if (!isNull(response)) {
+            if (response.length === 2) {
+                router.push('/casas-apartamentos-colombia-desde-el-exterior');
+
+            } else {
                 const data = JSON.parse(response);
                 setFavoritos(data);
-            } else {
-                router.push('/');
             }
             setLoading(true);
             setUpdateFavorites(false)
+
         }
         dataInmFavoritos();
-
     }, [router, updateFavorites]);
     return (
         <div>

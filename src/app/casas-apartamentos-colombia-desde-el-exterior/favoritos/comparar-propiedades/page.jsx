@@ -26,7 +26,11 @@ export default function CompareProperties() {
             if (items.find((item) => item.id === selectedItem.id)) {
                 return items.filter((item) => item.id !== selectedItem.id);
             }
-            return items.length < 3 ? [...items, selectedItem] : items;
+            if (width) {
+                return items.length < 2 ? [...items, selectedItem] : items;
+            } else {
+                return items.length < 3 ? [...items, selectedItem] : items;
+            }
         });
     }
     return (
@@ -34,11 +38,11 @@ export default function CompareProperties() {
 
             <Navbar />
             <section className='container-compare-properties'>
-                <TitleSection title={`${width ? "Compara" : "Compara y elige"}`} span={`${width ? "propiedades" : "tu hogar ideal"}`} >
-                    {width ? "Selecciona 2 propiedades para comparar" : "Selecciona, escribenos y nosotros hacemos lo demás"}
-                </TitleSection>
+                <SideMenuFavorites />
                 <section className='compare-properties-content'>
-                    <SideMenuFavorites />
+                    <TitleSection title={`${width ? "Compara" : "Compara y elige"}`} span={`${width ? "propiedades" : "tu hogar ideal"}`} >
+                        {width ? "Selecciona 2 propiedades para comparar" : "Selecciona, escribenos y nosotros hacemos lo demás"}
+                    </TitleSection>
                     {!compare ?
                         <div className='container-selectable-properties'>
                             <h2>Comparar <span>propiedades</span></h2>
