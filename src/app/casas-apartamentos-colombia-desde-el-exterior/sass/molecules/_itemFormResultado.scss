@@ -116,7 +116,7 @@
         border-radius: 12px;
         border: 1px solid $secundario;
         background-color: #F6F6F673;
-        
+
         font-size: 13px;
         font-weight: 600;
         color: $primario;
@@ -270,7 +270,12 @@
         padding: 0 1rem;
 
         .title-section-title {
-            font-size: 18px;
+            font-size: 19px;
+
+            &::before,
+            &::after {
+                top: 3.7rem;
+            }
 
             span {
                 display: block;
@@ -286,6 +291,7 @@
 
                 &::before,
                 &::after {
+                    top: 2.7rem;
                     min-width: 10%;
                 }
 
