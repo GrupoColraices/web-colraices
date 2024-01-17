@@ -84,7 +84,7 @@ export const filterProperties = (data, filters, favorites) => {
 export const finalFilteredProperties = (properties, state, propertyType, maxPrice, favorites, frequency) => {
     const filtered = filterProperties(properties, { state, type: propertyType, price: maxPrice }, favorites);
     if (frequency.length < 2) {
-        return filtered?.slice(0, 6);
+        return filtered;
     }
     const location1 = filtered
         ?.filter((item) => frequency[0] === item.ciudad || frequency[0] === item.region)
