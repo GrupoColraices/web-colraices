@@ -64,20 +64,9 @@
             max-width: 82rem;
         }
 
-        section.content-side {
-            margin-top: 4rem;
-
-        }
     }
 
-    .inmueble__formularios {
-        width: 100%;
-        display: none;
 
-        @include tablet {
-            display: block;
-        }
-    }
 
     .itemFormulario__cta {
         margin: 0.7rem auto;
