@@ -131,8 +131,8 @@ export const ItemFormResultado = () => {
                 <form onSubmit={handleSubmit(onSubmit)} id='form'>
                     <div className='container-fields'>
                         <TitleSection
-                            title={screen.width < 930 ? "Me interesa este proyecto" : "Te ayudamos a encontrar"}
-                            span={screen.width < 930 ? "Quiero más información" : "el hogar ideal"} />
+                            title={"Te ayudamos a encontrar"}
+                            span={"el hogar ideal"} />
                         <fieldset>
                             <input type="text" placeholder="Nombre Completo" {...register("name", { required: true })} />
                             {errors?.name && <p className='message-error'> Este campo es requerido</p>}
