@@ -4,6 +4,7 @@ import { Header } from '../casas-apartamentos-colombia-desde-el-exterior/Templat
 import { Animation } from '../casas-apartamentos-colombia-desde-el-exterior/molecules/Animation';
 import '../casas-apartamentos-colombia-desde-el-exterior/sass/app.scss'
 import { Toaster } from 'react-hot-toast';
+import Script from 'next/script';
 
 
 
@@ -21,6 +22,16 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
     <>
+      <Script id='HotJarAnalytics'
+        dangerouslySetInnerHTML={{
+          __html: `(function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 3262680, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+          })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');`}} />
       <ContextLikeProvider>
         <FiltroContextProvider>
           <Animation>
