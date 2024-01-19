@@ -15,14 +15,16 @@
 
         section.title-section {
             margin: 0 auto;
+            padding: 0 3.2rem;
 
             h4.title-section-title {
-                font-size: 1.9rem;
+                font-size: 1.7rem;
                 margin: 1.5rem auto 1rem auto;
                 color: $primario;
 
                 &::before,
                 &::after {
+                    top: 3.7rem;
                     min-width: 10%;
                 }
 
@@ -54,8 +56,9 @@
             }
         }
 
-        .itemFormulario__button,.itemFormulario__button-call {
-         
+        .itemFormulario__button,
+        .itemFormulario__button-call {
+
             font-size: 1.8rem;
             padding: 1rem 8rem;
             margin: 0 auto;
@@ -63,10 +66,12 @@
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
             transition: all .3s ease-in-out;
         }
-        .itemFormulario__button{
+
+        .itemFormulario__button {
             color: $blanco;
             background-color: $primario2;
             border: 1px solid $blanco;
+
             &:hover {
                 cursor: pointer;
                 color: $secundario;
@@ -74,10 +79,12 @@
                 background-color: $blanco;
             }
         }
-        .itemFormulario__button-call{
+
+        .itemFormulario__button-call {
             color: $primario;
             background-color: $blanco;
             border: 1px solid $secundario;
+
             &:hover {
                 cursor: pointer;
                 color: $blanco;
@@ -95,7 +102,7 @@
             width: 100%;
             column-gap: .5rem;
 
-            
+
         }
     }
 }

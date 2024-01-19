@@ -8,6 +8,7 @@ section.container-for-you {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(min(26rem, 100%), 1fr));
             place-items: center;
+            row-gap: 3.4rem;
         }
 
         @include tablet {
@@ -15,24 +16,31 @@ section.container-for-you {
             flex-direction: column;
             justify-content: flex-start;
             margin: 0 auto 15rem;
+
+            div.container-inmuebles {
+                row-gap: 2rem;
+            }
         }
     }
-    @include tablet{
+
+    @include tablet {
         display: flex;
         align-items: flex-start;
         height: 100%;
         margin: 3rem 0 25rem;
-        div.container-leftBar{
+
+        div.container-leftBar {
             margin-top: 16.5rem;
         }
 
-        .title-section{
-            padding:  0 12rem;
+        .title-section {
+            padding: 0 12rem;
             margin: 0 auto 5rem;
 
         }
     }
-    @include hyperDesktop{
+
+    @include hyperDesktop {
         margin: 5rem 0;
     }
 }

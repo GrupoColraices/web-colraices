@@ -25,13 +25,12 @@ export default function InmFavoritos() {
     useEffect(() => {
         const dataInmFavoritos = () => {
             const response = localStorage?.getItem('favoritos');
-            if (response.length === 2) {
+            const stored_data_as_JSON = JSON.parse(response);
+            if (stored_data_as_JSON?.length === 0 || stored_data_as_JSON === null) {
                 router.push('/casas-apartamentos-colombia-desde-el-exterior');
-
-            } else {
-                const data = JSON.parse(response);
-                setFavoritos(data);
             }
+            const data = JSON.parse(response);
+            setFavoritos(data);
             setLoading(true);
             setUpdateFavorites(false)
 
