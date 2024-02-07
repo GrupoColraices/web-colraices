@@ -120,15 +120,15 @@ export const ItemInmueble = ({ dataInmueble, Elim }) => {
                         sites={["facebook", "whatsapp", "mail", "telegram"]}
                         data={{
                             text: `${titulo}  ${descripcion}`,
-                            url: `${window.location.href}${slug}`,
+                            url: `${typeof window !== 'undefined' ? window.location.href : ''}${slug}`,
                             title: "Vitrina Colombia",
                         }}
                         onClick={() => console.log("shared successfully!")}
                     >
-                        <button><BsShareFill /></button>
+                        <button aria-label="Compartir inmueble en redes sociales"><BsShareFill /></button>
                     </RWebShare>
                     {!Elim &&
-                        <button onClick={liked ? () => handelDeleteIcon(dataInmueble) : () => handelLikeInmueble()}>
+                        <button aria-label={liked ? "Eliminar de favoritos" : "Agregar a favoritos"} onClick={liked ? () => handelDeleteIcon(dataInmueble) : () => handelLikeInmueble()}>
                             {liked ?
                                 <BsSuitHeartFill />
                                 :
