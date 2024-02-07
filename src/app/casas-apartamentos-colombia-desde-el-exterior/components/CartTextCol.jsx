@@ -1,5 +1,3 @@
-'use client'
-
 export const CartTextCol = (props) => {
     return (
         <article className='cartTextCol' data-aos="fade-down" >
