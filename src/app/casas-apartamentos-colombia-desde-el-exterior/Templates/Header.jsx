@@ -33,16 +33,19 @@ export const Header = () => {
                     checked={isOpen} onChange={handleToggle} />
                 <ul className={`dropdown__list ${isOpen ? 'open' : ''}`}>
                     {links?.slice(1)?.map((option) => (
-                        <Link href={option.url}
-                            key={option.id} data-option={option?.label}
-                            className={selectedOption === option.label ? 'active' : ''}
-                            onClick={() => handleOptionClick(option.label)}
-                        >
-                            {option?.label}
-                        </Link>
+                        <li key={option.id} className="dropdown__item">
+                            <Link
+                                href={option.url}
+                                data-option={option?.label}
+                                className={selectedOption === option.label ? 'active' : ''}
+                                onClick={() => handleOptionClick(option.label)}
+                            >
+                                {option?.label}
+                            </Link>
+                        </li>
 
                     ))}
-                    <a href="#contact">Contacto</a>
+                    <li className='dropdown__item'><a href="#contact">Contacto</a></li>
                 </ul>
             </nav>
         </header>
