@@ -201,15 +201,18 @@ export default function Filter({
                     <h2>No. Habitaciones</h2>
                     <ul className="items__list">
                         {optionsRooms?.map((option, index) =>
-                            <li key={index}><input
-                                name={'rooms'}
-                                className="field__checkbox"
-                                type="checkbox"
-                                value={option.value}
-                                checked={inputs.rooms === option.value}
-                                onChange={(e) =>
-                                    handleInputs({ name: e.target.name, value: e.target.checked ? e.target.value : '0' })} />
-                                {option.label}
+                            <li key={index}>
+                                <label>
+                                    <input
+                                        name={'rooms'}
+                                        className="field__checkbox"
+                                        type="checkbox"
+                                        value={option.value}
+                                        checked={inputs.rooms === option.value}
+                                        onChange={(e) =>
+                                            handleInputs({ name: e.target.name, value: e.target.checked ? e.target.value : '0' })} />
+                                    {option.label}
+                                </label>
                             </li>)}
                     </ul>
                 </div>
@@ -218,15 +221,17 @@ export default function Filter({
                     <ul className="items__list">
                         {optionsBaths?.map((option, index) =>
                             <li key={index}>
-                                <input
-                                    name={'baths'}
-                                    className="field__checkbox"
-                                    type="checkbox"
-                                    value={option.value}
-                                    checked={inputs.baths === option.value}
-                                    onChange={(e) =>
-                                        handleInputs({ name: e.target.name, value: e.target.checked ? e.target.value : '0' })} />
-                                {option.label}
+                                <label>
+                                    <input
+                                        name={'baths'}
+                                        className="field__checkbox"
+                                        type="checkbox"
+                                        value={option.value}
+                                        checked={inputs.baths === option.value}
+                                        onChange={(e) =>
+                                            handleInputs({ name: e.target.name, value: e.target.checked ? e.target.value : '0' })} />
+                                    {option.label}
+                                </label>
                             </li>)}
                     </ul>
                 </div>
