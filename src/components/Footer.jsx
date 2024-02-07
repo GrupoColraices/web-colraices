@@ -11,14 +11,16 @@ export const Footer = () => {
                 <Link href={'/'}>
                     <img className='logo' src="/portal-inmobiliario/img/colraicesInmobiliario/home/logo.svg" alt="logo" />
                 </Link>
-                {infoContact?.map((item) =>
+                {infoContact?.map((item, index) =>
                     <p key={item.id}>
                         <a href={item.map} target='_blank'>
                             <strong> {item.office} </strong>
                             {item.address}
                         </a>
                         <span> {item.phoneNumber && 'Teléfono:'} {item.phoneNumber} </span>
-                        <a href={`mailto:${item.email}`}>{item.email}</a>
+                        {index === 0 && (
+                            <a href={`mailto:${item?.email}`}>{item?.email}</a>
+                        )}
                     </p>
                 )}
 
@@ -26,13 +28,13 @@ export const Footer = () => {
                     <div className='container-list-link'>
                         <ul>
                             {linksFooter?.map((item) =>
-                                <a key={item.id} href={item.url} target='_blank'><li>{item.name}</li></a>
+                                <li key={item.id}><a href={item.url} target='_blank'>{item.name}</a></li>
                             )}
                         </ul>
                         <ul>
                             <li>Política de privacidad</li>
                             <li>Mapa del sitio</li>
-                            <a href="https://agenciamomentum.co/" target="_blank"><li>{new Date().getFullYear()} Momentum</li></a>
+                            <li><a href="https://agenciamomentum.co/" target="_blank">{new Date().getFullYear()} Momentum</a></li>
                         </ul>
                     </div>
                 </nav>
