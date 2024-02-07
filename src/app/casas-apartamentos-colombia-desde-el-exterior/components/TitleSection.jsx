@@ -1,5 +1,3 @@
-'use client'
-
 export const TitleSection = (props) => {
     return (
         <section className={`title-section ${props.shadow && 'shadow'}`} data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="111" data-aos-offset="0">
