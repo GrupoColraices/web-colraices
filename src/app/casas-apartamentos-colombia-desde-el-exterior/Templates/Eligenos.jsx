@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic'
-import { TitleSection } from '../components/TitleSection'
+import TitleSection from '../components/TitleSection'
 const ItemEligenos = dynamic(() => import('../molecules/ItemEligenos'))
 
 export const Eligenos = () => {
