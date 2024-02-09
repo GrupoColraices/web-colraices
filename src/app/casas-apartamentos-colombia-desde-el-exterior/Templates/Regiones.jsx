@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from "react";
 import { Link } from "next/link";
-import { TitleSection } from "../components/TitleSection";
+import TitleSection from "../components/TitleSection";
 import { ItemRegion } from "../molecules/ItemRegion";
 import { APIURL } from '../config';
 
