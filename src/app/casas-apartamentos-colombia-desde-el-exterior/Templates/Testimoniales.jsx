@@ -1,6 +1,6 @@
 
-import { TitleSection } from "../components/TitleSection";
-import { Testimonial } from "../molecules/Testimonial";
+import TitleSection from "../components/TitleSection";
+import Testimonial from "../molecules/Testimonial";
 import { testimonios } from "../helpers/options";
 
 export const Testimoniales = () => {
