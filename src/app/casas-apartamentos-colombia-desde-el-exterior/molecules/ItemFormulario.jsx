@@ -1,7 +1,7 @@
 'use client'
 import React, { useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { TitleSection } from "../components/TitleSection";
+import TitleSection from "../components/TitleSection";
 import { usePathname } from "next/navigation";
 
 
