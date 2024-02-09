@@ -3,20 +3,65 @@
 
 section.Property-container {
     position: relative;
+    padding-top: 25px;
+    padding-bottom: 30px;
 
     h2 {
         position: relative;
         font-weight: 700;
-        font-size: 1.5rem;
-        line-height: 1.8rem;
+        font-size: 20px;
         text-align: center;
-        margin: 1.7rem auto 4.5rem auto;
-
-        span {
-            color: $primary;
-        }
         max-width: 100rem;
-        width: 95%;
+        @include laptop{
+            .timeline{
+                display: none;
+            }
+        }
+    }
+
+    div.title-container{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        p{
+            color: var(--AZUL-COLRAICES, #2A3F77);
+            text-align: center;
+            
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+
+        .timeline-desktop{
+            display: none;
+        }
+
+        @include laptop{
+            padding: 65px 84px 26px 144px;
+            justify-content: center;
+            align-items: center;
+            gap: 22px;
+            p{
+                font-size: 35px;
+                margin: 0;
+                width: 100%;
+            }
+            
+            .container-timeline{
+                display: flex;
+                justify-content: center;
+                gap: 80px;
+            }
+            
+            .timeline-desktop{
+                position: relative;
+                width: 130px;
+                display: block;
+            }
+
+        }
     }
 
     div.Property-title {
@@ -29,22 +74,6 @@ section.Property-container {
         border-radius: 0px 8px 8px 8px;
         margin: 0 auto 3rem auto;
         grid-area: title;
-
-        h3 {
-            font-weight: 700;
-            font-size: 1.4rem;
-            color: $white;
-            line-height: 1.7rem;
-            text-align: center;
-        }
-    }
-
-    div.Property-slider {
-        display: grid;
-        grid-template-areas:
-            'title'
-            'slider'
-            'paragraph';
     }
 
     p {
@@ -57,75 +86,16 @@ section.Property-container {
         text-align: justify;
     }
 
-    p:nth-of-type(2) {
-        margin: 0 auto 2.7rem auto;
-
-        span {
-            font-weight: 700;
-        }
-    }
-
-    button.Property-button {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 16.6rem;
-        height: 3.1rem;
-        background: $primary-alt;
-        border: 1px solid $white;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 4.9rem;
-        margin: 0 auto 2.5rem auto;
-        padding: 0 0 0 0.5rem;
-        transition: all 0.3s;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-
-        a {
-            font-weight: 700;
-            font-size: 1.4rem;
-            line-height: 3rem;
-            color: $white;
-
-            &::after {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 0;
-                height: 100%;
-                width: 100%;
-                background-color: $secondary;
-                z-index: -1;
-                border-radius: 10rem;
-                transition: 0.3s ease all;
-                transform: scale(0, 1);
-                transform-origin: top right;
-                transition: transform 500ms cubic-bezier(0.86, 0, 0.07, 1);
-                transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-            }
-
-            &:hover::after {
-                transform: scale(1, 1);
-                transform-origin: top left;
-            }
-        }
-    }
 
     @include laptop {
-        padding: 5rem 0 6rem 0;
-        box-shadow: 3.18px 3.18px 10.58px rgba(102, 101, 101, 0.58);
-
-        div.Property-border {
-            max-width: 110rem;
-            width: 95%;
-            margin: 0 auto;
-        }
-
+        // padding: 5rem 0 6rem 0;
+        // box-shadow: 3.18px 3.18px 10.58px rgba(102, 101, 101, 0.58);
+        padding: 0;
         h2 {
-            font-size: 3.5rem;
+            display: flex;
+            font-size: 48px;
             line-height: 4.3rem;
-            margin: 5rem auto 7rem auto;
+            margin: 0;
         }
 
         div.Property-title {
@@ -133,43 +103,13 @@ section.Property-container {
             height: 6rem;
             align-self: end;
             margin: 0 0 5rem 0;
-
-            h3 {
-                font-size: 3.5rem;
-                line-height: 4.3rem;
-            }
-        }
-
-        div.Property-slider {
-            margin: 0 auto;
-            grid-template-areas:
-                'slider title'
-                'slider paragraph';
         }
 
         p {
             font-size: 2.4rem;
             line-height: 3rem;
-            max-width: 47rem;
+            max-width: fit-content;
         }
 
-        p:last-of-type {
-            margin: 0 0 5rem 0;
-        }
-
-        button.Property-button {
-            width: 23.8rem;
-            height: 4.3rem;
-            margin-top: 6rem;
-
-            img {
-                width: 2.6rem;
-                height: 2.6rem;
-            }
-
-            a {
-                font-size: 2rem;
-            }
-        }
     }
 }

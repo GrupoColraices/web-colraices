@@ -1,66 +1,153 @@
 @import '../../base/variables';
 @import '../../base/mixins';
 
-section.Banner-container {
-    @include laptop {
-        max-width: 110rem;
-        height: 100vh;
-        width: 95%;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+.container-flex{
+    display: flex;
+    flex-direction: column;
+
+    .partners-desktop{
+        display: none;
     }
+
+    @include laptop{
+        .partners-desktop{
+            display: block;
+            padding: 0 84px 0 144px;
+        }
+    }
+}
+
+section.Banner-container {
+
+    @include laptop {
+        width: 100%;
+        padding: 0 20px 0 20px;
+        display: flex;
+        // gap: 129px;
+        .partners{
+            display: none;
+        }
+    }
+
+    @include desktop {
+        width: 100%;
+        padding: 0 84px 0 144px;
+        display: flex;
+        gap: 1rem;
+    }
+
+    @include desktopxl {
+        width: 100%;
+        padding: 0 84px 0 144px;
+        display: flex;
+        gap: 119px;
+    }
+    
+
     div.Banner-title {
+
         h1 {
-            font-size: 3.2rem;
-            margin: 0;
+            width: 230px;
+            font-size: 24px;
+            margin: auto;
         }
+
         p {
-            font-weight: 500;
+            font-weight: 700;
             text-align: center;
+            font-size: 24px;
             margin: 0;
-            color: $primary;
+            color: $secondary;
         }
+
+        
+        div.container-buttons-desktop{
+            display: none;
+        }
+
         @include laptop {
-            align-self: center;
-            justify-self: center;
-            h1 {
-                font-size: 4.6rem;
+            padding-top: 84px;
+            h1{
+                width: 461px;
+                color: var(--AZUL-COLRAICES, #2A3F77);
+                
+                font-size: 48px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                margin: 0;
+                text-align: start;
                 span {
                     font-size: 4.9rem;
                 }
             }
-            p {
-                font-size: 2.6rem;
+
+            p{
+                font-size: 50px;
+                margin: 0;
+                width: 628px;
+                text-align: start;
+                color: var(--SUBITULO-HOME, #CAA55E);
+                
+                font-size: 50px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+
+            div.container-buttons-desktop{
+                display: flex;
+                margin-top: 50px;
+                gap: 24px;
+                padding-bottom: 49px;
             }
         }
     }
     article {
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-        gap: 1rem;
-        grid-template-areas: 'icons picture';
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 41px 0 3rem 0;
 
-        div.Banner-icons-container {
-            width: 100%;
-            display: grid;
-            gap: 1.5rem;
-            @include laptop {
-                gap: 1rem;
+        div.container-buttons{
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            padding-bottom: 49px;
+
+            @include laptop{
+                display: none;
             }
-            grid-area: icons;
         }
+
         section {
             place-self: center;
             grid-area: picture;
-            img {
-                width: 50rem;
-                height: 100%;
+            .bannerMobile {
+                width: 276px;
+                height: 349px;
+            }
+            .bannerDesktop {
+                display: none;
             }
         }
+
         @include laptop {
             grid-template-areas: 'picture icons';
             grid-template-columns: 3fr 1fr;
+            padding: 0;
+            margin-bottom: 20px;
+
+            section {
+                .bannerMobile {
+                    display: none;
+                }
+                .bannerDesktop {
+                    width: 530px;
+                    height: 603px;
+                    display: block;
+                }
+            }
         }
     }
 }

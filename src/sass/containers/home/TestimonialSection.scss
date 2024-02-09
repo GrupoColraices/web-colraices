@@ -4,79 +4,71 @@
 section.Testimonial-container {
     padding: 0 3rem;
     margin: 4rem auto 0rem auto;
+    position: relative;
+    background: #FFFF;
 
-    div {
-        h2 {
-            font-weight: 600;
-            font-size: 2.8rem;
-            line-height: 3.4rem;
-            text-align: center;
-            color: $primary;
-            margin: 0 auto;
-            max-width: 32rem;
+    .testimonial-texts {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 47px;
 
+        .text-title{
+            display: flex;
+            flex-direction: column;
+            div{
+                position: relative;
+            }
+            h2 {
+                font-weight: 600;
+                font-size: 2.8rem;
+                line-height: 3.4rem;
+                text-align: center;
+                color: $primary;
+                margin: 0 auto;
+                max-width: 32rem;
+            }
+            
             span {
                 color: $secondary;
-            }
-        }
-
-        p {
-            font-weight: 400;
-            font-size: 1.8rem;
-            line-height: 2.2rem;
-            text-align: center;
-            margin: 5rem auto 2rem auto;
-            max-width: 30rem;
-        }
-
-        button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 29.3rem;
-            height: 3.8rem;
-            background: $white-alt;
-            border: 1px solid $secondary;
-            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
-            border-radius: 19px;
-            margin: 0 auto 6rem auto;
-            padding: 0 0 0 0.5rem;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-
-            a {
-                font-weight: 700;
-                font-size: 1.7rem;
-                line-height: 2.1rem;
+                color: var(--DORADO-COLRAICES, #CAA55E);
                 text-align: center;
-                color: $secondary;
+                
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+            p{
+                display: none;
+            }
 
-                &:hover {
-                    color: $white;
+            @include laptop{
+                div div{
+                    display: none;
                 }
 
-                &::after {
-                    content: "";
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    height: 100%;
-                    width: 100%;
-                    background-color: $secondary;
-                    z-index: -1;
-                    border-radius: 10rem;
-                    transition: 0.3s ease all;
-                    transform: scale(0, 1);
-                    transform-origin: top right;
-                    transition: transform 500ms cubic-bezier(0.86, 0, 0.07, 1);
-                    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+                h2{
+                    font-size: 60px;
+                    text-align: start;
+                    margin: 0;
                 }
 
-                &:hover::after {
-                    transform: scale(1, 1);
-                    transform-origin: top left;
+                span{
+                    font-size: 60px;
+                    text-align: start;
+                }
+
+                p{
+                    display: block;
+                    color: #000;
+                    text-align: justify;
+                    
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    width: 466px;
+                    max-width: none;
                 }
             }
         }
@@ -89,7 +81,7 @@ section.Testimonial-container {
     @include laptop {
         display: flex;
         justify-content: space-evenly;
-        align-items: start;
+        align-items: flex-start;
         margin-top: 15rem;
 
         div {

@@ -1,0 +1,108 @@
+.itemFormulario {
+    margin-top: 6rem;
+    padding: 2rem 0;
+    border-radius: 12px;
+    background-color: $blanco;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+
+    .itemFormulario__form {
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        section.title-section {
+            margin: 0 auto;
+            padding: 0 3.2rem;
+
+            h4.title-section-title {
+                font-size: 1.7rem;
+                margin: 1.5rem auto 1rem auto;
+                color: $primario;
+
+                &::before,
+                &::after {
+                    top: 3.7rem;
+                    min-width: 10%;
+                }
+
+                span {
+                    display: block;
+                }
+            }
+        }
+
+        .itemFormulario__input,
+        .itemFormulario__textarea {
+            font-size: 15px;
+            font-weight: 300;
+            color: $gris;
+            max-width: 28rem;
+            width: 100%;
+            font-size: 1.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            border: 1px solid $secundario;
+            background-color: $blanco;
+
+            &:focus {
+                outline-style: solid;
+                outline-width: .2rem;
+                outline-color: $primario;
+                box-shadow: 0 -1px 19px 0 rgba(3, 101, 172, 0.14);
+            }
+        }
+
+        .itemFormulario__button,
+        .itemFormulario__button-call {
+
+            font-size: 1.8rem;
+            padding: 1rem 8rem;
+            margin: 0 auto;
+            border-radius: 6px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            transition: all .3s ease-in-out;
+        }
+
+        .itemFormulario__button {
+            color: $blanco;
+            background-color: $primario2;
+            border: 1px solid $blanco;
+
+            &:hover {
+                cursor: pointer;
+                color: $secundario;
+                border: 1px solid $secundario;
+                background-color: $blanco;
+            }
+        }
+
+        .itemFormulario__button-call {
+            color: $primario;
+            background-color: $blanco;
+            border: 1px solid $secundario;
+
+            &:hover {
+                cursor: pointer;
+                color: $blanco;
+                border: 1px solid $secundario;
+                background-color: $secundario;
+            }
+
+        }
+
+        .itemFormulario__cta {
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            column-gap: .5rem;
+
+
+        }
+    }
+}

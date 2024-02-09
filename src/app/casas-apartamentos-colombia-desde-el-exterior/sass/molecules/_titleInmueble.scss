@@ -1,0 +1,63 @@
+.title__inmueble {
+    padding: 2rem 0 0;
+
+    .title__inmueble__title {
+        max-width: 40rem;
+        font-size: clamp(2rem, 0.6909rem + 2.4851vw, 2.8125rem);
+        font-weight: 700;
+        color: $primario;
+    }
+
+    .title__inmueble__subtitle {
+        margin: 1rem 0 0;
+        font-size: clamp(1.5625rem, 1.4554rem + 0.4762vw, 1.8125rem);
+        font-weight: 600;
+        color: $secundario;
+
+        @include tablet {
+            margin: 2rem 0 0;
+        }
+    }
+
+    .title__inmueble__location {
+        display: flex;
+        align-items: center;
+
+        svg {
+            width: 3rem;
+            height: 3rem;
+            margin-right: -.5rem;
+            color: $secundario;
+        }
+
+        p {
+            font-size: clamp(1.5625rem, 1.4554rem + 0.4762vw, 1.8125rem);
+            font-weight: 300;
+            margin-left: 1rem;
+            color: #4D4D4D;
+        }
+
+    }
+
+    button.button-favorite {
+        display: none;
+    }
+
+    @include telefono {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button.button-favorite {
+            display: flex;
+            margin-top: 2rem;
+            padding: 1rem;
+        }
+
+    }
+
+    @include tablet {
+        max-width: 70rem;
+        align-items: flex-start;
+    }
+}

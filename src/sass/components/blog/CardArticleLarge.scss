@@ -1,0 +1,52 @@
+@import '../../base/mixins';
+
+.card-article-large{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    .image{
+        width: 295px;
+        height: 160px;
+        border-radius: 10px;
+        background: var(--Gris, #F2F2F2);
+        margin-bottom: 8px;
+    }
+
+    .title{
+        color: var(--Azul-Colraices, #2A3F77);
+        text-align: justify;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin: 0;
+    }
+
+    .description{
+        color: var(--Azul-Colraices, #2A3F77);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin: 0;
+    }
+
+    .author{
+        color: var(--SUBITULO-HOME, #CAA55E);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin: 0;
+    }
+
+    @include laptop{
+        max-width: 322px;
+
+        .image{
+            min-width: 322px;
+            min-height: 175px;
+        }
+    }
+}

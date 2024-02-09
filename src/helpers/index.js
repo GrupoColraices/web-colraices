@@ -1,18 +1,8 @@
 //?Navbar links
 export const navbarLinks = [
-    { label: 'Inmuebles', href: 'https://colraices.com/vitrina-colombia' },
-    { label: 'Crédito', href: '/credito' },
-    { label: 'Contacto', href: '/contacto' },
-    { label: 'Blog', href: '/blog' },
-]
-
-//!Home banner icons
-export const iconsData = [
-    { id: 1, icon: '/icons/online_credit_icon.svg', label: 'Crédito en línea' },
-    { id: 2, icon: '/icons/datacredito_icon.svg', label: 'Elimina tus reportes en Datacredito' },
-    { id: 3, icon: '/icons/steps_icon.svg', label: 'El paso a paso' },
-    { id: 4, icon: '/icons/pension_icon.svg', label: 'Pensiones' },
-    { id: 5, icon: '/icons/client_portal_icon.svg', label: 'Portal Cliente' },
+    { label: 'Encuentra tu casa', href: '/casas-apartamentos-colombia-desde-el-exterior' },
+    { label: 'Financia tu casa', href: 'https://financiatucasa.carrd.co' },
+    { label: 'Guía para comprar tu casa', href: '/proximamente' },
 ]
 
 //!Home banner section partners logos
@@ -53,26 +43,46 @@ export const constructionCompany = [
 export const servicesCards = [
     {
         image: '/buena-data.jpg',
-        title: 'Buena Data',
+        title: 'Gestionamos tu crédito',
         content:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, recusandae eaque excepturi.',
-        icon: '/icons/datacredito_icon.svg',
+            '¿Quieres una casa en Colombia? Te decimos cuánto te prestan, ¡gratis y sin esperas!',
+        icon: '/icons/credit_icon.svg',
     },
     {
         image: '/pensiones.jpg',
-        title: 'Pensiones',
-        content:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, recusandae eaque excepturi.',
-        icon: '/icons/pension_icon.svg',
+        title: 'Encontramos tu inmueble',
+        content: 'Te escuchamos y asesoramos en la forma más rentable de invertir y encontramos para ti el inmueble ideal.',
+        icon: '/icons/casa.png',
     },
     {
         image: '/credito.jpg',
-        title: 'Crédito',
+        title: 'Monetizamos tu dinero',
         content:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, recusandae eaque excepturi.',
-        icon: '/icons/credit_icon.svg',
+            'Te acompañamos y asesoramos en el envío de tus divisas a Colombia. Para que puedas invertirlas en el inmueble que elijas.',
+        icon: '/icons/credit_world.svg',
     },
 ]
+
+//! Home service section recommended projects
+export const recommendedProjects = [
+    {
+        id: 1,
+        image: '/components/carouselRecommendedProjects/project1.svg',
+    },
+    {
+        id: 2,
+        image: '/components/carouselRecommendedProjects/project2.svg',
+    },
+    {
+        id: 2,
+        image: '/components/carouselRecommendedProjects/project3.svg'
+    },
+    {
+        id: 3,
+        image: '/components/carouselRecommendedProjects/project4.svg',
+    }
+]
+
 
 //! Home history section cards
 export const historyData = [
@@ -83,7 +93,7 @@ export const historyData = [
         span: 'atendidos en todo el mundo',
         image: 'icons/colombianosIcon.svg',
     },
-    { id: 3, title: '11 mil', span: 'negocios', image: 'icons/negociosIcon.svg' },
+    { id: 3, title: '11 mil', span: 'negocios concretados', image: 'icons/negociosIcon.svg' },
 ]
 
 //! Home testimonials section cards
@@ -91,7 +101,7 @@ export const historyData = [
 export const testimonialsData = [
     {
         id: 1,
-        title: 'Testimonio de cliente',
+        title: 'Testimonio banco aliado',
         content:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus lacus, molestie vitae pretium at, gravida sit amet dui. Morbi ut tempus ante, vel mattis lorem. Proin vel',
     },
@@ -103,7 +113,7 @@ export const testimonialsData = [
     },
     {
         id: 3,
-        title: 'Testimonio de cliente',
+        title: 'Testimonio constructora',
         content:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus lacus, molestie vitae pretium at, gravida sit amet dui. Morbi ut tempus ante, vel mattis lorem. Proin vel',
     },
@@ -112,13 +122,39 @@ export const testimonialsData = [
 //! Footer section data
 export const infoContact = [
     {
-        id: 1,
-        office: 'Colraices - Oficina principal Ibagué, Colombia',
-        address: 'Calle 47 # 4-61',
-        addressMadrid: 'Av Mediterráneo 5, 1G, Madrid, Spain 28007',
-        addressAlemania: 'Katharinenplatz 57, Muhldorf Alemania.',
-        phoneNumber: '(57) 601 328 8939',
-        whatsapp: '15136479405',
-        email: 'info@colraices.co',
+      id: 1,
+      office: 'Colraices - Oficina principal Ibagué, Colombia',
+      address: 'Calle 47 # 4-61 ',
+      phoneNumber: '(57) 601 328 8939',
+      whatsapp: '15136479405',
+      email: 'info@colraices.co',
+      map: 'https://maps.app.goo.gl/yJqorhEuqYRg6SR79'
     },
+    {
+      id: 2,
+      office: 'Oficina Madrid, España',
+      address: 'Av Mediterráneo 5, 1G, Madrid, Spain 28007',
+      map: ''
+    },
+    {
+      id: 3,
+      office: 'Oficina Mühldorf, Alemania',
+      address: 'Katharinenplatz 57, Muhldorf Alemania.',
+      map: 'https://maps.app.goo.gl/419cNsRz3jsedZsN7'
+    }
+]
+
+export const linksFooter = [
+    { id: 1, name: 'Inmuebles', url: '' },
+    { id: 2, name: 'Favoritos', url: '/favoritos' },
+    { id: 3, name: 'Contacto', url: '' }
+]
+
+export const socialNetworks = [
+    { id: 1, name: 'facebook', url: 'https://www.facebook.com/colraices', src: '/icons/facebook.svg' },
+    { id: 2, name: 'instagram', url: 'https://www.instagram.com/colraices', src: '/icons/instagram.svg' },
+    { id: 3, name: 'linkedin', url: 'https://www.linkedin.com/company/colraices/mycompany', src: '/icons/linkedin.svg' },
+    { id: 4, name: 'whatsapp', url: 'https://api.whatsapp.com/send/?phone=15136479405', src: '/icons/whatsapp.svg' },
+    { id: 5, name: 'youtube', url: 'https://www.youtube.com/c/Colraicesserviciosinmobiliariosfinancieros', src: '/icons/youtube.svg' },
+  
 ]
