@@ -12,7 +12,7 @@ import { BannerInmueble } from '../Templates/BannerInmueble';
 import { InmSimilares } from '../Templates/InmSimilares';
 import { FilterSmall } from '../molecules/BarSearch/FilterSmall';
 import { BarSearch } from '../molecules/BarSearch';
-import { TitleSection } from '../components/TitleSection';
+import TitleSection from '../components/TitleSection';
 export const Inmueble = ({ inmueble, response }) => {
     const { titulo, descripcion, baños, habitaciones, garajes, area_const, fecha_const, pro_ser, region, ciudad, like, imagenes, planos, tipo, url, num_img } = inmueble;
     const similaresRegion = response.similares_region;
