@@ -1,6 +1,9 @@
+import million from "million/compiler";
 /** @type {import('next').NextConfig} */
-const path = require('path')
+import path from 'path';
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const nextConfig = {
+  reactStrictMode: true,
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
@@ -16,4 +19,5 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+
+export default million.next(nextConfig);
