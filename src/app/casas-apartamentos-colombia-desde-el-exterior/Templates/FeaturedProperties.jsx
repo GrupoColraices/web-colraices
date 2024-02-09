@@ -1,27 +1,29 @@
-import dynamic from 'next/dynamic';
-const ItemFeatured = dynamic(() => import('../molecules/ItemFeatured'))
-const ItemTextFeatured = dynamic(() => import('../molecules/ItemTextFeatured'))
-import { APIURL } from '../config';
+'use client'
+import ItemFeatured from '../molecules/ItemFeatured';
+import ItemTextFeatured from '../molecules/ItemTextFeatured';
 import { itemsEligenos } from '../helpers/options';
+import { block } from 'million/react';
+import { useEffect, useState } from 'react';
 
+export default block(function FeaturedProperties({ inmFeatured }) {
+    const [isClient, setIsClient] = useState(false)
 
-export const FeaturedProperties = async () => {
-    const fetching = await fetch(`${APIURL}likes`);
-    const response = await fetching.json();
-    const inmFeatured = response?.data;
+    useEffect(() => {
+        setIsClient(true)
+    }, [])
     return (
-        <section className='container-featured'>
-            <div className='container-items-featured'>
-                <h1>Explora nuestras <span> propiedades destacadas</span></h1>
-                <ul>
-                    {itemsEligenos.map((item) => (
-                        <li key={item.id}><img src={item.src} alt="Text icon" /><p>{item.text}</p></li>
-                    ))}
-
-                </ul>
-            </div>
-            <ItemFeatured itemProperty={inmFeatured} />
-            <ItemTextFeatured itemsEligenos={itemsEligenos} />
-        </section>
-    )
-}
+        isClient && (
+            <section className='container-featured'>
+                <div className='container-items-featured'>
+                    <h1>Explora nuestras <span> propiedades destacadas</span></h1>
+                    <ul>
+                        {itemsEligenos.map((item) => (
+                            <li key={item.id}><img src={item.src} alt="Text icon" /><p>{item.text}</p></li>
+                        ))}
+                    </ul>
+                </div>
+                <ItemFeatured itemProperty={inmFeatured} />
+                <ItemTextFeatured />
+            </section>
+        ))
+})
