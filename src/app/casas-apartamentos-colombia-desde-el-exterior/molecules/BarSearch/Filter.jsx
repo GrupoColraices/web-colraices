@@ -105,10 +105,10 @@ export default function Filter({
             </div>
             <div className="container__search">
                 <ul className={"list__options"}>
-                    {filtered.length === 0 && labelFilter.length !== 0 && !labelFilter.includes(',') ?
+                    {filtered?.length === 0 && labelFilter?.length !== 0 && !labelFilter.includes(',') ?
                         <li>No se encontraron resultados</li>
                         :
-                        filtered.map((item) => (
+                        filtered?.map((item) => (
                             <li key={item.label}
                                 onClick={() => {
                                     setInputs({ ...inputs, city: item.slug });
