@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import Navbar from '../../components/Navbar'
-import { TitleSection } from '../../components/TitleSection'
+import TitleSection from '../../components/TitleSection'
 import { SideMenuFavorites } from '../../components/SideMenuFavorites'
 import { useCurrency } from '../../hooks/useCurrency'
 import { CompareFavorites } from '../../Templates/CompareFavorites'
