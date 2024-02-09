@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { MdLocationOn } from 'react-icons/md'
 import { useCurrency } from '../hooks/useCurrency'
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -38,9 +39,9 @@ export default function ItemFeatured({ itemProperty }) {
                         <div className='container-item-featured'>
                             <article>
                                 <div>
-                                    <img src={item.thumbnail} alt="Image Property" />
+                                    <Image width={327} height={327} src={item.thumbnail} alt="Image Property" />
                                 </div>
-                                <h3>{item.titulo}</h3>
+                                <h1>{item.titulo}</h1>
                                 <p className='price'>Desde {formatePrice(item.precio)} COP</p>
                                 <p className='ubication'><MdLocationOn className="icon" />{item.ciudad} - {item.region}</p>
                                 <ul className='information'><li>Desde {item.area_const}m²</li> <li>{item.habitaciones} Hab</li> <li>{item.baños} Baños</li></ul>
