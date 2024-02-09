@@ -5,7 +5,7 @@ import ItemFavorite from '../../molecules/ItemFavorite'
 import { APIURL } from '../../config'
 import Navbar from '../../components/Navbar'
 import { SideMenuFavorites } from '../../components/SideMenuFavorites'
-import { TitleSection } from '../../components/TitleSection'
+import  TitleSection from '../../components/TitleSection'
 import { finalFilteredProperties, getMaxPrice, mostFrequent, mostFrequentType } from '../../helpers/filterFavorite'
 
 export default function RecommendedForYou() {
