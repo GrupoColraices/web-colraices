@@ -12,7 +12,7 @@ import LinearProgress from '@mui/material/LinearProgress';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import 'react-international-phone/style.css';
-import { TitleSection } from "../components/TitleSection";
+import TitleSection from "../components/TitleSection";
 import { scrollSection } from "../helpers/actionScroll";
 import { onlyNumbers, peso, reverseFormat } from "../helpers/formatCurrency";
 import { optionsProperty, optionsState, optionsTime } from '../helpers/options';
