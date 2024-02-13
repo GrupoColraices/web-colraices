@@ -3,6 +3,7 @@ import { Eligenos } from "../casas-apartamentos-colombia-desde-el-exterior/Templ
 import { InmReciente } from "../casas-apartamentos-colombia-desde-el-exterior/Templates/InmReciente";
 import { Testimoniales } from "../casas-apartamentos-colombia-desde-el-exterior/Templates/Testimoniales";
 import FeaturedProperties from "../casas-apartamentos-colombia-desde-el-exterior/Templates/FeaturedProperties";
+import { Toaster } from 'react-hot-toast';
 import Script from "next/script";
 import { APIURL } from "./config";
 
