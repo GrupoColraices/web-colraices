@@ -13,8 +13,9 @@ import { useCurrency } from "../hooks/useCurrency";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { ContextLike } from "../Context/Like";
 import 'swiper/css';
+import Image from "next/image";
 
-export const ItemInmueble = ({ dataInmueble, Elim }) => {
+export const ItemInmueble = ({ dataInmueble, Elim, serverUrl }) => {
     const router = useRouter();
     const { titulo, descripcion, precio, estado, tipo, baños, habitaciones, area_const, region, ciudad, slug, imagenes, num_img } = dataInmueble;
     const [liked, setLiked] = useLocalStorage(slug, false);
@@ -82,7 +83,7 @@ export const ItemInmueble = ({ dataInmueble, Elim }) => {
                         {imagenes?.map((image, index) => (
                             <SwiperSlide key={`image${index}`}>
                                 <div className="itemReciente__img--img">
-                                    <img src={`${image}`} alt={titulo} />
+                                    <Image width={370} height={260} src={`${image}`} alt={titulo} />
                                 </div>
                             </SwiperSlide>
                         ))}
@@ -101,8 +102,8 @@ export const ItemInmueble = ({ dataInmueble, Elim }) => {
             <div className="itemReciente__content">
 
                 <div className="itemReciente__content--main">
-                    <Link href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${slug}`}><h3 className="itemReciente__content--main--title">{titulo}</h3></Link>
-                    <h2 className="itemReciente__content--main--subtitle">{tipo} en venta en {ciudad}</h2>
+                    <Link href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${slug}`}><h2 className="itemReciente__content--main--title">{titulo}</h2></Link>
+                    <h3 className="itemReciente__content--main--subtitle">{tipo} en venta en {ciudad}</h3>
                     <p className="itemReciente__content--main--precio"><span>Desde:</span> {formatePrice(precio)}</p>
                     <div className="itemReciente__content--main--description" ><p>{descripcion.replace(/(<([^>]+)>)/ig, '')}</p></div>
 
@@ -120,15 +121,15 @@ export const ItemInmueble = ({ dataInmueble, Elim }) => {
                         sites={["facebook", "whatsapp", "mail", "telegram"]}
                         data={{
                             text: `${titulo}  ${descripcion}`,
-                            url: `${window.location.href}${slug}`,
+                            url: `${serverUrl}${slug}`,
                             title: "Vitrina Colombia",
                         }}
                         onClick={() => console.log("shared successfully!")}
                     >
-                        <button><BsShareFill /></button>
+                        <button aria-label="Compartir inmueble en redes sociales"><BsShareFill /></button>
                     </RWebShare>
                     {!Elim &&
-                        <button onClick={liked ? () => handelDeleteIcon(dataInmueble) : () => handelLikeInmueble()}>
+                        <button aria-label={liked ? "Eliminar de favoritos" : "Agregar a favoritos"} onClick={liked ? () => handelDeleteIcon(dataInmueble) : () => handelLikeInmueble()}>
                             {liked ?
                                 <BsSuitHeartFill />
                                 :
@@ -148,3 +149,11 @@ export const ItemInmueble = ({ dataInmueble, Elim }) => {
 
     );
 };
+export async function getServerSideProps({ req }) {
+    const serverUrl = req.headers.host;
+    return {
+        props: {
+            serverUrl,
+        },
+    };
+}

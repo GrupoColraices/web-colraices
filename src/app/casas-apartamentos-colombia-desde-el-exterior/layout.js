@@ -1,6 +1,6 @@
 import { ContextLikeProvider } from '../casas-apartamentos-colombia-desde-el-exterior/Context/Like';
 import { FiltroContextProvider } from '../casas-apartamentos-colombia-desde-el-exterior/Context/Filtro';
-import { Header } from '../casas-apartamentos-colombia-desde-el-exterior/Templates/Header';
+import Header from '../casas-apartamentos-colombia-desde-el-exterior/Templates/Header';
 import { Animation } from '../casas-apartamentos-colombia-desde-el-exterior/molecules/Animation';
 import '../casas-apartamentos-colombia-desde-el-exterior/sass/app.scss'
 import { Toaster } from 'react-hot-toast';

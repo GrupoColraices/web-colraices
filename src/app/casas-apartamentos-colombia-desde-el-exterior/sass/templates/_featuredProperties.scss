@@ -1,21 +1,28 @@
-section.container__featured {
+section.container-featured {
     position: unset;
 
-    .swiper-pagination-bullet-active {
-        background-color: $primario;
+    div.container-items-featured {
+        display: none;
     }
 
-    .swiper-button-next,
-    .swiper-button-prev {
-        color: $secundario;
+    .swiper-item-featured {
 
-        &::after {
-            font-size: 2rem;
-            font-weight: 800;
+        .swiper-pagination-bullet-active {
+            background-color: $primario;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: $secundario;
+
+            &::after {
+                font-size: 2rem;
+                font-weight: 800;
+            }
         }
     }
 
-    .swiper__text-featured {
+    .swiper-text-featured {
 
         .swiper-button-next::after,
         .swiper-button-prev::after {
@@ -36,8 +43,6 @@ section.container__featured {
 
     @include tablet {
         display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-around;
         padding: 5rem 2rem 0;
         column-gap: 2rem;
         max-width: 140rem;
@@ -62,8 +67,14 @@ section.container__featured {
             }
         }
 
-        div.container__items-featured {
+        .swiper-text-featured {
+            display: none;
+        }
+
+        div.container-items-featured {
             height: 61rem;
+            display: flex;
+            flex-direction: column;
             flex: 1;
 
             h1 {
@@ -108,7 +119,7 @@ section.container__featured {
         padding: 10rem 12rem 0;
         column-gap: 10rem;
 
-        div.container__items-featured {
+        div.container-items-featured {
             h1 {
                 text-align: left;
             }

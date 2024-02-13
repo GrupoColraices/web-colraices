@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types';
 import { Banner } from '../../casas-apartamentos-colombia-desde-el-exterior/Templates/Banner';
-import { TitleSection } from '../../casas-apartamentos-colombia-desde-el-exterior/components/TitleSection';
+import TitleSection from '../../casas-apartamentos-colombia-desde-el-exterior/components/TitleSection';
 import Navbar from '../../casas-apartamentos-colombia-desde-el-exterior/components/Navbar';
 import { TitleNavbar } from '../../casas-apartamentos-colombia-desde-el-exterior/components/TitleNavbar';
 import ItemFavorite from '../../casas-apartamentos-colombia-desde-el-exterior/molecules/ItemFavorite';

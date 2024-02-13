@@ -56,22 +56,27 @@ header.wrapper {
             transition: transform .1s ease-out;
             transform-origin: top;
 
-            a {
+            li.dropdown__item {
                 padding: 1rem;
-                border-radius: 0.5rem;
-                font-weight: 600;
-                color: $primario2;
-                cursor: pointer;
+
+                a {
+                    padding: 1rem;
+                    border-radius: 0.5rem;
+                    font-weight: 600;
+                    color: $primario2;
+                    cursor: pointer;
+                }
+
+                a:hover {
+                    color: $blanco;
+                }
+
+                a.active {
+                    color: $blanco2;
+                    background-color: $primario2;
+                }
             }
 
-            a:hover {
-                color: $blanco;
-            }
-
-            a.active {
-                color: $blanco2;
-                background-color: $primario2;
-            }
         }
 
         ul.dropdown__list.open {

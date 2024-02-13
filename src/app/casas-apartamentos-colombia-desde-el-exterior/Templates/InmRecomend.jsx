@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { TitleSection } from '../components/TitleSection'
+import TitleSection from '../components/TitleSection'
 import { ItemRecomend } from '../molecules/ItemRecomend'
 import { APIURL } from '../config';
 import Box from '@mui/material/Box';

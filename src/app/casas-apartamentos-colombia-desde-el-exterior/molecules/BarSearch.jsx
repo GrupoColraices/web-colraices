@@ -1,10 +1,12 @@
 'use client'
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState } from 'react'
+import useSWR from 'swr'
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 import { Filtro } from '../Context/Filtro';
-const Filter = dynamic(() => import('./BarSearch/Filter'), { ssr: false });
 import { APIURL } from '../config';
+const Filter = dynamic(() => import('./BarSearch/Filter'));
+
 
 export const BarSearch = ({ visibility = false, scrolling = 100 }) => {
     const router = useRouter();
@@ -12,23 +14,18 @@ export const BarSearch = ({ visibility = false, scrolling = 100 }) => {
     const [filterCl, setFilterCl] = useState(false);
     const [validate, setValidate] = useState(false);
     const [isNotFound, setIsNotFound] = useState(false);
-    const [ciudades, setCiudades] = useState([]);
-    const [departments, setDepartments] = useState([]);
 
-    useEffect(() => {
-        const ciudadData = async () => {
-            const resp = await fetch(`${APIURL}cities`);
-            const data = await resp.json();
-            setCiudades(data.data);
-        }
-        const departamentoData = async () => {
-            const resp = await fetch(`${APIURL}regions`);
-            const data = await resp.json();
-            setDepartments(data.data);
-        }
-        departamentoData();
-        ciudadData();
-    }, []);
+    const { data: ciudades } = useSWR(`${APIURL}cities`, async (url) => {
+        const response = await fetch(url)
+        const data = await response.json()
+        return data?.data
+    })
+    const { data: departments } = useSWR(`${APIURL}regions`, async (url) => {
+        const response = await fetch(url)
+        const data = await response.json()
+        return data?.data
+    })
+
     /**
      * Generates search options by concatenating cities and departments.
      *
@@ -36,7 +33,7 @@ export const BarSearch = ({ visibility = false, scrolling = 100 }) => {
      * @param {Array} departments - Array of objects representing departments.
      * @returns {Array} Array of search options with labels and slugs.
      */
-    const optionsSearch = [...ciudades, ...departments]?.map(obj => {
+    const optionsSearch = [...(ciudades || []), ...(departments || [])]?.map(obj => {
         return {
             label: obj.nombre_ciudad || obj.nombre_region,
             slug: obj.slug,

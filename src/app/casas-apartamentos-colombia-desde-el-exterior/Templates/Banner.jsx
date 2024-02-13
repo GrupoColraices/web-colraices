@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { BarSearch } from '../molecules/BarSearch'
 
+
 export const Banner = (props) => {
 
     const [fid, setFid] = useState(false)
@@ -41,7 +42,8 @@ export const Banner = (props) => {
             <div className={`sticky-barSearch banner ${!props.main && 'bannermin'}`} >
                 <div className='video'>
                     <video autoPlay muted loop ref={video}>
-                        <source src={props.main ? "/portal-inmobiliario/video/banner.mp4" : "/portal-inmobiliario/video/banner2.mp4"} type="video/mp4" />
+                        <source src={"/portal-inmobiliario/video/banner.mp4"} type="video/mp4" />
+                        <source src="/portal-inmobiliario/video/banner.avi" type='video/avi' />
                     </video>
                 </div>
 
