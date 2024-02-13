@@ -13,10 +13,11 @@ export default async function Home() {
     <>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-03VJLYKNTV" />
       <Script id="google-analytics"
-        {` window.dataLayer = window.dataLayer || [];
+  dangerouslySetInnerHTML={{
+        __html: ` window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', 'G-03VJLYKNTV');`} />
+                gtag('config', 'G-03VJLYKNTV');`}} />
       <Script id='HotJarAnalytics'
         dangerouslySetInnerHTML={{
           __html: `(function (h, o, t, j, a, r) {
