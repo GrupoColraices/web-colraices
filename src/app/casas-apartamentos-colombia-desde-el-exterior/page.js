@@ -16,9 +16,7 @@ export default async function Home() {
         {` window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', 'G-03VJLYKNTV');`}
-      </Script>
-
+                gtag('config', 'G-03VJLYKNTV');`} />
       <Script id='HotJarAnalytics'
         dangerouslySetInnerHTML={{
           __html: `(function (h, o, t, j, a, r) {
@@ -29,6 +27,9 @@ export default async function Home() {
                     r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
                     a.appendChild(r);
                 })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');`}} />
+
+      <Toaster containerStyle={{ zIndex: 10000000 }} position="top-right" />
+
       <Banner main />
       <FeaturedProperties inmFeatured={inmFeatured} />
       <InmReciente inmRecientes={inmRecientes} />
