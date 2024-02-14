@@ -1,37 +1,37 @@
-@import '../..//base/mixins'; 
+@import '../..//base/mixins';
 
-.section-blog{
+.section-blog {
     padding-bottom: 108px;
 
-    .banner-blog{
+    .banner-blog {
         padding: 62px 2.7rem 0 2.7rem;
         display: flex;
         flex-direction: column;
         gap: 30px;
         justify-content: center;
         align-items: center;
-    
-        h1{
+
+        h1 {
             color: var(--AZUL-COLRAICES, #2A3F77);
             text-align: center;
             font-size: 20px;
             font-style: normal;
             font-weight: 700;
             line-height: normal;
-            
+
         }
-        
-        span{
-            color: var(--SUBITULO-HOME, #CAA55E);
+
+        span {
+            color: var(--SUBITULO-HOME, #b08c47);
             text-align: center;
             font-size: 16px;
             font-style: normal;
             font-weight: 500;
             line-height: normal;
         }
-        
-        @include laptop{
-            h1{
+
+        @include laptop {
+            h1 {
                 width: 545px;
                 color: var(--AZUL-COLRAICES, #2A3F77);
                 text-align: center;
@@ -41,25 +41,24 @@
                 line-height: normal;
             }
 
-            span{
+            span {
                 font-size: 38px;
             }
         }
     }
-    
-    .container-search-blog{
+
+    .container-search-blog {
         padding: 30px 33px 0 33px;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    @include laptop{
-        .container-search-blog{
+    @include laptop {
+        .container-search-blog {
             padding: 49px 33px 0 33px;
             width: 802px;
             margin: auto;
         }
     }
 }
-

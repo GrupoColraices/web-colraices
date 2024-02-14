@@ -1,16 +1,16 @@
 @import '../../../base/mixins';
 
-.card-video-lg{
+.card-video-lg {
     display: flex;
     flex-direction: column;
     gap: 6px;
 
-    .video-control{
+    .video-control {
         display: flex;
         align-items: center;
         gap: 8px;
-        
-        .image{
+
+        .image {
             width: 100%;
             height: 122px;
             border-radius: 10px;
@@ -18,19 +18,19 @@
             margin-bottom: 8px;
         }
 
-        img{
+        img {
             width: 6px;
             height: 13px;
         }
     }
 
-    .texts{
+    .texts {
         display: flex;
         flex-direction: column;
         gap: 8px;
         padding: 0 20px;
 
-        .title{
+        .title {
             color: var(--Azul-Colraices, #2A3F77);
             text-align: justify;
             font-size: 14px;
@@ -39,8 +39,8 @@
             line-height: normal;
             margin: 0;
         }
-    
-        .description{
+
+        .description {
             color: var(--Azul-Colraices, #2A3F77);
             font-size: 12px;
             font-style: normal;
@@ -48,9 +48,9 @@
             line-height: normal;
             margin: 0;
         }
-    
-        .author{
-            color: var(--SUBITULO-HOME, #CAA55E);
+
+        .author {
+            color: var(--SUBITULO-HOME, #b08c47);
             font-size: 12px;
             font-style: normal;
             font-weight: 500;
@@ -59,11 +59,11 @@
         }
     }
 
-    @include laptop{
+    @include laptop {
         width: 363px;
 
-        .video-control{
-            .image{
+        .video-control {
+            .image {
                 width: 100%;
                 height: 163px;
                 border-radius: 10px;
@@ -71,7 +71,7 @@
                 margin-bottom: 8px;
             }
         }
-        
+
     }
 
 }

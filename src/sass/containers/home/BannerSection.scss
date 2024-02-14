@@ -1,16 +1,16 @@
 @import '../../base/variables';
 @import '../../base/mixins';
 
-.container-flex{
+.container-flex {
     display: flex;
     flex-direction: column;
 
-    .partners-desktop{
+    .partners-desktop {
         display: none;
     }
 
-    @include laptop{
-        .partners-desktop{
+    @include laptop {
+        .partners-desktop {
             display: block;
             padding: 0 84px 0 144px;
         }
@@ -23,8 +23,9 @@ section.Banner-container {
         width: 100%;
         padding: 0 20px 0 20px;
         display: flex;
+
         // gap: 129px;
-        .partners{
+        .partners {
             display: none;
         }
     }
@@ -42,7 +43,7 @@ section.Banner-container {
         display: flex;
         gap: 119px;
     }
-    
+
 
     div.Banner-title {
 
@@ -60,42 +61,44 @@ section.Banner-container {
             color: $secondary;
         }
 
-        
-        div.container-buttons-desktop{
+
+        div.container-buttons-desktop {
             display: none;
         }
 
         @include laptop {
             padding-top: 84px;
-            h1{
+
+            h1 {
                 width: 461px;
                 color: var(--AZUL-COLRAICES, #2A3F77);
-                
+
                 font-size: 48px;
                 font-style: normal;
                 font-weight: 700;
                 line-height: normal;
                 margin: 0;
                 text-align: start;
+
                 span {
                     font-size: 4.9rem;
                 }
             }
 
-            p{
+            p {
                 font-size: 50px;
                 margin: 0;
                 width: 628px;
                 text-align: start;
-                color: var(--SUBITULO-HOME, #CAA55E);
-                
+                color: var(--SUBITULO-HOME, #b08c47);
+
                 font-size: 50px;
                 font-style: normal;
                 font-weight: 700;
                 line-height: normal;
             }
 
-            div.container-buttons-desktop{
+            div.container-buttons-desktop {
                 display: flex;
                 margin-top: 50px;
                 gap: 24px;
@@ -103,19 +106,20 @@ section.Banner-container {
             }
         }
     }
+
     article {
         display: flex;
         justify-content: center;
         flex-direction: column;
         padding: 41px 0 3rem 0;
 
-        div.container-buttons{
+        div.container-buttons {
             display: flex;
             justify-content: center;
             gap: 24px;
             padding-bottom: 49px;
 
-            @include laptop{
+            @include laptop {
                 display: none;
             }
         }
@@ -123,10 +127,12 @@ section.Banner-container {
         section {
             place-self: center;
             grid-area: picture;
+
             .bannerMobile {
                 width: 276px;
                 height: 349px;
             }
+
             .bannerDesktop {
                 display: none;
             }
@@ -142,6 +148,7 @@ section.Banner-container {
                 .bannerMobile {
                     display: none;
                 }
+
                 .bannerDesktop {
                     width: 530px;
                     height: 603px;

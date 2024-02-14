@@ -41,9 +41,9 @@
     cursor: pointer;
 
     &:hover {
-        color: var(--SUBITULO-HOME, #CAA55E);
+        color: var(--SUBITULO-HOME, #b08c47);
         border-radius: 26px;
-        border: 1px solid var(--SUBITULO-HOME, #CAA55E);
+        border: 1px solid var(--SUBITULO-HOME, #b08c47);
         background: var(--gris-fondos-cards-2, #EBEBEB);
         box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.15);
     }
@@ -65,9 +65,9 @@
     line-height: normal;
 
     &:hover {
-        color: var(--SUBITULO-HOME, #CAA55E);
+        color: var(--SUBITULO-HOME, #b08c47);
         border-radius: 26px;
-        border: 1px solid var(--SUBITULO-HOME, #CAA55E);
+        border: 1px solid var(--SUBITULO-HOME, #b08c47);
         background: var(--gris-fondos-cards-2, #EBEBEB);
         box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.15);
     }
@@ -93,7 +93,7 @@
 // button gold component rounded
 .btn-gold-rounded {
     border-radius: 0px 8px 8px 8px;
-    background: var(--DORADO-COLRAICES, #CAA55E);
+    background: var(--DORADO-COLRAICES, #b08c47);
     box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.25);
     color: #FFF;
     text-align: center;

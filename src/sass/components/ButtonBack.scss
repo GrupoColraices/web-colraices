@@ -6,10 +6,10 @@ a.button-back {
     column-gap: 0.5rem;
     font-size: clamp(1.5625rem, 1.4554rem + 0.4762vw, 1.8125rem);
     font-weight: 600;
-    color: #caa55e;
+    color: #b08c47;
     padding: 1rem 1.5rem;
     border-radius: 32px;
-    border: 1px solid #caa55e;
+    border: 1px solid #b08c47;
     background-color: #fff;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     overflow: hidden;
@@ -29,7 +29,7 @@ a.button-back {
         left: 0;
         transform: translateX(-100%);
         transition: all .3s;
-        background-color: #caa55e;
+        background-color: #b08c47;
         z-index: -1;
 
     }
