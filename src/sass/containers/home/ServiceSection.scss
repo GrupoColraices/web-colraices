@@ -1,10 +1,10 @@
 @import '../../base/mixins';
 
 section.Service-container {
-    max-width: 110rem;
+    max-width: 120rem;
     margin: 0 auto;
     padding: 2rem 30px 0 30px;
-    
+
     h2 {
         position: relative;
         font-size: 20px;
@@ -30,7 +30,7 @@ section.Service-container {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        h2{
+        h2 {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -45,7 +45,7 @@ section.Service-container {
         }
     }
 
-    div.register{
+    div.register {
         margin: 68px auto 15px auto;
         display: flex;
         justify-content: center;
@@ -72,7 +72,7 @@ section.Service-container {
             div.container-content {
                 padding: 1.3rem 1.6rem 1.3rem 1.6rem;
                 border-radius: 0px 30px 0px 0px;
-                background: var(--Blanco, #FFF);
+                background: var(--Blanco, #fff);
                 box-shadow: 3px 3px 4px 0px rgba(192, 192, 192, 0.15), -3px -3px 4px 0px rgba(218, 218, 218, 0.15);
 
                 @include tablet {
@@ -103,8 +103,8 @@ section.Service-container {
                         font-size: 3rem;
                     }
 
-                    color: var(--Azul-Colraices, #2A3F77);
-                    
+                    color: var(--Azul-Colraices, #2a3f77);
+
                     font-size: 10px;
                     font-style: normal;
                     font-weight: 600;
@@ -117,7 +117,7 @@ section.Service-container {
                     margin: 0;
                     text-align: justify;
                     color: #000;
-                    
+
                     font-size: 9px;
                     font-style: normal;
                     font-weight: 400;
@@ -143,13 +143,15 @@ section.Service-container {
             }
         }
 
-        @include desktop{
-            padding: 0 84px 0 84px;
+        @include desktop {
+            padding: 0;
+            width: 100%;
+            max-width: 1200px;
         }
     }
 }
 
-.container-icons{
+.container-icons {
     display: flex;
     align-items: center;
     gap: 5px;
