@@ -3,6 +3,7 @@ import { Eligenos } from "../casas-apartamentos-colombia-desde-el-exterior/Templ
 import { InmReciente } from "../casas-apartamentos-colombia-desde-el-exterior/Templates/InmReciente";
 import { Testimoniales } from "../casas-apartamentos-colombia-desde-el-exterior/Templates/Testimoniales";
 import FeaturedProperties from "../casas-apartamentos-colombia-desde-el-exterior/Templates/FeaturedProperties";
+import { Toaster } from 'react-hot-toast';
 import Script from "next/script";
 import { APIURL } from "./config";
 
@@ -12,11 +13,12 @@ export default async function Home() {
   return (
     <>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-03VJLYKNTV" />
-      <Script id="google-analytics">
-        {` window.dataLayer = window.dataLayer || [];
+      <Script id="google-analytics"
+  dangerouslySetInnerHTML={{
+        __html: ` window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', 'G-03VJLYKNTV');`} />
+                gtag('config', 'G-03VJLYKNTV');`}} />
       <Script id='HotJarAnalytics'
         dangerouslySetInnerHTML={{
           __html: `(function (h, o, t, j, a, r) {
