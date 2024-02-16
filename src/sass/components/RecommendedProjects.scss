@@ -1,46 +1,48 @@
 @import '../../sass/base/mixins';
 
-.recommendedProjects{
+.recommendedProjects {
     position: relative;
     padding: 65px 0 48px 0;
 
-    div.btn-recommended{
+    div.btn-recommended {
         display: flex;
         justify-content: center;
-        button{
+        button {
             margin-bottom: 30px;
         }
     }
 
-    @include laptop{
+    @include laptop {
         display: flex;
         justify-content: center;
         gap: 3rem;
-        
-        div.btn-recommended{
+
+        div.btn-recommended {
             display: none;
         }
     }
+    @include desktop {
+        gap: 10rem;
+    }
 
-    div.container-text-btn{
-        .btn-gold-rounded-desktop{
+    div.container-text-btn {
+        .btn-gold-rounded-desktop {
             display: none;
         }
 
-        @include desktop{
-
-            .btn-recommended-desktop{
+        @include desktop {
+            .btn-recommended-desktop {
                 margin-top: 40px;
             }
 
-            .btn-gold-rounded-desktop{
+            .btn-gold-rounded-desktop {
                 display: block;
                 border-radius: 0px 8px 8px 8px;
-                background: var(--DORADO-COLRAICES, #CAA55E);
+                background: var(--DORADO-COLRAICES, #caa55e);
                 box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.25);
-                color: #FFF;
+                color: #fff;
                 text-align: center;
-                
+
                 font-size: 35px;
                 font-style: normal;
                 font-weight: 700;
@@ -49,61 +51,61 @@
         }
     }
 
-    .circle1{
+    .circle1 {
         position: absolute;
         width: 43px;
         height: 134px;
         left: 7px;
         top: 80px;
 
-        @include desktop{
+        @include desktop {
             width: 175px;
             height: 543px;
             top: -45px;
         }
     }
 
-    .circle2{
+    .circle2 {
         position: absolute;
         width: 39px;
         height: 132px;
         right: 7px;
         bottom: 160px;
 
-        @include desktop{
+        @include desktop {
             width: 159px;
             height: 492px;
             bottom: -180px;
         }
     }
 
-    div.container-projects-btn{
-        .slider-button-desktop{
+    div.container-projects-btn {
+        .slider-button-desktop {
             display: none;
         }
 
-        @include laptop{
-            .slider-button-desktop{
+        @include laptop {
+            .slider-button-desktop {
                 display: flex;
                 justify-content: center;
                 gap: 10px;
                 align-items: center;
                 margin-top: 5px;
-                svg{
+                svg {
                     cursor: pointer;
                     width: 51px;
                 }
-                span{
-                    color: var(--DORADO-COLRAICES, #CAA55E);
+                span {
+                    color: var(--DORADO-COLRAICES, #caa55e);
                     text-align: justify;
-                    
+
                     font-size: 29px;
                     font-style: normal;
                     font-weight: 500;
                     line-height: 30px; /* 166.667% */
-                    span{
-                        color: var(--DORADO-COLRAICES, #CAA55E);
-                        
+                    span {
+                        color: var(--DORADO-COLRAICES, #caa55e);
+
                         font-size: 18px;
                         font-style: normal;
                         font-weight: 500;
@@ -112,12 +114,12 @@
                 }
             }
 
-            div.container-projects{
+            div.container-projects {
                 width: 553px;
                 height: 410px;
                 position: relative;
-                article{
-                    .name-project{
+                article {
+                    .name-project {
                         bottom: 40px;
                         left: 20px;
                         position: absolute;
@@ -125,10 +127,10 @@
                         width: 258px;
                         height: 50px;
                         border-radius: 0px 0px 20px 0px;
-                        background: var(--DORADO-COLRAICES, #CAA55E);
+                        background: var(--DORADO-COLRAICES, #caa55e);
                         z-index: 100;
-                        border: 1px solid #FFF;
-                        
+                        border: 1px solid #fff;
+
                         white-space: nowrap;
                         line-height: normal;
                         overflow: hidden;
@@ -156,7 +158,6 @@
                     }
                 }
             }
-
         }
     }
 
@@ -166,9 +167,9 @@
         position: relative;
         display: flex;
         overflow: hidden;
-    
+
         article {
-            .name-project{
+            .name-project {
                 display: none;
             }
 
@@ -180,43 +181,43 @@
             opacity: 0;
             transition: all 0.3s linear;
         }
-          
+
         article.activeSlide {
             opacity: 1;
             transform: translateX(0);
         }
-        
+
         article.lastSlide {
             transform: translateX(-100%);
         }
-        
+
         article.nextSlide {
             transform: translateX(100%);
         }
-          
+
         .project-img {
             width: 290px;
             height: 220px;
         }
     }
 
-    div.slider-button{
+    div.slider-button {
         display: flex;
         justify-content: center;
         gap: 5px;
         align-items: center;
         margin-top: 10px;
-        span{
-            color: var(--DORADO-COLRAICES, #CAA55E);
+        span {
+            color: var(--DORADO-COLRAICES, #caa55e);
             text-align: justify;
-            
+
             font-size: 18px;
             font-style: normal;
             font-weight: 500;
             line-height: 30px; /* 166.667% */
-            span{
-                color: var(--DORADO-COLRAICES, #CAA55E);
-                
+            span {
+                color: var(--DORADO-COLRAICES, #caa55e);
+
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 500;
@@ -226,12 +227,12 @@
     }
 
     @include laptop {
-        div.slider-button{
+        div.slider-button {
             display: none;
         }
     }
-    
-    div.container-texts{
+
+    div.container-texts {
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -239,63 +240,63 @@
         width: 291px;
         margin: 5px auto 0 auto;
 
-        .p-mobile{
+        .p-mobile {
             margin: 0;
-            color: #4D4D4D;
+            color: #4d4d4d;
             text-align: justify;
-            
+
             font-size: 13px;
             font-style: normal;
             font-weight: 400;
             line-height: 18px;
         }
 
-        .p-desktop{
+        .p-desktop {
             display: none;
         }
-    
-        span{
-            color: #4D4D4D;
-            
+
+        span {
+            color: #4d4d4d;
+
             font-size: 13px;
             font-style: normal;
             font-weight: 700;
             line-height: 18px;
         }
 
-        @include desktop{
+        @include desktop {
             margin: 47px auto 0 auto;
-            width: 559px;  
-            
-            .p-mobile{
+            width: 559px;
+
+            .p-mobile {
                 display: none;
             }
 
-            .p-desktop{
+            .p-desktop {
                 display: block;
-                color: #4D4D4D;
-                
+                color: #4d4d4d;
+
                 font-size: 24px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 30px; /* 125% */
             }
 
-            span{
+            span {
                 display: none;
             }
         }
     }
-    
-    .offer{
+
+    .offer {
         display: flex;
         justify-content: center;
         align-items: center;
         padding-top: 26px;
 
-        .offer-btn{
+        .offer-btn {
             border-radius: 49px;
-            border: 1px solid #FFF;
+            border: 1px solid #fff;
             color: white;
             width: 193px;
             padding: 5px 0;
@@ -304,21 +305,21 @@
             justify-content: center;
             gap: 5px;
             align-items: center;
-            background: var(--AZUL-COLRAICES, #2A3F77);
+            background: var(--AZUL-COLRAICES, #2a3f77);
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-            
-            @include desktop{
+
+            @include desktop {
                 display: none;
             }
         }
 
-        .star-btn{
+        .star-btn {
             display: none;
-            
-            @include desktop{
+
+            @include desktop {
                 display: block;
                 border-radius: 49px;
-                border: 1px solid #FFF;
+                border: 1px solid #fff;
                 color: white;
                 width: 210px;
                 padding: 7px 0;
@@ -327,25 +328,22 @@
                 justify-content: center;
                 gap: 5px;
                 align-items: center;
-                background: var(--AZUL-COLRAICES, #2A3F77);
+                background: var(--AZUL-COLRAICES, #2a3f77);
                 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
-                &:hover{
-                    color: #FFF;
+                &:hover {
+                    color: #fff;
                     border-radius: 49px;
-                    border: 1px solid #FFF;
-                    background: var(--DORADO-COLRAICES, #CAA55E);
+                    border: 1px solid #fff;
+                    background: var(--DORADO-COLRAICES, #caa55e);
                     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
                 }
             }
         }
 
-        @include desktop{
+        @include desktop {
             justify-content: start;
             padding-top: 16px;
         }
-
-
     }
 }
-
