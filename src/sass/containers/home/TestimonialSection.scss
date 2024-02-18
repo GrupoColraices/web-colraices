@@ -5,7 +5,7 @@ section.Testimonial-container {
     padding: 0 3rem;
     margin: 4rem auto 0rem auto;
     position: relative;
-    background: #FFFF;
+    background: #ffff;
 
     .testimonial-texts {
         display: flex;
@@ -88,7 +88,6 @@ section.Testimonial-container {
         margin-top: 15rem;
 
         div {
-
             h2 {
                 font-weight: 700;
                 font-size: 4rem;
@@ -120,6 +119,12 @@ section.Testimonial-container {
                 }
             }
         }
+    }
+
+    @include desktop {
+        max-width: 1200px;
+        padding: 0;
+        justify-content: space-between;
     }
 
     div:nth-child(2) {

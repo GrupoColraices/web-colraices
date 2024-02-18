@@ -22,6 +22,12 @@ header.Header-container {
         padding: 6% 0 43px 144px;
     }
 
+    @include desktopxl {
+        margin: 0 auto;
+        padding: 50px 0 43px;
+        max-width: 1200px;
+    }
+
     img {
         @include laptop {
             // display: none;
@@ -75,7 +81,6 @@ header.Header-container {
                 }
             }
         }
-
     }
 
     nav {

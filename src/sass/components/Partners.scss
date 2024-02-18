@@ -20,4 +20,7 @@ section.Partners-container {
         padding: 0.3rem 8rem;
         max-height: 7rem;
     }
+    @include desktopxl {
+        padding: 0;
+    }
 }

@@ -7,7 +7,7 @@ footer {
 
     &::before {
         position: absolute;
-        content: "";
+        content: '';
         width: 100%;
         min-height: 51rem;
         background-image: url('/portal-inmobiliario/img/colraicesInmobiliario/home/background_footer.svg');
@@ -17,7 +17,6 @@ footer {
         @include phone {
             min-height: 52rem;
         }
-
     }
 
     section {
@@ -89,7 +88,6 @@ footer {
                     }
                 }
             }
-
         }
 
         div.social-networks {
@@ -111,7 +109,6 @@ footer {
                     height: auto;
                 }
             }
-
         }
     }
 
@@ -184,8 +181,8 @@ footer {
 
     @include desktop {
         section {
-            column-gap: 15rem;
-            padding: 10rem 1rem 0 10rem;
+            max-width: 120rem;
+            padding: 10rem 1rem 0 0;
         }
     }
 }
