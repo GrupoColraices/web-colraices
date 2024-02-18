@@ -113,6 +113,14 @@ button {
     filter: drop-shadow(0px 1px 8px rgba(0, 0, 0, 0.75));
 }
 
+section {
+    @include desktop {
+        max-width: 130rem;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
 // 404 Not Found
 .container-not-found {
     height: 100vh;
