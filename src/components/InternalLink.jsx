@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import '@/sass/components/InternalLink.scss'
 
 export const InternalLink = ({ children, options }) => {
     const { type, ...attrs } = options
