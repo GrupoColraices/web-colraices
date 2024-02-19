@@ -16,7 +16,7 @@ export const CreditRequest = () => {
                     <p>Te entregamos el pre aprobado de tu crédito
                         con un banco de renombre en Colombia.
                     </p>
-                    <Button text={"LO QUIERO"} URL={"/"} />
+                    <Button text={"LO QUIERO"} URL={"https://colraices.com/aprobaciones/"} target={"_blank"} />
                 </div>
                 <div className='content-graphic'>
                     <img src="/gestionamos-tu-credito/img/image-movil.webp" alt="" />
