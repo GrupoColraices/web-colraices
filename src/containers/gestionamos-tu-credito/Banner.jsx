@@ -3,7 +3,7 @@ import '@/sass/containers/gestionamos-tu-credito/Banner.scss';
 
 export const Banner = () => {
     return (
-        <section className="container-manage-credit">
+        <section className="container-manage-credit max-width">
             <div className="content-text">
                 <img src="/gestionamos-tu-credito/img/banner-icons.svg" alt="Image" />
                 <h1>Abrimos la puerta al crédito
