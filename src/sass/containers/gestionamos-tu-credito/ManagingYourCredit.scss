@@ -13,3 +13,11 @@ section.partners-managing-your-credit {
         border-radius: unset;
     }
 }
+
+section.max-width {
+    @include desktop {
+        max-width: 130rem;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
