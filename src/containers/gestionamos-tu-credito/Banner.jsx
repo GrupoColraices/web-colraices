@@ -13,7 +13,7 @@ export const Banner = () => {
                     y sin
                     importar donde estés.
                 </p>
-                <Button text={"VER MAS"} URL={"/"} />
+                <Button text={"VER MAS"} URL={"#bank-loank"} />
             </div>
             <img className='image-banner' src="/gestionamos-tu-credito/img/image-banner.webp" alt="Image" />
         </section>
