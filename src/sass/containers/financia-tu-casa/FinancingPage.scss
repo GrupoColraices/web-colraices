@@ -163,6 +163,7 @@ main.financing-main {
         }
         @include laptop {
             padding: 8rem 0 0;
+
             h2 {
                 font-size: 4rem;
                 line-height: 4.8rem;
@@ -210,6 +211,38 @@ main.financing-main {
                     padding-inline: 5rem;
                     min-width: fit-content;
                 }
+            }
+        }
+        .slideRight {
+            animation: slide-in-right 20s ease-in forwards;
+            animation-timeline: view();
+            animation-range: entry;
+        }
+        .slideLeft {
+            animation: slide-in-left 20s ease-in forwards;
+            animation-timeline: view();
+            animation-range: entry;
+        }
+        @keyframes slide-in-right {
+            0% {
+                transform: translateX(300px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slide-in-left {
+            0% {
+                transform: translateX(-300px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
             }
         }
     }
@@ -281,6 +314,134 @@ main.financing-main {
                 right: 0;
                 top: 4rem;
                 width: 70rem;
+            }
+        }
+    }
+    section.financing-steps {
+        h2 {
+            color: $primary;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            span {
+                color: $secondary;
+                display: block;
+            }
+        }
+        ul {
+            li {
+                position: relative;
+                color: $font-slate;
+                img {
+                    width: 100%;
+                }
+
+                p {
+                    position: absolute;
+                    top: 1.5rem;
+                    left: 8rem;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    max-width: 30ch;
+                    span {
+                        display: block;
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                        margin-bottom: 0.4rem;
+                    }
+                }
+            }
+            li:nth-child(even) {
+                p {
+                    left: 5rem;
+                }
+            }
+        }
+        @include tablet {
+            h2 {
+                font-size: 3.2rem;
+                font-weight: 700;
+            }
+            ul {
+                li {
+                    p {
+                        top: 20%;
+                        left: 14rem;
+                        font-size: 1.6rem;
+                        font-weight: 600;
+                        max-width: 50ch;
+                        span {
+                            display: block;
+                            font-size: 2rem;
+                            font-weight: 700;
+                            margin-bottom: 1rem;
+                        }
+                    }
+                }
+                li:nth-child(even) {
+                    p {
+                        left: 8rem;
+                    }
+                }
+            }
+        }
+        @include laptop {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16rem 1rem;
+            h2 {
+                font-size: 4rem;
+                span {
+                    display: inline-block;
+                }
+            }
+            ul {
+                display: flex;
+                column-gap: 5rem;
+                margin-top: 8rem;
+                li {
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    img {
+                        display: none;
+                    }
+                    p {
+                        position: relative;
+                        text-align: justify;
+                        top: 0;
+                        left: 0;
+                        font-size: 1.6rem;
+                        font-weight: 400;
+                        span {
+                            text-align: center;
+                            font-size: 1.8rem;
+                            margin-block: 2.4rem;
+                        }
+                    }
+                    div {
+                        width: 13rem;
+                        height: 13rem;
+                        border-radius: 100%;
+                        border: solid 2px $primary;
+                        display: grid;
+                        place-items: center;
+                        p {
+                            background: $primary;
+                            padding: 3rem 3.6rem;
+                            border-radius: 100%;
+                            color: white;
+                        }
+                    }
+                }
+                li:nth-child(even) {
+                    p {
+                        left: 0;
+                    }
+                }
             }
         }
     }
