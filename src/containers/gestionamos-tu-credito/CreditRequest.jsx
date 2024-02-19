@@ -7,7 +7,7 @@ import '@/sass/containers/gestionamos-tu-credito/CreditRequest.scss';
 
 export const CreditRequest = () => {
     return (
-        <section className='container-credit-request'>
+        <section className='container-credit-request max-width'>
             <div className='content-credit-request'>
                 <div className='content-text'>
                     <h3>¿Listo para solicitar el
