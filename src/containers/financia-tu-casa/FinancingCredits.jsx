@@ -7,7 +7,7 @@ export const FinancingCredits = () => {
             <h2>
                 <span>Tu casa en Colombia es una realidad </span>con nuestras opciones de crédito
             </h2>
-            <article className="row-reverse">
+            <article className="row-reverse slideLeft">
                 <picture>
                     <source media="(max-width: 768px)" srcset="/img/financia/financia-credito-hipotecario.webp" />
                     <img src="/icons/financia-icon-hipotecario.svg" alt="Crédito hipotecario" />
@@ -20,7 +20,7 @@ export const FinancingCredits = () => {
                     </p>
                 </aside>
             </article>
-            <article>
+            <article className="slideRight">
                 <picture>
                     <source media="(max-width: 768px)" srcset="/img/financia/financia-leasing.webp" />
                     <img src="/icons/financia-icon-leasing.svg" alt="Crédito hipotecario" />
