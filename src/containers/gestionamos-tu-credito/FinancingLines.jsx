@@ -11,7 +11,7 @@ export const FinancingLines = () => {
                         Conoce más sobre nuestras líneas de financiación para tu
                         casa en Colombia
                     </p>
-                    <Button text={"SABER MÀS "} URL={"/"} />
+                    <Button text={"SABER MÀS "} URL={"/financia-tu-casa"} target={"_blank"} />
                 </div>
             </div>
         </section>
