@@ -33,7 +33,9 @@ section.container-financing-lines {
     }
 
     @include laptop {
-        height: 682px;
+        height: 600px;
+        background-repeat: no-repeat;
+        background-position: unset;
 
         div.content-financing-lines {
             padding: 3rem 2rem;
@@ -47,7 +49,7 @@ section.container-financing-lines {
                 }
 
                 .btn-link {
-                    margin-right: auto;
+                    max-width: 360px;
 
                 }
             }
