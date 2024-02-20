@@ -19,6 +19,7 @@ body {
     font-size: 1.6rem;
     background-color: #ffffff;
     margin: 0;
+    overflow-x: hidden;
 
     &.fijar-body {
         overflow: hidden;
@@ -112,6 +113,7 @@ button {
 .shodow_bottom {
     filter: drop-shadow(0px 1px 8px rgba(0, 0, 0, 0.75));
 }
+
 
 // 404 Not Found
 .container-not-found {

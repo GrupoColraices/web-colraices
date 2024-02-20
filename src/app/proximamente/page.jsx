@@ -1,6 +1,6 @@
 
 
-import { ButtonBack } from '@/components/ButtonBack'
+import { Button } from '@/components/Button'
 import '@/sass/containers/proximamente/coming-soon.scss'
 export default function ComingSoonPage() {
     return (
@@ -16,7 +16,7 @@ export default function ComingSoonPage() {
                 usar, seguro y confiable.
             </p>
             <img src="/coming-soon.svg" alt="Proceso de construción" />
-            <ButtonBack />
+            <Button />
         </section>
     )
 }

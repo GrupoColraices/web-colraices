@@ -1,27 +1,27 @@
-.container-pagination-basic{
+.container-pagination-basic {
     display: flex;
     align-items: center;
     gap: 20px;
 
-    img{
+    img {
         width: 40px;
         height: 20px;
     }
 
-    .text-pagination{
+    .text-pagination {
         display: flex;
         gap: 10px;
 
-        .first-text{
-            color: #CAA55E;
+        .first-text {
+            color: #b08c47;
             font-size: 20px;
             font-style: normal;
             font-weight: 600;
             line-height: normal;
         }
 
-        .second-text{
-            color: #CAA55E;
+        .second-text {
+            color: #b08c47;
             font-size: 18px;
             font-style: normal;
             font-weight: 500;

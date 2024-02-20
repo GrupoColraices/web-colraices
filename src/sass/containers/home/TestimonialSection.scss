@@ -15,9 +15,11 @@ section.Testimonial-container {
         .text-title {
             display: flex;
             flex-direction: column;
+
             div {
                 position: relative;
             }
+
             h2 {
                 font-weight: 600;
                 font-size: 2.8rem;
@@ -30,7 +32,7 @@ section.Testimonial-container {
 
             span {
                 color: $secondary;
-                color: var(--DORADO-COLRAICES, #caa55e);
+                color: var(--DORADO-COLRAICES, #b08c47);
                 text-align: center;
 
                 font-size: 24px;
@@ -38,6 +40,7 @@ section.Testimonial-container {
                 font-weight: 700;
                 line-height: normal;
             }
+
             p {
                 display: none;
             }
@@ -117,6 +120,7 @@ section.Testimonial-container {
             }
         }
     }
+
     @include desktop {
         max-width: 1200px;
         padding: 0;
