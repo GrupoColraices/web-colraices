@@ -47,12 +47,14 @@ export const servicesCards = [
         content:
             '¿Quieres una casa en Colombia? Te decimos cuánto te prestan, ¡gratis y sin esperas!',
         icon: '/icons/credit_icon.svg',
+        link: '/gestionamos-tu-credito',
     },
     {
         image: '/pensiones.jpg',
         title: 'Encontramos tu inmueble',
         content: 'Te escuchamos y asesoramos en la forma más rentable de invertir y encontramos para ti el inmueble ideal.',
         icon: '/icons/casa.png',
+        link: '/encontramos-tu-inmueble',
     },
     {
         image: '/credito.jpg',
@@ -60,6 +62,7 @@ export const servicesCards = [
         content:
             'Te acompañamos y asesoramos en el envío de tus divisas a Colombia. Para que puedas invertirlas en el inmueble que elijas.',
         icon: '/icons/credit_world.svg',
+        link: '/monetizamos-tu-dinero',
     },
 ]
 
@@ -122,25 +125,25 @@ export const testimonialsData = [
 //! Footer section data
 export const infoContact = [
     {
-      id: 1,
-      office: 'Colraices - Oficina principal Ibagué, Colombia',
-      address: 'Calle 47 # 4-61 ',
-      phoneNumber: '(57) 601 328 8939',
-      whatsapp: '15136479405',
-      email: 'info@colraices.co',
-      map: 'https://maps.app.goo.gl/yJqorhEuqYRg6SR79'
+        id: 1,
+        office: 'Colraices - Oficina principal Ibagué, Colombia',
+        address: 'Calle 47 # 4-61 ',
+        phoneNumber: '(57) 601 328 8939',
+        whatsapp: '15136479405',
+        email: 'info@colraices.co',
+        map: 'https://maps.app.goo.gl/yJqorhEuqYRg6SR79'
     },
     {
-      id: 2,
-      office: 'Oficina Madrid, España',
-      address: 'Av Mediterráneo 5, 1G, Madrid, Spain 28007',
-      map: ''
+        id: 2,
+        office: 'Oficina Madrid, España',
+        address: 'Av Mediterráneo 5, 1G, Madrid, Spain 28007',
+        map: ''
     },
     {
-      id: 3,
-      office: 'Oficina Mühldorf, Alemania',
-      address: 'Katharinenplatz 57, Muhldorf Alemania.',
-      map: 'https://maps.app.goo.gl/419cNsRz3jsedZsN7'
+        id: 3,
+        office: 'Oficina Mühldorf, Alemania',
+        address: 'Katharinenplatz 57, Muhldorf Alemania.',
+        map: 'https://maps.app.goo.gl/419cNsRz3jsedZsN7'
     }
 ]
 
@@ -156,5 +159,5 @@ export const socialNetworks = [
     { id: 3, name: 'linkedin', url: 'https://www.linkedin.com/company/colraices/mycompany', src: '/icons/linkedin.svg' },
     { id: 4, name: 'whatsapp', url: 'https://api.whatsapp.com/send/?phone=15136479405', src: '/icons/whatsapp.svg' },
     { id: 5, name: 'youtube', url: 'https://www.youtube.com/c/Colraicesserviciosinmobiliariosfinancieros', src: '/icons/youtube.svg' },
-  
+
 ]

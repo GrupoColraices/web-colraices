@@ -1,0 +1,13 @@
+@import '../../base/variables';
+@import '../../base/mixins';
+
+.title-section {
+    font-size: clamp(1.2rem, 0.2308rem + 4.3077vw, 4rem);
+    font-weight: 600;
+    text-align: center;
+    line-height: normal;
+
+    span {
+        color: $primary;
+    }
+}

@@ -1,13 +1,13 @@
 @import '../../base/mixins';
 
-.top{
+.top {
     padding-top: 33px;
     padding-bottom: 47px;
     border-radius: 10px;
     background: var(--Gris, #F2F2F2);
     box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.20);
 
-    h5{
+    h5 {
         margin: 0;
         margin-bottom: 20px;
         text-align: center;
@@ -18,19 +18,19 @@
         line-height: normal;
     }
 
-    .top-article-container{
+    .top-article-container {
         display: flex;
         flex-direction: column;
         gap: 37px;
         padding: 0 20px;
 
-        .top-article{
+        .top-article {
             display: flex;
             align-items: center;
             gap: 8px;
             justify-content: center;
 
-            .number{
+            .number {
                 color: var(--Azul-Colraices, #2A3F77);
                 font-size: 30px;
                 font-style: normal;
@@ -38,24 +38,24 @@
                 line-height: normal;
             }
 
-            .line-gold-container{
+            .line-gold-container {
                 display: flex;
                 justify-content: center;
                 align-items: center;
 
-                .line-gold{
+                .line-gold {
                     width: 1px;
                     height: 27px;
-                    background: #CAA55E;
+                    background: #b08c47;
                 }
 
             }
-        
-            .top-texts{
+
+            .top-texts {
                 display: flex;
                 flex-direction: column;
-                
-                .title{
+
+                .title {
                     margin: 0;
                     text-align: start;
                     color: var(--Azul-Colraices, #2A3F77);
@@ -65,7 +65,7 @@
                     line-height: normal;
                 }
 
-                .description{
+                .description {
                     margin: 0;
                     text-align: start;
                     color: var(--Azul-Colraices, #2A3F77);
@@ -75,10 +75,10 @@
                     line-height: normal;
                 }
 
-                .author{
+                .author {
                     margin: 0;
                     text-align: start;
-                    color: var(--SUBITULO-HOME, #CAA55E);
+                    color: var(--SUBITULO-HOME, #b08c47);
                     font-size: 12px;
                     font-style: normal;
                     font-weight: 500;
@@ -90,7 +90,7 @@
 
     }
 
-    @include laptop{
+    @include laptop {
         width: 338px;
     }
 }

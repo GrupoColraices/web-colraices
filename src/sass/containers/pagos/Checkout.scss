@@ -2,31 +2,38 @@
 
 section.Checkout-container {
     padding: 3.4rem 0;
+
     h1 {
         font-size: 1.9rem;
         color: $primary;
         text-align: center;
+
         span {
             color: $secondary;
         }
+
         @include laptop {
             text-align: left;
             font-size: 2.1rem;
             margin-left: 3rem;
         }
     }
+
     div.Service-info {
         background: #ffffff;
         box-shadow: -3px 3px 6px 2px rgba(0, 0, 0, 0.16), 3px 3px 6px 2px rgba(0, 0, 0, 0.12);
         width: 90%;
         margin: 3rem auto;
+
         @include laptop {
             margin: 3rem 0;
             width: 80rem;
             padding: 1rem 2rem;
         }
+
         border-radius: 10px;
         padding: 1rem;
+
         .Service-info-group {
             display: flex;
             align-items: center;
@@ -46,10 +53,12 @@ section.Checkout-container {
                     position: relative;
                     z-index: 0;
                     display: none;
+
                     @include laptop {
                         display: inline-block;
                     }
                 }
+
                 p {
                     font-size: 1.4rem;
                     font-weight: 600;
@@ -57,11 +66,13 @@ section.Checkout-container {
                     margin: 0;
                     width: 70%;
                 }
+
                 span {
                     color: $secondary;
                     margin-left: 3rem;
                     font-weight: bold;
                     width: 30%;
+
                     @include laptop {
                         width: unset;
                         margin: 0 2rem 0 auto;
@@ -73,30 +84,36 @@ section.Checkout-container {
                         width: 2rem;
                         height: 2rem;
                         animation: all 0.5s ease;
+
                         &:hover {
                             background-color: rgba(177, 177, 177, 0.315);
                         }
+
                         &:disabled {
                             opacity: 0.7;
                             cursor: not-allowed;
+
                             &:hover {
                                 background-color: rgba(177, 177, 177, 0.192);
                             }
                         }
                     }
                 }
+
                 @include laptop {
                     p {
                         font-size: 1.6rem;
                     }
                 }
             }
+
             .Service-info-value {
                 justify-self: flex-end;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 width: 30%;
+
                 @include laptop {
                     width: 20%;
                 }
@@ -112,6 +129,7 @@ section.Checkout-container {
                         display: none;
                         color: $secondary;
                     }
+
                     @include laptop {
                         font-size: 1.6rem;
 
@@ -120,12 +138,14 @@ section.Checkout-container {
                         }
                     }
                 }
+
                 button {
                     width: 2rem;
                     height: 2rem;
                     background-color: rgba(255, 0, 0, 0.705);
                     color: #ffffff;
                     border-radius: 0.6rem;
+
                     &:hover {
                         background-color: rgba(255, 0, 0, 0.877);
                     }
@@ -133,8 +153,10 @@ section.Checkout-container {
             }
         }
     }
+
     form {
         margin-bottom: 6rem;
+
         @include laptop {
             display: grid;
             grid-template-columns: 3fr 1.3fr;
@@ -152,60 +174,74 @@ section.Checkout-container {
             display: flex;
             flex-direction: column;
             gap: 1rem;
+
             @include laptop {
                 width: 100%;
                 height: fit-content;
                 gap: 2rem;
                 padding: 2rem 4rem 6rem;
             }
+
             p {
                 color: $primary;
                 font-weight: bold;
                 margin: 0 0 0.6rem;
                 font-size: 1.5rem;
+
                 @include laptop {
                     font-size: 1.8rem;
                 }
             }
+
             input,
             select {
                 width: 100%;
                 border-radius: 0.9rem;
-                border: 1px solid #caa55e;
+                border: 1px solid #b08c47;
                 padding: 1rem 1.4rem;
+
                 &::placeholder {
                     color: $gray;
                 }
+
                 max-height: 4rem;
             }
+
             select {
                 color: $gray;
             }
+
             .Input-group {
                 display: grid;
                 gap: 1rem;
+
                 @include laptop {
                     grid-template-columns: repeat(2, 1fr);
                     row-gap: 2rem;
                 }
             }
         }
+
         aside {
             .Payment-method {
                 box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.14), -2px 2px 6px 2px rgba(0, 0, 0, 0.12);
                 border-radius: 1.2rem;
                 padding: 1.4rem 2rem 2rem;
                 width: 90%;
+
                 @include laptop {
                     width: 100%;
                 }
+
                 margin: 3rem auto;
+
                 p {
                     color: $primary;
                     font-weight: bold;
                     margin: 0 0 1.3rem;
                     font-size: 1.5rem;
                 }
+
                 label {
                     display: flex;
                     align-items: center;
@@ -213,19 +249,24 @@ section.Checkout-container {
                     padding: 0.6rem 0;
                     cursor: pointer;
                 }
+
                 label:first-of-type {
                     border-bottom: solid 1px $gray;
                 }
             }
+
             .Payment-resume {
                 box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.14), -2px 2px 6px 2px rgba(0, 0, 0, 0.12);
                 border-radius: 1.2rem;
                 padding: 1.4rem 2rem 2rem;
                 width: 90%;
+
                 @include laptop {
                     width: 100%;
                 }
+
                 margin: 3rem auto;
+
                 p.title {
                     color: $primary;
                     font-weight: bold;
@@ -233,10 +274,12 @@ section.Checkout-container {
                     font-size: 1.5rem;
                     text-align: left;
                 }
+
                 .Resume-info {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+
                     p,
                     span {
                         font-weight: 600;
@@ -244,16 +287,19 @@ section.Checkout-container {
                         margin: 0.4rem 0;
                         font-size: 1.5rem;
                     }
+
                     p {
                         width: 70%;
                     }
                 }
+
                 .Resume-info-total {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     border-top: solid 1px gray;
                     margin-top: 1rem;
+
                     p,
                     span {
                         font-weight: bold;
@@ -262,8 +308,9 @@ section.Checkout-container {
                         margin: 1rem 0;
                     }
                 }
+
                 button {
-                    border: 1px solid #caa55e;
+                    border: 1px solid #b08c47;
                     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
                     border-radius: 26px;
                     background: $primary;
@@ -272,15 +319,18 @@ section.Checkout-container {
                     font-weight: bold;
                     padding: 0.6rem 2.2rem;
                     transition: all 0.5s ease;
+
                     &:hover {
                         background: $secondary;
                     }
+
                     display: flex;
                     margin: 0 auto;
                 }
             }
         }
     }
+
     .Go-back {
         font-weight: bold;
         color: $primary;
@@ -288,9 +338,11 @@ section.Checkout-container {
         transition: all 0.5s ease;
         display: flex;
         justify-content: center;
+
         &:hover {
-            color: #caa55e;
+            color: #b08c47;
         }
+
         @include laptop {
             justify-content: flex-start;
         }
