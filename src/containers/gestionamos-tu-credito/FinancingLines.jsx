@@ -4,7 +4,7 @@ import '@/sass/containers/gestionamos-tu-credito/FinancingLines.scss';
 
 export const FinancingLines = () => {
     return (
-        <section className='container-financing-lines max-width'>
+        <section className='container-financing-lines'>
             <div className='content-financing-lines'>
                 <div>
                     <p>
