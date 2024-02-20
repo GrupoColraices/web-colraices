@@ -9,6 +9,7 @@ section.container-financing-lines {
     border-radius: 0px 70px 0px 0px;
     background-image: url("/gestionamos-tu-credito/img/background-financing-lines.webp");
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: -120px;
 
     div.content-financing-lines {
@@ -33,9 +34,10 @@ section.container-financing-lines {
     }
 
     @include laptop {
-        height: 600px;
-        background-repeat: no-repeat;
-        background-position: unset;
+        width: 100%;
+        min-height: 676px;
+        margin: 0 auto;
+        background-position: center;
 
         div.content-financing-lines {
             padding: 3rem 2rem;
