@@ -97,11 +97,14 @@ section.container-credit-request {
 
         div.content-credit-request {
             width: 100%;
+            min-height: 690px;
             display: flex;
             justify-content: space-around;
             align-items: center;
+            border-radius: 0px 70px 0px 0px;
             background-image: url("/gestionamos-tu-credito/img/background-credit-request.webp");
-            background-size: contain;
+            background-size: cover;
+            background-position: center;
             background-repeat: no-repeat;
 
             div.content-text {
