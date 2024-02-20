@@ -129,7 +129,6 @@ button {
         width: 100%;
     }
 
-
     @include tablet {
         justify-content: flex-start;
 
@@ -139,8 +138,29 @@ button {
     }
 }
 
-/* 404 Not Found */
+.btn-internal-page {
+    border: 1px solid;
+    border-radius: 26px;
+    padding: 10px 30px;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    max-width: 220px;
+    text-align: center;
+    background: linear-gradient(0deg, #caa45e48, #caa45ea2),
+        linear-gradient(180deg, #caa55e 0%, rgba(202, 165, 94, 0.5) 100%);
+    border-color: #caa55e;
+    margin: 0 auto;
+    transition: all 0.5s ease;
+    &:hover {
+        background: linear-gradient(0deg, #caa55e 0%, rgba(202, 165, 94, 0.5) 100%),
+            linear-gradient(180deg, #caa45e48, #caa45ea2);
+    }
+}
 
+/* 404 Not Found */
 
 /* width */
 ::-webkit-scrollbar {
