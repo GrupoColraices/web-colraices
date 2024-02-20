@@ -18,7 +18,7 @@ export default function InmFavoritos() {
                 main: '#354676'
             },
             secondary: {
-                main: '#CAA55E',
+                main: '#b08c47',
             },
         },
     });

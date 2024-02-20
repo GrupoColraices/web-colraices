@@ -1,10 +1,10 @@
-import { ButtonBack } from "@/components/ButtonBack";
+import { Button } from "@/components/Button";
 
 export default function NotFound() {
   return (
     <div className="container-not-found">
       <img src='/not-found-404.webp' />
-      <ButtonBack />
+      <Button />
     </div>
   )
 }

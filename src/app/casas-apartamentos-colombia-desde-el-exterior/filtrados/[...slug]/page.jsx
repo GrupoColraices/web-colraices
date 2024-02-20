@@ -31,7 +31,7 @@ export default function InmFiltrados() {
                 main: '#354676'
             },
             secondary: {
-                main: '#CAA55E',
+                main: '#b08c47',
             },
         },
     });
@@ -62,14 +62,14 @@ export default function InmFiltrados() {
 
     return (
         <div>
-            {loading ? 
+            {loading ?
                 <LayoutInmuebles
                     loading={loading}
                     inmuebles={inmuebles}
                     Notion={true}
                     inm={inm}
                 />
-                : 
+                :
 
                 <div className='loading'>
                     <img src="/portal-inmobiliario/img/colraicesInmobiliario/home/logo.svg" alt="Portal Inmobiliario" />

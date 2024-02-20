@@ -179,6 +179,6 @@ export const styles = [
   {
     featureType: "water",
     elementType: "labels.text.fill",
-    stylers: [{ color: "#CAA55E" }],
+    stylers: [{ color: "#b08c47" }],
   },
 ];

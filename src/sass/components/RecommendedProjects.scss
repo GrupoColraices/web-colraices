@@ -7,6 +7,7 @@
     div.btn-recommended {
         display: flex;
         justify-content: center;
+
         button {
             margin-bottom: 30px;
         }
@@ -21,6 +22,7 @@
             display: none;
         }
     }
+
     @include desktop {
         gap: 10rem;
     }
@@ -38,7 +40,7 @@
             .btn-gold-rounded-desktop {
                 display: block;
                 border-radius: 0px 8px 8px 8px;
-                background: var(--DORADO-COLRAICES, #caa55e);
+                background: var(--DORADO-COLRAICES, #b08c47);
                 box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.25);
                 color: #fff;
                 text-align: center;
@@ -91,20 +93,24 @@
                 gap: 10px;
                 align-items: center;
                 margin-top: 5px;
+
                 svg {
                     cursor: pointer;
                     width: 51px;
                 }
+
                 span {
-                    color: var(--DORADO-COLRAICES, #caa55e);
+                    color: var(--DORADO-COLRAICES, #b08c47);
                     text-align: justify;
 
                     font-size: 29px;
                     font-style: normal;
                     font-weight: 500;
-                    line-height: 30px; /* 166.667% */
+                    line-height: 30px;
+
+                    /* 166.667% */
                     span {
-                        color: var(--DORADO-COLRAICES, #caa55e);
+                        color: var(--DORADO-COLRAICES, #b08c47);
 
                         font-size: 18px;
                         font-style: normal;
@@ -118,6 +124,7 @@
                 width: 553px;
                 height: 410px;
                 position: relative;
+
                 article {
                     .name-project {
                         bottom: 40px;
@@ -127,9 +134,9 @@
                         width: 258px;
                         height: 50px;
                         border-radius: 0px 0px 20px 0px;
-                        background: var(--DORADO-COLRAICES, #caa55e);
+                        background: var(--DORADO-COLRAICES, #b08c47);
                         z-index: 100;
-                        border: 1px solid #fff;
+                        border: 1px solid #FFF;
 
                         white-space: nowrap;
                         line-height: normal;
@@ -140,10 +147,12 @@
                         text-align: center;
                         font-style: normal;
                         font-weight: 700;
-                        line-height: 140.4%; /* 42.12px */
+                        line-height: 140.4%;
+                        /* 42.12px */
                         color: white;
                         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
                     }
+
                     .project-img {
                         min-width: 513px;
                         min-height: 370px;
@@ -207,16 +216,19 @@
         gap: 5px;
         align-items: center;
         margin-top: 10px;
+
         span {
-            color: var(--DORADO-COLRAICES, #caa55e);
+            color: var(--DORADO-COLRAICES, #b08c47);
             text-align: justify;
 
             font-size: 18px;
             font-style: normal;
             font-weight: 500;
-            line-height: 30px; /* 166.667% */
+            line-height: 30px;
+
+            /* 166.667% */
             span {
-                color: var(--DORADO-COLRAICES, #caa55e);
+                color: var(--DORADO-COLRAICES, #b08c47);
 
                 font-size: 14px;
                 font-style: normal;
@@ -256,7 +268,7 @@
         }
 
         span {
-            color: #4d4d4d;
+            color: #4D4D4D;
 
             font-size: 13px;
             font-style: normal;
@@ -274,12 +286,13 @@
 
             .p-desktop {
                 display: block;
-                color: #4d4d4d;
+                color: #4D4D4D;
 
                 font-size: 24px;
                 font-style: normal;
                 font-weight: 400;
-                line-height: 30px; /* 125% */
+                line-height: 30px;
+                /* 125% */
             }
 
             span {
@@ -332,10 +345,10 @@
                 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
                 &:hover {
-                    color: #fff;
+                    color: #FFF;
                     border-radius: 49px;
-                    border: 1px solid #fff;
-                    background: var(--DORADO-COLRAICES, #caa55e);
+                    border: 1px solid #FFF;
+                    background: var(--DORADO-COLRAICES, #b08c47);
                     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
                 }
             }

@@ -1,0 +1,23 @@
+@import '../../base/variables';
+@import '../../base/mixins';
+
+section.partners-managing-your-credit {
+    width: 95%;
+    margin: 3rem auto;
+    padding: 0.5rem 0;
+    border-radius: 25px;
+
+    @include desktop {
+        margin: 6rem auto;
+        border-radius: unset;
+        box-shadow: (0px 0px 9.78px rgba(147, 146, 146, 0.72));
+    }
+}
+
+section.max-width {
+    @include desktop {
+        max-width: 130rem;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
