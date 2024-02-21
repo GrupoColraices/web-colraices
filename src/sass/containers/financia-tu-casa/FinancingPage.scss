@@ -1,0 +1,571 @@
+@import '../../base/variables';
+@import '../../base/mixins';
+
+main.financing-main {
+    margin-bottom: 20rem;
+    header.financing-banner {
+        padding-top: 8rem;
+        position: relative;
+        margin-bottom: 4rem;
+        overflow: hidden;
+        &::before {
+            position: absolute;
+            display: block;
+            content: url('/icons/semicircle-decorator.svg');
+            top: 0;
+            left: 0;
+        }
+        &::after {
+            position: absolute;
+            display: block;
+            content: url('/icons/semicircle-decorator.svg');
+            transform: scaleX(-1) rotate(-40deg);
+            bottom: -50px;
+            right: -5px;
+        }
+        h1 {
+            color: $primary;
+            text-align: center;
+            font-size: 2.2rem;
+            line-height: 26px;
+
+            span {
+                color: $secondary;
+                display: block;
+            }
+        }
+        p {
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+            text-wrap: balance;
+            text-align: center;
+            margin: 2rem 0;
+            font-weight: 500;
+            color: $font-slate;
+        }
+        picture {
+            display: none;
+        }
+        @include laptop {
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            margin: 0 auto 6rem;
+            padding-top: 0;
+            &::before {
+                display: none;
+            }
+            &::after {
+                display: none;
+            }
+            h1 {
+                text-align: left;
+                font-size: 4rem;
+                line-height: 48px;
+            }
+            p {
+                font-size: 2.2rem;
+                line-height: 2.8rem;
+                text-align: left;
+                max-width: 55ch;
+                text-wrap: unset;
+            }
+            a {
+                margin: 0;
+                font-size: 16px;
+                max-width: fit-content;
+            }
+            picture {
+                display: block;
+            }
+        }
+    }
+    .financing-partners {
+        padding-inline: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        .Partners-container {
+            border-radius: 10rem;
+            @include laptop {
+                border-radius: 0;
+                box-shadow: 0px 0px 9.78px rgba(147, 146, 146, 0.72);
+            }
+        }
+    }
+    section.financing-credits {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        h2 {
+            color: $primary;
+            text-align: center;
+            font-size: 1.6rem;
+            line-height: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            span {
+                color: $secondary;
+                display: block;
+            }
+        }
+        article {
+            padding: 1rem;
+            border: 3px solid $secondary;
+            border-radius: 3.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.15), -4px -4px 6px 0px rgba(0, 0, 0, 0.15);
+            img {
+                border-radius: 2.6rem 2.6rem 0 0;
+                object-fit: cover;
+                object-position: center center;
+                overflow: hidden;
+                height: 80px;
+                width: 100%;
+            }
+            aside {
+                padding: 0 1rem 1rem;
+                h1 {
+                    font-size: 1.8rem;
+                    color: $primary;
+                    line-height: 2.2rem;
+                    margin: 1rem 0;
+                }
+                p {
+                    color: $primary;
+                    font-size: 1.4rem;
+                    line-height: 1.7rem;
+                    text-wrap: pretty;
+                    margin: 0;
+                }
+            }
+        }
+        div {
+            display: flex;
+            margin-top: 4rem;
+            a {
+                padding-inline: 1rem;
+                color: $primary;
+                &:hover {
+                    color: white;
+                }
+            }
+
+            .bg-blue {
+                background: linear-gradient(0deg, #142656, #142656);
+                color: white;
+                &:hover {
+                    background: linear-gradient(180deg, #1f3a85, #142656);
+                }
+                &::before {
+                    background-color: $secondary;
+                }
+            }
+        }
+        @include laptop {
+            padding: 8rem 0 0;
+
+            h2 {
+                font-size: 4rem;
+                line-height: 4.8rem;
+                margin-bottom: 6rem;
+            }
+            article {
+                max-width: 110rem;
+                border-width: 6px;
+                display: flex;
+                padding: 4rem 8rem;
+                column-gap: 3rem;
+                align-items: center;
+
+                img {
+                    width: 18rem;
+                    height: auto;
+                    border-radius: 0;
+                }
+                aside {
+                    width: 100%;
+                    h1 {
+                        font-size: 3rem;
+                        margin: 0 0 2rem;
+                    }
+                    p {
+                        font-size: 2.2rem;
+                        line-height: 2.7rem;
+                        max-width: 45ch;
+                        text-wrap: unset;
+                        font-weight: 500;
+                    }
+                }
+                &:last-of-type {
+                    margin-left: 10rem;
+                    margin-top: 5rem;
+                }
+            }
+            .row-reverse {
+                flex-direction: row-reverse;
+            }
+            div {
+                margin-top: 6rem;
+                a {
+                    font-size: 1.6rem;
+                    padding-inline: 5rem;
+                    min-width: fit-content;
+                }
+            }
+        }
+        .slideRight {
+            animation: slide-in-right 20s ease-in forwards;
+            animation-timeline: view();
+            animation-range: entry;
+        }
+        .slideLeft {
+            animation: slide-in-left 20s ease-in forwards;
+            animation-timeline: view();
+            animation-range: entry;
+        }
+        @keyframes slide-in-right {
+            0% {
+                transform: translateX(300px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slide-in-left {
+            0% {
+                transform: translateX(-300px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    }
+    section.financing-benefics {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        article {
+            h2 {
+                color: $font-slate;
+                font-size: 1.8rem;
+                font-weight: 700;
+                margin-bottom: 2rem;
+                padding-left: 4rem;
+            }
+            ul {
+                li {
+                    display: flex;
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    color: $font-slate;
+                    line-height: normal;
+                    max-width: 35ch;
+                    margin-bottom: 2rem;
+                }
+                li:before {
+                    content: url('/icons/circle-check-icon.svg');
+                    display: flex;
+                    padding-right: 2rem;
+                }
+            }
+        }
+        picture {
+            display: none;
+        }
+        @include laptop {
+            margin-top: 8rem;
+            display: flex;
+            align-items: center;
+            position: relative;
+            article {
+                padding: 0;
+                min-width: 90rem;
+                border-radius: 2.6rem;
+                box-shadow: 0 9px 5px -6px rgba(0, 0, 0, 0.65);
+                h2 {
+                    font-size: 4.8rem;
+                    padding: 0;
+                    text-align: center;
+                    background-color: $secondary;
+                    border-radius: 2.6rem 2.6rem 0 0;
+                    padding-block: 3rem;
+                }
+                ul {
+                    padding: 2rem 4rem;
+                    li {
+                        font-size: 1.8rem;
+                        max-width: 53ch;
+                        margin-bottom: 3rem;
+                        &::before {
+                            content: url('/icons/circle-check-icon-slate.svg');
+                        }
+                    }
+                }
+            }
+            picture {
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 4rem;
+                width: 70rem;
+            }
+        }
+    }
+    section.financing-steps {
+        h2 {
+            color: $primary;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            span {
+                color: $secondary;
+                display: block;
+            }
+        }
+        ul {
+            li {
+                position: relative;
+                color: $font-slate;
+                img {
+                    width: 100%;
+                }
+                div.step-number {
+                    display: none;
+                }
+
+                p {
+                    position: absolute;
+                    top: 1.5rem;
+                    left: 8rem;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    max-width: 30ch;
+                    span {
+                        display: block;
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                        margin-bottom: 0.4rem;
+                    }
+                }
+            }
+            li:nth-child(even) {
+                p {
+                    left: 5rem;
+                }
+            }
+        }
+        @include tablet {
+            h2 {
+                font-size: 3.2rem;
+                font-weight: 700;
+            }
+            ul {
+                li {
+                    p {
+                        top: 20%;
+                        left: 14rem;
+                        font-size: 1.6rem;
+                        font-weight: 600;
+                        max-width: 50ch;
+                        span {
+                            display: block;
+                            font-size: 2rem;
+                            font-weight: 700;
+                            margin-bottom: 1rem;
+                        }
+                    }
+                }
+                li:nth-child(even) {
+                    p {
+                        left: 8rem;
+                    }
+                }
+            }
+        }
+        @include laptop {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16rem 1rem;
+            h2 {
+                font-size: 4rem;
+                span {
+                    display: inline-block;
+                }
+            }
+            ul {
+                display: flex;
+                column-gap: 5rem;
+                margin-top: 8rem;
+                li {
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    img {
+                        display: none;
+                    }
+                    p {
+                        position: relative;
+                        text-align: justify;
+                        top: 0;
+                        left: 0;
+                        font-size: 1.6rem;
+                        font-weight: 400;
+                        span {
+                            text-align: center;
+                            font-size: 1.8rem;
+                            margin-block: 2.4rem;
+                        }
+                    }
+                    div.step-number {
+                        width: 13rem;
+                        height: 13rem;
+                        border-radius: 100%;
+                        border: solid 2px $primary;
+                        display: grid;
+                        place-items: center;
+                        p {
+                            background: $primary;
+                            padding: 3rem 3.6rem;
+                            border-radius: 100%;
+                            color: white;
+                            font-weight: bold;
+                        }
+                    }
+                }
+                li:nth-child(even) {
+                    p {
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+    section.financing-requirements {
+        padding-block: 4rem;
+        h2 {
+            font-size: 1.8rem;
+            color: $primary;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        article {
+            h2 {
+                display: none;
+            }
+            picture {
+                display: none;
+            }
+            ul {
+                li {
+                    border-radius: 0 2.8rem 2.8rem 0;
+                    padding: 1.2rem 3rem;
+                    background-color: $secondary;
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    color: $white;
+                    margin-bottom: 2rem;
+                    box-shadow: 0px 0px 9.78px rgba(147, 146, 146, 0.72);
+                    width: fit-content;
+                    &:first-of-type {
+                        max-width: 38ch;
+                    }
+                    &:nth-of-type(2) {
+                        max-width: 34ch;
+                    }
+                    &:nth-of-type(3) {
+                        max-width: 30ch;
+                    }
+                    &:last-of-type {
+                        max-width: 26ch;
+                    }
+                }
+            }
+        }
+        @include tablet {
+            h2 {
+                font-size: 2.4rem;
+            }
+            article {
+                ul {
+                    li {
+                        padding: 1.4rem 3.2rem;
+                        font-size: 1.6rem;
+                        &:first-of-type {
+                            max-width: 40ch;
+                        }
+                        &:nth-of-type(2) {
+                            max-width: 36ch;
+                        }
+                        &:nth-of-type(3) {
+                            max-width: 32ch;
+                        }
+                        &:last-of-type {
+                            max-width: 28ch;
+                        }
+                    }
+                }
+            }
+        }
+        @include laptop {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            h2 {
+                display: none;
+            }
+            article {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                h2 {
+                    display: block;
+                    position: absolute;
+                    font-size: 4rem;
+                    left: 10rem;
+                    top: 0;
+                    margin-top: 10rem;
+                }
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    li {
+                        border-radius: 6rem 0 0 6rem;
+                        padding: 2rem 4rem 2rem 6rem;
+                        font-size: 2.4rem;
+                        background-color: #eacd93;
+                        max-width: fit-content;
+                        color: $font-slate;
+                        &:first-of-type {
+                            max-width: 36ch;
+                        }
+                        &:nth-of-type(2) {
+                            max-width: 32ch;
+                        }
+                        &:nth-of-type(3) {
+                            max-width: 28ch;
+                        }
+                        &:last-of-type {
+                            max-width: 24ch;
+                        }
+                    }
+                }
+                picture {
+                    display: block;
+                    max-width: 50rem;
+                    margin-left: -4rem;
+                }
+            }
+        }
+    }
+}
