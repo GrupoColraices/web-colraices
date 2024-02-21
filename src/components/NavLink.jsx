@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-export const NavLink = ({ label, href, onClick }) => {
+export const NavLink = ({ label, href, onClick, isExternal }) => {
     const activeRoute = usePathname()
 
     return (
@@ -9,7 +9,7 @@ export const NavLink = ({ label, href, onClick }) => {
             className={`NavLink ${activeRoute === href ? 'active' : ''}`}
             href={href}
             onClick={onClick}
-            target="_blank"
+            target={isExternal ? '_blank' : undefined}
         >
             {label}
         </Link>
