@@ -169,3 +169,18 @@ export const socialNetworks = [
         src: '/icons/youtube.svg',
     },
 ]
+export const stepTitles = [
+    {
+        id: 1,
+        title: 'Completa el formulario con tus preferencias ...',
+    },
+    {
+        id: 2,
+        title: 'Nuestro equipo experto busca la mejor opcion para ti ...',
+    }
+    , {
+        id: 3,
+        title: 'Recibe recomendaciones personalizadas y agenda tus visitas ...',
+    }
+
+]
