@@ -1,8 +1,10 @@
 import { Header } from '@/components/Header'
 import { Partners } from '@/components/Partners'
+import { Form } from '@/components/gestionamos-tu-credito/Form'
 import { FinancingBanner } from '@/containers/financia-tu-casa/FinancingBanner'
 import { FinancingBenefics } from '@/containers/financia-tu-casa/FinancingBenefics'
 import { FinancingCredits } from '@/containers/financia-tu-casa/FinancingCredits'
+import { FinancingRequirements } from '@/containers/financia-tu-casa/FinancingRequirements'
 import { FinancingSteps } from '@/containers/financia-tu-casa/FinancingSteps'
 import { partners } from '@/helpers'
 import '@/sass/containers/financia-tu-casa/FinancingPage.scss'
@@ -18,6 +20,8 @@ export default function FinancingPage() {
                 <FinancingCredits />
                 <FinancingBenefics />
                 <FinancingSteps />
+                <FinancingRequirements />
+                <Form />
             </main>
         </>
     )
