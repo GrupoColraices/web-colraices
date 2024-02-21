@@ -9,7 +9,7 @@ export const FinancingCredits = () => {
             </h2>
             <article className="row-reverse slideLeft">
                 <picture>
-                    <source media="(max-width: 768px)" srcset="/img/financia/financia-credito-hipotecario.webp" />
+                    <source media="(max-width: 768px)" srcSet="/img/financia/financia-credito-hipotecario.webp" />
                     <img src="/icons/financia-icon-hipotecario.svg" alt="Crédito hipotecario" />
                 </picture>
                 <aside>
@@ -22,7 +22,7 @@ export const FinancingCredits = () => {
             </article>
             <article className="slideRight">
                 <picture>
-                    <source media="(max-width: 768px)" srcset="/img/financia/financia-leasing.webp" />
+                    <source media="(max-width: 768px)" srcSet="/img/financia/financia-leasing.webp" />
                     <img src="/icons/financia-icon-leasing.svg" alt="Crédito hipotecario" />
                 </picture>
                 <aside>
