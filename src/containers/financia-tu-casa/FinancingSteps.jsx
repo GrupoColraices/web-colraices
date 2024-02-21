@@ -9,7 +9,7 @@ export const FinancingSteps = () => {
             <ul>
                 <li>
                     <img src="/img/financia/financing-steps-container-1.svg" alt="" />
-                    <div>
+                    <div className="step-number">
                         <p>1</p>
                     </div>
                     <p>
@@ -19,7 +19,7 @@ export const FinancingSteps = () => {
                 </li>
                 <li>
                     <img src="/img/financia/financing-steps-container-2.svg" alt="" />
-                    <div>
+                    <div className="step-number">
                         <p>2</p>
                     </div>
                     <p>
@@ -29,7 +29,7 @@ export const FinancingSteps = () => {
                 </li>
                 <li>
                     <img src="/img/financia/financing-steps-container-3.svg" alt="" />
-                    <div>
+                    <div className="step-number">
                         <p>3</p>
                     </div>
                     <p>
@@ -39,7 +39,7 @@ export const FinancingSteps = () => {
                 </li>
                 <li>
                     <img src="/img/financia/financing-steps-container-4.svg" alt="" />
-                    <div>
+                    <div className="step-number">
                         <p>4</p>
                     </div>
                     <p>
