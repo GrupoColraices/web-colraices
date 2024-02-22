@@ -1,0 +1,61 @@
+@import '../../base/variables';
+@import '../../base/mixins';
+
+section.container-banner {
+    background-color: #E0E0E0;
+    padding-bottom: 8rem;
+    margin-bottom: -6.5rem;
+
+    .img-figure {
+        width: 100%;
+        position: absolute;
+        top: 10px;
+    }
+
+    .content-slider {
+        width: 100%;
+        padding: 3rem 0 10rem 2rem;
+        background-image: url("/encontramos-tu-inmueble/img/background-border.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        h1 {
+            font-size: 24px;
+            font-weight: 800;
+            color: $primary;
+
+            span {
+                width: 16%;
+                display: block;
+                font-size: 16px;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                background-color: #E0E0E0;
+            }
+        }
+
+        .img-items {
+            width: 100%;
+            margin-top: 1rem;
+        }
+    }
+
+    .content-form {
+        padding: 0 2rem;
+
+        h2 {
+            font-size: clamp(1.7rem, 1.4667rem + 1.037vw, 2.4rem);
+            font-weight: 600;
+            color: $primary;
+            line-height: normal;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 400;
+            color: $grayPlaceholder;
+            line-height: normal;
+        }
+    }
+
+}
