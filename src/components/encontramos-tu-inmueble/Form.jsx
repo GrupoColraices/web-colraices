@@ -4,6 +4,7 @@ import 'react-international-phone/style.css';
 import '@/sass/components/encontramos-tu-inmueble/Form.scss';
 import { optionsProperty, optionsState, optionsTime } from '@/app/casas-apartamentos-colombia-desde-el-exterior/helpers/options';
 import { peso, reverseFormat } from '@/app/casas-apartamentos-colombia-desde-el-exterior/helpers/formatCurrency';
+import { Fieldset } from './Fieldset';
 
 export const Form = () => {
     const { register, formState: { errors }, handleSubmit, control, reset } = useForm({ defaultValues: { name: "", phone: "", email: "" } });
@@ -105,36 +106,20 @@ export const Form = () => {
                 </select>
                 {errors?.acquire && <span className='message-error'>Este campo es requerido</span>}
             </label>
-            <label className='field-content'>
+            <div className='field-content'>
                 Elije las características
                 <details>
                     <summary>+ 5 habitaciones</summary>
-                    <fieldset>
-                        <legend>Baños</legend>
-                        <label>1+
-                            <input type="radio" name='characteristics' value='1' {...register("characteristics", { required: true })} />
-                        </label>
-                        <label>2+
-                            <input type="radio" name='characteristics' value='2' {...register("characteristics", { required: true })} />
-                        </label>
-                        <label>3+
-                            <input type="radio" name='characteristics' value='3' {...register("characteristics", { required: true })} />
-                        </label>
-                        <label>4+
-                            <input type="radio" name='characteristics' value='4' {...register("characteristics", { required: true })} />
-                        </label>
-                        <label>5+
-                            <input type="radio" name='characteristics' value='5' {...register("characteristics", { required: true })} />
-                        </label>
-                    </fieldset>
-                    <label>
-                        Habitaciones
-                        <input type="radio" name='characteristics' value='habitaciones' {...register("characteristics", { required: true })} /> /
-                    </label>
 
+                    <Fieldset name={"bathrooms"} nameSection={"Baños"} required={true} count={5} />
+                    <Fieldset name={"bedrooms"} nameSection={"Habitaciones"} required={true} count={5} />
+                    <Fieldset name={"parkinglot"} nameSection={"Parqueadero"} required={true} count={5} />
+                    <fieldset>
+                        <input className='extra-request' type="text" name="extrarequest" placeholder='Escribe algun peticion extra ... ' />
+                    </fieldset>
                 </details>
 
-            </label>
+            </div>
 
             <button type='submit' className='btn-send'>ENVIAR</button>
         </form>
