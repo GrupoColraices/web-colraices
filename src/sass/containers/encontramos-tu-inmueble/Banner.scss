@@ -201,6 +201,9 @@ section.container-banner {
 }
 
 .message-succes {
+    width: 100%;
+    position: sticky;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -210,6 +213,7 @@ section.container-banner {
     margin: 0;
     padding: 2rem;
     background-color: #13C39C;
+    z-index: 2;
 
     svg {
         width: 20px;
