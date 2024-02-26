@@ -11,16 +11,12 @@ import 'tippy.js/animations/scale.css'
 import 'react-international-phone/style.css'
 import '@/sass/components/gestionamos-tu-credito/Form.scss'
 import TitleSection from '@/app/casas-apartamentos-colombia-desde-el-exterior/components/TitleSection'
+import { usePathname } from 'next/navigation';
 
 export const Form = () => {
-    const {
-        register,
-        formState: { errors },
-        handleSubmit,
-        control,
-        reset,
-    } = useForm({ defaultValues: { name: '', phone: '', email: '' } })
-    const [loading, setLoading] = useState(false)
+    const { register, formState: { errors }, handleSubmit, control, reset } = useForm({ defaultValues: { name: "", phone: "", email: "" } });
+    const [loading, setLoading] = useState(false);
+    const pathName = usePathname();
     const theme = createTheme({
         palette: {
             primary: {
@@ -32,12 +28,12 @@ export const Form = () => {
         },
     })
     const storageDataSheet = (data) => {
-        const scriptURL =
-            'https://script.google.com/macros/s/AKfycbyhFRpcHTMm8EmtvgzHI3lR9cgSB9neosa0uo_2E00Ucvs70cfApCyIcFP0FH3b1I9_jA/exec'
-        const formData = new FormData()
-        formData.append('name', data.name)
-        formData.append('phone', data.phone)
-        formData.append('email', data.email)
+        const scriptURL = "https://script.google.com/macros/s/AKfycbyhFRpcHTMm8EmtvgzHI3lR9cgSB9neosa0uo_2E00Ucvs70cfApCyIcFP0FH3b1I9_jA/exec";
+        const formData = new FormData();
+        formData.append("name", data.name);
+        formData.append("phone", data.phone);
+        formData.append("email", data.email);
+        formData.append("pathName", `colraices.com${pathName}`);
 
         fetch(scriptURL, {
             method: 'POST',
