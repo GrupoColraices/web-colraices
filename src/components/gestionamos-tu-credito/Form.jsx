@@ -11,11 +11,13 @@ import 'tippy.js/animations/scale.css';
 import 'react-international-phone/style.css';
 import '@/sass/components/gestionamos-tu-credito/Form.scss';
 import TitleSection from '@/app/casas-apartamentos-colombia-desde-el-exterior/components/TitleSection'
+import { usePathname } from 'next/navigation';
 
 
 export const Form = () => {
     const { register, formState: { errors }, handleSubmit, control, reset } = useForm({ defaultValues: { name: "", phone: "", email: "" } });
     const [loading, setLoading] = useState(false);
+    const pathName = usePathname();
     const theme = createTheme({
         palette: {
             primary: {
@@ -32,6 +34,7 @@ export const Form = () => {
         formData.append("name", data.name);
         formData.append("phone", data.phone);
         formData.append("email", data.email);
+        formData.append("pathName", `colraices.com${pathName}`);
 
         fetch(scriptURL, {
             method: "POST",
