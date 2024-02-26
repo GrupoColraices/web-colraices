@@ -11,7 +11,7 @@ section.container-banner {
     .img-figure {
         width: 100%;
         position: absolute;
-        top: 10px;
+        top: 120px;
     }
 
     .content-slider {
@@ -41,6 +41,12 @@ section.container-banner {
             position: relative;
             margin-top: 1rem;
             z-index: 1;
+        }
+
+        .check-bubble,
+        .idea-bubble,
+        .notification-bubble {
+            display: none;
         }
     }
 
@@ -72,20 +78,141 @@ section.container-banner {
 
     @include laptop {
         flex-direction: row-reverse;
+        justify-content: space-between;
+        padding: 0 0 0 2rem;
+        margin-bottom: 20rem;
+
 
         .img-figure {
             display: none;
         }
 
+        .content-form {
+            padding: 5rem 2rem 10rem;
+        }
+
         .content-slider {
+            position: relative;
             width: 50%;
+            background-image: url("/encontramos-tu-inmueble/img/background-desktop.webp");
+            background-position: center bottom;
+            padding: 6rem 0 0 2rem;
+            background-color: $white;
 
             h1 {
-                span {
-                    width: 8%;
+                max-width: 364px;
+            }
+
+            .img-items {
+                display: none;
+            }
+
+            .check-bubble,
+            .idea-bubble,
+            .notification-bubble {
+                position: absolute;
+                display: block;
+                animation: bounce-in-fwd 2s ease-in 5s infinite alternate;
+
+                @keyframes bounce-in-fwd {
+                    0% {
+                        transform: scale(0.4);
+                        animation-timing-function: ease-in;
+                        opacity: 0.7;
+                    }
+
+                    38% {
+                        transform: scale(1);
+                        animation-timing-function: ease-out;
+                        opacity: 1;
+                    }
+
+                    55% {
+                        transform: scale(0.7);
+                        animation-timing-function: ease-in;
+                    }
+
+                    72% {
+                        transform: scale(1);
+                        animation-timing-function: ease-out;
+                    }
+
+                    81% {
+                        transform: scale(0.84);
+                        animation-timing-function: ease-in;
+                    }
+
+                    89% {
+                        transform: scale(1);
+                        animation-timing-function: ease-out;
+                    }
+
+                    95% {
+                        transform: scale(0.95);
+                        animation-timing-function: ease-in;
+                    }
+
+                    100% {
+                        transform: scale(1);
+                        animation-timing-function: ease-out;
+                    }
                 }
+            }
+
+            .check-bubble {
+                top: 38%;
+                left: 10%;
+            }
+
+            .idea-bubble {
+                top: 40%;
+                left: 42%
+            }
+
+            .notification-bubble {
+                top: 32%;
+                right: 10%;
             }
         }
     }
 
+    @include desktopxl {
+        .content-slider {
+            background-size: cover;
+            background-position: center;
+
+            .check-bubble {
+                top: 25%;
+                left: 10%;
+            }
+
+            .idea-bubble {
+                top: 27%;
+                left: 43%
+            }
+
+            .notification-bubble {
+                top: 20%;
+                right: 10%;
+            }
+        }
+    }
+
+}
+
+.message-succes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1rem;
+    font-size: 16px;
+    color: $white;
+    margin: 0;
+    padding: 2rem;
+    background-color: #13C39C;
+
+    svg {
+        width: 20px;
+        height: 25px;
+    }
 }
