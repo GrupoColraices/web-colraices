@@ -10,7 +10,7 @@ export const FinancingRequirements = () => {
                 <ul>
                     <li>Necesitas contar con la capacidad de pago de tu crédito.</li>
                     <li>Debes tener mínimo 18 años y máximo 74.</li>
-                    <li>Demostrar ingresos certíficables en el exterior</li>
+                    <li>Demostrar ingresos certificables en el exterior</li>
                     <li>Ser colombiano residente en el exterior</li>
                 </ul>
                 <picture>

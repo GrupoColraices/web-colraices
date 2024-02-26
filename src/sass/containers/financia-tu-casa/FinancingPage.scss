@@ -214,12 +214,12 @@ main.financing-main {
             }
         }
         .slideRight {
-            animation: slide-in-right 20s ease-in forwards;
+            animation: slide-in-right 3s ease-in forwards;
             animation-timeline: view();
             animation-range: entry;
         }
         .slideLeft {
-            animation: slide-in-left 20s ease-in forwards;
+            animation: slide-in-left 3s ease-in forwards;
             animation-timeline: view();
             animation-range: entry;
         }
@@ -295,6 +295,7 @@ main.financing-main {
                     background-color: $secondary;
                     border-radius: 2.6rem 2.6rem 0 0;
                     padding-block: 3rem;
+                    color: $white;
                 }
                 ul {
                     padding: 2rem 4rem;
@@ -321,7 +322,7 @@ main.financing-main {
         h2 {
             color: $primary;
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 600;
             margin-bottom: 3rem;
             span {
@@ -438,6 +439,7 @@ main.financing-main {
                             border-radius: 100%;
                             color: white;
                             font-weight: bold;
+                            font-size: 2rem;
                         }
                     }
                 }
@@ -562,8 +564,8 @@ main.financing-main {
                 }
                 picture {
                     display: block;
-                    max-width: 50rem;
-                    margin-left: -4rem;
+                    max-width: 46rem;
+                    margin-left: -6rem;
                 }
             }
         }
