@@ -1,16 +1,17 @@
-
-
 //Colors
 $white: #ffffff;
 $blanco: #ffffff;
 $white-alt: #f2f2f2;
 $primary: rgb(53, 70, 118);
 $primary-alt: #2a3f77;
-$secondary: #caa55e;
+$primary-gradient: linear-gradient(180deg, #142656 0%, #2A3F77 100%);
+$secondary: #b08c47;
 $white-trans: #fafafac9;
 $black: #000000;
 $gray: #3b3b3b;
 $gray-alt: #4d4d4d;
+$grayPlaceholder: #303030;
+$font-slate: #37474f;
 
 //Media Queries
 $phone: 480px;

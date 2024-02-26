@@ -1,0 +1,41 @@
+@import '../base/mixins';
+.btn-internal-page {
+    border: 1px solid;
+    border-radius: 26px;
+    padding: 10px 30px;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    max-width: 220px;
+    text-align: center;
+    background: linear-gradient(0deg, #caa45e48, #caa45ea2),
+        linear-gradient(180deg, #caa55e 0%, rgba(202, 165, 94, 0.5) 100%);
+    border-color: #caa55e;
+    margin: 0 auto;
+    z-index: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    position: relative;
+    &:hover {
+        background: linear-gradient(0deg, #caa55e 0%, rgba(202, 165, 94, 0.5) 100%),
+            linear-gradient(180deg, #caa45e48, #caa45ea2);
+    }
+    &::before {
+        height: 100%;
+        width: 100%;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        transition: all 0.3s;
+        background-color: $primary;
+        border-radius: 26px;
+        z-index: -1;
+    }
+    &:hover:before {
+        transform: translateX(0);
+    }
+}

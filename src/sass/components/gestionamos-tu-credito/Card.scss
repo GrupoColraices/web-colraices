@@ -1,0 +1,142 @@
+@import '../../base/variables';
+@import '../../base/mixins';
+
+.container-card {
+    width: 100%;
+    min-width: 136px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $secondary;
+    padding: 2rem 0;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 10px 6px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease;
+
+    p {
+        max-width: 96px;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: $white;
+        text-align: left;
+        margin: 0 0 1rem 0;
+    }
+
+    @include desktop {
+        width: 245px;
+        justify-content: flex-end;
+
+        p {
+            font-size: 3rem;
+            max-width: 204px;
+        }
+    }
+
+    @include desktopxl {
+        width: 275px;
+
+    }
+}
+
+.left {
+    height: 171px;
+    top: 27px;
+    left: 10px;
+    flex-direction: column-reverse;
+    z-index: 0;
+    transform: rotate(-9.132deg);
+
+    img {
+        width: 84px;
+        height: 77px;
+    }
+
+    p {
+        margin: 0.5rem 2rem 2rem 0;
+    }
+
+    &:hover {
+        z-index: 2;
+        scale: 1.1;
+    }
+
+    @include desktop {
+        max-height: 346px;
+        height: 307px;
+        flex-direction: column;
+        top: 70px;
+
+        img {
+            width: 129px;
+            height: 119px;
+        }
+    }
+}
+
+.center {
+    height: 187px;
+    left: -23px;
+    padding-left: 1.7rem;
+    z-index: 1;
+
+    img {
+        width: 84px;
+        height: 77px;
+        align-self: flex-start;
+    }
+
+    &:hover {
+        z-index: 2;
+        scale: 1.1;
+    }
+
+    @include desktop {
+        height: 350px;
+        padding-left: 1rem;
+
+        img {
+            width: 116px;
+            height: 164px;
+            align-self: center;
+        }
+    }
+
+}
+
+.right {
+    height: 151px;
+    top: 46px;
+    right: 62px;
+    padding-left: 2rem;
+    transform: rotate(8.708deg);
+    z-index: 2;
+
+    img {
+        width: 65px;
+        height: 60px;
+    }
+
+    &:hover {
+        scale: 1.1;
+    }
+
+    @include desktop {
+        max-height: 305px;
+        height: 270px;
+        top: 100px;
+        padding-left: 2rem;
+
+        img {
+            width: 164px;
+            height: 152px;
+        }
+    }
+
+}
+
+
+.primary {
+    background-color: $primary;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}

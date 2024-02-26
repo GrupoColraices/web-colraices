@@ -16,40 +16,29 @@ export const Header = () => {
     return (
         <header className="Header-container">
             <Image src="/logo.svg" alt="Logo Colraices" width={170} height={40} quality={100} />
-            
-            <div className='navbar-links-desktop'>
+
+            <div className="navbar-links-desktop">
                 {navbarLinks.map((link) => (
-                    <NavLink key={link.href} label={link.label} href={link.href} />
+                    <NavLink key={link.href} label={link.label} href={link.href} isExternal={link.isExternal} />
                 ))}
             </div>
 
-            <nav className='responsive_nav' ref={navRef}>
+            <nav className="responsive_nav" ref={navRef}>
                 <button className="Header-btn-close" onClick={showNavBar}>
                     <Image src="/icons/close_icon.svg" alt="Close icon" width={17} height={17} />
                 </button>
                 <Link href="/">
-                    <Image
-                        src="/logo.svg"
-                        alt="Logo Colraices"
-                        width={200}
-                        height={55}
-                        quality={100}
-                    />
+                    <Image src="/logo.svg" alt="Logo Colraices" width={200} height={55} quality={100} />
                 </Link>
-                <div className='navbar-links'>
+                <div className="navbar-links">
                     {navbarLinks.map((link) => (
-                        <NavLink key={link.href} label={link.label} href={link.href} />
+                        <NavLink key={link.href} label={link.label} href={link.href} isExternal={link.isExternal} />
                     ))}
                 </div>
             </nav>
 
             <button className="Header-btn-open" onClick={showNavBar}>
-                <Image
-                    src="/icons/hamburguer_icon.svg"
-                    alt="Hamburgures icon"
-                    width={17}
-                    height={11}
-                />
+                <Image src="/icons/hamburguer_icon.svg" alt="Hamburgures icon" width={17} height={11} />
             </button>
         </header>
     )

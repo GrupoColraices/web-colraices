@@ -2,7 +2,7 @@ export const TitleLine = ({ width = 10, left = false, right = false, top = 20 })
     const styles = {
         width: `${width}%`,
         height: '2px',
-        background: '#CAA55E',
+        background: '#b08c47',
         position: 'absolute',
         top: `${top}%`,
     }

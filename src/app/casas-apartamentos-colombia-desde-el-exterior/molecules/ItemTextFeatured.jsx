@@ -4,9 +4,17 @@ import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { block } from 'million/react';
+import { useEffect, useState } from 'react'
 
-export default function ItemTextFeatured({ itemsEligenos }) {
+export default block(function ItemTextFeatured({ itemsEligenos }) {
+    const [isClient, setIsClient] = useState(false)
+
+    useEffect(() => {
+        setIsClient(true)
+    }, [])
     return (
+        isClient &&
         <>
             <Swiper
                 className='swiper-text-featured'
@@ -44,4 +52,4 @@ export default function ItemTextFeatured({ itemsEligenos }) {
         </>
 
     )
-}
+})

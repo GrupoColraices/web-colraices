@@ -15,7 +15,7 @@ export const InmRecomend = () => {
                 main: '#354676'
             },
             secondary: {
-                main: '#CAA55E',
+                main: '#b08c47',
             },
         },
     });

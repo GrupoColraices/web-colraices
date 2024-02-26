@@ -2,7 +2,7 @@
 <g filter="url(#filter0_d_17_2289)">
 <circle cx="15.5" cy="13.5" r="11.5" fill="#F6F6F6"/>
 </g>
-<path d="M13 9L19 14L13 19" stroke="#CAA55E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13 9L19 14L13 19" stroke="#b08c47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <defs>
 <filter id="filter0_d_17_2289" x="0" y="0" width="31" height="31" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>

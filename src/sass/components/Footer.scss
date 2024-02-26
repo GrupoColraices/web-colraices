@@ -7,7 +7,7 @@ footer {
 
     &::before {
         position: absolute;
-        content: "";
+        content: '';
         width: 100%;
         min-height: 51rem;
         background-image: url('/portal-inmobiliario/img/colraicesInmobiliario/home/background_footer.svg');
@@ -17,7 +17,6 @@ footer {
         @include phone {
             min-height: 52rem;
         }
-
     }
 
     section {
@@ -89,7 +88,6 @@ footer {
                     }
                 }
             }
-
         }
 
         div.social-networks {
@@ -111,7 +109,6 @@ footer {
                     height: auto;
                 }
             }
-
         }
     }
 
@@ -127,8 +124,8 @@ footer {
             max-width: 122rem;
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(3, auto);
-            column-gap: 15rem;
-            padding: 10rem 1rem 0 10rem;
+            column-gap: 2rem;
+            padding: 10rem 1rem 0 2rem;
 
             img.logo {
                 grid-area: 1/1;
@@ -179,6 +176,13 @@ footer {
                 grid-row: 3;
                 align-self: self-end;
             }
+        }
+    }
+
+    @include desktop {
+        section {
+            max-width: 120rem;
+            padding: 10rem 1rem 0 0;
         }
     }
 }

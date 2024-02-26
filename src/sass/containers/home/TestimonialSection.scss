@@ -5,19 +5,21 @@ section.Testimonial-container {
     padding: 0 3rem;
     margin: 4rem auto 0rem auto;
     position: relative;
-    background: #FFFF;
+    background: #ffff;
 
     .testimonial-texts {
         display: flex;
         flex-direction: column;
         margin-bottom: 47px;
 
-        .text-title{
+        .text-title {
             display: flex;
             flex-direction: column;
-            div{
+
+            div {
                 position: relative;
             }
+
             h2 {
                 font-weight: 600;
                 font-size: 2.8rem;
@@ -27,42 +29,43 @@ section.Testimonial-container {
                 margin: 0 auto;
                 max-width: 32rem;
             }
-            
+
             span {
                 color: $secondary;
-                color: var(--DORADO-COLRAICES, #CAA55E);
+                color: var(--DORADO-COLRAICES, #b08c47);
                 text-align: center;
-                
+
                 font-size: 24px;
                 font-style: normal;
                 font-weight: 700;
                 line-height: normal;
             }
-            p{
+
+            p {
                 display: none;
             }
 
-            @include laptop{
-                div div{
+            @include laptop {
+                div div {
                     display: none;
                 }
 
-                h2{
+                h2 {
                     font-size: 60px;
                     text-align: start;
                     margin: 0;
                 }
 
-                span{
+                span {
                     font-size: 60px;
                     text-align: start;
                 }
 
-                p{
+                p {
                     display: block;
                     color: #000;
                     text-align: justify;
-                    
+
                     font-size: 18px;
                     font-style: normal;
                     font-weight: 400;
@@ -85,7 +88,6 @@ section.Testimonial-container {
         margin-top: 15rem;
 
         div {
-
             h2 {
                 font-weight: 700;
                 font-size: 4rem;
@@ -117,6 +119,12 @@ section.Testimonial-container {
                 }
             }
         }
+    }
+
+    @include desktop {
+        max-width: 1200px;
+        padding: 0;
+        justify-content: space-between;
     }
 
     div:nth-child(2) {
