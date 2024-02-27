@@ -1,3 +1,4 @@
+import { Header } from '@/components/Header';
 import { Banner } from '@/containers/encontramos-tu-inmueble/Banner'
 import { APIURL } from '@/helpers/api';
 
@@ -10,7 +11,7 @@ export const metadata = {
 export default async function WeFoundYourProperty() {
     const cities = await getCities();
     return (
-        <>
+        <>  <Header />
             <Banner cities={cities} />
         </>
     )
