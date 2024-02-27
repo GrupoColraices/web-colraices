@@ -42,9 +42,10 @@ export const Form = ({ cities: listCities, setLoading }) => {
                 if (response.status === 200) {
                     reset();
                     setLabel("")
+                    setLoading(true);
                     setTimeout(() => {
                         setLoading(false);
-                    }, "3000")
+                    }, "4000")
                 }
             } catch (error) {
                 console.log(error);
@@ -52,7 +53,6 @@ export const Form = ({ cities: listCities, setLoading }) => {
         });
     }
     const onSubmit = (data) => {
-        setLoading(true);
         storageDataSheet(data);
     }
     return (
@@ -192,9 +192,8 @@ export const Form = ({ cities: listCities, setLoading }) => {
                 </label>
             </div>
             <div className='field-content'>
-                Elije las características
                 <details>
-                    <summary>+ 5 habitaciones</summary>
+                    <summary>Elije las características</summary>
 
                     <Fieldset name={"bathrooms"} nameSection={"Baños"} register={register} required={false} count={5} />
                     <Fieldset name={"bedrooms"} nameSection={"Habitaciones"} register={register} required={false} count={5} />
