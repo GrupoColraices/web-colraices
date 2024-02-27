@@ -15,7 +15,9 @@ export const Header = () => {
 
     return (
         <header className="Header-container">
-            <Image src="/logo.svg" alt="Logo Colraices" width={170} height={40} quality={100} />
+            <Link href="/">
+                <Image src="/logo.svg" alt="Logo Colraices" width={170} height={40} quality={100} />
+            </Link>
 
             <div className="navbar-links-desktop">
                 {navbarLinks.map((link) => (
