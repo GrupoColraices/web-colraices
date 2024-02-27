@@ -51,7 +51,7 @@ export const Banner = ({ cities }) => {
                 </div>
                 <div className="content-form">
                     <h2>Dinos como buscas tu hogar y te ayudaremos a encontrarlo </h2>
-                    <p>Completa el formualrio con tus preferencias</p>
+                    <p>Completa el formulario con tus preferencias</p>
                     <Form cities={cities} setLoading={setLoading} />
                 </div>
             </section >
