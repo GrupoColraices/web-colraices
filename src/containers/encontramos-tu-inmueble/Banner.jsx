@@ -8,11 +8,13 @@ import { stepTitles } from "@/helpers";
 import '@/sass/containers/encontramos-tu-inmueble/Banner.scss'
 import { Form } from "@/components/encontramos-tu-inmueble/Form";
 import { FaCheck } from "react-icons/fa6";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Banner = ({ cities }) => {
     const [loading, setLoading] = useState(false);
-
+    useEffect(() => {
+        scrollTo(0, 0);
+    }, [])
     return (
         <>
             {loading && <p className="message-succes">Tu solicitud fue enviada con éxito <FaCheck color="#fff" />
