@@ -7,32 +7,34 @@ import { optionsProperty, optionsState, optionsTime } from '@/app/casas-apartame
 import { peso, reverseFormat } from '@/app/casas-apartamentos-colombia-desde-el-exterior/helpers/formatCurrency';
 import { Fieldset } from './Fieldset';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 export const Form = ({ cities: listCities, setLoading }) => {
     const { register, formState: { errors }, handleSubmit, control, reset } = useForm({ defaultValues: { name: "", phone: "", email: "" } });
     const [cities, setCities] = useState(listCities);
     const [label, setLabel] = useState('');
     const [value, setValue] = useState('');
-
+    const pathname = usePathname();
     const filtered = cities?.filter((item) => {
         const search = label?.toLowerCase();
         const name = item?.slug.toLowerCase();
         return (search && name?.startsWith(search)) || name === search;
     });
     const storageDataSheet = (data) => {
-        const scriptURL = "https://script.google.com/macros/s/AKfycby-eKee7ynU9TTPOJ5R_AF76v3YtJzy7k8dnT_Jd91AVbxHpSfp06JaPOrrYhxmX6oR/exec";
+        const scriptURL = "https://script.google.com/macros/s/AKfycbxwUM9vNEijLnvEnAJYohvbLum8DD7nvVPE3ExxMGpA9G9yOfRWHsMKYD_Itnp-Ix6x/exec";
         const formData = new FormData();
         formData.append("name", data.name);
         formData.append("phone", data.phone);
         formData.append("email", data.email);
+        formData.append("city", data.cityOfInteres);
         formData.append("typeProperty", data.typeProperty);
-        formData.append("cityOfInteres", data.cityOfInteres);
-        formData.append("stateProperty", data.stateProperty);
+        formData.append("state", data.stateProperty);
+        formData.append("rooms", data.bedrooms);
         formData.append("budget", data.budget);
-        formData.append("acquire", data.acquire);
+        formData.append("timeAcquire", data.acquire);
         formData.append("bathrooms", data.bathrooms);
-        formData.append("bedrooms", data.bedrooms);
         formData.append("parkinglot", data.parkinglot);
         formData.append("extraRequest", data.extraRequest);
+        formData.append("pathName", `colraices.com${pathname}`);
 
         fetch(scriptURL, {
             method: "POST",
