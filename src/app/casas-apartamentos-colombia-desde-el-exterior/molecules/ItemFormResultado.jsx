@@ -16,12 +16,14 @@ import TitleSection from "../components/TitleSection";
 import { scrollSection } from "../helpers/actionScroll";
 import { onlyNumbers, peso, reverseFormat } from "../helpers/formatCurrency";
 import { optionsProperty, optionsState, optionsTime } from '../helpers/options';
+import { usePathname } from 'next/navigation';
 
 
 export const ItemFormResultado = () => {
     const { register, formState: { errors }, handleSubmit, control, reset, resetField } = useForm();
     const [fields, setFields] = useState(false);
     const [loading, setLoading] = useState(false);
+    const pathname = usePathname();
     const theme = createTheme({
         palette: {
             primary: {
@@ -54,7 +56,7 @@ export const ItemFormResultado = () => {
         formData.append("rooms", data.rooms);
         formData.append("budget", data.budget);
         formData.append("timeAcquire", data.timeAcquire);
-
+        formData.append("pathName", `colraices.com${pathname}`);
 
         fetch(scriptURL, {
             method: "POST",
