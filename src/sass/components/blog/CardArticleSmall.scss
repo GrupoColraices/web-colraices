@@ -3,10 +3,11 @@
 .card-article-small {
     display: flex;
     gap: 15px;
+    margin: 0 0 2rem 0;
 
     .image {
-        min-width: 131px;
-        min-height: 120px;
+        width: 131px;
+        height: 120px;
         border-radius: 10px;
         background: var(--Gris, #F2F2F2);
         margin-bottom: 8px;
@@ -15,7 +16,7 @@
     @include laptop {
         .image {
             min-width: 128px;
-            min-height: 117px;
+            height: 117px;
         }
     }
 
@@ -40,7 +41,7 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal;
-            margin: 0;
+            margin: 0.5rem 0;
         }
 
         .author {

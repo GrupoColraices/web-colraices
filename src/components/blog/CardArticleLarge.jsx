@@ -1,15 +1,23 @@
 'use client'
 import '@/sass/components/blog/CardArticleLarge.scss';
+import { format } from 'date-fns';
+import Image from 'next/image';
+import Link from 'next/link';
 
-const CardArticleLarge = () => {
+
+const CardArticleLarge = ({ article }) => {
   return (
-    <div className='card-article-large'>
-        <div className='image'></div>
-        <p className='title'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh </p>
-        <p className='description'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh </p>
-        <p className='author'>Lorem ipsum  -  dolor sit </p>
-        <span className='author'>Fecha / año</span>
-    </div>
+    <Link href={`/blog/${article?.slug}`}>
+      <div className='card-article-large'>
+        <Image className='image' width="295" height="160" src={article?.imagen} alt={article?.alt} />
+        <div className='texts'>
+          <p className='title'>{article?.titulo}</p>
+          <p className='description'>{article?.descripcion}</p>
+          <p className='author'>{article?.autor}</p>
+          <span className='author'>{format(new Date(article?.creacion), 'dd MMMM / yyyy')}</span>
+        </div>
+      </div>
+    </Link>
   )
 }
 

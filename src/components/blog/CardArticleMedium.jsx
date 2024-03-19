@@ -1,17 +1,22 @@
 'use client'
 import '@/sass/components/blog/CardArticleMedium.scss';
+import Image from 'next/image';
+import { format } from 'date-fns';
+import Link from 'next/link';
 
-const CardArticleMedium = () => {
+const CardArticleMedium = ({ article }) => {
   return (
-    <div className='card-article-medium'>
-        <div className='image'></div>
+    <Link href={`/blog/${article?.slug}`}>
+      <div className='card-article-medium'>
+        <Image width={300} height={200} className="image" src={article?.imagen} alt={article?.alt} />
         <div className='texts'>
-            <p className='title'>Lorem ipsum dolor sit</p>
-            <p className='description'>Lorem ipsum dolor sit amet, cons</p>
-            <p className='author'>Lorem ipsum  -  dolor sit </p>
-            <span className='author'>Fecha / año</span>
+          <p className='title'>{article?.titulo}</p>
+          <p className='description'>{article?.descripcion}</p>
+          <p className='author'>{article?.autor}</p>
+          <span className='author'>{format(new Date(article?.creacion), 'dd MMMM / yyyy')}</span>
         </div>
-    </div>
+      </div>
+    </Link>
   )
 }
 

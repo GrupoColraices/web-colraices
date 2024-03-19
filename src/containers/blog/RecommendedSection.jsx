@@ -4,28 +4,27 @@ import Top from '@/components/blog/Top';
 import CardVideoLg from '@/components/blog/video/CardVideoLg';
 import '@/sass/containers/blog/RecommendedSection.scss';
 
-const RecommendedSection = () => {
+const RecommendedSection = ({ articles, videos }) => {
   return (
     <section className='recommended-section'>
-        <h4 className='title-recommended'>Contenido recomendado</h4>
+      <h4 className='title-recommended'>Contenido recomendado</h4>
 
-        <div className='videos'>
-          <span>Videos</span>
-          <Line width='20' />
+      <div className='videos'>
+        <span>Videos</span>
+        <Line width='20' />
+      </div>
+
+      <div className='container-video-cards'>
+        <div className='video-cards'>
+          {videos.map((video, index) => (
+            <CardVideoLg key={index} video={video} />
+          ))}
         </div>
 
-        <div className='container-video-cards'>
-          <div className='video-cards'>
-            <CardVideoLg/>
-            <CardVideoLg/>
-            <CardVideoLg/>
-            <CardVideoLg/>
-          </div>
-
-          <div className='container-top-desktop'>
-            <Top/>
-          </div>
+        <div className='container-top-desktop'>
+          <Top articles={articles} />
         </div>
+      </div>
 
     </section>
   )
