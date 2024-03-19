@@ -1,79 +1,35 @@
 'use client'
 import '@/sass/components/blog/Top.scss';
+import Link from 'next/link';
 
-const Top = () => {
-  return (
-    <div className="top">
-        <h5>Top Articulos Blog</h5>
 
-        <div className='top-article-container'>
+const Top = ({ articles }) => {
 
-            <div className='top-article'>
-                <span className='number'>01</span>
+    return (
+        <div className="top">
+            <h5>Top Articulos Blog</h5>
 
-                <div className='line-gold-container'>
-                    <div className='line-gold'></div>
-                </div>
+            <div className='top-article-container'>
+                {articles?.slice(0, 5).map((article, index) => (
+                    <Link href={`/blog/${article?.slug}`} key={index}>
+                        <div className='top-article' >
+                            <span className='number'>{index + 1}</span>
 
-                <div className='top-texts'>
-                    <p className='title'>Lorem ipsum dolor sit </p>
-                    <p className='description'>Lorem ipsum dolor sit amet</p>
-                    <p className='author'>Lorem ipsum - dolor sit </p>
-                </div>
+                            <div className='line-gold-container'>
+                                <div className='line-gold'></div>
+                            </div>
+
+                            <div className='top-texts'>
+                                <p className='title'>{article.titulo}</p>
+                                <p className='description'>{article.descripcion}</p>
+                                <p className='author'>{article.autor} </p>
+                            </div>
+                        </div>
+                    </Link>
+                ))}
             </div>
-
-            <div className='top-article'>
-
-                <span className='number'>02</span>
-                <div className='line-gold-container'>
-                    <div className='line-gold'></div>
-                </div>
-                <div className='top-texts'>
-                    <p className='title'>Lorem ipsum dolor sit </p>
-                    <p className='description'>Lorem ipsum dolor sit amet</p>
-                    <p className='author'>Lorem ipsum - dolor sit </p>
-                </div>
-            </div>
-
-            <div className='top-article'>
-                <span className='number'>03</span>
-                <div className='line-gold-container'>
-                    <div className='line-gold'></div>
-                </div>
-                <div className='top-texts'>
-                    <p className='title'>Lorem ipsum dolor sit </p>
-                    <p className='description'>Lorem ipsum dolor sit amet</p>
-                    <p className='author'>Lorem ipsum - dolor sit </p>
-                </div>
-            </div>
-
-            <div className='top-article'>
-                <span className='number'>04</span>
-                <div className='line-gold-container'>
-                    <div className='line-gold'></div>
-                </div>
-                <div className='top-texts'>
-                    <p className='title'>Lorem ipsum dolor sit </p>
-                    <p className='description'>Lorem ipsum dolor sit amet</p>
-                    <p className='author'>Lorem ipsum - dolor sit </p>
-                </div>
-            </div>
-
-            <div className='top-article'>
-                <span className='number'>05</span>
-                <div className='line-gold-container'>
-                    <div className='line-gold'></div>
-                </div>
-                <div className='top-texts'>
-                    <p className='title'>Lorem ipsum dolor sit </p>
-                    <p className='description'>Lorem ipsum dolor sit amet</p>
-                    <p className='author'>Lorem ipsum - dolor sit </p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-  )
+        </div >
+    )
 }
 
 export default Top
