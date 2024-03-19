@@ -8,6 +8,7 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
+    domains: ['vc.colraices.com', 'blog.colraices.com'],
     remotePatterns: [
       {
         protocol: 'https',
