@@ -1,50 +1,67 @@
 import { Partners } from "@/components/Partners";
 import CardArticleSm from "@/components/blog/CardArticleSm";
-import Pagination from "@/components/blog/Pagination";
 import Podcast from "@/components/blog/Podcast";
 import Top from "@/components/blog/Top";
 import ArticlesSection from "@/containers/blog/ArticlesSection";
 import BannerSectionBlog from "@/containers/blog/BannerSectionBlog";
 import RecommendedSection from "@/containers/blog/RecommendedSection";
+import { ArticlesProvider } from "@/context/ArticlesContext";
 import { partners } from "@/helpers";
 import '@/sass/containers/blog/Blog.scss';
 
-export default function BlogPage() {
-    return(
-        <main>
-            <BannerSectionBlog/>
+const getArticles = async () => {
+    const fetching = await fetch(`https://blog.colraices.com/api/v1/posts?category_id=8`);
+    const response = await fetching.json();
+    return response?.data;
+}
+const getVideos = async () => {
+    const apiKey = "AIzaSyAWQ4bAayePmmYTrnhxvwefzcQQaTmQk2k";
+    const channelId = "UCiBystYzqzabHULJWwgAjnw"
+    const fetching = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=4`);
+    const response = await fetching.json();
+    return response?.items;
+}
 
-            <div className="container-partners">
-                <div className='partners'>
-                    <Partners partners={partners} hover={true} />
-                </div>
-            </div>
+export default async function BlogPage() {
+    const articles = await getArticles();
+    const videos = await getVideos();
+    return (
+        <ArticlesProvider>
+            <main>
+                <BannerSectionBlog articles={articles} />
 
-            <div className="articles">
-                <div className="article-container">
-                    <ArticlesSection/>
+                <div className="container-partners">
+                    <div className='partners'>
+                        <Partners partners={partners} hover={true} />
+                    </div>
                 </div>
-                <div className='container-cards-sm'>
+
+                <div className="articles">
+                    <div className="article-container">
+                        <ArticlesSection />
+                    </div>
+                    {/* <div className='container-cards-sm'>
                     <CardArticleSm />
                     <CardArticleSm />
                     <CardArticleSm />
                 </div>
                 <div className="container-pagination">
-                    <Pagination/>
+
+                </div> */}
                 </div>
-            </div>
 
-            <div className="recommended">
-                <RecommendedSection/>
-            </div>
+                <div className="recommended">
+                    <RecommendedSection articles={articles} videos={videos} />
+                </div>
 
-            <div className="top-container">
-                <Top/>
-            </div>
+                <div className="top-container">
+                    <Top articles={articles} />
+                </div>
 
-            <div className="podcast-container">
-                <Podcast/>
-            </div>
-        </main>
+                <div className="podcast-container">
+                    {/* <Podcast /> */}
+                </div>
+            </main>
+        </ArticlesProvider>
     )
 }
