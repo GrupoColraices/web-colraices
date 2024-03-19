@@ -21,7 +21,7 @@
     .top-article-container {
         display: flex;
         flex-direction: column;
-        gap: 37px;
+        gap: 15px;
         padding: 0 20px;
 
         .top-article {
@@ -56,7 +56,7 @@
                 flex-direction: column;
 
                 .title {
-                    margin: 0;
+                    margin: 0.2rem;
                     text-align: start;
                     color: var(--Azul-Colraices, #2A3F77);
                     font-size: 12px;
@@ -66,8 +66,8 @@
                 }
 
                 .description {
-                    margin: 0;
-                    text-align: start;
+                    margin: 0.2rem;
+                    text-align: justify;
                     color: var(--Azul-Colraices, #2A3F77);
                     font-size: 12px;
                     font-style: normal;
@@ -76,8 +76,8 @@
                 }
 
                 .author {
-                    margin: 0;
-                    text-align: start;
+                    margin: 0.2rem;
+                    text-align: justify;
                     color: var(--SUBITULO-HOME, #b08c47);
                     font-size: 12px;
                     font-style: normal;
