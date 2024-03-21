@@ -1,6 +1,6 @@
 'use client'
 import Line from '@/components/Line';
-import Top from '@/components/blog/Top';
+import TopArticles from '@/components/blog/TopArticles';
 import CardVideoLg from '@/components/blog/video/CardVideoLg';
 import '@/sass/containers/blog/RecommendedSection.scss';
 
@@ -22,7 +22,7 @@ const RecommendedSection = ({ articles, videos }) => {
         </div>
 
         <div className='container-top-desktop'>
-          <Top articles={articles} />
+          <TopArticles articles={articles} />
         </div>
       </div>
 
