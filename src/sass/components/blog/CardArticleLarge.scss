@@ -8,45 +8,52 @@
     .image {
         width: 295px;
         height: 160px;
+        object-fit: cover;
         border-radius: 10px;
         background: var(--Gris, #F2F2F2);
         margin-bottom: 8px;
     }
 
-    .title {
-        color: var(--Azul-Colraices, #2A3F77);
-        text-align: justify;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-        margin: 0;
-    }
+    .texts {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
 
-    .description {
-        color: var(--Azul-Colraices, #2A3F77);
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        margin: 0;
-    }
+        .title {
+            color: var(--Azul-Colraices, #2A3F77);
+            text-align: justify;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            margin: 0;
+        }
 
-    .author {
-        color: var(--SUBITULO-HOME, #b08c47);
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        margin: 0;
+        .description {
+            color: var(--Azul-Colraices, #2A3F77);
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin: 0.5rem 0;
+        }
+
+        .author {
+            color: var(--SUBITULO-HOME, #b08c47);
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            margin: 0;
+        }
     }
 
     @include laptop {
         max-width: 322px;
 
         .image {
-            min-width: 322px;
-            min-height: 175px;
+            width: 322px;
+            height: 175px;
         }
     }
 }
