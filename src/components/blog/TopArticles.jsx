@@ -3,14 +3,15 @@ import '@/sass/components/blog/Top.scss';
 import Link from 'next/link';
 
 
-const Top = ({ articles }) => {
+const TopArticles = ({ articles }) => {
+    const sortedArticlesByTitle = articles?.slice().sort((a, b) => a.titulo.localeCompare(b.titulo));
 
     return (
         <div className="top">
             <h5>Top Articulos Blog</h5>
 
             <div className='top-article-container'>
-                {articles?.slice(0, 5).map((article, index) => (
+                {sortedArticlesByTitle?.slice(0, 5).map((article, index) => (
                     <Link href={`/blog/${article?.slug}`} key={index}>
                         <div className='top-article' >
                             <span className='number'>{index + 1}</span>
@@ -32,4 +33,4 @@ const Top = ({ articles }) => {
     )
 }
 
-export default Top
+export default TopArticles

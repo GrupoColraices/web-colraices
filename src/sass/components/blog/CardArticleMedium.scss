@@ -14,7 +14,7 @@
 
     @include laptop {
         .image {
-            width: 191px;
+            min-width: 191px;
             height: 175px;
             object-fit: cover;
         }

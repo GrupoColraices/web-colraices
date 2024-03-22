@@ -1,7 +1,7 @@
 import { Header } from '@/components/Header'
-import Top from '@/components/blog/Top';
+import TopArticles from '@/components/blog/TopArticles';
+import { formatDate } from '@/helpers/formatDate';
 import '@/sass/containers/blog/ArticlePage.scss';
-import { format } from 'date-fns';
 import Image from 'next/image';
 
 
@@ -27,15 +27,14 @@ export default async function ArticlePage({ params }) {
             <section className='article-container'>
                 <div className='article-content'>
                     <article>
-                        <h1>Lorem Ipsum</h1>
-                        <span className='author'>Lorem Ipsum / {format(new Date(article.creacion), 'dd MMMM yyyy')}</span>
-                        <p>Lorem Ipsum</p>
-                        <div width={705} height={500} className="image" src={article.imagen} alt={article.alt} />
-                        {/* <div className='image'></div> */}
-                        <p>Lorem Ipsum </p>
+                        <h1>{article.titulo}</h1>
+                        <span className='author'>{article.autor} / {formatDate(article.creacion)}</span>
+                        <p>{article.description}</p>
+                        <Image width={705} height={500} className="image" src={article.imagen} alt={article.alt} />
+                        <div dangerouslySetInnerHTML={{ __html: article.contenido }}></div>
                     </article>
                     <aside>
-                        <Top articles={articles} />
+                        <TopArticles articles={articles} />
                     </aside>
 
                 </div>

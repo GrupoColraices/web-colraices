@@ -1,7 +1,7 @@
+import { Header } from "@/components/Header";
 import { Partners } from "@/components/Partners";
-import CardArticleSm from "@/components/blog/CardArticleSm";
 import Podcast from "@/components/blog/Podcast";
-import Top from "@/components/blog/Top";
+import TopArticles from "@/components/blog/TopArticles";
 import ArticlesSection from "@/containers/blog/ArticlesSection";
 import BannerSectionBlog from "@/containers/blog/BannerSectionBlog";
 import RecommendedSection from "@/containers/blog/RecommendedSection";
@@ -27,6 +27,7 @@ export default async function BlogPage() {
     const videos = await getVideos();
     return (
         <ArticlesProvider>
+            <Header />
             <main>
                 <BannerSectionBlog articles={articles} />
 
@@ -40,14 +41,6 @@ export default async function BlogPage() {
                     <div className="article-container">
                         <ArticlesSection />
                     </div>
-                    {/* <div className='container-cards-sm'>
-                    <CardArticleSm />
-                    <CardArticleSm />
-                    <CardArticleSm />
-                </div>
-                <div className="container-pagination">
-
-                </div> */}
                 </div>
 
                 <div className="recommended">
@@ -55,7 +48,7 @@ export default async function BlogPage() {
                 </div>
 
                 <div className="top-container">
-                    <Top articles={articles} />
+                    <TopArticles articles={articles} />
                 </div>
 
                 <div className="podcast-container">
