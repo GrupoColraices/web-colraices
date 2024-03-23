@@ -5,6 +5,16 @@ import '@/sass/containers/blog/ArticlePage.scss';
 import Image from 'next/image';
 
 
+
+export async function generateMetadata({ params }) {
+    const { titulo, description } = await getArticle(params.slug)
+    return {
+        title: titulo,
+        description: description,
+    }
+
+}
+
 const getArticle = async (slug) => {
     const article = await fetch(`https://blog.colraices.com/api/v1/posts/${slug}`)
     const response = await article.json()
