@@ -47,7 +47,9 @@ export const Footer = () => {
                             <li>
                                 <Link href={'/politica-de-privacidad'}>Política de privacidad</Link>
                             </li>
-                            <li>Mapa del sitio</li>
+                            <li>
+                                <Link href={'/blog'}>Blog</Link>
+                            </li>
                             <li>
                                 <a href="https://agenciamomentum.co/" target="_blank">
                                     {new Date().getFullYear()} Momentum
