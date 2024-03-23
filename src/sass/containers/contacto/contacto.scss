@@ -1,0 +1,28 @@
+@import '../../base/variables';
+@import '../../base/mixins';
+
+section.assisted-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .title-section {
+        h2.title-section-title {
+            font-size: 15px;
+        }
+    }
+
+    @include tablet {
+        margin: 5rem 0 18rem;
+
+        .title-section {
+            h2.title-section-title {
+                font-size: 24px;
+
+                span {
+                    display: block;
+                }
+            }
+        }
+    }
+}
