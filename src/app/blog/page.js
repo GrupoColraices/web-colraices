@@ -9,6 +9,14 @@ import { ArticlesProvider } from "@/context/ArticlesContext";
 import { partners } from "@/helpers";
 import '@/sass/containers/blog/Blog.scss';
 
+
+
+
+export const metadata = {
+    title: 'Blog de vivienda colombianos en el exterior l Colraices',
+    description: "El blog para colombianos en el exterior ofrece todo lo que necesitas para tomar decisiones inteligentes sobre inmuebles en Colombia. ¡Descubre todo lo que necesitas en un solo lugar! Desde guías de compra hasta consejos sobre las mejores ciudades y zonas para invertir en Colombia.",
+    keywords: "Comprar casa en Colombia desde el exterior,Invertir en vivienda en Colombia,Mercado inmobiliario en Colombia,Consejos para comprar casa en Colombia,Vivienda nueva o usada en Colombia,Mejores ciudades para comprar casa en Colombia,Guía para comprar vivienda en ColombiComprar propiedad en Colombia desde el exterior,Requisitos para comprar casa en Colombia,Trámites para comprar casa en Colombia."
+}
 const getArticles = async () => {
     const fetching = await fetch(`https://blog.colraices.com/api/v1/posts?category_id=8`);
     const response = await fetching.json();

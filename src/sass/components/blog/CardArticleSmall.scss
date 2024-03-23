@@ -36,6 +36,11 @@
         }
 
         .description {
+            max-width: 240px;
+            -webkit-line-clamp: 3;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
             color: var(--Azul-Colraices, #2A3F77);
             font-size: 12px;
             font-style: normal;

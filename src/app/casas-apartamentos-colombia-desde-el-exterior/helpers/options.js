@@ -24,8 +24,8 @@ export const optionsTipo = [
 export const infoContact = [
   {
     id: 1,
-    office: 'Colraices - Oficina principal Ibagué, Colombia',
-    address: 'Calle 47 # 4-61 ',
+    office: 'Colraices - Oficina principal Bogotá, Colombia',
+    address: 'Cr 13 # 93 - 35 oficina OV-424',
     phoneNumber: '(57) 601 328 8939',
     whatsapp: '15136479405',
     email: 'info@colraices.co',
@@ -33,12 +33,21 @@ export const infoContact = [
   },
   {
     id: 2,
+    office: 'Avenida 4 Norte 7N-46 Of 26 Piso 3 - Yoffice',
+    address: 'Centro comercial centenario en Cali, Colombia',
+    phoneNumber: '(57) 601 328 8939',
+    whatsapp: '15136479405',
+    email: 'info@colraices.co',
+    map: 'https://maps.app.goo.gl/yJqorhEuqYRg6SR79'
+  },
+  {
+    id: 3,
     office: 'Oficina Madrid, España',
     address: 'Av Mediterráneo 5, 1G, Madrid, Spain 28007',
     map: ''
   },
   {
-    id: 3,
+    id: 4,
     office: 'Oficina Mühldorf, Alemania',
     address: 'Katharinenplatz 57, Muhldorf Alemania.',
     map: 'https://maps.app.goo.gl/419cNsRz3jsedZsN7'
@@ -56,7 +65,7 @@ export const socialNetworks = [
 export const linksFooter = [
   { id: 1, name: 'Inmuebles', url: '/casas-apartamentos-colombia-desde-el-exterior' },
   { id: 2, name: 'Favoritos', url: '/casas-apartamentos-colombia-desde-el-exterior/favoritos' },
-  { id: 3, name: 'Contacto', url: '/' }
+  { id: 3, name: 'Contacto', url: '/contacto' }
 ]
 export const links = [
   { id: 1, label: "Menú", url: "" },
