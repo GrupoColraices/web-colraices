@@ -125,8 +125,8 @@ export const testimonialsData = [
 export const infoContact = [
     {
         id: 1,
-        office: 'Colraices - Oficina principal Ibagué, Colombia',
-        address: 'Calle 47 # 4-61 ',
+        office: 'Colraices - Oficina principal Bogotá, Colombia',
+        address: 'Cr 13 # 93 - 35 oficina OV-424',
         phoneNumber: '(57) 601 328 8939',
         whatsapp: '15136479405',
         email: 'info@colraices.co',
