@@ -30,11 +30,16 @@
         }
 
         .description {
-            color: var(--Azul-Colraices, #2A3F77);
+            max-width: 240px;
+            -webkit-line-clamp: 3;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
             font-size: 12px;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
+            color: var(--Azul-Colraices, #2A3F77);
             margin: 0.5rem 0;
         }
 
