@@ -1,5 +1,5 @@
 'use client'
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Line from '@/components/Line';
 import CardArticleLarge from '@/components/blog/CardArticleLarge';
 import CardArticleMedium from '@/components/blog/CardArticleMedium';
@@ -13,24 +13,19 @@ import { ArticlesContext } from '@/context/ArticlesContext';
 const ArticlesSection = () => {
   const { filtered: articles } = useContext(ArticlesContext);
   const [currentPage, setCurrentPage] = useState(1);
-  const [articleStart, setArticleStart] = useState(0)
-  const [articleEnd, setArticleEnd] = useState(6)
 
-  const totalPages = articles?.length / 6 > 1 ? articles?.length / 6 : 1
+  const totalPages = articles?.length / 6 > 1 ? Math.ceil(articles.length / 6) : 1;
   const handlePageChange = (page) => {
-    if (page > currentPage) {
-      setArticleStart(articleStart + (page - currentPage) * 6)
-      setArticleEnd(articleEnd + (page - currentPage) * 6)
-    } else {
-      setArticleStart(articleStart - (currentPage - page) * 6)
-      setArticleEnd(articleEnd - (currentPage - page) * 6)
-    }
     setCurrentPage(page);
   }
+  const startIndex = (currentPage - 1) * 6;
+  const endIndex = Math.min(startIndex + 6, articles?.length || 0);
+  const sliceArticles = articles ? articles?.slice(startIndex, endIndex) : [];
 
-  const sliceArticles = (start, end) => {
-    return articles?.slice(start, end)
-  }
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [articles])
+
   return (
     <section>
       <h2>Artículos</h2>
@@ -39,19 +34,19 @@ const ArticlesSection = () => {
         <>
           <div className='container-cards-article'>
             <div>
-              {(sliceArticles(articleStart, articleEnd)[0]) && <CardArticleLarge article={sliceArticles(articleStart, articleEnd)[0]} />}
+              {(sliceArticles[0]) && <CardArticleLarge article={sliceArticles[0]} />}
             </div>
-            {<div className='container-cards-medium'>
-              {(sliceArticles(articleStart, articleEnd)[1]) && <CardArticleMedium article={sliceArticles(articleStart, articleEnd)[1]} />}
-              {(sliceArticles(articleStart, articleEnd)[2]) && <CardArticleMedium article={sliceArticles(articleStart, articleEnd)[2]} />}
-            </div>}
+            <div className='container-cards-medium'>
+              {(sliceArticles[1]) && <CardArticleMedium article={sliceArticles[1]} />}
+              {(sliceArticles[2]) && <CardArticleMedium article={sliceArticles[2]} />}
+            </div>
             <div className='container-cards-sm'>
-              {(sliceArticles(articleStart, articleEnd)[3]) && <CardArticleSm article={sliceArticles(articleStart, articleEnd)[3]} />}
+              {(sliceArticles[3]) && <CardArticleSm article={sliceArticles[3]} />}
             </div>
             <div className='container-cards-sm-desktop'>
-              {(sliceArticles(articleStart, articleEnd)[3]) && <CardArticleSm article={sliceArticles(articleStart, articleEnd)[3]} />}
-              {(sliceArticles(articleStart, articleEnd)[4]) && <CardArticleSm article={sliceArticles(articleStart, articleEnd)[4]} />}
-              {(sliceArticles(articleStart, articleEnd)[5]) && <CardArticleSm article={sliceArticles(articleStart, articleEnd)[5]} />}
+              {(sliceArticles[3]) && <CardArticleSm article={sliceArticles[3]} />}
+              {(sliceArticles[4]) && <CardArticleSm article={sliceArticles[4]} />}
+              {(sliceArticles[5]) && <CardArticleSm article={sliceArticles[5]} />}
             </div>
           </div>
           <div className="container-pagination">

@@ -1,8 +1,8 @@
 'use client'
-import '@/sass/components/blog/CardArticleLarge.scss';
-import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
+import { formatDate } from '@/helpers/formatDate';
+import '@/sass/components/blog/CardArticleLarge.scss';
 
 
 const CardArticleLarge = ({ article }) => {
@@ -14,7 +14,7 @@ const CardArticleLarge = ({ article }) => {
           <p className='title'>{article?.titulo}</p>
           <p className='description'>{article?.descripcion}</p>
           <p className='author'>{article?.autor}</p>
-          <span className='author'>{format(new Date(article?.creacion), 'dd MMMM / yyyy')}</span>
+          <span className='author'>{formatDate(article?.creacion)}</span>
         </div>
       </div>
     </Link>

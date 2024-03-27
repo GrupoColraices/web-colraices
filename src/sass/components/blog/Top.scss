@@ -1,6 +1,8 @@
 @import '../../base/mixins';
 
 .top {
+    position: sticky;
+    top: 0;
     padding-top: 33px;
     padding-bottom: 47px;
     border-radius: 10px;
@@ -8,14 +10,13 @@
     box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.20);
 
     h5 {
-        margin: 0;
-        margin-bottom: 20px;
-        text-align: center;
         color: var(--Azul-Colraices, #2A3F77);
         font-size: 20px;
+        text-align: center;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+        margin: 0 0 20px 0;
     }
 
     .top-article-container {
@@ -66,6 +67,11 @@
                 }
 
                 .description {
+                    max-width: 240px;
+                    -webkit-line-clamp: 2;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
                     margin: 0.2rem;
                     text-align: justify;
                     color: var(--Azul-Colraices, #2A3F77);
