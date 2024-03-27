@@ -37,7 +37,7 @@ export const Footer = () => {
                         <ul>
                             {linksFooter?.map((item) => (
                                 <li key={item.id}>
-                                    <a href={item.url} target="_blank">
+                                    <a href={item.url} target={item.target}>
                                         {item.name}
                                     </a>
                                 </li>
