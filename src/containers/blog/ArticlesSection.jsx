@@ -40,9 +40,6 @@ const ArticlesSection = () => {
               {(sliceArticles[1]) && <CardArticleMedium article={sliceArticles[1]} />}
               {(sliceArticles[2]) && <CardArticleMedium article={sliceArticles[2]} />}
             </div>
-            <div className='container-cards-sm'>
-              {(sliceArticles[3]) && <CardArticleSm article={sliceArticles[3]} />}
-            </div>
             <div className='container-cards-sm-desktop'>
               {(sliceArticles[3]) && <CardArticleSm article={sliceArticles[3]} />}
               {(sliceArticles[4]) && <CardArticleSm article={sliceArticles[4]} />}
