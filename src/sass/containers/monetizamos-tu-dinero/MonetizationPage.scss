@@ -215,5 +215,37 @@ main.monetization-main {
                 }
             }
         }
+        .slideRight {
+            animation: slide-in-right 3s ease-in forwards;
+            animation-timeline: view();
+            animation-range: entry;
+        }
+        .slideLeft {
+            animation: slide-in-left 3s ease-in forwards;
+            animation-timeline: view();
+            animation-range: entry;
+        }
+        @keyframes slide-in-right {
+            0% {
+                transform: translateX(300px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slide-in-left {
+            0% {
+                transform: translateX(-300px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
     }
 }
