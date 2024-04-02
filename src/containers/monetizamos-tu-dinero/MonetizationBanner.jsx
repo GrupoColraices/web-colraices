@@ -12,8 +12,7 @@ export const MonetizationBanner = () => {
                 <p>Servicio de Monetización para colombianos en el exterior</p>
                 <InternalLink
                     options={{
-                        type: 'anchor',
-                        href: 'https://colraices.com/cupocreditoalinstante',
+                        href: '#seccion-de-contacto',
                     }}
                 >
                     {' '}
