@@ -3,7 +3,7 @@ import React from 'react'
 export const BenefitsSection = () => {
     return (
         <section className="monetization-benefits">
-            <article>
+            <article className="slideLeft">
                 <h2>
                     Con <span>nosotros</span>
                 </h2>
@@ -13,7 +13,7 @@ export const BenefitsSection = () => {
                     comprar tu vivienda de contado.
                 </p>
             </article>
-            <aside>
+            <aside className="slideRight">
                 <div className="item item-1">
                     <h3>100% seguro</h3>
                     <img src="/img/monetizamos/credit-card-hold.svg" alt="Icono de tarjeta de credito en la mano" />
