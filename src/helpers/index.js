@@ -62,7 +62,7 @@ export const servicesCards = [
         content:
             'Te acompañamos y asesoramos en el envío de tus divisas a Colombia. Para que puedas invertirlas en el inmueble que elijas.',
         icon: '/icons/credit_world.svg',
-        link: '/proximamente',
+        link: '/monetizamos-tu-dinero',
     },
 ]
 
@@ -177,10 +177,9 @@ export const stepTitles = [
     {
         id: 2,
         title: 'Nuestro equipo experto busca la mejor opcion para ti ...',
-    }
-    , {
+    },
+    {
         id: 3,
         title: 'Recibe recomendaciones personalizadas y agenda tus visitas ...',
-    }
-
+    },
 ]
