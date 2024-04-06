@@ -1,0 +1,61 @@
+@import "../../base/variables";
+@import "../../base/mixins";
+
+header.header-container {
+    background-image: url("/img/historia/historia-background-banner.webp");
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+
+    div.header-content {
+        padding: 3rem 1.7rem 0;
+
+        h1 {
+            font-size: clamp(1.8rem, 1.0667rem + 3.2593vw, 4rem);
+            font-weight: 600;
+            text-align: start;
+            color: $primary;
+
+            span {
+                display: block;
+                color: $secondary;
+            }
+        }
+
+        p {
+            font-size: clamp(1.6rem, 1.4rem + 0.8889vw, 2.2rem);
+            font-weight: 500;
+            text-align: start;
+            color: #666666;
+            line-height: 20px;
+        }
+    }
+
+    img {
+        width: 260px;
+        text-align: center;
+    }
+
+    @include tablet {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        background-image: none;
+        align-items: center;
+        justify-content: space-evenly;
+
+        div.header-content {
+            padding: 0 0 5rem 0;
+
+            p {
+                max-width: 467px;
+                line-height: 27px;
+            }
+        }
+
+        img {
+            min-width: 550px;
+        }
+
+    }
+}
