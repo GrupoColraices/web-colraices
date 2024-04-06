@@ -1,0 +1,111 @@
+@import "../../base/variables";
+@import "../../base/mixins";
+
+section.companies-construction-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 5rem;
+    padding: 0 1.7rem;
+
+    div.companies-construction-content {
+        position: unset;
+
+        h2 {
+            font-size: clamp(1.6rem, 0.8rem + 3.5556vw, 4rem);
+            font-weight: 600;
+            color: $primary;
+
+            span {
+                color: $secondary;
+            }
+        }
+
+        p {
+            font-size: clamp(1.5rem, 1.2667rem + 1.037vw, 2.2rem);
+            font-weight: 500;
+        }
+    }
+
+    div.swiper-container {
+        position: relative;
+
+        .companies-construction-slider {
+            position: unset;
+
+            .swiper-button-prev {
+                width: 100%;
+                left: -20px;
+                top: unset;
+                bottom: 10px;
+                background-image: url("/img/historia/arrow-left-circle.webp");
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+
+            .swiper-button-next::after,
+            .swiper-button-prev::after {
+                display: none;
+            }
+
+            .swiper-slide {
+                div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 155px;
+                    height: 179px;
+                    border: 0.5px solid rgba(224, 224, 224, 1);
+                    box-shadow: 0px 1.6px 3.1px 0px rgba(102, 102, 102, 1);
+                }
+
+                img {
+                    width: 95px;
+
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    @include tablet {
+        max-width: 1200px;
+        flex-direction: row;
+        margin: 10rem auto;
+        padding: 0;
+
+        div.companies-construction-content {
+            h2 {
+                padding-top: 3rem;
+            }
+        }
+
+        div.swiper-container {
+            max-width: 67%;
+
+            .companies-construction-slider {
+                .swiper-slide {
+                    div {
+                        width: 250px;
+                        height: 336px;
+                    }
+
+                    img {
+                        width: 220px;
+                        height: 184px;
+                        object-fit: contain;
+                    }
+                }
+
+                .swiper-button-prev {
+                    height: 60px;
+                    display: block;
+                    left: -30px;
+                    bottom: 20px;
+
+                }
+
+            }
+        }
+    }
+}

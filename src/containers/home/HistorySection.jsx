@@ -14,6 +14,7 @@ export const HistorySection = () => {
             </Link>
 
             <SliderHistory />
+            <Link href={'/historia'} className='btn-blue-xl'>Conoce nuestra historia</Link>
         </section>
     )
 }

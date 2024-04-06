@@ -24,7 +24,7 @@ export const ServiceSection = () => {
                 ))}
             </div>
             <div className="register">
-                <Link href={'/busqueda-asistida'} target="_blank" className='btn-blue-xl'>Continuar</Link>
+                <Link href={'/contacto'} className='btn-blue-xl'>Continuar</Link>
             </div>
         </section>
     )

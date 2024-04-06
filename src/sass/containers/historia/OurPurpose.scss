@@ -1,0 +1,56 @@
+@import "../../base/variables";
+@import "../../base/mixins";
+
+section.our-purpose-container {
+    margin: 4rem 0;
+    background-color: $primary;
+
+    div.our-purpose-content {
+        padding: 3rem;
+
+        div {
+            h2 {
+                font-size: clamp(1.4rem, 0.5333rem + 3.8519vw, 4rem);
+                font-weight: 600;
+                color: $white;
+                line-height: 22px;
+            }
+
+            p {
+                font-size: clamp(1.2rem, 0.8667rem + 1.4815vw, 2.2rem);
+                color: $white;
+                font-weight: 600;
+                line-height: 17px;
+            }
+        }
+
+        img {
+            display: none;
+        }
+    }
+
+    @include tablet {
+        div.our-purpose-content {
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            padding: 0;
+
+            div {
+                p {
+                    width: 100%;
+                    line-height: 26.82px;
+                }
+            }
+
+            img {
+                width: 554px;
+                height: 100%;
+                display: block;
+                align-self: flex-end;
+                margin-left: -18rem;
+            }
+        }
+    }
+}
