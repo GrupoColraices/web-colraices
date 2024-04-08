@@ -62,7 +62,7 @@ export const servicesCards = [
         content:
             'Te acompañamos y asesoramos en el envío de tus divisas a Colombia. Para que puedas invertirlas en el inmueble que elijas.',
         icon: '/icons/credit_world.svg',
-        link: '/proximamente',
+        link: '/monetizamos-tu-dinero',
     },
 ]
 
@@ -177,10 +177,133 @@ export const stepTitles = [
     {
         id: 2,
         title: 'Nuestro equipo experto busca la mejor opcion para ti ...',
-    }
-    , {
+    },
+    {
         id: 3,
         title: 'Recibe recomendaciones personalizadas y agenda tus visitas ...',
+    },
+]
+export const logosCompaniesConstruction = [
+    {
+        id: 1,
+        src: "/img/historia/logo-habi.webp"
+    },
+    {
+        id: 2,
+        src: "/img/historia/logo-gojom.webp"
+    },
+    {
+        id: 3,
+        src: "/img/historia/logo-grupo-platinium-itimo.webp"
+    },
+    {
+        id: 4,
+        src: "/img/historia/logo-bolivar.webp"
+    },
+    {
+        id: 5,
+        src: '/img/historia/logo-buendia.webp'
+    },
+    {
+        id: 6,
+        src: '/img/historia/logo-camu.png'
+    },
+    {
+        id: 7,
+        src: '/img/historia/logo-ciencuadras.png'
+    },
+    {
+        id: 8,
+        src: '/img/historia/logo-colpatria.png'
+    },
+    {
+        id: 9,
+        src: '/img/historia/logo-contex.png'
+    },
+    {
+        id: 10,
+        src: '/img/historia/logo-constructora-centenario.webp'
+    },
+    {
+        id: 11,
+        src: '/img/historia/logo-cupula.png'
+    },
+    {
+        id: 12,
+        src: '/img/historia/logo-espacios-libres.webp'
+    },
+    {
+        id: 13,
+        src: '/img/historia/logo-jaramillo-mora-rojo.webp'
+    },
+    {
+        id: 14,
+        src: '/img/historia/logo-jm.png'
+    },
+    {
+        id: 15,
+        src: '/img/historia/logo-londono-gomez.jpg'
+    },
+    {
+        id: 16,
+        src: '/img/historia/logo-optimo.webp'
+    },
+    {
+        id: 17,
+        src: '/img/historia/logo-prodesa.webp'
+    },
+    {
+        id: 18,
+        src: '/img/historia/logo-recinto.png'
+    },
+
+
+]
+
+export const timelineItems = [
+    {
+        id: 1,
+        year: "2004",
+        text: "Nace Colraices en España y Colombia",
+        position: "left"
+    },
+    {
+        id: 2,
+        year: "2009",
+        text: "De España a europa: !cruzamos fronteras!",
+        position: "right"
+
+    },
+    {
+        id: 3,
+        year: "2009",
+        text: "Llegamos a America Latina",
+        position: "left"
+
+    },
+    {
+        id: 4,
+        year: "2017",
+        text: "Nace nuestro modelo de franquicias",
+        position: "right"
+    },
+    {
+        id: 5,
+        year: "2019-2020",
+        text: "Rediseñamos Colraices para los desafíos de la era digital.",
+        position: "left"
+    },
+    {
+        id: 6,
+        year: "2022",
+        text: "Ampliamos nuestro portafolio de servicios",
+        position: "right"
+    },
+    {
+        id: 7,
+        year: "2023",
+        text: "Ampliamos nuestra oferta de inmuebles, damos la bienvenida a nuevas constructoras aliadas",
+        position: "left"
     }
 
 ]

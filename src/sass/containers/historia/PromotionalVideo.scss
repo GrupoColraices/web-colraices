@@ -1,0 +1,36 @@
+@import "../../base/variables";
+@import "../../base/mixins";
+
+section.promotional-video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1.7rem;
+
+    h2 {
+        font-size: clamp(1.6rem, 0.8rem + 3.5556vw, 4rem);
+        font-weight: 600;
+        text-align: center;
+
+        span {
+            display: block;
+            color: $primary;
+        }
+    }
+
+    iframe {
+        width: 95%;
+        margin: 2rem 0;
+    }
+
+    @include tablet {
+        max-width: 1200px;
+        margin: 10rem auto;
+
+        iframe {
+            width: 1080px;
+            height: 624px;
+            margin: 5rem 0 8rem 0;
+        }
+    }
+}
