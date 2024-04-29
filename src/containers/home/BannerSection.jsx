@@ -14,12 +14,12 @@ export const BannerSection = () => {
 
                     <div className="container-buttons-desktop">
                         <Link href={'/casas-apartamentos-colombia-desde-el-exterior'} target="_blank" className="btn-blue-xl">Buscar mi casa</Link>
-                        <Link href={'/busqueda-asistida'} target="_blank" className="btn-gray-xl">La buscamos por ti</Link>
+                        <Link href={'/encontramos-tu-inmueble'} target="_blank" className="btn-gray-xl">La buscamos por ti</Link>
                     </div>
                 </div>
                 <article>
                     <div className="container-buttons">
-                        <Link href={'/busqueda-asistida'} target="_blank" className="btn-gray">La buscamos por ti</Link>
+                        <Link href={'/encontramos-tu-inmueble'} target="_blank" className="btn-gray">La buscamos por ti</Link>
                         <Link href={'/casas-apartamentos-colombia-desde-el-exterior'} target="_blank" className="btn-blue">Buscar mi casa</Link>
                     </div>
                     <section>
