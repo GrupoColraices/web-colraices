@@ -29,7 +29,7 @@ export const infoContact = [
     phoneNumber: '(57) 601 328 8939',
     whatsapp: '15136479405',
     email: 'info@colraices.co',
-    map: 'https://maps.app.goo.gl/yJqorhEuqYRg6SR79'
+    map: 'https://maps.app.goo.gl/7juXqbcNZxR8ZktKA'
   },
   {
     id: 2,
@@ -38,7 +38,7 @@ export const infoContact = [
     phoneNumber: '(57) 601 328 8939',
     whatsapp: '15136479405',
     email: 'info@colraices.co',
-    map: 'https://maps.app.goo.gl/yJqorhEuqYRg6SR79'
+    map: 'https://maps.app.goo.gl/v2zma2eg5pta9QcA6'
   },
   {
     id: 3,
