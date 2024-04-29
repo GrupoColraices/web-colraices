@@ -19,7 +19,7 @@ export const FinancingBanner = () => {
                     }}
                 >
                     {' '}
-                    Clacula tu credito
+                    Calcula tu crédito
                 </InternalLink>
             </div>
             <picture>
