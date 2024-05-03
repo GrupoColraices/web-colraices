@@ -35,9 +35,9 @@ export default function Filter({
      * @returns {Array} - An array containing the filtered options.
      */
     const filtered = optionsSearch?.filter((item) => {
-        const search = labelFilter.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        const name = item.label.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        return (search && name.startsWith(search) || name === search);
+        const search = labelFilter?.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        const name = item.label?.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        return (search && name?.startsWith(search) || name === search);
     })
     return (
         <>
