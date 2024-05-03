@@ -124,9 +124,9 @@ export const FilterSmall = ({ inmueble }) => {
                         <div className="container__search">
                             <ul className={"list__options"}>
                                 {optionsSearch.filter((item) => {
-                                    const search = labelFilter.toLowerCase();
-                                    const name = item.label.toLowerCase();
-                                    return (search && name.startsWith(search) && name !== search);
+                                    const search = labelFilter?.toLowerCase();
+                                    const name = item.label?.toLowerCase();
+                                    return (search && name?.startsWith(search) && name !== search);
                                 }).map((item) => (
                                     <li key={item.label}
                                         onClick={() => {
