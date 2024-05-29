@@ -2,6 +2,7 @@
 export const navbarLinks = [
     { label: 'Encuentra tu casa', href: '/casas-apartamentos-colombia-desde-el-exterior', isExternal: true },
     { label: 'Financia tu casa', href: '/financia-tu-casa', isExternal: false },
+    { label: 'Leasing', href: '/leasing-bancolombia', isExternal: false },
     { label: 'Guía para comprar tu casa', href: '/blog', isExternal: false },
 ]
 
