@@ -332,7 +332,7 @@ export const chooseItems = [
     },
     {
         id: 5,
-        text: "Disponible durante 2024 en proyectos financieados por Bancolombia",
+        text: "Disponible durante 2024 en proyectos financiados por Bancolombia",
         icon: "/leasing-bancolombia/icons/available.svg",
     }
 ]
