@@ -1,5 +1,5 @@
 import { Button } from '@/components/leasing-bancolombia/LeasingButton';
-import '@/sass/containers/Leasing-bancolombia/LeasingBanner.scss';
+import '@/sass/containers/leasing-bancolombia/LeasingBanner.scss';
 
 export const LeasingBanner = () => {
     return (
