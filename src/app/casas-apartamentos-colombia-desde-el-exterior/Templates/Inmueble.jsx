@@ -91,12 +91,10 @@ export const Inmueble = ({ inmueble, response }) => {
                             />
                         }
 
-                        <ItemMap
+                        {/* <ItemMap
                             lat={Number(inmueble.coordenadas?.lat)}
                             lng={Number(inmueble.coordenadas?.lng)}
-                        />
-
-
+                        /> */}
                     </main>
 
                     <section className='content-side'>
