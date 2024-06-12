@@ -128,7 +128,9 @@ export default function Filter({
                     <ul className="items__list">
                         {optionsTipo?.map((option, index) =>
                             <li key={index}>
+
                                 <input
+                                    id={`typeProperty__${option.label}`}
                                     name='typeProperty'
                                     type="checkbox"
                                     value={option.value}
@@ -137,7 +139,7 @@ export default function Filter({
                                         handleInputs({ name: e.target.name, value: e.target.checked ? e.target.value : '0' });
                                         setIsDropwnProperty(!isDropdownProperty)
                                     }} />
-                                {option.label}
+                                <label htmlFor={`typeProperty__${option.label}`}>{option.label}</label>
                             </li>)}
                     </ul>
                 }
@@ -149,6 +151,7 @@ export default function Filter({
                         {optionsEstado?.map((option, index) =>
                             <li key={index}>
                                 <input
+                                    id={`state__${option.value}`}
                                     name='state'
                                     type="checkbox"
                                     value={option.value}
@@ -157,11 +160,10 @@ export default function Filter({
                                         handleInputs({ name: e.target.name, value: e.target.checked ? e.target.value : '0' });
                                         setIsDropdownState(!isDropdownState)
                                     }} />
-                                {option.label}
+                                <label htmlFor={`state__${option.value}`}>{option.label}</label>
                             </li>)}
                     </ul>}
             </div>
-
 
             <div className={`advanced__filter ${filterCl && 'open'}`}>
                 <img src="/portal-inmobiliario/img/colraicesInmobiliario/icons/arrow_up.svg"
