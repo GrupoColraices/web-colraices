@@ -102,10 +102,12 @@ export const ItemInmueble = ({ dataInmueble, Elim, serverUrl }) => {
             <div className="itemReciente__content">
 
                 <div className="itemReciente__content--main">
-                    <Link href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${slug}`}><h2 className="itemReciente__content--main--title">{titulo}</h2></Link>
-                    <h3 className="itemReciente__content--main--subtitle">{tipo} en venta en {ciudad}</h3>
-                    <p className="itemReciente__content--main--precio"><span>Desde:</span> {formatePrice(precio)}</p>
-                    <div className="itemReciente__content--main--description" ><p>{descripcion.replace(/(<([^>]+)>)/ig, '')}</p></div>
+                    <Link href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${slug}`}>
+                        <h2 className="itemReciente__content--main--title">{titulo}</h2>
+                        <h3 className="itemReciente__content--main--subtitle">{tipo} en venta en {ciudad}</h3>
+                        <p className="itemReciente__content--main--precio"><span>Desde:</span> {formatePrice(precio)}</p>
+                        <div className="itemReciente__content--main--description" ><p>{descripcion.replace(/(<([^>]+)>)/ig, '')}</p></div>
+                    </Link>
 
                     <div className="itemReciente__content--main--footer">
                         <p className="itemReciente__content--footer--icon"><BiBed /> <span>{habitaciones}</span> </p>
