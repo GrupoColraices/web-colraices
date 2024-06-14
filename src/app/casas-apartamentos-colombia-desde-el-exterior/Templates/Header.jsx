@@ -30,7 +30,7 @@ export default block(function Header() {
         isClient && (
             <header className={`wrapper ${route === `${pathName}favoritos` || route === `${pathName}favoritos/para-ti` || route === `${pathName}favoritos/comparar-propiedades` ? 'fav-position' : 'custom-position'}`}>
                 <nav className="dropdown" data-open={isOpen}>
-                    <label htmlFor="dropdown__toggle" className="dropdown__active">
+                    <label htmlFor="dropdown__toggle" className={`dropdown__active ${selectedOption.includes("Portal") && "custom__padding"}`}>
                         <span id="dropdown__selected">{selectedOption}</span>
 
                         <img src={!isOpen ? "/portal-inmobiliario/img/colraicesInmobiliario/icons/hamburguer.svg" : "/portal-inmobiliario/img/colraicesInmobiliario/icons/close_hamburguer.svg"} className='dropdown__icon' alt="Icon" />

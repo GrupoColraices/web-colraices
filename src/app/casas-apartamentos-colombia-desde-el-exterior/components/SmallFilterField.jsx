@@ -62,6 +62,7 @@ export const SmallFilterField = ({ name, type, checked, options, action, label, 
                             {options?.map((option, index) =>
                                 <li key={index}>
                                     <input
+                                        id={`${name}-${option.value}`}
                                         name={name}
                                         type={type}
                                         value={option.value}
@@ -70,7 +71,7 @@ export const SmallFilterField = ({ name, type, checked, options, action, label, 
                                             handleInputs({ name: e.target.name, value: e.target.checked ? e.target.value : '0' });
                                             handleUpdate(name)
                                         }} />
-                                    {option.label}
+                                    <label htmlFor={`${name}-${option.value}`}>{option.label}</label>
                                 </li>)}
                         </ul>
                     }

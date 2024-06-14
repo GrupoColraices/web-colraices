@@ -12,7 +12,7 @@ section.banner-inmueble-container {
         z-index: 20;
     }
 
-    div.bannerInmueble {
+    div.photos-gallery {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: .1rem;
@@ -46,6 +46,7 @@ section.banner-inmueble-container {
             grid-template-rows: 30.2rem 29.5rem 0;
             height: 54rem;
 
+
             iframe {
                 height: 600px;
                 width: 700px;
@@ -78,29 +79,31 @@ section.banner-inmueble-container {
 
     }
 
-    div.button_view {
-        display: none;
+    button.button_view {
+        p:nth-child(2) {
+            background-color: $blanco;
+            color: $primario2;
+            font-weight: 600;
+            padding: 0.7rem 0rem;
+            border-radius: 0.7rem;
+            border: 1.2px solid $primario2;
+            font-size: 1.7rem;
+            width: 15rem;
+            cursor: pointer;
+        }
 
         @include tablet {
             position: absolute;
             left: auto;
-            top: 65%;
+            top: 73%;
             right: 5%;
             z-index: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
 
-            button {
-                background-color: $blanco;
-                color: $primario2;
-                font-weight: 600;
-                padding: 0.7rem 0rem;
-                border-radius: 0.7rem;
-                border: 1.2px solid $primario2;
-                font-size: 1.7rem;
-                width: 15rem;
-                cursor: pointer;
+            img {
+                display: none;
             }
 
             p {
@@ -133,15 +136,22 @@ section.banner-inmueble-container {
 }
 
 section.container__responsive {
-    .logo {
-        position: absolute;
-        height: 44px;
-        width: 160px;
-        top: 42px;
-        left: 4%;
-        max-width: 100%;
-        z-index: 20;
+    .content__header {
+        background: rgba(42, 63, 119, 0.90);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        padding: 1.5rem 1rem;
+
+        .logo {
+            height: 44px;
+            width: 160px;
+            top: 42px;
+            left: 4%;
+            max-width: 100%;
+            z-index: 20;
+        }
     }
+
 
     .image__slide {
         height: 350px;
@@ -200,117 +210,8 @@ section.container__responsive {
     }
 }
 
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 12;
-    display: none;
-    justify-content: center;
-    align-items: center;
-
-    .modal-content {
-        display: grid;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-
-        @include tablet {
-            position: relative;
-            width: 100%;
-            height: 80%;
-            max-width: 160rem;
-
-            .close {
-                position: absolute;
-                top: 0;
-                right: 78px;
-                border: none;
-                padding: 0.3rem 1.5rem;
-                background-color: #be2c08;
-                font-size: 2rem;
-                color: $blanco;
-                font-weight: 600;
-                transition: all .3s;
-                z-index: 1;
-
-                &:hover {
-                    background-color: #9c2203;
-                    cursor: pointer;
-                }
-            }
-        }
-
-        .swiper {
-            position: unset;
-            width: 100%;
-            max-width: 120rem;
-        }
-
-        .swiper-slide {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 18px;
-            font-size: 22px;
-            font-weight: bold;
-            background-color: none;
-            position: relative;
-        }
-
-        .swiper-button-prev::after,
-        .swiper-button-next::after {
-            content: "";
-        }
-
-        .swiper-button-prev,
-        .swiper-button-next {
-            top: 45%;
-        }
-
-        .swiper-button-prev {
-            left: 25px;
-            background-image: url('/portal-inmobiliario/img/colraicesInmobiliario/icons/arrow-left-slider-property-desktop.svg');
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
-
-        .swiper-button-next {
-            right: 25px;
-            background-image: url('/portal-inmobiliario/img/colraicesInmobiliario/icons/arrow-left-slider-property-desktop.svg');
-            background-repeat: no-repeat;
-            background-size: contain;
-            transform: rotate(180deg);
-        }
-
-
-        img {
-            @include tabletinvert {
-                max-height: 40rem;
-            }
-
-            @include tablet {
-                width: 100%;
-                height: 59rem;
-            }
-
-            object-fit: cover;
-        }
-    }
-
-
-}
 
 .thumbs {
     width: 70rem;
     margin: 0.5rem auto;
-}
-
-.no-modal {
-    display: flex;
-    flex-wrap: wrap;
 }

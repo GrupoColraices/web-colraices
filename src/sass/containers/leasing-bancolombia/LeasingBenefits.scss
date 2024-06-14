@@ -1,0 +1,87 @@
+@import '../../base/variables';
+@import '../../base/mixins';
+
+section.container-benefits {
+    margin-top: 7rem;
+
+    .title-section {
+        position: relative;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .title-section-title {
+            font-size: clamp(2rem, 1.2667rem + 3.2593vw, 4.2rem);
+            font-weight: 700;
+            text-align: center;
+            text-wrap: balance;
+            color: $primary;
+
+            span {
+                color: $secondary;
+            }
+
+            &::before,
+            &::after {
+                position: absolute;
+                content: '';
+                top: 4.7rem;
+                min-width: 6%;
+                max-width: 80%;
+                height: 2px;
+                background-color: $secondary;
+            }
+
+            &::before {
+                left: 0;
+            }
+
+            &::after {
+                right: 0;
+            }
+        }
+
+    }
+
+    div.content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4rem;
+        align-items: flex-start;
+    }
+
+    @include tablet {
+        max-width: 1200px;
+        margin: 0 auto;
+
+
+        .title-section {
+            .title-section-title {
+
+                &::before,
+                &::after {
+                    min-width: 10%;
+                }
+
+                &::before {
+                    left: 5%;
+                }
+
+                &::after {
+                    right: 5%;
+                }
+            }
+        }
+
+        div.content {
+            max-width: 930px;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0 auto;
+        }
+    }
+
+}
