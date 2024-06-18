@@ -23,7 +23,7 @@ const TopArticles = ({ articles }) => {
                             <div className='top-texts'>
                                 <p className='title'>{article.titulo}</p>
                                 <p className='description'>{article.descripcion}</p>
-                                <p className='author'>{article.autor} </p>
+                                {/* <p className='author'>{article.autor} </p> */}
                             </div>
                         </div>
                     </Link>
