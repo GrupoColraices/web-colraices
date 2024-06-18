@@ -10,7 +10,7 @@ const CardArticleSm = ({ article }) => {
         <div className='texts'>
           <p className='title'>{article?.titulo}</p>
           <p className='description'>{article.descripcion}</p>
-          <p className='author'>{article?.autor}</p>
+          {/* <p className='author'>{article?.autor}</p> */}
           <span className='author'>{formatDate(article?.creacion)}</span>
         </div>
       </div>

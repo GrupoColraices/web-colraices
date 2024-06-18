@@ -6,6 +6,11 @@
     // padding: 0 10rem;
     margin: auto;
 
+    .input-search-blog {
+        max-width: 800px;
+        margin: 6rem auto 0;
+    }
+
     .title-recommended {
         color: #2A3F77;
         text-align: center;
@@ -33,6 +38,10 @@
         @include laptop {
             span {
                 font-size: 22px;
+            }
+
+            p {
+                width: 100%;
             }
         }
     }
