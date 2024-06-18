@@ -60,7 +60,7 @@ export default async function BlogPage() {
                 </div>
 
                 <div className="podcast-container">
-                    {/* <Podcast /> */}
+                    <Podcast />
                 </div>
             </main>
         </ArticlesProvider>

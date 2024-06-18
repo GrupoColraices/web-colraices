@@ -1,0 +1,32 @@
+.yarl__thumbnails_wrapper {
+    .yarl__toolbar {
+        align-items: center;
+
+        button[aria-label="Close"] {
+            max-height: 36px;
+            background-color: #be2c08;
+            padding: 0 1rem;
+        }
+    }
+}
+
+.yarl__thumbnails_container {
+
+    .yarl__thumbnails_track {
+        gap: 10px;
+
+        button.yarl__thumbnails_thumbnail_active {
+            border-style: solid;
+            border: 2px solid $secundario;
+        }
+
+        .yarl__thumbnails_thumbnail {
+
+            border-radius: unset;
+            border-style: none;
+            background-color: unset;
+
+
+        }
+    }
+}

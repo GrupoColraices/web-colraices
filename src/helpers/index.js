@@ -2,6 +2,7 @@
 export const navbarLinks = [
     { label: 'Encuentra tu casa', href: '/casas-apartamentos-colombia-desde-el-exterior', isExternal: true },
     { label: 'Financia tu casa', href: '/financia-tu-casa', isExternal: false },
+    { label: 'Leasing', href: '/leasing-bancolombia', isExternal: false },
     { label: 'Guía para comprar tu casa', href: '/blog', isExternal: false },
 ]
 
@@ -306,4 +307,50 @@ export const timelineItems = [
         position: "left"
     }
 
+]
+
+export const chooseItems = [
+    {
+        id: 1,
+        text: "Una de las tasas de interés más bajas en Colombia",
+        icon: "/leasing-bancolombia/icons/rates.svg",
+    },
+    {
+        id: 2,
+        text: "Aplica para colombianos en el exterior",
+        icon: "/leasing-bancolombia/icons/map.svg",
+    },
+    {
+        id: 3,
+        text: "Disponible para vivienda NO VIS",
+        icon: "/leasing-bancolombia/icons/home.svg",
+    },
+    {
+        id: 4,
+        text: "Financia hasta el 80% de tu vivienda",
+        icon: "/leasing-bancolombia/icons/finance.svg",
+    },
+    {
+        id: 5,
+        text: "Disponible durante 2024 en proyectos financiados por Bancolombia",
+        icon: "/leasing-bancolombia/icons/available.svg",
+    }
+]
+
+export const cardItems = [
+    {
+        id: 1,
+        icon: "/leasing-bancolombia/icons/contract.svg",
+        text: "La casa es tuya al finalizar el contrato"
+    },
+    {
+        id: 2,
+        icon: "/leasing-bancolombia/icons/home-circle.svg",
+        text: "Para vivienda nueva y usada"
+    },
+    {
+        id: 3,
+        icon: "/leasing-bancolombia/icons/map-circle.svg",
+        text: "En proyectos en toda Colombia"
+    }
 ]

@@ -69,8 +69,9 @@ export const linksFooter = [
 ]
 export const links = [
   { id: 1, label: "Menú", url: "" },
-  { id: 2, label: "Home", url: "/casas-apartamentos-colombia-desde-el-exterior" },
-  { id: 3, label: "Mis favoritos", url: "/casas-apartamentos-colombia-desde-el-exterior/favoritos" },
+  { id: 2, label: "Home", url: "/" },
+  { id: 3, label: "Portal Inmobiliario", url: "/casas-apartamentos-colombia-desde-el-exterior" },
+  { id: 4, label: "Mis favoritos", url: "/casas-apartamentos-colombia-desde-el-exterior/favoritos" },
   // { id: 4, label: "Contactos", url: "#contact" }
 ]
 export const itemsEligenos = [

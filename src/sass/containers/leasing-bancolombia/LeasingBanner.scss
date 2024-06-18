@@ -1,0 +1,85 @@
+@import '../../base/variables';
+@import '../../base/mixins';
+
+section.container-leasing-banner {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+    div.content-text {
+        padding: 2rem 3rem;
+
+        h1 {
+            max-width: 312px;
+            font-size: clamp(3.5rem, 2.8333rem + 2.963vw, 5.5rem);
+            font-weight: 700;
+            line-height: 42px;
+            color: $primary;
+            text-align: center;
+            margin: 0 auto;
+
+            span {
+                color: $secondary;
+
+                img {
+                    width: 186px;
+                    display: block;
+                    margin: 2rem auto 3rem;
+                }
+            }
+        }
+
+        p {
+            font-size: clamp(1.5rem, 1.2rem + 1.3333vw, 2.4rem);
+            font-weight: 500;
+            color: $black;
+            line-height: 18px;
+            text-align: center;
+            margin-top: 0;
+        }
+
+    }
+
+    img.image-banner {
+        display: none;
+    }
+
+    @include tablet {
+        max-width: 1150px;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 5rem;
+        box-shadow: 0 120px 100px -130px rgba(0, 0, 0, .1);
+
+        div.content-text {
+            align-self: center;
+
+            h1 {
+                max-width: 593px;
+                text-align: start;
+                line-height: 67px;
+
+                span {
+                    img {
+                        width: 286px;
+                        display: inline;
+                        margin: 0 0 0 2rem;
+                    }
+                }
+            }
+
+            p {
+                width: fit-content;
+                margin: 3rem 0 5rem 0;
+            }
+
+            img {
+                display: none;
+            }
+        }
+
+        img.image-banner {
+            display: block
+        }
+    }
+}

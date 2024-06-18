@@ -19,7 +19,7 @@ header.Header-container {
 
     @include desktop {
         margin: 0 auto;
-        padding: 4% 0 43px 144px;
+        padding: 4% 0 43px 134px;
     }
 
     @include desktopxl {
@@ -56,7 +56,7 @@ header.Header-container {
         }
 
         @include desktop {
-            gap: 85px;
+            gap: 35px;
         }
 
         a.NavLink {

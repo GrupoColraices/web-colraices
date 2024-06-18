@@ -38,7 +38,7 @@ export default async function ArticlePage({ params }) {
                 <div className='article-content'>
                     <article>
                         <h1>{article.titulo}</h1>
-                        <span className='author'>{article.autor} / {formatDate(article.creacion)}</span>
+                        <span className='author'> {formatDate(article.creacion)}</span>
                         <p>{article.description}</p>
                         <Image width={705} height={500} className="image" src={article.imagen} alt={article.alt} />
                         <div dangerouslySetInnerHTML={{ __html: article.contenido }}></div>
