@@ -54,7 +54,8 @@ div.container__eligenos-item {
                 width: 15rem;
                 height: 1.5rem;
             }
-            img[src*="img/aliados/1.svg"]{
+
+            img[src*="img/aliados/1.svg"] {
                 margin-left: 2rem;
             }
 
@@ -172,7 +173,8 @@ div.container__eligenos-item {
         }
 
         article.housing {
-            padding: 10rem  0 6rem;
+            padding: 10rem 0 6rem;
+
             article.cartTextCol {
                 grid-column: 1;
                 margin-top: 15rem;
@@ -182,9 +184,28 @@ div.container__eligenos-item {
                 grid-column: 2;
             }
         }
-        article.construction{
+
+        article.construction {
             div.slider {
                 margin: -25rem 0 0 0 !important;
+            }
+        }
+    }
+
+    @include tablet {
+        article.construction {
+
+            div.container__img {
+                grid-column: 2;
+            }
+
+            article.cartTextCol {
+                grid-column: 1;
+            }
+
+            div.slider {
+                grid-column: 1;
+
             }
         }
     }
@@ -195,5 +216,7 @@ div.container__eligenos-item {
                 margin-top: -15rem;
             }
         }
+
+
     }
 }
