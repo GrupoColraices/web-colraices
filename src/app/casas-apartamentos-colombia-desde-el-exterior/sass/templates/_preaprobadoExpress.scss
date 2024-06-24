@@ -1,0 +1,112 @@
+.container-express {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 2rem;
+    margin: 0 auto;
+
+    div.content-express {
+        margin-bottom: 3rem;
+
+        h2 {
+            font-size: clamp(2.5rem, 2.1667rem + 1.4815vw, 3.5rem);
+            font-weight: 700;
+            text-align: center;
+            color: $primario;
+
+            span {
+                color: $secundario;
+            }
+        }
+
+        p {
+            font-size: clamp(1.4rem, 1.1rem + 1.3333vw, 2.3rem);
+            text-align: center;
+        }
+
+        p:first-of-type {
+            font-weight: 600;
+            color: $primario;
+        }
+
+        a {
+            max-width: 261px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 0.5rem;
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            padding: 1rem;
+            margin: 0 auto;
+            border-radius: 14px;
+            border: 1px solid $secundario;
+            background-color: $primario;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            z-index: 0;
+
+            &:hover {
+                color: $blanco;
+            }
+
+            &::before {
+                height: 100%;
+                width: 100%;
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translateX(-100%);
+                transition: all .3s;
+                background-color: $secundario;
+                z-index: -1;
+
+            }
+
+            &:hover:before {
+                transform: translateX(0);
+            }
+        }
+    }
+
+    img {
+        width: 50%;
+    }
+
+    @include tablet {
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        padding-block: 5rem;
+        box-shadow: 0px 120px 100px -130px rgba(0, 0, 0, 0.1);
+
+        div.content-express {
+            h2 {
+                text-align: start;
+            }
+
+            p {
+                max-width: 581px;
+                text-align: start;
+                text-wrap: balance;
+                margin-bottom: 6rem;
+            }
+
+            p:first-of-type {
+                max-width: 500px;
+            }
+
+            a {
+                max-width: 361px;
+                margin: 0;
+            }
+        }
+
+        img {
+            width: 278px;
+        }
+    }
+}
