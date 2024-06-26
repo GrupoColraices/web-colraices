@@ -1,5 +1,5 @@
 'use client'
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Link from 'next/link'
 import toast from 'react-hot-toast';
 import { useRouter } from "next/navigation";
@@ -12,15 +12,20 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { useCurrency } from "../hooks/useCurrency";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { ContextLike } from "../Context/Like";
+import { FairMode } from "../Context/Mode";
 import 'swiper/css';
 import Image from "next/image";
 
 export const ItemInmueble = ({ dataInmueble, Elim, serverUrl }) => {
     const router = useRouter();
-    const { titulo, descripcion, precio, estado, tipo, baños, habitaciones, area_const, region, ciudad, slug, imagenes, num_img } = dataInmueble;
+    const { titulo, descripcion, precio, precio_feria, estado, tipo, baños, habitaciones, area_const, region, ciudad, slug, imagenes, num_img, fecha_inicial_feria, fecha_final_feria } = dataInmueble;
     const [liked, setLiked] = useLocalStorage(slug, false);
     const { handelLike, handelDelete } = useContext(ContextLike);
+    const { fairMode } = useContext(FairMode);
     const [formatePrice] = useCurrency();
+    const currentDate = new Date();
+    const isInFair = currentDate >= new Date(fecha_inicial_feria) && currentDate <= new Date(fecha_final_feria);
+    const discountRate = precio_feria !== null && ((precio - precio_feria) / precio) * 100
 
     const handelLikeInmueble = () => {
         setLiked(!liked);
@@ -102,10 +107,12 @@ export const ItemInmueble = ({ dataInmueble, Elim, serverUrl }) => {
             <div className="itemReciente__content">
 
                 <div className="itemReciente__content--main">
+                    {isInFair && fairMode && <p className="price__off"><span>{discountRate}% OFF</span></p>}
                     <Link href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${slug}`}>
                         <h2 className="itemReciente__content--main--title">{titulo}</h2>
                         <h3 className="itemReciente__content--main--subtitle">{tipo} en venta en {ciudad}</h3>
-                        <p className="itemReciente__content--main--precio"><span>Desde:</span> {formatePrice(precio)}</p>
+                        <p className={`itemReciente__content--main--precio ${isInFair && fairMode && "line__through"}`}><span>Desde:</span> {formatePrice(precio)}</p>
+                        {isInFair && fairMode && <p className="itemReciente__content--main--precio-feria"><span>Precio feria: </span> {formatePrice(precio_feria)}</p>}
                         <div className="itemReciente__content--main--description" ><p>{descripcion.replace(/(<([^>]+)>)/ig, '')}</p></div>
                     </Link>
 
