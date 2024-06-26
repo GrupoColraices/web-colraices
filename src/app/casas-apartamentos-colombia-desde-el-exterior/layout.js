@@ -5,6 +5,7 @@ import { Animation } from '../casas-apartamentos-colombia-desde-el-exterior/mole
 import '../casas-apartamentos-colombia-desde-el-exterior/sass/app.scss'
 import { Toaster } from 'react-hot-toast';
 import Script from 'next/script';
+import { FairModeContextProvider } from './Context/Mode';
 
 
 
@@ -34,11 +35,13 @@ export default function Layout({ children }) {
           })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');`}} />
       <ContextLikeProvider>
         <FiltroContextProvider>
-          <Animation>
-            <Toaster containerStyle={{ zIndex: 10000000 }} position="top-right" />
-            <Header />
-            {children}
-          </Animation>
+          <FairModeContextProvider>
+            <Animation>
+              <Toaster containerStyle={{ zIndex: 10000000 }} position="top-right" />
+              <Header />
+              {children}
+            </Animation>
+          </FairModeContextProvider>
         </FiltroContextProvider>
       </ContextLikeProvider>
     </>
