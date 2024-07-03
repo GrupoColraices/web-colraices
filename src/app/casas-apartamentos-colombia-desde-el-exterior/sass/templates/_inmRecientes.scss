@@ -3,6 +3,17 @@
     margin: 4rem auto;
     padding: 0;
 
+    .title-section {
+        .title-section-title {
+
+            &::before,
+            &::after {
+                top: 1.7rem;
+            }
+        }
+
+    }
+
     .swiper-wrapper {
         padding: 5rem 0 0 0;
     }
@@ -22,6 +33,7 @@
         font-weight: 800;
         transition: all .2s ease-in-out;
         z-index: 1;
+
         &::after {
             font-size: 2rem;
         }
@@ -35,8 +47,38 @@
     @include tablet {
         padding: 0 2rem;
 
+        .title-section {
+            .title-section-title {
+
+                &::before {
+                    left: -20px;
+                }
+
+                &::after {
+                    right: -20px;
+                }
+
+                &::before,
+                &::after {
+                    top: 2.7rem;
+                }
+            }
+
+        }
+
         div.container__reciente {
             position: relative;
+
+            .title-section {
+                .title-section-title {
+
+                    &::before,
+                    &::after {
+                        top: 4.7rem;
+                    }
+                }
+
+            }
 
             .swiper {
                 position: unset;
