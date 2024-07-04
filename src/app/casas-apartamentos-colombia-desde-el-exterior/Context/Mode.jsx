@@ -5,9 +5,9 @@ const FairMode = createContext()
 
 
 const FairModeContextProvider = ({ children }) => {
-    const { fairMode } = useFairMode();
+    const { fairMode, setFairMode, fairRoutes, countries, convertedPrice } = useFairMode();
     return (
-        <FairMode.Provider value={{ fairMode }}>
+        <FairMode.Provider value={{ fairMode, setFairMode, fairRoutes, countries, convertedPrice }}>
             {children}
         </FairMode.Provider>
     )
