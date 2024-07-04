@@ -1,15 +1,17 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { useParams, useSearchParams } from 'next/navigation';
+import { useParams, useSearchParams, usePathname } from 'next/navigation';
 import { LayoutInmuebles } from '../../Templates/LayoutInmuebles';
 import { APIURL } from '../../config';
 import { Box, createTheme } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 import LinearProgress from '@mui/material/LinearProgress';
 
+
 export default function InmFiltrados() {
     const { slug } = useParams();
     const query = useSearchParams();
+    // console.log("pathName", pathName)
     const [city = '0', type = '0', state = '0'] = slug || []
     const typeProperty = type === "Otros" ? "Cabaña" : type;
 
