@@ -1,4 +1,4 @@
-import ItemFeatured from '../molecules/ItemFeatured';
+import InmFeatured from '../molecules/InmFeatured';
 import ItemTextFeatured from '../molecules/ItemTextFeatured';
 import { itemsEligenos } from '../helpers/options';
 
@@ -13,7 +13,7 @@ export default function FeaturedProperties({ inmFeatured }) {
                     ))}
                 </ul>
             </div>
-            <ItemFeatured itemProperty={inmFeatured} />
+            <InmFeatured itemProperty={inmFeatured} />
             <ItemTextFeatured />
         </section>
     )
