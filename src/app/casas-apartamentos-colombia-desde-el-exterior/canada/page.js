@@ -10,6 +10,13 @@ import { Banner } from "../Templates/Banner";
 import { APIURL } from "../config";
 
 
+export const metadata = {
+    title: "¡Inmuebles en oferta en la Feria de Vivienda para Colombianos en Canadá!",
+    description: "¡Aprovecha la Feria de Vivienda de Colraices! Descuentos en inmuebles para colombianos en Canadá, con estudio de títulos y avalúo gratis. ¡Entra ahora!",
+    keywords: "Casa en Cali, Casas nuevas en venta en Bogotá, Casa en Medellín, Comprar casa en Colombia, casas de venta en Colombia, casas baratas en Medellín, medellín casas en venta, feria de vivienda, vivienda en Colombia, casas nuevas en Pereira, casa en venta en Barranquilla"
+}
+
+
 export default async function Page() {
     const inmFeatured = await getinmFeatured();
     const inmRecientes = await getinmRecientes();
