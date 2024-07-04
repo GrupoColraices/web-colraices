@@ -20,13 +20,6 @@ import { NextResponse } from "next/server"
 
 const GEOLOCATION_API = "https://ipinfo.io"
 const TOKEN = "0b05297d792e01"
-const allowedCountries = new Set(
-    [
-        // "ES", "CH", "DE", "GB", 
-        "CA",
-        // "PA", "MX", "CR", "PE", "US", "AE"
-    ]
-)
 const countryNames = {
     // "ES": "españa",
     // "CH": "suiza",
@@ -47,9 +40,10 @@ export async function middleware(request) {
         const geoResponse = await fetch(`${GEOLOCATION_API}/json?token=${TOKEN}`);
         const geoData = await geoResponse.json();
         const country = countryNames[geoData.country];
+
         const redirectUrl = `/casas-apartamentos-colombia-desde-el-exterior/${country}`;
 
-        if (allowedCountries.has(geoData.country)) {
+        if (country) {
             return NextResponse.redirect(new URL(redirectUrl, request.url).origin + redirectUrl);
         }
 
