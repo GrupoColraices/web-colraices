@@ -1,13 +1,14 @@
 import Script from "next/script";
 import { Toaster } from "react-hot-toast";
-import FeaturedProperties from "../Templates/FeaturedProperties";
-import { Reasons } from "../Templates/Reasons";
-import { PreaprobadoExpress } from "../Templates/PreaprobadoExpress";
-import { Eligenos } from "../Templates/Eligenos";
-import { Testimoniales } from "../Templates/Testimoniales";
-import { InmReciente } from "../Templates/InmReciente";
-import { Banner } from "../Templates/Banner";
-import { APIURL } from "../config";
+import { Form } from "@/components/gestionamos-tu-credito/Form";
+import { Banner } from "../../Templates/Banner";
+import FeaturedProperties from "../../Templates/FeaturedProperties";
+import { InmReciente } from "../../Templates/InmReciente";
+import { Reasons } from "../../Templates/Reasons";
+import { PreaprobadoExpress } from "../../Templates/PreaprobadoExpress";
+import { Eligenos } from "../../Templates/Eligenos";
+import { Testimoniales } from "../../Templates/Testimoniales";
+import { APIURL } from "../../config";
 
 
 export const metadata = {
@@ -47,6 +48,7 @@ export default async function Page() {
             <InmReciente inmRecientes={inmRecientes} />
             <Reasons />
             <PreaprobadoExpress />
+            <Form />
             <Eligenos />
             <Testimoniales />
         </>

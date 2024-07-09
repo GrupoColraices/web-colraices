@@ -56,7 +56,7 @@ export const BarSearch = ({ visibility = false, scrolling = 100 }) => {
                 `hasta=${inputs.precioHasta}`,]
             const filterSegments = routeSegments.filter((segment) => segment !== '0');
             const filterQuery = routeQuery.filter((query) => query?.split('=')[1] !== '0');
-            router.push(`/casas-apartamentos-colombia-desde-el-exterior${fairMode ? "/canada" : ""}/filtrados/${filterSegments.join('/')}?${filterQuery.join('&')}`);
+            router.push(`/casas-apartamentos-colombia-desde-el-exterior${fairMode ? "/feria/canada" : ""}/filtrados/${filterSegments.join('/')}?${filterQuery.join('&')}`);
         } else {
             e.preventDefault();
             setValidate(true);

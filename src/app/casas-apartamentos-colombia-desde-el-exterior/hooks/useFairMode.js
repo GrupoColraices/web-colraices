@@ -50,7 +50,7 @@ export const useFairMode = (initialPrice, fairPrice) => {
     };
 
     const fairRoutes = new Set(
-        Object.keys(countries).map(country => `/casas-apartamentos-colombia-desde-el-exterior/${country}`)
+        Object.keys(countries).map(country => `/casas-apartamentos-colombia-desde-el-exterior/feria/${country}`)
     );
 
     const [fairMode, setFairMode] = useState(fairRoutes.has(pathName));
