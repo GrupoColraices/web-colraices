@@ -1,5 +1,4 @@
 import Script from "next/script";
-import { Toaster } from "react-hot-toast";
 import { Form } from "@/components/gestionamos-tu-credito/Form";
 import { Banner } from "../../Templates/Banner";
 import FeaturedProperties from "../../Templates/FeaturedProperties";
@@ -40,9 +39,6 @@ export default async function Page() {
                       r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
                       a.appendChild(r);
                   })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');`}} />
-
-            <Toaster containerStyle={{ zIndex: 10000000 }} position="top-right" />
-
             <Banner main />
             <FeaturedProperties inmFeatured={inmFeatured} />
             <InmReciente inmRecientes={inmRecientes} />
