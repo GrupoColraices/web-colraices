@@ -3,7 +3,6 @@ import { FiltroContextProvider } from '../casas-apartamentos-colombia-desde-el-e
 import Header from '../casas-apartamentos-colombia-desde-el-exterior/Templates/Header';
 import { Animation } from '../casas-apartamentos-colombia-desde-el-exterior/molecules/Animation';
 import '../casas-apartamentos-colombia-desde-el-exterior/sass/app.scss'
-import { Toaster } from 'react-hot-toast';
 import Script from 'next/script';
 import { FairModeContextProvider } from './Context/Mode';
 
@@ -37,7 +36,6 @@ export default function Layout({ children }) {
         <FiltroContextProvider>
           <FairModeContextProvider>
             <Animation>
-              <Toaster containerStyle={{ zIndex: 10000000 }} position="top-right" />
               <Header />
               {children}
             </Animation>
