@@ -73,7 +73,6 @@
                     width: 185px;
                     position: absolute;
                     top: 210px;
-                    background-color: #ffffffc9;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -177,17 +176,19 @@
                     }
 
                     div.content-text {
-                        width: 290px;
+                        width: 295px;
                         top: 272px;
+                        padding-inline: 0px;
 
                         h2 {
-                            font-size: 2.5rem;
+                            font-size: 2.7rem;
                         }
 
                         p {
+                            font-size: 3rem;
 
                             span:nth-of-type(1) {
-                                font-size: 8rem;
+                                font-size: 10rem;
                                 font-weight: 700;
                             }
 
@@ -196,7 +197,7 @@
                                 text-wrap: balance;
 
                                 strong:nth-of-type(1) {
-                                    font-size: 4rem;
+                                    font-size: 4.4rem;
                                 }
 
                                 strong:nth-of-type(2) {
