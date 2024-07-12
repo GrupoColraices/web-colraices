@@ -1,5 +1,34 @@
 .title__inmueble {
+    position: relative;
     padding: 2rem 0 0;
+
+    .price__off {
+        width: 53px;
+        height: 53px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 500;
+        color: white;
+        margin: 0;
+        border-radius: 50%;
+        background-color: #c1272d;
+
+        span {
+            width: 60%;
+        }
+
+        @include tablet {
+            width: 60px;
+            height: 60px;
+            top: 20px;
+            right: 40%;
+        }
+    }
 
     .title__inmueble__title {
         max-width: 40rem;

@@ -2,18 +2,19 @@
 import { CartTextCol } from '../components/CartTextCol'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { block } from 'million/react';
-export default block(function ItemEligenos({ description, img, children, slideshow, slidesView, slidesViewDesktop, spaceBetween, customClass }) {
+import { FairMode } from '../Context/Mode';
+export default block(function ItemEligenos({ description, img, children, slideshow, slidesView, slidesViewDesktop, spaceBetween, customClass, fair }) {
     const [isClient, setIsClient] = useState(false)
-
+    const { fairMode } = useContext(FairMode)
     useEffect(() => {
         setIsClient(true)
     }, [])
     return (
         isClient && (
             <div className={`container__eligenos-item`}>
-                <article className={`eligenos__item ${customClass && customClass} `}>
+                <article className={`eligenos__item ${customClass && customClass} ${fair && fairMode && "disabled"} `} >
                     <CartTextCol description={description}>
                         {children}
                     </CartTextCol>
@@ -24,20 +25,18 @@ export default block(function ItemEligenos({ description, img, children, slidesh
                         <div className='slider'>
                             <Swiper
                                 navigation={true}
-                                modules={[Autoplay, Navigation]}
+                                modules={[Navigation]}
                                 slidesPerView={slidesView}
                                 spaceBetween={spaceBetween}
                                 loop={true}
-                                autoplay={{ delay: 2000, disableOnInteraction: false }}
                                 breakpoints={{
                                     640: {
                                         slidesPerView: 3,
                                         spaceBetween: 2,
                                     },
-                                    1024: {
+                                    930: {
                                         slidesPerView: slidesViewDesktop,
                                         spaceBetween: 1,
-                                        navigation: false,
                                     },
                                 }}
                             >

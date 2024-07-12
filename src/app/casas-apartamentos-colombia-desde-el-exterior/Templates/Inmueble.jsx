@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { AtributInmueble } from '../molecules/AtributInmueble';
 import { DesInmuebles } from '../molecules/DesInmuebles';
 import { ItemMap } from '../molecules/ItemMap';
@@ -13,15 +13,21 @@ import { InmSimilares } from '../Templates/InmSimilares';
 import { FilterSmall } from '../molecules/BarSearch/FilterSmall';
 import { BarSearch } from '../molecules/BarSearch';
 import TitleSection from '../components/TitleSection';
+import { useFairMode } from '../hooks/useFairMode';
+import { FairMode } from '../Context/Mode';
+
+
 export const Inmueble = ({ inmueble, response }) => {
-    const { titulo, descripcion, baños, habitaciones, garajes, area_const, fecha_const, pro_ser, region, ciudad, like, imagenes, planos, tipo, url, num_img } = inmueble;
+    const { titulo, descripcion, baños, precio, precio_feria, habitaciones, garajes, area_const, fecha_const, pro_ser, region, ciudad, like, imagenes, planos, fecha_inicial_feria, fecha_final_feria, tipo, url, num_img } = inmueble;
+    const { fairMode } = useContext(FairMode);
+    const { currency, setCurrency, discountRate, convertedPrice } = useFairMode(precio, precio_feria)
     const similaresRegion = response.similares_region;
     const existPlano = planos?.length > 0 && true;
     const existSimilar = similaresRegion?.length > 0 && true;
-
+    const currentDate = new Date();
+    const isInFair = currentDate >= new Date(fecha_inicial_feria) && currentDate <= new Date(fecha_final_feria);
     const [fid, setFid] = useState(false)
     const observar = useRef(null)
-
     useEffect(() => {
         observar.current = new IntersectionObserver(function (entries) {
             setFid(entries[0].isIntersecting);
@@ -43,7 +49,6 @@ export const Inmueble = ({ inmueble, response }) => {
             observar.current && observar.current.disconnect();
         }
 
-
     }, [fid]);
     return (
         <>
@@ -61,10 +66,17 @@ export const Inmueble = ({ inmueble, response }) => {
                             ciudad={ciudad}
                             tipo_inmueble={tipo}
                             inmueble={inmueble}
+                            discountRate={discountRate}
+                            isInFair={isInFair}
+                            fairMode={fairMode}
                         />
                         <div className='container-price-mobile'>
                             <PrecioInmueble
-                                inmueble={inmueble}
+                                price={convertedPrice}
+                                currency={currency}
+                                setCurrency={setCurrency}
+                                fairMode={fairMode}
+                                isInFair={isInFair}
                             />
                         </div>
 
@@ -100,7 +112,11 @@ export const Inmueble = ({ inmueble, response }) => {
                     <section className='content-side'>
                         <div className='container-price-desktop'>
                             <PrecioInmueble
-                                inmueble={inmueble}
+                                price={convertedPrice}
+                                currency={currency}
+                                setCurrency={setCurrency}
+                                fairMode={fairMode}
+                                isInFair={isInFair}
                             />
                         </div>
 

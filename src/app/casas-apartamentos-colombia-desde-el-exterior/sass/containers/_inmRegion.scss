@@ -40,6 +40,10 @@
             row-gap: 1rem;
             flex-wrap: wrap;
 
+            .itemReciente__main {
+                min-height: 545px;
+            }
+
             @include telefono {
                 justify-content: space-between;
             }

@@ -49,7 +49,6 @@ export const ItemFormulario = () => {
         );
     };
 
-    console.log(pathname)
     return (
         <section className="itemFormulario">
             <Toaster

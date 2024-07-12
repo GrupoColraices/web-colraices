@@ -2,7 +2,22 @@ section.container-featured {
     position: unset;
 
     div.container-items-featured {
-        display: none;
+        ul {
+            display: none;
+        }
+
+        h1 {
+            font-size: 22px;
+            color: $primario;
+            text-align: center;
+            margin-top: 3rem;
+
+            span {
+                display: block;
+                color: $secundario;
+            }
+        }
+
     }
 
     .swiper-item-featured {
@@ -78,7 +93,7 @@ section.container-featured {
             flex: 1;
 
             h1 {
-                color: $primario;
+                color: $secundario;
                 font-size: 50px;
                 font-weight: 700;
                 text-align: center;
@@ -87,7 +102,7 @@ section.container-featured {
                 margin: 0 0 3rem 0;
 
                 span {
-                    color: $secundario;
+                    color: $primario;
                     font-size: 35px;
                 }
             }

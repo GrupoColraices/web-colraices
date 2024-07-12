@@ -1,42 +1,30 @@
 'use client'
-import useSWR from 'swr'
-import { useState } from 'react'
+import { useContext } from 'react';
+import { FairMode } from '../Context/Mode';
 import { useCurrency } from '../hooks/useCurrency';
+import { useFairMode } from '../hooks/useFairMode';
 
-export const PrecioInmueble = ({ inmueble }) => {
-
-    const { precio } = inmueble;
-
+export const PrecioInmueble = (props) => {
+    const { price, currency, setCurrency, fairMode, isInFair } = props
     const [formatePrice] = useCurrency();
-    const [currency, setCurrency] = useState("COP");
-    const { data: exchangeRate, error } = useSWR(
-        'https://api.exchangerate-api.com/v4/latest/COP',
-        async (url) => {
-            const response = await fetch(url);
-            const data = await response.json();
-            return data.rates;
-        }
-    );
-    const converterCurrency = () => {
-        if (!exchangeRate || error) return 'Error obteniendo tasas de cambio';
-        return (precio * exchangeRate[currency]);
 
-    }
-    const handleCurrency = (e) => {
+    const handleCurrencyChange = (e) => {
         setCurrency(e.target.value);
-    }
+    };
 
     return (
         <div className='container-price'>
-            <h2 className='title-price'>Desde:</h2>
+            <h2 className="title-price">Desde: <span className={`${isInFair && fairMode && "line__through"}`}>{formatePrice(price.price)} {currency}</span></h2>
+
             <div className='container-currency'>
-                <select value={currency} onChange={handleCurrency}>
+                <select value={currency} onChange={handleCurrencyChange}>
                     <option value="COP">COP / $</option>
                     <option value="USD">USD / $</option>
                     <option value="EUR">EUR / $</option>
                     <option value="GBP">GBP / $</option>
+                    {fairMode && <option value="CAD">CAD / $</option>}
                 </select>
-                <p>{formatePrice(converterCurrency())}</p>
+                {isInFair && fairMode && <p>Precio feria: {formatePrice(price.fairprice)} {currency}</p>}
             </div>
             <a className='action-link' href="https://colraices.com/cupocreditoalinstante/" target='_bank'>
                 Conoce tu Cupo de Crédito

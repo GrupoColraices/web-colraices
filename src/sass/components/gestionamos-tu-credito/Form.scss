@@ -165,6 +165,7 @@
     }
 
     @include tablet {
+        min-height: 456px;
         max-width: 120rem;
         margin: 6rem auto 22rem auto;
         padding: 2rem 0 8rem 0;

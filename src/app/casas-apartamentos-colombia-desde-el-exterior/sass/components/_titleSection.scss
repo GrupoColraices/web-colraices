@@ -7,9 +7,10 @@
     align-items: center;
 
     .title-section-title {
-        text-align: center;
+        max-width: 30rem;
         font-size: 2.5rem;
         font-weight: 700;
+        text-align: center;
         line-height: 1.2;
         margin-bottom: 1.3rem;
         color: $primario2;
@@ -18,7 +19,7 @@
         &::after {
             position: absolute;
             content: '';
-            top: 4.7rem;
+            top: 1.7rem;
             min-width: 9%;
             max-width: 80%;
             height: 2px;
@@ -52,6 +53,7 @@
         margin: 0 5rem 0;
 
         .title-section-title {
+            max-width: unset;
             font-size: 4.5rem;
             margin: 0 0 1rem 0;
 
