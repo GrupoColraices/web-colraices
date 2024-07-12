@@ -12,15 +12,22 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { useCurrency } from "../hooks/useCurrency";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { ContextLike } from "../Context/Like";
+import { FairMode } from "../Context/Mode";
 import 'swiper/css';
 import Image from "next/image";
+import { useFairMode } from "../hooks/useFairMode";
 
 export const ItemInmueble = ({ dataInmueble, Elim, serverUrl }) => {
     const router = useRouter();
-    const { titulo, descripcion, precio, estado, tipo, baños, habitaciones, area_const, region, ciudad, slug, imagenes, num_img } = dataInmueble;
+    const { titulo, descripcion, precio, precio_feria, estado, tipo, baños, habitaciones, area_const, region, ciudad, slug, imagenes, num_img, fecha_inicial_feria, fecha_final_feria } = dataInmueble;
     const [liked, setLiked] = useLocalStorage(slug, false);
+    const { currency, convertedPrice, discountRate } = useFairMode(precio, precio_feria)
     const { handelLike, handelDelete } = useContext(ContextLike);
+    const { fairMode } = useContext(FairMode);
     const [formatePrice] = useCurrency();
+    const currentDate = new Date();
+    const isInFair = currentDate >= new Date(fecha_inicial_feria) && currentDate <= new Date(fecha_final_feria);
+    const isFair = fairMode && isInFair;
 
     const handelLikeInmueble = () => {
         setLiked(!liked);
@@ -60,8 +67,8 @@ export const ItemInmueble = ({ dataInmueble, Elim, serverUrl }) => {
         );
     }
     return (
-        <article className="itemReciente__main" data-aos="fade-zoom-in" data-aos-offset="0">
-            <Link href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${slug}`}>
+        <article className={`itemReciente__main ${isFair && "fair__mode"}`} data-aos="fade-zoom-in" data-aos-offset="0">
+            <Link href={`/casas-apartamentos-colombia-desde-el-exterior${fairMode ? "/feria/canada" : ""}/inmueble/${slug}`}>
                 <div className="itemReciente__img">
                     <div className="itemReciente__img--header">
                         <div className="itemReciente__img--header--content">
@@ -102,10 +109,12 @@ export const ItemInmueble = ({ dataInmueble, Elim, serverUrl }) => {
             <div className="itemReciente__content">
 
                 <div className="itemReciente__content--main">
-                    <Link href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${slug}`}>
+                    {isFair && <p className="price__off"><span>-{discountRate.toFixed(0)}% OFF</span></p>}
+                    <Link href={`/casas-apartamentos-colombia-desde-el-exterior${fairMode ? "/canada" : ""}/inmueble/${slug}`}>
                         <h2 className="itemReciente__content--main--title">{titulo}</h2>
                         <h3 className="itemReciente__content--main--subtitle">{tipo} en venta en {ciudad}</h3>
-                        <p className="itemReciente__content--main--precio"><span>Desde:</span> {formatePrice(precio)}</p>
+                        <p className={`itemReciente__content--main--precio ${isFair && "line__through"}`}><span>Desde:</span> {formatePrice(convertedPrice.price)} {currency}</p>
+                        {isFair && <p className="itemReciente__content--main--precio-feria"><span>Precio feria: </span> {formatePrice(convertedPrice.fairprice)} {currency}</p>}
                         <div className="itemReciente__content--main--description" ><p>{descripcion.replace(/(<([^>]+)>)/ig, '')}</p></div>
                     </Link>
 

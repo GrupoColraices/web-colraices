@@ -1,7 +1,7 @@
 import { ButtonFavorite } from "../components/ButtonFavorite";
 
 
-export const TitleInmueble = ({ titulo, region, ciudad, tipo_inmueble, inmueble }) => {
+export const TitleInmueble = ({ titulo, region, ciudad, tipo_inmueble, inmueble, discountRate, isInFair, fairMode }) => {
   return (
     <article className='title__inmueble'>
       <div>
@@ -12,6 +12,7 @@ export const TitleInmueble = ({ titulo, region, ciudad, tipo_inmueble, inmueble 
           <p>{ciudad} - {region}</p>
         </div>
       </div>
+      {isInFair && fairMode && <p className="price__off"><span>-{discountRate.toFixed(0)}% OFF</span></p>}
       <ButtonFavorite inmueble={inmueble} />
     </article>
   )

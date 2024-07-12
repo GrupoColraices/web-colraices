@@ -3,7 +3,30 @@ import TitleSection from '../components/TitleSection'
 import ItemEligenos from '../molecules/ItemEligenos'
 
 export const Eligenos = () => {
+    const constructionCompanies = [
+        '/img/historia/logo-camacol-valle.webp',
+        '/img/historia/logo-colpatria.png',
+        '/img/historia/logo-bolivar.webp',
+        '/img/historia/logo-contex.png',
+        '/img/historia/logo-londono-gomez.jpg',
+        '/img/historia/logo-ciencuadras.png',
+        '/img/historia/logo-gojom.webp',
+        '/img/historia/logo-jaramillo-mora-rojo.webp',
+        '/img/historia/logo-recinto.png',
+        '/img/historia/logo-optimo.webp',
+        '/img/historia/logo-grupo-platinium-itimo.webp',
+        '/img/historia/logo-habi.webp',
+        '/img/historia/logo-buendia.webp',
+        '/img/historia/logo-camu.png',
+        '/img/historia/logo-prodesa.webp',
+        '/img/historia/logo-espacios-libres.webp',
+        '/img/historia/logo-constructora-centenario.webp',
+        '/img/historia/logo-cupula.png',
+        '/img/historia/logo-jm.png',
 
+
+
+    ]
     return (
         <main className='eligenos'>
             <div className='section__title'>
@@ -15,14 +38,9 @@ export const Eligenos = () => {
                 <ItemEligenos
                     description={'Invierte de forma segura y confiable en nuestros proyectos inmobiliarios, respaldados por importantes constructoras aliadas en Colombia.'}
                     img={'/portal-inmobiliario/img/eligenos/aliados.webp'}
-                    slideshow={
-                        ['/portal-inmobiliario/img/aliados/5.webp', '/portal-inmobiliario/img/aliados/6.webp',
-                            '/portal-inmobiliario/img/aliados/7.webp', '/portal-inmobiliario/img/aliados/8.webp',
-                            '/portal-inmobiliario/img/aliados/12.webp',
-                        ]
-                    }
+                    slideshow={constructionCompanies}
                     slidesView={2}
-                    slidesViewDesktop={4}
+                    slidesViewDesktop={3}
                     spaceBetween={0}
                     customClass={'construction'}
                 >
@@ -32,6 +50,7 @@ export const Eligenos = () => {
                     description={'Nuestros inmuebles nuevos y usados pasan por un riguroso proceso de verificación para garantizar su calidad y características específicas. Con Colraices, invierte con confianza y seguridad en la propiedad que deseas.'}
                     img={'/portal-inmobiliario/img/eligenos/inmuebles.webp'}
                     customClass={'housing'}
+                    fair={true}
                 >
                     Viviendas con las
                     <span>mejores condiciones</span>

@@ -1,4 +1,5 @@
 .banner {
+    max-height: 80rem;
     position: relative;
     z-index: 3;
     display: flex;
@@ -8,21 +9,215 @@
 
     @include tablet {
         height: 99vh;
+
+        &[aria-disabled="true"] {
+            max-height: unset;
+            justify-content: flex-end;
+        }
     }
 
-    max-height: 80rem;
+    @include hyperDesktop {
+        &[aria-disabled="true"] {
+            justify-content: center;
+        }
+    }
 
     .video {
+        max-height: 80rem;
+        min-height: 40vh;
         object-fit: cover;
         overflow: hidden;
-        min-height: 40vh;
 
-        @include tablet {
-            height: 99vh;
-            width: 100%;
+        .main-content {
+            display: none;
         }
 
-        max-height: 80rem;
+        &[aria-disabled="true"] {
+            width: 100%;
+            min-height: 360px;
+            background-image: url("/portal-inmobiliario/img/colraicesInmobiliario/home/background-canada-movil.webp");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+            &::before {
+                background-color: unset;
+                opacity: unset;
+            }
+
+            video {
+                display: none;
+            }
+
+            .main-content {
+                max-width: 360px;
+                display: block;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0 auto;
+
+                h1 {
+                    position: absolute;
+                    top: 173px;
+                    left: 60px;
+                    font-size: clamp(2.3rem, 1.7333rem + 2.5185vw, 4rem);
+                    font-weight: 600;
+                    color: #ffff;
+                    margin: 0;
+                    z-index: 3;
+                }
+
+                div.content-text {
+                    width: 185px;
+                    position: absolute;
+                    top: 210px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 1.2rem 0.5rem;
+
+                    h2 {
+                        width: fit-content;
+                        font-size: 1.5rem;
+                        font-weight: 400;
+                        text-align: center;
+                        color: #fff;
+                        border-radius: 10px;
+                        padding: 0 0.5rem;
+                        margin: 0;
+                        background-color: $primario;
+
+                        span {
+                            font-weight: 700;
+                        }
+                    }
+
+                    p {
+                        display: flex;
+                        align-items: center;
+                        column-gap: 0.5rem;
+                        font-size: 1.3rem;
+                        margin: 0;
+                        color: $primario;
+
+                        span:nth-of-type(1) {
+                            font-size: 6rem;
+                            font-weight: 700;
+                        }
+
+                        span:nth-of-type(2) {
+                            text-wrap: balance;
+
+                            strong:nth-of-type(1) {
+                                font-size: 2.5rem;
+                            }
+
+                            strong:nth-of-type(2) {
+                                display: inline-block;
+                                color: #fff;
+                                border-radius: 50%;
+                                padding: 0.2rem 0.3rem;
+                                background-color: $primario;
+                            }
+                        }
+
+
+                    }
+
+
+                }
+
+
+                img {
+                    position: absolute;
+                }
+
+                img:nth-child(2) {
+                    width: 250px;
+                    z-index: 1;
+                }
+
+                img:nth-child(3) {
+                    width: 320px;
+                    top: 170px;
+                    z-index: 2;
+                }
+
+                img:nth-child(4) {
+                    width: 135px;
+                    top: 175px;
+                    right: 55px;
+                    z-index: 3;
+                }
+
+                @include tablet {
+                    max-width: 1000px;
+
+                    h1 {
+                        top: 215px;
+                        left: 320px;
+                    }
+
+                    img:nth-child(2) {
+                        width: 35%;
+                    }
+
+                    img:nth-child(3) {
+                        width: 50%;
+                        top: 210px;
+                    }
+
+                    img:nth-child(4) {
+                        width: 19%;
+                        top: 219px;
+                        right: 313px;
+                    }
+
+                    div.content-text {
+                        width: 295px;
+                        top: 272px;
+                        padding-inline: 0px;
+
+                        h2 {
+                            font-size: 2.7rem;
+                        }
+
+                        p {
+                            font-size: 3rem;
+
+                            span:nth-of-type(1) {
+                                font-size: 10rem;
+                                font-weight: 700;
+                            }
+
+                            span:nth-of-type(2) {
+                                font-size: 2.2rem;
+                                text-wrap: balance;
+
+                                strong:nth-of-type(1) {
+                                    font-size: 4.4rem;
+                                }
+
+                                strong:nth-of-type(2) {
+                                    display: inline-block;
+                                    color: #fff;
+                                    border-radius: 50%;
+                                    padding: 0.2rem 0.3rem;
+                                    background-color: $primario;
+                                }
+                            }
+
+
+                        }
+                    }
+                }
+
+            }
+        }
+
+
 
         &::before {
             content: "";
@@ -42,7 +237,30 @@
             min-height: 40vh;
 
         }
+
+        @include tablet {
+            height: 99vh;
+            width: 100%;
+
+            &[aria-disabled="true"] {
+                height: 100vh;
+                max-height: unset;
+                background-image: url("/portal-inmobiliario/img/colraicesInmobiliario/home/background-canada.webp");
+                background-position: center;
+            }
+        }
+
+        @include hyperDesktop {
+            &[aria-disabled="true"] {
+                background-image: url("/portal-inmobiliario/img/colraicesInmobiliario/home/background-canada.webp");
+                background-size: cover;
+
+            }
+        }
+
     }
+
+
 
     .banner-content {
         z-index: 1;
@@ -51,6 +269,18 @@
         align-items: center;
         justify-content: center;
         position: absolute;
+
+        @include tablet {
+            &[aria-disabled="true"] {
+                margin-bottom: 7rem;
+            }
+        }
+
+        @include hyperDesktop {
+            &[aria-disabled="true"] {
+                margin-top: 7rem;
+            }
+        }
     }
 
     .banner__text {
@@ -59,8 +289,14 @@
         justify-content: center;
         align-items: center;
         max-width: 60rem;
-        a{
+
+        &[aria-disabled="true"] {
+            display: none;
+        }
+
+        a {
             text-align: center;
+
             img {
                 max-width: 70%;
                 height: 100%;

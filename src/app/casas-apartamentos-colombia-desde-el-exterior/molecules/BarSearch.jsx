@@ -4,6 +4,7 @@ import useSWR from 'swr'
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 import { Filtro } from '../Context/Filtro';
+import { FairMode } from "../Context/Mode"
 import { APIURL } from '../config';
 const Filter = dynamic(() => import('./BarSearch/Filter'));
 
@@ -11,6 +12,7 @@ const Filter = dynamic(() => import('./BarSearch/Filter'));
 export const BarSearch = ({ visibility = false, scrolling = 100 }) => {
     const router = useRouter();
     const { inputs, handleInputs, setInputs, label: labelFilter, setLabel } = useContext(Filtro);
+    const { fairMode } = useContext(FairMode)
     const [filterCl, setFilterCl] = useState(false);
     const [validate, setValidate] = useState(false);
     const [isNotFound, setIsNotFound] = useState(false);
@@ -54,7 +56,7 @@ export const BarSearch = ({ visibility = false, scrolling = 100 }) => {
                 `hasta=${inputs.precioHasta}`,]
             const filterSegments = routeSegments.filter((segment) => segment !== '0');
             const filterQuery = routeQuery.filter((query) => query?.split('=')[1] !== '0');
-            router.push(`/casas-apartamentos-colombia-desde-el-exterior/filtrados/${filterSegments.join('/')}?${filterQuery.join('&')}`);
+            router.push(`/casas-apartamentos-colombia-desde-el-exterior${fairMode ? "/feria/canada" : ""}/filtrados/${filterSegments.join('/')}?${filterQuery.join('&')}`);
         } else {
             e.preventDefault();
             setValidate(true);

@@ -18,7 +18,7 @@ export const metadata = {
     keywords: "Comprar casa en Colombia desde el exterior,Invertir en vivienda en Colombia,Mercado inmobiliario en Colombia,Consejos para comprar casa en Colombia,Vivienda nueva o usada en Colombia,Mejores ciudades para comprar casa en Colombia,Guía para comprar vivienda en ColombiComprar propiedad en Colombia desde el exterior,Requisitos para comprar casa en Colombia,Trámites para comprar casa en Colombia."
 }
 const getArticles = async () => {
-    const fetching = await fetch(`https://blog.colraices.com/api/v1/posts?category_id=8`);
+    const fetching = await fetch(`https://blog.colraices.com/api/v1/posts?category_id=8`, { cache: "no-store" });
     const response = await fetching.json();
     return response?.data;
 }

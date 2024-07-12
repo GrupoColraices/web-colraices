@@ -22,12 +22,7 @@ div.container__eligenos-item {
 
                 .swiper-button-next,
                 .swiper-button-prev {
-                    color: $secundario;
-
-                    &::after {
-                        font-size: 2rem;
-                        font-weight: 800;
-                    }
+                    display: none;
                 }
             }
 
@@ -36,13 +31,13 @@ div.container__eligenos-item {
         div.container__img-item {
             display: grid;
             place-items: center;
-            height: 8rem;
 
             img {
-                width: 13rem;
+                width: 85%;
+                aspect-ratio: 3/2;
+                object-fit: contain;
                 filter: grayscale(95%);
                 cursor: pointer;
-
 
                 &:hover {
                     filter: grayscale(0);
@@ -54,7 +49,8 @@ div.container__eligenos-item {
                 width: 15rem;
                 height: 1.5rem;
             }
-            img[src*="img/aliados/1.svg"]{
+
+            img[src*="img/aliados/1.svg"] {
                 margin-left: 2rem;
             }
 
@@ -96,6 +92,10 @@ div.container__eligenos-item {
 
     }
 
+    article.disabled {
+        display: none;
+    }
+
     @include tablet {
         box-shadow: 0px 120px 100px -130px rgba(0, 0, 0, 0.1);
         padding: 0;
@@ -121,10 +121,6 @@ div.container__eligenos-item {
                 box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.40);
                 margin-top: -10rem;
 
-                .swiper-button-next,
-                .swiper-button-prev {
-                    display: none;
-                }
             }
 
             div.container__img-item {
@@ -132,6 +128,7 @@ div.container__eligenos-item {
 
                 img {
                     width: 10rem;
+                    aspect-ratio: unset;
                 }
 
                 img[src*="img/aliados/1.svg"],
@@ -144,16 +141,6 @@ div.container__eligenos-item {
                     height: auto;
                     width: 7.5rem;
                     margin-bottom: 1rem;
-                }
-
-                img[src*="img/aliados/12.webp"] {
-                    height: 2rem;
-                }
-
-                img[src*="img/aliados/7.webp"] {
-                    height: 5rem;
-                    width: 6rem;
-
                 }
 
             }
@@ -171,8 +158,13 @@ div.container__eligenos-item {
             }
         }
 
+        article.disabled {
+            display: none;
+        }
+
         article.housing {
-            padding: 10rem  0 6rem;
+            padding: 10rem 0 6rem;
+
             article.cartTextCol {
                 grid-column: 1;
                 margin-top: 15rem;
@@ -182,9 +174,54 @@ div.container__eligenos-item {
                 grid-column: 2;
             }
         }
-        article.construction{
+
+        article.construction {
             div.slider {
                 margin: -25rem 0 0 0 !important;
+                padding: 0.5rem;
+
+                .swiper {
+
+                    .swiper-button-next,
+                    .swiper-button-prev {
+                        display: flex;
+
+                        &::after {
+                            font-size: 27px;
+                            font-weight: 900;
+                            color: $primario;
+                        }
+                    }
+
+                }
+
+                div.container__img-item {
+                    height: 8.7rem;
+
+                    img {
+                        width: 80%;
+                        aspect-ratio: 16/9;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+
+    @include tablet {
+        article.construction {
+
+            div.container__img {
+                grid-column: 2;
+            }
+
+            article.cartTextCol {
+                grid-column: 1;
+            }
+
+            div.slider {
+                grid-column: 1;
+
             }
         }
     }
@@ -195,5 +232,7 @@ div.container__eligenos-item {
                 margin-top: -15rem;
             }
         }
+
+
     }
 }

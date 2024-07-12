@@ -19,7 +19,7 @@ export const metadata = {
 export default function HomePage() {
     return (
         <>
-            <Scripts />
+            {/* <Scripts /> */}
             <Header />
             <BannerSection />
             <PropertySection />
