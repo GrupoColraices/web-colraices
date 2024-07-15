@@ -35,8 +35,8 @@ const countryNames = {
     // "AE": "emiratos-árabes-unidos"
 };
 export async function middleware(request) {
-    // const ip = (request.headers.get('x-forwarded-for') ?? '127.0.0.1').split(',')[0]
-    let ip = request.headers.get('X-Forwarded-For')
+    const ip = (request.headers.get('x-forwarded-for') ?? '127.0.0.1').split(',')[0]
+    // let ip = request.headers.get('x-Forwarded-For')
     console.log(ip)
 
     try {
