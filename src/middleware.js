@@ -33,18 +33,17 @@ const countryNames = {
     // "US": "estados-unidos",
     // "AE": "emiratos-árabes-unidos"
 };
-export async function middleware(request) {
+export async function middleware(req) {
+    const ip = req.headers.get('x-forwarded-for')?.split(',').shift() || req.ip || req.headers.get('x-real-ip') || req.nextUrl.hostname;
 
     try {
         // const testIP = "184.71.130.183"
-        const geoResponse = await fetch(`${GEOLOCATION_API}/json?token=${TOKEN}`);
+        const geoResponse = await fetch(`${GEOLOCATION_API}/${ip}/json?token=${TOKEN}`);
         const geoData = await geoResponse.json();
         const country = countryNames[geoData.country];
 
-        const redirectUrl = `/casas-apartamentos-colombia-desde-el-exterior/feria/${country}`;
-
         if (country) {
-            return NextResponse.redirect(new URL(redirectUrl, request.url));
+            return NextResponse.redirect(new URL(`/casas-apartamentos-colombia-desde-el-exterior/feria/${country}`, req.url));
         }
 
     } catch (error) {
