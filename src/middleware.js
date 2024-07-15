@@ -41,6 +41,7 @@ export async function middleware(request) {
         const geoResponse = await fetch(`${GEOLOCATION_API}/${ip}/json?token=${TOKEN}`);
         const geoData = await geoResponse.json();
         const country = countryNames[geoData.country];
+        console.log(geoData, "geodata")
 
         if (country) {
             return NextResponse.redirect(new URL(`/casas-apartamentos-colombia-desde-el-exterior/feria/${country}`, request.url));
