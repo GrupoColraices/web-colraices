@@ -17,7 +17,6 @@
  */
 
 import { NextResponse } from "next/server"
-import requestIp from "request-ip"
 
 const GEOLOCATION_API = "https://ipinfo.io"
 const TOKEN = "0b05297d792e01"
@@ -35,21 +34,16 @@ const countryNames = {
     // "AE": "emiratos-árabes-unidos"
 };
 export async function middleware(req) {
-
-    // const ip = (request.headers.get('x-forwarded-for') ?? '127.0.0.1').split(',')[0]
-    // let ip = request.headers.get('x-Forwarded-For')
     const ip = req.headers.get('x-forwarded-for')?.split(',').shift() || req.ip || req.headers.get('x-real-ip') || req.nextUrl.hostname;
 
-    console.log(ip, "IP")
     try {
         // const testIP = "184.71.130.183"
         const geoResponse = await fetch(`${GEOLOCATION_API}/${ip}/json?token=${TOKEN}`);
         const geoData = await geoResponse.json();
         const country = countryNames[geoData.country];
-        console.log(geoData, "geodata")
 
         if (country) {
-            return NextResponse.redirect(new URL(`/casas-apartamentos-colombia-desde-el-exterior/feria/${country}`, request.url));
+            return NextResponse.redirect(new URL(`/casas-apartamentos-colombia-desde-el-exterior/feria/${country}`, req.url));
         }
 
     } catch (error) {
