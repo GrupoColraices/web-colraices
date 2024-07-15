@@ -40,20 +40,25 @@ export async function middleware(request) {
         const geoResponse = await fetch(`${GEOLOCATION_API}/json?token=${TOKEN}`);
         const geoData = await geoResponse.json();
         const country = countryNames[geoData.country];
-
+        console.log(geoResponse, "response")
+        console.log(geoData, "data")
+        console.log(country, "country");
+        console.log(geoData.country, "geodata country")
+        console.log(request.url, "url")
 
         if (country) {
-            const redirectUrl = `/casas-apartamentos-colombia-desde-el-exterior/feria/${country}`;
-            console.log(country, "country");
-            console.log(NextResponse.redirect(new URL(redirectUrl, request.url)), "redirect")
-            console.log(request.url, "url")
-            return NextResponse.redirect(new URL(redirectUrl, request.url));
+            // const redirectUrl = `/casas-apartamentos-colombia-desde-el-exterior/feria/${country}`;
+            console.log(NextResponse.redirect(new URL(`/casas-apartamentos-colombia-desde-el-exterior/feria/${country}`, request.url)), "redirect")
+            return NextResponse.redirect(new URL(`/casas-apartamentos-colombia-desde-el-exterior/feria/${country}`, request.url));
         }
 
     } catch (error) {
         console.error("Error fetching geolocation", error);
     }
-    return NextResponse.next();
+    if (request.nextUrl.pathname.includes(`/casas-apartamentos-colombia-desde-el-exterior/feria`)) {
+        console.log("true")
+        return NextResponse.next();
+    }
 
 }
 export const config = {
