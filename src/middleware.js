@@ -41,9 +41,12 @@ export async function middleware(request) {
         const geoData = await geoResponse.json();
         const country = countryNames[geoData.country];
 
-        const redirectUrl = `/casas-apartamentos-colombia-desde-el-exterior/feria/${country}`;
 
         if (country) {
+            const redirectUrl = `/casas-apartamentos-colombia-desde-el-exterior/feria/${country}`;
+            console.log(country, "country");
+            console.log(NextResponse.redirect(new URL(redirectUrl, request.url)), "redirect")
+            console.log(request.url, "url")
             return NextResponse.redirect(new URL(redirectUrl, request.url));
         }
 
