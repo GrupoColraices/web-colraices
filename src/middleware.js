@@ -17,6 +17,7 @@
  */
 
 import { NextResponse } from "next/server"
+import { headers } from 'next/headers'
 
 const GEOLOCATION_API = "https://ipinfo.io"
 const TOKEN = "0b05297d792e01"
@@ -34,7 +35,9 @@ const countryNames = {
     // "AE": "emiratos-árabes-unidos"
 };
 export async function middleware(request) {
-    const ip = (request.headers.get('x-forwarded-for') ?? '127.0.0.1').split(',')[0]
+    // const ip = (request.headers.get('x-forwarded-for') ?? '127.0.0.1').split(',')[0]
+    let ip = request.headers.get('X-Forwarded-For')
+    console.log(ip)
 
     try {
         // const testIP = "184.71.130.183"
