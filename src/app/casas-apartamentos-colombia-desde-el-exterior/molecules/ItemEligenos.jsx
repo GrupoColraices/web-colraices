@@ -25,10 +25,13 @@ export default block(function ItemEligenos({ description, img, children, slidesh
                         <div className='slider'>
                             <Swiper
                                 navigation={true}
-                                modules={[Navigation]}
+                                modules={[Autoplay, Navigation]}
                                 slidesPerView={slidesView}
                                 spaceBetween={spaceBetween}
                                 loop={true}
+                                autoplay={{
+                                    delay: 2500,
+                                }}
                                 breakpoints={{
                                     640: {
                                         slidesPerView: 3,
@@ -37,6 +40,8 @@ export default block(function ItemEligenos({ description, img, children, slidesh
                                     930: {
                                         slidesPerView: slidesViewDesktop,
                                         spaceBetween: 1,
+                                        autoplay: false,
+
                                     },
                                 }}
                             >
