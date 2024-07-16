@@ -110,7 +110,7 @@ export const ItemInmueble = ({ dataInmueble, Elim, serverUrl }) => {
 
                 <div className="itemReciente__content--main">
                     {isFair && <p className="price__off"><span>-{discountRate.toFixed(0)}% OFF</span></p>}
-                    <Link href={`/casas-apartamentos-colombia-desde-el-exterior${fairMode ? "/canada" : ""}/inmueble/${slug}`}>
+                    <Link href={`/casas-apartamentos-colombia-desde-el-exterior${fairMode ? "/feria/canada" : ""}/inmueble/${slug}`}>
                         <h2 className="itemReciente__content--main--title">{titulo}</h2>
                         <h3 className="itemReciente__content--main--subtitle">{tipo} en venta en {ciudad}</h3>
                         <p className={`itemReciente__content--main--precio ${isFair && "line__through"}`}><span>Desde:</span> {formatePrice(convertedPrice.price)} {currency}</p>
