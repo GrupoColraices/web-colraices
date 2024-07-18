@@ -39,7 +39,7 @@
                 }
 
                 .bg__color {
-                    background-color: #7C7C7C;
+                    background-color: #7c7c7c;
                 }
 
                 .itemReciente__img--header-div {
@@ -81,7 +81,7 @@
             width: 100%;
 
             &::before {
-                content: "";
+                content: '';
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -100,7 +100,6 @@
                 .itemReciente__img--footer--icon {
                     color: $blanco;
                     font-size: 1.8rem;
-
                 }
             }
         }
@@ -120,7 +119,8 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-size: 14px;
+                text-align: center;
+                font-size: 12px;
                 font-weight: 500;
                 color: white;
                 margin: 0;
@@ -169,7 +169,7 @@
                 color: white;
                 border-radius: 10px;
                 padding: 0.5rem;
-                background-color: $primario
+                background-color: $primario;
             }
 
             .line__through {
@@ -254,9 +254,9 @@
                 background-color: transparent;
                 padding: 0.5rem 1rem;
                 font-size: 1.4rem;
-                color: #4D4D4D;
+                color: #4d4d4d;
                 border-radius: 4px;
-                border: 1px solid #D9D9D9;
+                border: 1px solid #d9d9d9;
             }
 
             &:hover {
@@ -270,7 +270,6 @@
 
         .itemReciente__content {
             .itemReciente__content--main {
-
                 .price__off {
                     top: 35px;
                     right: 15px;
