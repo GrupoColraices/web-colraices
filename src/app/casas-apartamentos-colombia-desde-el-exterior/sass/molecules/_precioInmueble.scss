@@ -32,7 +32,7 @@
             border: none;
             border-radius: 40px;
             border-right: 8px solid transparent;
-            background-color: rgba(238, 238, 238, 0.70);
+            background-color: rgba(238, 238, 238, 0.7);
             box-shadow: -2px 2px 4px 0px rgba(0, 0, 0, 0.25);
             background-size: 15px;
             background-image: url('/portal-inmobiliario/img/colraicesInmobiliario/icons/arrow_down.svg');
@@ -45,7 +45,6 @@
             &:focus {
                 outline: none;
             }
-
         }
 
         p {
@@ -68,7 +67,6 @@
                 background-position: 90px center;
             }
         }
-
     }
 
     a.action-link {
@@ -99,10 +97,9 @@
             top: 0;
             left: 0;
             transform: translateX(-100%);
-            transition: all .3s;
+            transition: all 0.3s;
             background-color: $secundario;
             z-index: -1;
-
         }
 
         &:hover:before {
