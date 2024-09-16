@@ -1,5 +1,4 @@
 import { Partners } from '@/components/Partners'
-import { Header } from '@/components/Header'
 import RecommendedProjects from '@/containers/home/RecommendedProjects'
 import { BannerSection } from '@/containers/home/BannerSection'
 import { HistorySection } from '@/containers/home/HistorySection'
@@ -20,7 +19,6 @@ export default function HomePage() {
     return (
         <>
             <Scripts />
-            <Header />
             <BannerSection />
             <PropertySection />
             <ServiceSection />
