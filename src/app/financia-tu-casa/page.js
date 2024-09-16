@@ -18,7 +18,6 @@ export const metadata = {
 export default function FinancingPage() {
     return (
         <>
-            <Header />
             <main className="financing-main">
                 <FinancingBanner />
                 <section className="financing-partners">
