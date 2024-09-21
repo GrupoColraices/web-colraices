@@ -1,9 +1,9 @@
 'use client'
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import Link from 'next/link'
 import { BarSearch } from '../molecules/BarSearch'
 import { FairMode } from '../Context/Mode'
 import { usePathname } from 'next/navigation'
+import { SliderBanner } from './SliderBanner'
 
 
 export const Banner = (props) => {
@@ -52,10 +52,7 @@ export const Banner = (props) => {
         <section>
             <div className={`sticky-barSearch banner ${!main && 'bannermin'}`} aria-disabled={fairMode} >
                 <div className={`video `} aria-disabled={isFair}>
-                    <video autoPlay muted loop ref={video}>
-                        <source src={"/portal-inmobiliario/video/banner.mp4"} type="video/mp4" />
-                        <source src="/portal-inmobiliario/video/banner.avi" type='video/avi' />
-                    </video>
+                    <SliderBanner banners={props.banners} />
                     <div className='main-content'>
                         <h1>La feria</h1>
                         <img src="/portal-inmobiliario/img/colraicesInmobiliario/home/persons.webp" alt="Image of family" />
@@ -71,9 +68,6 @@ export const Banner = (props) => {
 
                 <div className='banner-content' aria-disabled={fairMode} >
                     <div className='banner__text' aria-disabled={fairMode}>
-                        <Link href={'/'}>
-                            <img src="/portal-inmobiliario/img/colraicesInmobiliario/home/logo.svg" alt="Colraices logo" />
-                        </Link>
                     </div>
                     {!width && <BarSearch />}
                 </div>
