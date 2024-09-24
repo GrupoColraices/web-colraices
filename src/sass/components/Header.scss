@@ -49,22 +49,19 @@ header.Header-container {
             gap: 1rem;
         }
 
-        @include desktop {
-            gap: 35px;
-        }
-
         a.NavLink {
             width: fit-content;
             font-size: 15px;
             font-weight: 400;
             color: #000;
-            padding: 0.7rem 0;
+            padding: 1rem;
 
             @include laptop {
                 cursor: pointer;
 
                 &:hover {
-                    color: $secondary;
+                    border-radius: 5rem;
+                    box-shadow: 0px 1px 10px 0px #B9945D;
                 }
             }
         }
@@ -101,7 +98,6 @@ header.Header-container {
             left: auto;
             display: grid;
             grid-template-columns: 2fr repeat(3, 1fr) 2fr;
-            gap: 1rem;
             transform: none;
             width: 87%;
         }
