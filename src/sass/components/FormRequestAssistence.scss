@@ -45,12 +45,19 @@ form.request-assistence {
     translate: 100% 0;
     transition: 0.4s;
 
-    .field-content {
-        display: flex;
-        flex-direction: column;
-        font-size: 16px;
-        color: #000;
-        line-height: 18px;
+    div.content-phone {
+        width: 100%;
+
+        .field-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            font-size: 16px;
+            color: #000;
+            line-height: 18px;
+
+
+        }
 
         input {
             width: 100%;
@@ -85,6 +92,7 @@ form.request-assistence {
         }
     }
 
+
     h2 {
         font-size: clamp(1.8rem, 1.7143rem + 0.381vw, 2rem);
         font-weight: 700;
@@ -107,32 +115,32 @@ form.request-assistence {
         flex-direction: column;
         font-size: clamp(1.2rem, 1.1143rem + 0.381vw, 1.4rem);
 
-        input {
-            border: none;
-            border-radius: 5rem;
-            margin-top: 0.3rem;
-            padding: 1rem 3rem;
-            background-color: $white;
-
-            &:focus {
-                outline: none;
-            }
-        }
-
-        span.message-error {
-            font-size: 12px;
-            font-weight: 500;
-            color: #bf1650;
-            margin: 0.5rem 0;
-
-            &::before {
-                display: inline;
-                content: '⚠ ';
-            }
-        }
-
         @include desktop {
             font-size: clamp(1.4rem, 0.2rem + 1.6vw, 1.6rem);
+        }
+    }
+
+    input {
+        border: none;
+        border-radius: 5rem;
+        margin-top: 0.3rem;
+        padding: 1rem 3rem;
+        background-color: $white;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    span.message-error {
+        font-size: 12px;
+        font-weight: 500;
+        color: #bf1650;
+        margin: 0.5rem 0;
+
+        &::before {
+            display: inline;
+            content: '⚠ ';
         }
     }
 
@@ -162,7 +170,7 @@ form.request-assistence {
     }
 }
 
-div.container-request-assistence.open {
+div.container-request-assistence.overlay {
     visibility: visible;
     opacity: 1;
     background-color: rgba(69, 69, 69, 0.80);
