@@ -27,27 +27,18 @@ div.container-banner-main {
         gap: 2rem;
         margin-bottom: 1.5rem;
 
-        .field-content {
-            display: flex;
-            flex-direction: column;
-            font-size: 16px;
-            color: $primary;
-            line-height: 18px;
+        div.content-phone {
+            width: 100%;
 
-            input {
+            .field-content {
                 width: 100%;
+                display: flex;
+                flex-direction: column;
                 font-size: 16px;
-                font-weight: 400;
-                line-height: 24px;
-                margin: 1rem 0 0;
-                border-radius: 0px 50px 50px 0;
-                padding: 0 1rem;
+                color: $primary;
+                line-height: 18px;
 
-                &:focus {
-                    outline: none;
-                }
             }
-
 
             input.react-international-phone-input,
             button.react-international-phone-country-selector-button {
@@ -59,32 +50,15 @@ div.container-banner-main {
 
             }
 
+            input.react-international-phone-input {
+                border-radius: 0px 50px 50px 0px;
+            }
+
             button.react-international-phone-country-selector-button {
                 padding: 1rem 3rem 1rem 2rem;
                 border-radius: 50px 0px 0px 50px;
                 background: #E4E4E4;
                 backdrop-filter: blur(50px);
-            }
-        }
-
-        label {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            font-size: 16px;
-            font-weight: 400;
-            color: $primary;
-
-            input {
-                border: none;
-                border-radius: 5rem;
-                margin-top: 0.3rem;
-                padding: 1rem 3rem;
-                background-color: $white;
-
-                &:focus {
-                    outline: none;
-                }
             }
 
             span.message-error {
@@ -98,6 +72,41 @@ div.container-banner-main {
                     content: '⚠ ';
                 }
             }
+        }
+
+        label {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            font-size: 16px;
+            font-weight: 400;
+            color: $primary;
+
+            span.message-error {
+                font-size: 12px;
+                font-weight: 500;
+                color: #bf1650;
+                margin: 0.5rem 0 0;
+
+                &::before {
+                    display: inline;
+                    content: '⚠ ';
+                }
+            }
+
+        }
+
+        input {
+            border: none;
+            border-radius: 5rem;
+            margin-top: 0.3rem;
+            padding: 1rem 3rem;
+            background-color: $white;
+
+            &:focus {
+                outline: none;
+            }
+
         }
 
         button.submit {
