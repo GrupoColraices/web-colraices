@@ -1,0 +1,35 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+.slider-container {
+    width: 90%;
+    height: 65px;
+    padding: 0.3rem 0;
+    margin-bottom: 3rem;
+    box-shadow: 0px 0px 9.78px rgba(147, 146, 146, 0.72);
+
+    .swiper-slide {
+        width: fit-content !important;
+    }
+
+    img {
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+        filter: grayscale(100%);
+        transition: all 0.5s ease;
+        cursor: pointer;
+
+        &:hover {
+            filter: grayscale(0)
+        }
+    }
+
+    @include laptop {
+        margin-bottom: 7rem;
+
+        img {
+            height: 60px;
+        }
+    }
+
+}

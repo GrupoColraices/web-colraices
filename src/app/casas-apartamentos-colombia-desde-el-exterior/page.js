@@ -10,12 +10,13 @@ import { APIURL } from "./config";
 export default async function Home() {
   const inmFeatured = await getinmFeatured();
   const inmRecientes = await getinmRecientes();
+  const banners = await getBanners();
   return (
     <>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-03VJLYKNTV" />
       <Script id="google-analytics"
-  dangerouslySetInnerHTML={{
-        __html: ` window.dataLayer = window.dataLayer || [];
+        dangerouslySetInnerHTML={{
+          __html: ` window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', 'G-03VJLYKNTV');`}} />
@@ -32,7 +33,7 @@ export default async function Home() {
 
       <Toaster containerStyle={{ zIndex: 10000000 }} position="top-right" />
 
-      <Banner main />
+      <Banner main banners={banners} />
       <FeaturedProperties inmFeatured={inmFeatured} />
       <InmReciente inmRecientes={inmRecientes} />
       <Eligenos />
@@ -48,6 +49,11 @@ export async function getinmFeatured() {
 }
 export async function getinmRecientes() {
   const fetching = await fetch(`${APIURL}properties`);
+  const response = await fetching.json();
+  return response?.data;
+}
+export async function getBanners() {
+  const fetching = await fetch(`${APIURL}banners`, { cache: "no-store" });
   const response = await fetching.json();
   return response?.data;
 }

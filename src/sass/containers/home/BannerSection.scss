@@ -2,11 +2,82 @@
 @import '../../base/mixins';
 
 .container-flex {
-    display: flex;
-    flex-direction: column;
+    position: relative;
+
+    .mySwiper {
+        padding-bottom: 8rem;
+
+        .swiper-slide {
+            position: relative;
+            min-height: 600px;
+            max-height: 100vh;
+            height: auto;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: $primary;
+            bottom: 0px;
+            top: auto;
+            z-index: 20;
+
+            &::after {
+                font-size: 25px;
+                font-weight: 700;
+                color: $white;
+
+            }
+
+            &.swiper-button-disabled {
+                opacity: 1;
+                background-color: #8B8B8B;
+            }
+        }
+
+        .swiper-button-prev {
+            left: 55px;
+        }
+
+        .swiper-button-next {
+            right: 55px;
+        }
+
+        span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+            background-color: $secondary;
+        }
+
+        .swiper-pagination-bullet {
+            width: 20px;
+            height: 20px;
+            opacity: 1;
+            margin-inline: 1rem;
+            background-color: $primary;
+        }
+
+        .swiper-pagination-horizontal {
+            bottom: 10px;
+        }
+
+        @include laptop {
+            .swiper-button-prev {
+                left: 38%;
+            }
+
+            .swiper-button-next {
+                right: 38%;
+            }
+        }
+    }
 
     .partners-desktop {
         display: none;
+    }
+
+    .partners {
+        margin: 5rem 0 0 0;
     }
 
     @include laptop {
@@ -24,144 +95,93 @@
             margin: 0 auto;
         }
     }
-}
 
-section.Banner-container {
-    @include laptop {
-        width: 100%;
-        padding: 0 20px 0 20px;
+    div.banner-container {
+        height: 100%;
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin-inline: 2rem;
+        padding-inline: 2rem;
+        border-radius: 2.5rem;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
 
-        // gap: 129px;
-        .partners {
-            display: none;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.26) 8.9%, #000 100%);
+            z-index: 1;
+            margin-inline: 2rem;
+            border-radius: 2.5rem;
         }
-    }
 
-    @include desktop {
-        width: 100%;
-        padding: 0 84px 0 144px;
-        display: flex;
-        gap: 1rem;
-    }
+        .banner-title {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 2;
+        }
 
-    @include desktopxl {
-        width: 100%;
-        padding: 0;
-        display: flex;
-
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    div.Banner-title {
         h1 {
-            width: 230px;
-            font-size: 24px;
-            margin: auto;
+            font-size: clamp(3rem, 2.1346rem + 3.8462vw, 5.5rem);
+            font-weight: 700;
+            text-align: center;
+            color: $white;
+            margin: 0;
         }
 
         p {
-            font-weight: 700;
+            font-size: clamp(1.6rem, 1.1154rem + 2.1538vw, 3rem);
             text-align: center;
-            font-size: 24px;
-            margin: 0;
-            color: $secondary;
+            color: $white;
         }
 
-        div.container-buttons-desktop {
-            display: none;
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: clamp(1.6rem, 1.3923rem + 0.9231vw, 2.2rem);
+            font-weight: 400;
+            color: $primary;
+            padding: 1rem 4rem;
+            border-radius: 26px;
+            box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            background-color: #FFB800;
         }
 
         @include laptop {
-            padding-top: 84px;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-inline: 4rem;
+            border-radius: 5rem;
 
-            h1 {
-                width: 461px;
-                color: var(--AZUL-COLRAICES, #2A3F77);
+            &::before {
+                border-radius: 5rem;
+            }
 
-                font-size: 48px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: normal;
-                margin: 0;
-                text-align: start;
+            .banner-title {
+                align-items: flex-start;
 
-                span {
-                    font-size: 4.9rem;
+                h1 {
+                    max-width: 600px;
+                    text-wrap: pretty;
+                    text-align: left;
                 }
-            }
-
-            p {
-                font-size: 50px;
-                margin: 0;
-                width: 628px;
-                text-align: start;
-                color: var(--SUBITULO-HOME, #b08c47);
-
-                font-size: 50px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: normal;
-            }
-
-            div.container-buttons-desktop {
-                display: flex;
-                margin-top: 50px;
-                gap: 24px;
-                padding-bottom: 49px;
             }
         }
     }
 
-    article {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        padding: 41px 0 3rem 0;
-
-        div.container-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            padding-bottom: 49px;
-
-            @include laptop {
-                display: none;
-            }
-        }
-
-        section {
-            place-self: center;
-            grid-area: picture;
-
-            .bannerMobile {
-                width: 276px;
-                height: 349px;
-            }
-
-            .bannerDesktop {
-                display: none;
-            }
-        }
-
-        @include laptop {
-            grid-template-areas: 'picture icons';
-            grid-template-columns: 3fr 1fr;
-            padding: 0;
-            margin-bottom: 20px;
-
-            section {
-                .bannerMobile {
-                    display: none;
-                }
-
-                .bannerDesktop {
-                    width: 530px;
-                    height: 603px;
-                    display: block;
-                }
-            }
-        }
+    @include laptop {
+        max-width: 1300px;
+        margin: 6rem auto;
     }
 }

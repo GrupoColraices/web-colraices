@@ -15,7 +15,6 @@ export const metadata = {
 export default function History() {
     return (
         <>
-            <Header />
             <Banner />
             <CompaniesConstruction />
             <Banks />

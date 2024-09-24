@@ -49,10 +49,6 @@ export const LayoutInmuebles = ({ loading, inmuebles, Notion, Elim, inm, fav, se
             {fav && <Navbar />}
             {fav && <TitleNavbar title={"Mis favoritos"} />}
 
-            {!fav &&
-                <img className='btn-float-form' src='/portal-inmobiliario/img/colraicesInmobiliario/icons/widget-form.webp' onClick={() => scrollSection("form-container", true, -150)} alt="Icon" />
-            }
-
             <section className={fav ? 'favSection' : 'inmRegion'}>
                 <div className={fav ? 'favSection__flex' : 'inmRegion__grid'}>
                     {!fav && <TitleSection

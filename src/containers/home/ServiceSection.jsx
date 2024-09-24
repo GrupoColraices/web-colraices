@@ -6,7 +6,7 @@ import Link from 'next/link'
 export const ServiceSection = () => {
     return (
         <section className="Service-container">
-            <h2> Si lo prefieres, <span>lo hacemos todo por tí</span></h2>
+            {/* <h2> Si lo prefieres, <span>lo hacemos todo por tí</span></h2> */}
             <div className="Service-cards-container">
                 {servicesCards.map((service) => (
                     <Link href={service.link} key={service.image}>
