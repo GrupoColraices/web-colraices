@@ -7,14 +7,13 @@ import { TestimonialSection } from '@/containers/home/TestimonialSection'
 import '@/sass/containers/home/Home.scss'
 import { Scripts } from '@/helpers/Scripts'
 import { SliderLogos } from '@/components/SliderLogos'
-import { APIURL } from '@/helpers/api'
 
 export const metadata = {
     title: 'Comprar casa en Colombia desde el exterior | Colraices',
     description: 'Comprar casa en Colombia desde el exterior | Colraices',
 }
 const getBanners = async () => {
-    const fetching = await fetch(`${APIURL}/banners`, { cache: "no-store" });
+    const fetching = await fetch(`https://blog.colraices.com/api/v1/banners`, { cache: "no-store" });
     const response = await fetching.json();
     return response?.data;
 }
