@@ -4,6 +4,8 @@ import { BarSearch } from '../molecules/BarSearch'
 import { FairMode } from '../Context/Mode'
 import { usePathname } from 'next/navigation'
 import { SliderBanner } from './SliderBanner'
+import { APIURL } from '../config'
+import useSWR from 'swr'
 
 
 export const Banner = (props) => {
@@ -15,6 +17,11 @@ export const Banner = (props) => {
     const [width, setWidth] = useState(false)
     const { fairMode, setFairMode, fairRoutes } = useContext(FairMode);
     const [isFair, setIsFair] = useState(fairMode)
+    const { data: banners } = useSWR(`${APIURL}banners`, async (url) => {
+        const response = await fetch(url)
+        const data = await response.json()
+        return data?.data
+    })
     useEffect(() => {
         if (window.innerWidth < 930) {
             setWidth(true)
@@ -51,8 +58,8 @@ export const Banner = (props) => {
     return (
         <section>
             <div className={`sticky-barSearch banner ${!main && 'bannermin'}`} aria-disabled={fairMode} >
-                <div className={`video `} aria-disabled={isFair}>
-                    <SliderBanner banners={props.banners} />
+                <div className={`video`} aria-disabled={isFair}>
+                    <SliderBanner banners={banners} />
                     <div className='main-content'>
                         <h1>La feria</h1>
                         <img src="/portal-inmobiliario/img/colraicesInmobiliario/home/persons.webp" alt="Image of family" />
