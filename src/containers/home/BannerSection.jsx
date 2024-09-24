@@ -32,8 +32,7 @@ export const BannerSection = ({ banners }) => {
                             <div className="banner-title">
                                 <h1 className="title">{item.title}</h1>
                                 <p>{item.description}</p>
-                                <img src={item.file} alt="Imagen ilustrativa" />
-                                <Link href={'/casas-apartamentos-colombia-desde-el-exterior'} target="_blank">Buscar mi casa</Link>
+                                <Link href={item.link} target="_blank">{item.button_text}</Link>
                             </div>
                             {index === 0 && <FormBannerMain />}
                         </div>
