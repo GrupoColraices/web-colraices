@@ -45,7 +45,7 @@ export const FormRequestAssistence = () => {
     return (
         <>
 
-            <div className={`container-request-assistence ${formState && "open"}`}>
+            <div className={`container-request-assistence ${formState && "overlay"}`}>
             </div>
             <Toaster
                 position="top-right"
@@ -106,15 +106,16 @@ export const FormRequestAssistence = () => {
                     }}
                     render={({ field }) => {
                         return (
-                            <label className='field-content'>
-                                Teléfono * Sin indicativo del país
+                            <div className='content-phone'>
+                                <label className='field-content'>Teléfono * Sin indicativo del país</label>
                                 <PhoneInput
                                     {...field}
+                                    defaultCountry="co"
                                     onChange={(v) => field.onChange(v)}
                                     placeholder="Teléfono"
                                 />
                                 {errors?.phone && (<span className='message-error'>El teléfono es obligatorio</span>)}
-                            </label>
+                            </div>
                         );
                     }}
                 />
