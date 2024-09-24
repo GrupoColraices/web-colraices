@@ -66,15 +66,18 @@ export const FormBannerMain = () => {
                     }}
                     render={({ field }) => {
                         return (
-                            <label className='field-content'>
-                                Teléfono *
+                            <div className='content-phone'>
+                                <label className='field-content'>
+                                    Teléfono *
+                                </label>
                                 <PhoneInput
                                     {...field}
+                                    defaultCountry="co"
                                     onChange={(v) => field.onChange(v)}
                                     placeholder="Teléfono"
                                 />
                                 {errors?.phone && (<span className='message-error'>El teléfono es obligatorio</span>)}
-                            </label>
+                            </div>
                         );
                     }}
                 />
