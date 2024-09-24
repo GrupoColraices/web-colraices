@@ -32,7 +32,7 @@ export const BannerSection = ({ banners }) => {
                             <div className="banner-title">
                                 <h1 className="title">{item.title}</h1>
                                 <p>{item.description}</p>
-                                <Link href={item.link} target="_blank">{item.button_text}</Link>
+                                <Link href={item.link} target={item.is_external === 1 ? '_blank' : '_self'}>{item.button_text}</Link>
                             </div>
                             {index === 0 && <FormBannerMain />}
                         </div>
