@@ -1,3 +1,7 @@
+.banner-section {
+    position: relative;
+}
+
 .banner {
     max-height: 80rem;
     position: relative;
@@ -233,6 +237,7 @@
         }
 
         @include tablet {
+            position: relative;
             height: 99vh;
             width: 100%;
 
