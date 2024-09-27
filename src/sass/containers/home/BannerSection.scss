@@ -6,12 +6,13 @@
 
     .mySwiper {
         padding-bottom: 8rem;
+        border-radius: 5rem;
 
         .swiper-slide {
+            height: auto;
             position: relative;
             min-height: 600px;
             max-height: 100vh;
-            height: auto;
         }
 
         .swiper-button-prev,
@@ -174,6 +175,14 @@
                 h1 {
                     max-width: 600px;
                     text-wrap: pretty;
+                    text-align: left;
+                }
+
+                h1.title-portal-inmobiliario {
+                    max-width: 100%;
+                }
+
+                p {
                     text-align: left;
                 }
             }
