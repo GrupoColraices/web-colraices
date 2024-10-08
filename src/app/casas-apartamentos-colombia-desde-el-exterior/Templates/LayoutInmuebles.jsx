@@ -20,28 +20,28 @@ export const LayoutInmuebles = ({ loading, inmuebles, Notion, Elim, inm, fav, se
     const [fid, setFid] = useState(false)
     const observar = useRef(null)
 
-    useEffect(() => {
-        observar.current = new IntersectionObserver(function (entries) {
-            setFid(entries[0].isIntersecting);
-        }, { root: null });
-        observar.current.observe(document.querySelector('.sticky-barSearch'));
+    // useEffect(() => {
+    //     observar.current = new IntersectionObserver(function (entries) {
+    //         setFid(entries[0].isIntersecting);
+    //     }, { root: null });
+    //     observar.current.observe(document.querySelector('.sticky-barSearch'));
 
-        const bar = document.querySelector('.barSearch');
-        const containerFilter = document.querySelector('.container__filter');
-        const containerList = document.querySelector('.container__list');
-        const containerState = document.querySelector('.container__list-state');
-        const containerSearch = document.querySelector('.container__search');
+    //     const bar = document.querySelector('.barSearch');
+    //     const containerFilter = document.querySelector('.container__filter');
+    //     const containerList = document.querySelector('.container__list');
+    //     const containerState = document.querySelector('.container__list-state');
+    //     const containerSearch = document.querySelector('.container__search');
 
-        fid ? bar.classList.remove('fijo') : bar.classList.add('fijo');
-        fid ? containerFilter?.classList.remove('sticky') : containerFilter?.classList.add('sticky');
-        fid ? containerList?.classList.remove('sticky__list') : containerList?.classList.add('sticky__list');
-        fid ? containerState?.classList.remove('sticky__state') : containerState?.classList.add('sticky__state');
-        fid ? containerSearch?.classList.remove('sticky__search') : containerSearch?.classList.add('sticky__search');
-        return () => {
-            observar.current && observar.current.disconnect();
-        }
+    //     fid ? bar.classList.remove('fijo') : bar.classList.add('fijo');
+    //     fid ? containerFilter?.classList.remove('sticky') : containerFilter?.classList.add('sticky');
+    //     fid ? containerList?.classList.remove('sticky__list') : containerList?.classList.add('sticky__list');
+    //     fid ? containerState?.classList.remove('sticky__state') : containerState?.classList.add('sticky__state');
+    //     fid ? containerSearch?.classList.remove('sticky__search') : containerSearch?.classList.add('sticky__search');
+    //     return () => {
+    //         observar.current && observar.current.disconnect();
+    //     }
 
-    }, [fid]);
+    // }, [fid]);
 
     return (
         <>

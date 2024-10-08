@@ -2,6 +2,22 @@
     max-width: 60rem;
     margin: 0 auto;
     z-index: 999;
+
+    @include tablet {
+        position: absolute;
+        bottom: 190px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 120rem;
+
+        form {
+            height: 0;
+        }
+    }
+}
+
+.barSearchFavorites {
+    bottom: unset;
 }
 
 .show-filter {
@@ -32,21 +48,6 @@
             background-color: $primario;
             z-index: 100000 !important;
             width: 100vw;
-        }
-    }
-
-
-    .barSearch {
-        margin: 0 auto 8rem;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        position: relative;
-        top: 0;
-        max-width: 120rem;
-
-        form {
-            height: 0;
         }
     }
 }

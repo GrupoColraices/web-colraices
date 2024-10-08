@@ -4,6 +4,8 @@ import { BarSearch } from '../molecules/BarSearch'
 import { FairMode } from '../Context/Mode'
 import { usePathname } from 'next/navigation'
 import { SliderBanner } from './SliderBanner'
+import { APIURL } from '../config'
+import useSWR from 'swr'
 
 
 export const Banner = (props) => {
@@ -15,6 +17,11 @@ export const Banner = (props) => {
     const [width, setWidth] = useState(false)
     const { fairMode, setFairMode, fairRoutes } = useContext(FairMode);
     const [isFair, setIsFair] = useState(fairMode)
+    const { data: banners } = useSWR(`${APIURL}banners`, async (url) => {
+        const response = await fetch(url)
+        const data = await response.json()
+        return data?.data
+    })
     useEffect(() => {
         if (window.innerWidth < 930) {
             setWidth(true)
@@ -25,34 +32,34 @@ export const Banner = (props) => {
         if (pathName.includes("filtrados") && fairMode) {
             setIsFair(false)
         }
-        observar.current = new IntersectionObserver(function (entries) {
-            setFid(entries[0].isIntersecting);
-        }, { root: null });
-        video?.current?.play();
-        observar.current.observe(document.querySelector('.sticky-barSearch'));
+        // observar.current = new IntersectionObserver(function (entries) {
+        //     setFid(entries[0].isIntersecting);
+        // }, { root: null });
+        // video?.current?.play();
+        // observar?.current?.observe(document.querySelector('.sticky-barSearch'));
 
-        const bar = document.querySelector('.barSearch');
-        const containerFilter = document.querySelector('.container__filter');
-        const containerList = document.querySelector('.container__list');
-        const containerState = document.querySelector('.container__list-state');
-        const containerSearch = document.querySelector('.container__search');
+        // const bar = document.querySelector('.barSearch');
+        // const containerFilter = document.querySelector('.container__filter');
+        // const containerList = document.querySelector('.container__list');
+        // const containerState = document.querySelector('.container__list-state');
+        // const containerSearch = document.querySelector('.container__search');
 
-        fid ? bar.classList.remove('fijo') : bar.classList.add('fijo');
-        fid ? containerFilter?.classList.remove('sticky') : containerFilter?.classList.add('sticky');
-        fid ? containerList?.classList.remove('sticky__list') : containerList?.classList.add('sticky__list');
-        fid ? containerState?.classList.remove('sticky__state') : containerState?.classList.add('sticky__state');
-        fid ? containerSearch?.classList.remove('sticky__search') : containerSearch?.classList.add('sticky__search');
-        return () => {
-            observar.current && observar.current.disconnect();
-        }
+        // fid ? bar.classList.remove('fijo') : bar.classList.add('fijo');
+        // fid ? containerFilter?.classList.remove('sticky') : containerFilter?.classList.add('sticky');
+        // fid ? containerList?.classList.remove('sticky__list') : containerList?.classList.add('sticky__list');
+        // fid ? containerState?.classList.remove('sticky__state') : containerState?.classList.add('sticky__state');
+        // fid ? containerSearch?.classList.remove('sticky__search') : containerSearch?.classList.add('sticky__search');
+        // return () => {
+        //     observar.current && observar.current.disconnect();
+        // }
 
 
-    }, [fid]);
+    }, []);
     return (
-        <section>
-            <div className={`sticky-barSearch banner ${!main && 'bannermin'}`} aria-disabled={fairMode} >
-                <div className={`video `} aria-disabled={isFair}>
-                    <SliderBanner banners={props.banners} />
+        <section className='banner-section'>
+            <SliderBanner banners={banners} />
+            {/* <div className={`sticky-barSearch banner ${!main && 'bannermin'}`} aria-disabled={fairMode} >
+                <div className={`video`} aria-disabled={isFair}>
                     <div className='main-content'>
                         <h1>La feria</h1>
                         <img src="/portal-inmobiliario/img/colraicesInmobiliario/home/persons.webp" alt="Image of family" />
@@ -65,15 +72,14 @@ export const Banner = (props) => {
                     </div>
                 </div>
 
-
                 <div className='banner-content' aria-disabled={fairMode} >
                     <div className='banner__text' aria-disabled={fairMode}>
                     </div>
-                    {!width && <BarSearch />}
+
                 </div>
 
-            </div>
-            {width && <BarSearch />}
+            </div> */}
+            <BarSearch />
         </section>
     )
 }

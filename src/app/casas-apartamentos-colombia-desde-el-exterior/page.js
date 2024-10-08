@@ -10,7 +10,6 @@ import { APIURL } from "./config";
 export default async function Home() {
   const inmFeatured = await getinmFeatured();
   const inmRecientes = await getinmRecientes();
-  const banners = await getBanners();
   return (
     <>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-03VJLYKNTV" />
@@ -33,7 +32,7 @@ export default async function Home() {
 
       <Toaster containerStyle={{ zIndex: 10000000 }} position="top-right" />
 
-      <Banner main banners={banners} />
+      <Banner />
       <FeaturedProperties inmFeatured={inmFeatured} />
       <InmReciente inmRecientes={inmRecientes} />
       <Eligenos />
@@ -52,8 +51,4 @@ export async function getinmRecientes() {
   const response = await fetching.json();
   return response?.data;
 }
-export async function getBanners() {
-  const fetching = await fetch(`${APIURL}banners`, { cache: "no-store" });
-  const response = await fetching.json();
-  return response?.data;
-}
+
