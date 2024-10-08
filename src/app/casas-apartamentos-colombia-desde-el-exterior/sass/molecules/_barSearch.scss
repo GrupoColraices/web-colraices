@@ -20,6 +20,20 @@
     bottom: unset;
 }
 
+.barSearchProperty {
+    @include tablet {
+        position: unset;
+        bottom: unset;
+        transform: unset;
+        max-width: fit-content;
+
+        form {
+            margin-bottom: 6rem;
+
+        }
+    }
+}
+
 .show-filter {
     display: none;
 

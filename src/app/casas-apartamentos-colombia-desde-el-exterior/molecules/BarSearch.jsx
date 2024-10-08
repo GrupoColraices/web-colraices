@@ -18,6 +18,7 @@ export const BarSearch = ({ visibility = false, scrolling = 450 }) => {
     const [validate, setValidate] = useState(false);
     const [isNotFound, setIsNotFound] = useState(false);
     const pageFavorite = pathName === '/casas-apartamentos-colombia-desde-el-exterior/favoritos'
+    const pagePropery = pathName.includes('/casas-apartamentos-colombia-desde-el-exterior/inmueble')
     const { data: ciudades } = useSWR(`${APIURL}cities`, async (url) => {
         const response = await fetch(url)
         const data = await response.json()
@@ -68,7 +69,7 @@ export const BarSearch = ({ visibility = false, scrolling = 450 }) => {
 
     }
     return (
-        <div className={`barSearch ${visibility && 'show-filter'} ${pageFavorite && 'barSearchFavorites'}`}>
+        <div className={`barSearch ${visibility && 'show-filter'} ${pageFavorite && 'barSearchFavorites'} ${pagePropery && 'barSearchProperty'}`}>
             <form onSubmit={setData}>
                 <Filter
                     inputs={inputs}
