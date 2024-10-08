@@ -35,7 +35,6 @@ export default async function BlogPage() {
     const videos = await getVideos();
     return (
         <ArticlesProvider>
-            <Header />
             <main>
                 <BannerSectionBlog articles={articles} />
 

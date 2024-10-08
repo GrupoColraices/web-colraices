@@ -1,6 +1,5 @@
 import { ContextLikeProvider } from '../casas-apartamentos-colombia-desde-el-exterior/Context/Like';
 import { FiltroContextProvider } from '../casas-apartamentos-colombia-desde-el-exterior/Context/Filtro';
-import Header from '../casas-apartamentos-colombia-desde-el-exterior/Templates/Header';
 import { Animation } from '../casas-apartamentos-colombia-desde-el-exterior/molecules/Animation';
 import '../casas-apartamentos-colombia-desde-el-exterior/sass/app.scss'
 import Script from 'next/script';
@@ -36,7 +35,6 @@ export default function Layout({ children }) {
         <FiltroContextProvider>
           <FairModeContextProvider>
             <Animation>
-              <Header />
               {children}
             </Animation>
           </FairModeContextProvider>

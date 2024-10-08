@@ -1,13 +1,15 @@
 'use client'
-import { useRef } from 'react'
+import { useContext, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import '@/sass/components/Header.scss'
 import { NavLink } from './NavLink'
 import { navbarLinks } from '@/helpers'
+import { FormContext } from '@/context/FormContext'
 
 export const Header = () => {
     const navRef = useRef()
+    const { formState, setFormState } = useContext(FormContext);
 
     const showNavBar = () => {
         navRef.current.classList.toggle('responsive_nav')
@@ -23,6 +25,7 @@ export const Header = () => {
                 {navbarLinks.map((link) => (
                     <NavLink key={link.href} label={link.label} href={link.href} isExternal={link.isExternal} />
                 ))}
+                <button className='request-assistance' onClick={() => setFormState(!formState)}>Solicitar Asesoría</button>
             </div>
 
             <nav className="responsive_nav" ref={navRef}>
@@ -36,6 +39,7 @@ export const Header = () => {
                     {navbarLinks.map((link) => (
                         <NavLink key={link.href} label={link.label} href={link.href} isExternal={link.isExternal} />
                     ))}
+                    <button className='request-assistance' onClick={() => setFormState(!formState)}>Solicitar Asesoría</button>
                 </div>
             </nav>
 

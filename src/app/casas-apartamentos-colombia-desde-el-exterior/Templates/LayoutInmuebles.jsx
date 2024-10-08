@@ -20,38 +20,34 @@ export const LayoutInmuebles = ({ loading, inmuebles, Notion, Elim, inm, fav, se
     const [fid, setFid] = useState(false)
     const observar = useRef(null)
 
-    useEffect(() => {
-        observar.current = new IntersectionObserver(function (entries) {
-            setFid(entries[0].isIntersecting);
-        }, { root: null });
-        observar.current.observe(document.querySelector('.sticky-barSearch'));
+    // useEffect(() => {
+    //     observar.current = new IntersectionObserver(function (entries) {
+    //         setFid(entries[0].isIntersecting);
+    //     }, { root: null });
+    //     observar.current.observe(document.querySelector('.sticky-barSearch'));
 
-        const bar = document.querySelector('.barSearch');
-        const containerFilter = document.querySelector('.container__filter');
-        const containerList = document.querySelector('.container__list');
-        const containerState = document.querySelector('.container__list-state');
-        const containerSearch = document.querySelector('.container__search');
+    //     const bar = document.querySelector('.barSearch');
+    //     const containerFilter = document.querySelector('.container__filter');
+    //     const containerList = document.querySelector('.container__list');
+    //     const containerState = document.querySelector('.container__list-state');
+    //     const containerSearch = document.querySelector('.container__search');
 
-        fid ? bar.classList.remove('fijo') : bar.classList.add('fijo');
-        fid ? containerFilter?.classList.remove('sticky') : containerFilter?.classList.add('sticky');
-        fid ? containerList?.classList.remove('sticky__list') : containerList?.classList.add('sticky__list');
-        fid ? containerState?.classList.remove('sticky__state') : containerState?.classList.add('sticky__state');
-        fid ? containerSearch?.classList.remove('sticky__search') : containerSearch?.classList.add('sticky__search');
-        return () => {
-            observar.current && observar.current.disconnect();
-        }
+    //     fid ? bar.classList.remove('fijo') : bar.classList.add('fijo');
+    //     fid ? containerFilter?.classList.remove('sticky') : containerFilter?.classList.add('sticky');
+    //     fid ? containerList?.classList.remove('sticky__list') : containerList?.classList.add('sticky__list');
+    //     fid ? containerState?.classList.remove('sticky__state') : containerState?.classList.add('sticky__state');
+    //     fid ? containerSearch?.classList.remove('sticky__search') : containerSearch?.classList.add('sticky__search');
+    //     return () => {
+    //         observar.current && observar.current.disconnect();
+    //     }
 
-    }, [fid]);
+    // }, [fid]);
 
     return (
         <>
             {!fav && < Banner />}
             {fav && <Navbar />}
             {fav && <TitleNavbar title={"Mis favoritos"} />}
-
-            {!fav &&
-                <img className='btn-float-form' src='/portal-inmobiliario/img/colraicesInmobiliario/icons/widget-form.webp' onClick={() => scrollSection("form-container", true, -150)} alt="Icon" />
-            }
 
             <section className={fav ? 'favSection' : 'inmRegion'}>
                 <div className={fav ? 'favSection__flex' : 'inmRegion__grid'}>

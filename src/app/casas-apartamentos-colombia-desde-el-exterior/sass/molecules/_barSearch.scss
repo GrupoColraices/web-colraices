@@ -2,6 +2,36 @@
     max-width: 60rem;
     margin: 0 auto;
     z-index: 999;
+
+    @include tablet {
+        position: absolute;
+        bottom: 190px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 120rem;
+
+        form {
+            height: 0;
+        }
+    }
+}
+
+.barSearchFavorites {
+    bottom: unset;
+}
+
+.barSearchProperty {
+    @include tablet {
+        position: unset;
+        bottom: unset;
+        transform: unset;
+        max-width: fit-content;
+
+        form {
+            margin-bottom: 6rem;
+
+        }
+    }
 }
 
 .show-filter {
@@ -17,7 +47,6 @@
     .fijo {
         display: initial !important;
         transition: all 500ms linear;
-        position: fixed !important;
         top: 0 !important;
         max-width: 150rem !important;
 
@@ -33,21 +62,6 @@
             background-color: $primario;
             z-index: 100000 !important;
             width: 100vw;
-        }
-    }
-
-
-    .barSearch {
-        margin: 0 auto 8rem;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        position: relative;
-        top: 0;
-        max-width: 120rem;
-
-        form {
-            height: 0;
         }
     }
 }

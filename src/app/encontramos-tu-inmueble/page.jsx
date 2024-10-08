@@ -11,9 +11,7 @@ export const metadata = {
 export default async function WeFoundYourProperty() {
     const cities = await getCities();
     return (
-        <>  <Header />
-            <Banner cities={cities} />
-        </>
+        <Banner cities={cities} />
     )
 }
 export async function getCities() {

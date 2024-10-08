@@ -6,8 +6,19 @@ import {
 } from '../app/casas-apartamentos-colombia-desde-el-exterior/helpers/options'
 import Link from 'next/link'
 import '@/sass/components/Footer.scss'
+import { FaHeart } from "react-icons/fa";
+import { RiArrowUpDoubleLine } from "react-icons/ri";
+import Tippy from '@tippyjs/react';
+import { usePathname } from 'next/navigation'
 
 export const Footer = () => {
+    const router = usePathname();
+    const paths = [
+        'filtrados',
+        'inmueble'
+    ];
+    const showButtonUP = paths.some(path => router.includes(`/casas-apartamentos-colombia-desde-el-exterior/${path}`));
+    const showButton = router.includes('/casas-apartamentos-colombia-desde-el-exterior');
     return (
         <footer id="contact">
             <section>
@@ -28,7 +39,7 @@ export const Footer = () => {
                             {' '}
                             {item.phoneNumber && 'Teléfono:'} {item.phoneNumber}{' '}
                         </span>
-                        {index === 0 && <a href={`mailto:${item?.email}`}>{item?.email}</a>}
+                        {index === 0 && <a href={`mailto: ${item?.email}`}>{item?.email}</a>}
                     </p>
                 ))}
 
@@ -64,11 +75,33 @@ export const Footer = () => {
                             <img src={item.src} alt="Icon" />
                         </a>
                     ))}
+
                 </div>
+                {showButton && (
+                    <Tippy
+                        animation="scale"
+                        theme={'dark'}
+                        content="Ir a favoritos"
+                    >
+                        <Link className="favorites-widget" href="/casas-apartamentos-colombia-desde-el-exterior/favoritos">
+                            <FaHeart color='#F9635c' size={30} />
+                        </Link>
+                    </Tippy>
+                )}
             </section>
-            <a id="whatsapp-widget" href="https://wa.me/+15136479405" target="_blank">
+            <Link className="whatsapp-widget" href="https://wa.me/+15136479405" target="_blank">
                 <img src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="WhatsApp Logo" />
-            </a>
+            </Link>
+
+            {showButtonUP && <Tippy
+                animation="scale"
+                theme={'dark'}
+                content="Volver a arriba"
+            >
+                <Link href={'#inicio'} className='button-up-widget'>
+                    <RiArrowUpDoubleLine size={30} color='#2E4077' />
+                </Link>
+            </Tippy>}
         </footer>
     )
 }

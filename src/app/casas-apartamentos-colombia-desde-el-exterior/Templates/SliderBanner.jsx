@@ -6,10 +6,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '@/sass/containers/home/BannerSection.scss'
-import { FormBannerMain } from '@/components/FormBannerMain';
-import { SliderLogos } from '@/components/SliderLogos';
 
-export const BannerSection = ({ banners }) => {
+export const SliderBanner = ({ banners }) => {
     return (
         <section className='container-flex'>
             <Swiper
@@ -30,18 +28,15 @@ export const BannerSection = ({ banners }) => {
                     <SwiperSlide key={index}>
                         <div className='banner-container' style={{ backgroundImage: `url(${item.file})` }}>
                             <div className="banner-title">
-                                <h1 className={`title ${index !== 0 && 'title-portal-inmobiliario'}`}>{item.title}</h1>
+                                <h1 className="title title-portal-inmobiliario">{item.title}</h1>
                                 {item.description && <p>{item.description}</p>}
                                 {item.button_text && <Link href={item.link} target={item.is_external === 1 ? '_blank' : '_self'}>{item.button_text}</Link>}
                             </div>
-                            {index === 0 && <FormBannerMain />}
                         </div>
                     </SwiperSlide>
                 ))}
+
             </Swiper>
-            <div className='partners'>
-                <SliderLogos />
-            </div>
-        </section >
+        </section>
     )
 }

@@ -2,21 +2,23 @@
 import React, { useContext, useState } from 'react'
 import useSWR from 'swr'
 import dynamic from 'next/dynamic';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { Filtro } from '../Context/Filtro';
 import { FairMode } from "../Context/Mode"
 import { APIURL } from '../config';
 const Filter = dynamic(() => import('./BarSearch/Filter'));
 
 
-export const BarSearch = ({ visibility = false, scrolling = 100 }) => {
+export const BarSearch = ({ visibility = false, scrolling = 450 }) => {
     const router = useRouter();
+    const pathName = usePathname();
     const { inputs, handleInputs, setInputs, label: labelFilter, setLabel } = useContext(Filtro);
     const { fairMode } = useContext(FairMode)
     const [filterCl, setFilterCl] = useState(false);
     const [validate, setValidate] = useState(false);
     const [isNotFound, setIsNotFound] = useState(false);
-
+    const pageFavorite = pathName === '/casas-apartamentos-colombia-desde-el-exterior/favoritos'
+    const pagePropery = pathName.includes('/casas-apartamentos-colombia-desde-el-exterior/inmueble')
     const { data: ciudades } = useSWR(`${APIURL}cities`, async (url) => {
         const response = await fetch(url)
         const data = await response.json()
@@ -67,7 +69,7 @@ export const BarSearch = ({ visibility = false, scrolling = 100 }) => {
 
     }
     return (
-        <div className={`barSearch ${visibility && 'show-filter'}`}>
+        <div className={`barSearch ${visibility && 'show-filter'} ${pageFavorite && 'barSearchFavorites'} ${pagePropery && 'barSearchProperty'}`}>
             <form onSubmit={setData}>
                 <Filter
                     inputs={inputs}
