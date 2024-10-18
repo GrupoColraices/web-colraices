@@ -63,12 +63,27 @@
         }
 
         @include laptop {
-            .swiper-button-prev {
-                left: 38%;
+            padding-bottom: 0;
+            border-radius: 0;
+
+            .swiper-pagination-bullet {
+                margin-inline: 1.5rem;
+                background-color: $white;
             }
 
+            .swiper-pagination-horizontal {
+                bottom: 15px;
+            }
+
+            .swiper-slide {
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            .swiper-button-prev,
             .swiper-button-next {
-                right: 38%;
+                display: none;
             }
         }
     }
@@ -78,7 +93,8 @@
     }
 
     .partners {
-        margin: 5rem 0 0 0;
+        max-width: 1200px;
+        margin: 8rem auto 0;
     }
 
     @include laptop {
@@ -160,13 +176,16 @@
         }
 
         @include laptop {
+            max-width: 125rem;
+            margin: 0 auto;
             flex-direction: row;
             justify-content: space-between;
-            padding-inline: 4rem;
-            border-radius: 5rem;
+            padding-right: 6rem;
+            border-radius: 0;
 
             &::before {
-                border-radius: 5rem;
+                margin-inline: 0;
+                border-radius: 0;
             }
 
             .banner-title {
@@ -184,13 +203,13 @@
 
                 p {
                     text-align: left;
+                    text-wrap: balance;
                 }
             }
         }
     }
 
     @include laptop {
-        max-width: 1300px;
-        margin: 6rem auto;
+        top: -95px;
     }
 }
