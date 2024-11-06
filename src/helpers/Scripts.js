@@ -40,8 +40,16 @@ export const Scripts = () => {
                 }}
             />
 
-            <noscript><img height="1" width="1" style={{ display: "none" }} src="https://www.facebook.com/tr?id=572109847507646&ev=PageView&noscript=1" /></noscript>
-            <Script id='HotJarAnalytics'
+            <noscript>
+                <img
+                    height="1"
+                    width="1"
+                    style={{ display: 'none' }}
+                    src="https://www.facebook.com/tr?id=572109847507646&ev=PageView&noscript=1"
+                />
+            </noscript>
+            <Script
+                id="HotJarAnalytics"
                 dangerouslySetInnerHTML={{
                     __html: `(function (h, o, t, j, a, r) {
                     h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
@@ -50,7 +58,11 @@ export const Scripts = () => {
                     r = o.createElement('script'); r.async = 1;
                     r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
                     a.appendChild(r);
-                })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');`}} />
+                })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');`,
+                }}
+            />
+            {/* HubSpot Script */}
+            <Script id="hs-script-loader" async defer src="//js.hs-scripts.com/39709027.js" />
         </>
     )
 }
