@@ -21,9 +21,18 @@ export const Footer = () => {
     useEffect(() => {
         const adjustChatbotButton = () => {
             const chatbotButton = document.querySelector('.dapta-chatbot-button')
+            const chatbotOpen = document.querySelector('.dapta-chatbot--open')
             if (chatbotButton) {
+                chatbotButton.style.position = 'fixed'
                 chatbotButton.style.bottom = '90px'
                 chatbotButton.style.right = '40px'
+            }
+
+            if (chatbotOpen) {
+                chatbotOpen.style.position = 'fixed'
+                chatbotOpen.style.bottom = '160px'
+                chatbotOpen.style.right = '40px'
+                chatbotOpen.style.height = 'calc(99% - 160px)'
             }
         }
 
@@ -109,10 +118,7 @@ export const Footer = () => {
                     </Tippy>
                 )}
             </section>
-            <Script
-                src="https://widget.dapta.ai/dapta_agent_min.js?agentId=1e82e407-916d-422b-bc78-ad5f7228ffe4"
-                strategy="lazyOnload"
-            />
+            <Script src="https://widget.dapta.ai/dapta_agent_min.js?agentId=1e82e407-916d-422b-bc78-ad5f7228ffe4" />
             <Link className="whatsapp-widget" href="https://wa.me/+15136479405" target="_blank">
                 <img src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="WhatsApp Logo" />
             </Link>
