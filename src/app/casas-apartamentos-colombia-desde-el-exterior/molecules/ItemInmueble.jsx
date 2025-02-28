@@ -35,13 +35,16 @@ export const ItemInmueble = ({ dataInmueble, Elim, serverUrl }) => {
         num_img,
         fecha_inicial_feria,
         fecha_final_feria,
-        is_fair_mode
+        is_fair_mode,
     } = dataInmueble
+    console.log('feria', is_fair_mode)
+    console.log('normal', precio)
     const [liked, setLiked] = useLocalStorage(slug, false)
     const { currency, convertedPrice, discountRate } = useFairMode(precio, precio_feria)
     const { handelLike, handelDelete } = useContext(ContextLike)
     const [formatePrice] = useCurrency()
     const isFairMode = Boolean(is_fair_mode)
+    console.log('isFairMode', isFairMode)
     const handelLikeInmueble = () => {
         setLiked(!liked)
         handelLike(dataInmueble)
@@ -76,7 +79,11 @@ export const ItemInmueble = ({ dataInmueble, Elim, serverUrl }) => {
         })
     }
     return (
-        <article className={`itemReciente__main ${isFairMode ? 'fair__mode' : ''}}`} data-aos="fade-zoom-in" data-aos-offset="0">
+        <article
+            className={`itemReciente__main ${isFairMode ? 'fair__mode' : ''}`}
+            data-aos="fade-zoom-in"
+            data-aos-offset="0"
+        >
             <Link href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${slug}`}>
                 <div className="itemReciente__img">
                     <div className="itemReciente__img--header">
@@ -130,16 +137,15 @@ export const ItemInmueble = ({ dataInmueble, Elim, serverUrl }) => {
                         <h3 className="itemReciente__content--main--subtitle">
                             {tipo} en venta en {ciudad}
                         </h3>
-                        <p className="itemReciente__content--main--precio">
+                        <p className={`itemReciente__content--main--precio ${isFairMode ? 'line__through' : ''}`}>
                             <span>Desde:</span> {formatePrice(convertedPrice.price)} {currency}
                         </p>
-                        {/* 
-                                {isFair && (
-                                    <p className="itemReciente__content--main--precio-feria">
-                                        <span>Precio feria: </span> {formatePrice(convertedPrice.fairprice)} {currency}
-                                    </p>
-                                )} 
-                                */}
+                        {isFairMode && (
+                            <p className="itemReciente__content--main--precio-feria">
+                                <span>Precio feria: </span> {formatePrice(convertedPrice.fairprice)} {currency}
+                            </p>
+                        )}
+
                         <div className="itemReciente__content--main--description">
                             <p>{descripcion.replace(/(<([^>]+)>)/gi, '')}</p>
                         </div>

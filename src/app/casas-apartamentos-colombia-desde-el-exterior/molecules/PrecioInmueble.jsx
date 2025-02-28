@@ -27,9 +27,13 @@ export const PrecioInmueble = (props) => {
                     <option value="USD">USD / $</option>
                     <option value="EUR">EUR / $</option>
                     <option value="GBP">GBP / $</option>
-                    {fairMode && <option value="CAD">CAD / $</option>}
+                    {/* {fairMode && <option value="CAD">CAD / $</option>} */}
                 </select>
-                {/*       {isInFair && fairMode && <p>Precio feria: {formatePrice(price.fairprice)} {currency}</p>}*/}
+                {isInFair && (
+                    <p>
+                        Precio feria: {formatePrice(price.fairprice)} {currency}
+                    </p>
+                )}
             </div>
             <a className="action-link" href="https://colraices.com/cupocreditoalinstante/" target="_bank">
                 Conoce tu Cupo de Crédito
