@@ -16,7 +16,8 @@ import { SideMenuFavorites } from '../components/SideMenuFavorites';
 
 
 export const LayoutInmuebles = ({ loading, inmuebles, Notion, Elim, inm, fav, setUpdateFavorites }) => {
-    const { currentItems, currentPage, handleNextPage, handlePrevPage, totalPages } = usePagination(3, inmuebles)
+    const sortedInmuebles = inmuebles.sort((a, b) => b.is_fair_mode - a.is_fair_mode);
+    const { currentItems, currentPage, handleNextPage, handlePrevPage, totalPages } = usePagination(3, sortedInmuebles)
     const [fid, setFid] = useState(false)
     const observar = useRef(null)
 
@@ -42,7 +43,6 @@ export const LayoutInmuebles = ({ loading, inmuebles, Notion, Elim, inm, fav, se
     //     }
 
     // }, [fid]);
-
     return (
         <>
             {!fav && < Banner />}

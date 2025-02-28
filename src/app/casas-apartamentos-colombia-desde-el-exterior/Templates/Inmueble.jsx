@@ -2,7 +2,6 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { AtributInmueble } from '../molecules/AtributInmueble';
 import { DesInmuebles } from '../molecules/DesInmuebles';
-import { ItemMap } from '../molecules/ItemMap';
 import { ItemFormulario } from '../molecules/ItemFormulario';
 import { ItemPlano } from '../molecules/ItemPlano';
 import { PrecioInmueble } from '../molecules/PrecioInmueble';
@@ -14,7 +13,6 @@ import { FilterSmall } from '../molecules/BarSearch/FilterSmall';
 import { BarSearch } from '../molecules/BarSearch';
 import TitleSection from '../components/TitleSection';
 import { useFairMode } from '../hooks/useFairMode';
-import { FairMode } from '../Context/Mode';
 
 
 export const Inmueble = ({ inmueble, response }) => {

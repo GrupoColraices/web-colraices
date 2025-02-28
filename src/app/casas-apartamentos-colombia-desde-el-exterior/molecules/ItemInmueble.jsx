@@ -37,14 +37,11 @@ export const ItemInmueble = ({ dataInmueble, Elim, serverUrl }) => {
         fecha_final_feria,
         is_fair_mode,
     } = dataInmueble
-    console.log('feria', is_fair_mode)
-    console.log('normal', precio)
     const [liked, setLiked] = useLocalStorage(slug, false)
     const { currency, convertedPrice, discountRate } = useFairMode(precio, precio_feria)
     const { handelLike, handelDelete } = useContext(ContextLike)
     const [formatePrice] = useCurrency()
     const isFairMode = Boolean(is_fair_mode)
-    console.log('isFairMode', isFairMode)
     const handelLikeInmueble = () => {
         setLiked(!liked)
         handelLike(dataInmueble)
