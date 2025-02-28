@@ -24,6 +24,7 @@ export const BannerSection = ({ banners }) => {
     background-image: none;
   }
 `;
+ console.log(banners)
     return (
         <section className='container-flex'>
             <Swiper
@@ -42,14 +43,20 @@ export const BannerSection = ({ banners }) => {
             >
                 {banners?.map((item, index) => (
                     <StyledSwiperSlide key={index} imageUrl={item.file}>
-                        <BannerContainer className='banner-container' imageUrl={item.responsive_image}>
-                            <div className="banner-title">
-                                <h1 className={`title ${index !== 0 && 'title-portal-inmobiliario'}`}>{item.title}</h1>
-                                {item.description && <p>{item.description}</p>}
-                                {item.button_text && <Link href={item.link} target={item.is_external === 1 ? '_blank' : '_self'}>{item.button_text}</Link>}
-                            </div>
-                            {index === 0 && <FormBannerMain />}
-                        </BannerContainer>
+                        <a 
+                            href={item.link} 
+                            target={item.is_external === "1" ? '_blank' : '_self'}
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: 'none', display: 'block' }}
+                        >
+                            <BannerContainer className='banner-container' imageUrl={item.responsive_image}>
+                                <div className="banner-title">
+                                    {item.title && <h1 className="title">{item.title}</h1>}
+                                    {item.description && <p>{item.description}</p>}
+                                </div>
+                                {index === 0 && <FormBannerMain />}
+                            </BannerContainer>
+                        </a>
                     </StyledSwiperSlide>
                 ))}
             </Swiper>

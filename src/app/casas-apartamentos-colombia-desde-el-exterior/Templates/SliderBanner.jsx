@@ -39,13 +39,19 @@ export const SliderBanner = ({ banners }) => {
             >
                 {banners?.map((item, index) => (
                     <StyledSwiperSlide key={index} imageUrl={item.file}>
-                        <BannerContainer className='banner-container' imageUrl={item.responsive_image}>
-                            <div className="banner-title">
-                                <h1 className="title title-portal-inmobiliario">{item.title}</h1>
-                                {item.description && <p>{item.description}</p>}
-                                {item.button_text && <Link href={item.link} target={item.is_external === 1 ? '_blank' : '_self'}>{item.button_text}</Link>}
-                            </div>
-                        </BannerContainer>
+                        <a 
+                            href={item.link} 
+                            target={item.is_external === "1" ? '_blank' : '_self'}
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: 'none', display: 'block' }}
+                        >
+                            <BannerContainer className='banner-container' imageUrl={item.responsive_image}>
+                                <div className="banner-title">
+                                    {item.title &&<h1 className="title title-portal-inmobiliario">{item.title}</h1>}
+                                    {item.description && <p>{item.description}</p>}
+                                </div>
+                            </BannerContainer>
+                        </a>
                     </StyledSwiperSlide>
                 ))}
 
