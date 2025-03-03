@@ -143,13 +143,13 @@ div.container__filter {
 
     @include tablet {
         min-height: 7.1rem;
-        grid-template-columns: 350px 230px 150px 250px;
+        grid-template-columns: 350px 230px 250px;
         margin: 3rem 0rem 0rem;
         padding: 0;
 
 
         div.container__buttons {
-            grid-column: 4/4;
+            grid-column: 3/3;
             padding: 0;
             border: none;
 
@@ -216,8 +216,7 @@ div.container__search {
     }
 }
 
-div.container__list,
-div.container__list-state {
+div.container__list {
     min-width: 29.6rem;
     margin: 1rem 3.5rem;
     border-radius: 10px;
@@ -293,7 +292,7 @@ div.container__list-state {
 
 @include tablet {
     .sticky {
-        grid-template-columns: 2fr 1.5fr 1fr 1fr !important;
+        grid-template-columns: 2fr 1.5fr 1fr !important;
         border-radius: unset !important;
         margin: 0 !important;
 
@@ -311,16 +310,6 @@ div.container__list-state {
 
         @include hyperDesktop {
             left: 2% !important;
-        }
-    }
-
-    .sticky__state {
-        width: 17rem !important;
-        left: 65% !important;
-        margin: 1rem 0 0 0 !important;
-
-        @include hyperDesktop {
-            left: 62% !important;
         }
     }
 

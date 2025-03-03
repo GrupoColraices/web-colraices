@@ -3,7 +3,7 @@ export const navbarLinks = [
     { label: 'Nosotros', href: '/historia', isExternal: false },
     { label: 'Encontramos tu casa', href: '/encontramos-tu-inmueble', isExternal: false },
     { label: 'Financia tu casa', href: '/financia-tu-casa', isExternal: false },
-    { label: 'Portal Inmobiliario', href: '/casas-apartamentos-colombia-desde-el-exterior', isExternal: false },
+    { label: 'Tour de la vivienda', href: '/casas-apartamentos-colombia-desde-el-exterior', isExternal: false },
     { label: 'Blog', href: '/blog', isExternal: false },
 ]
 
