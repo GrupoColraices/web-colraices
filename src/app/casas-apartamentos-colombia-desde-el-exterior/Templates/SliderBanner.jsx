@@ -24,37 +24,41 @@ export const SliderBanner = ({ banners }) => {
     return (
         <section className='container-flex'>
             <Swiper
-                pagination={{
-                    clickable: true,
-                }}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: true,
-                }}
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 5000, disableOnInteraction: true }}
                 slidesPerView={1}
                 spaceBetween={30}
                 navigation={true}
                 modules={[Pagination, Navigation, Autoplay]}
                 className="mySwiper"
             >
-                {banners?.map((item, index) => (
-                    <StyledSwiperSlide key={index} imageUrl={item.file}>
-                        <a 
-                            href={item.link} 
-                            target={item.is_external === "1" ? '_blank' : '_self'}
-                            rel="noopener noreferrer"
-                            style={{ textDecoration: 'none', display: 'block' }}
-                        >
+                    {banners?.map((item, index) => {
+                        const bannerContent = (
                             <BannerContainer className='banner-container' imageUrl={item.responsive_image}>
                                 <div className="banner-title">
-                                    {item.title &&<h1 className="title title-portal-inmobiliario">{item.title}</h1>}
+                                    {item.button_text && item.title && <h1 className="title">{item.title}</h1>}
                                     {item.description && <p>{item.description}</p>}
                                 </div>
                             </BannerContainer>
-                        </a>
-                    </StyledSwiperSlide>
-                ))}
-
+                        );
+    
+                        return (
+                            <StyledSwiperSlide key={index} imageUrl={item.file}>
+                                {item.is_external === "1" ? (
+                                    <a 
+                                        href={item.link} 
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{ textDecoration: 'none', display: 'block' }}
+                                    >
+                                        {bannerContent}
+                                    </a>
+                                ) : (
+                                    bannerContent
+                                )}
+                            </StyledSwiperSlide>
+                        );
+                    })}
             </Swiper>
         </section>
     )
