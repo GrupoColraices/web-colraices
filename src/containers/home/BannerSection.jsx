@@ -14,7 +14,6 @@ export const BannerSection = ({ banners }) => {
 
     const StyledSwiperSlide = styled(SwiperSlide)`
     background-image: none;
-    margin-top:40px;
     @media (min-width: 930px) {
       background-image: ${({ imageUrl }) => imageUrl ? `url(${imageUrl})` : 'none'};
     }
