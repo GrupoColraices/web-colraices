@@ -9,8 +9,6 @@ import 'swiper/css/navigation';
 import '@/sass/containers/home/BannerSection.scss'
 
 export const SliderBanner = ({ banners }) => {
-    const bannerMobile = '/img/bannerMovil.jpg';
-
     const StyledSwiperSlide = styled(SwiperSlide)`
     background-image: none;
     @media (min-width: 930px) {
@@ -20,7 +18,7 @@ export const SliderBanner = ({ banners }) => {
     }
   `;
     const BannerContainer = styled.div`
-    background-image: url(${bannerMobile});
+    background-image: ${({ imageUrl }) => imageUrl ? `url(${imageUrl})` : 'none'};
     background-size: cover;
     background-position: center;
   @media (min-width: 930px) {
@@ -42,7 +40,7 @@ export const SliderBanner = ({ banners }) => {
             >
                     {banners?.map((item, index) => {
                         const bannerContent = (
-                            <BannerContainer className='banner-container'>
+                            <BannerContainer className='banner-container' imageUrl={item.responsive_image}>
                                 <div className="banner-title">
                                     {item.button_text && item.title && <h1 className="title">{item.title}</h1>}
                                     {item.description && <p>{item.description}</p>}
