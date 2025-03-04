@@ -11,7 +11,6 @@ import { FormBannerMain } from '@/components/FormBannerMain';
 import { SliderLogos } from '@/components/SliderLogos';
 
 export const BannerSection = ({ banners }) => {
-
     const StyledSwiperSlide = styled(SwiperSlide)`
     background-image: none;
     @media (min-width: 930px) {
@@ -49,14 +48,16 @@ export const BannerSection = ({ banners }) => {
                     return (
                         <StyledSwiperSlide key={index} imageUrl={item.file}>
                             {item.is_external === "1" ? (
-                                <a 
-                                    href={item.link} 
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{ textDecoration: 'none', display: 'block' }}
-                                >
+                                <>
+                                    <a 
+                                        href={item.link} 
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{ textDecoration: 'none', display: 'block' }}
+                                    >
+                                    </a>
                                     {bannerContent}
-                                </a>
+                                </>
                             ) : (
                                 bannerContent
                             )}
