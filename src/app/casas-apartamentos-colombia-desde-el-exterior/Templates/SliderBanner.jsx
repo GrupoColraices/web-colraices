@@ -13,6 +13,8 @@ export const SliderBanner = ({ banners }) => {
     background-image: none;
     @media (min-width: 930px) {
       background-image: ${({ imageUrl }) => imageUrl ? `url(${imageUrl})` : 'none'};
+      background-size: cover;
+      background-position: center;
     }
   `;
     const BannerContainer = styled.div`
@@ -24,6 +26,8 @@ export const SliderBanner = ({ banners }) => {
     return (
         <section className='container-flex'>
             <Swiper
+                observer={true}
+                observeParents={true}
                 pagination={{ clickable: true }}
                 autoplay={{ delay: 5000, disableOnInteraction: true }}
                 slidesPerView={1}

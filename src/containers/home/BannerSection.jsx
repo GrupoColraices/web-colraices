@@ -24,7 +24,6 @@ export const BannerSection = ({ banners }) => {
     background-image: none;
   }
 `;
- console.log(banners)
     return (
         <section className='container-flex'>
             <Swiper
