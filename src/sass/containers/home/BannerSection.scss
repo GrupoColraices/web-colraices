@@ -103,7 +103,7 @@
 
     .partners {
         max-width: 1200px;
-        margin: 8rem auto 0;
+        margin: 8rem auto 2rem;
     }
 
     @include laptop {
@@ -122,11 +122,6 @@
         }
     }
 
-    @include desktop{
-        .swiper-slide{
-            margin-top:70px;
-        }
-    }
 
     div.banner-container {
         height: 600px;
@@ -232,6 +227,6 @@
     }
 
     @include laptop {
-        top: -95px;
+        top: -20px;
     }
 }
