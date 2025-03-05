@@ -180,7 +180,10 @@ section.container-fair-mode{
         div.container-slider-fair{
             margin-top: 1rem;
             margin-bottom: 3rem;
-            width: 90%
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 

@@ -5,7 +5,7 @@ import { Select } from '../../components/Select'
 import { optionsTipo, optionsEstado, optionsBaths, optionsRooms } from "../../helpers/options";
 import { actionScroll } from "../../helpers/actionScroll";
 import { onlyNumbers, peso, reverseFormat } from "../../helpers/formatCurrency";
-
+import { usePathname } from 'next/navigation';
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -39,9 +39,11 @@ export default function Filter({
         const name = item.label?.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
         return (search && name?.startsWith(search) || name === search);
     })
+    const pathName  = usePathname();
+    const main = pathName === '/casas-apartamentos-colombia-desde-el-exterior';
     return (
         <>
-            <div className="container__filter">
+            <div className={`container__filter ${main ? 'container__filter--home' : ''}`}>
                 <div className={`field__cities ${(validateSearch || validateField) && "outline__error"}`}>
                     <img src={'/portal-inmobiliario/img/colraicesInmobiliario/icons/search.svg'} alt="Icon" />
                     <input
@@ -117,7 +119,7 @@ export default function Filter({
                 </ul>
             </div>
 
-            <div className="container__list">
+            <div className={`container__list ${main ? 'container__list--home' : ''}`}>
                 {isDropdownProperty &&
                     <ul className="items__list">
                         {optionsTipo?.map((option, index) =>
@@ -140,7 +142,7 @@ export default function Filter({
             </div>
 
 
-            <div className={`advanced__filter ${filterCl && 'open'}`}>
+            <div className={`advanced__filter ${filterCl && 'open'} ${main ? 'advanced__filter--home' : ''}`}>
                 <img src="/portal-inmobiliario/img/colraicesInmobiliario/icons/arrow_up.svg"
                     onClick={() => {
                         if (labelFilter.length > 0) {
