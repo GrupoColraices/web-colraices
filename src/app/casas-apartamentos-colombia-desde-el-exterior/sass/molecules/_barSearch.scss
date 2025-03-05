@@ -147,7 +147,6 @@ div.container__filter {
         grid-template-columns: 350px 230px 250px;
         margin: 3rem 0rem 0rem;
         padding: 0;
-        top: 22rem;
 
         div.container__buttons {
             grid-column: 3/3;
@@ -172,6 +171,12 @@ div.container__filter {
 
     }
 
+}
+
+div.container__filter--home{
+    @include tablet {
+        top: 22rem;
+    }
 }
 
 div.container__search {
@@ -272,7 +277,7 @@ div.container__list {
     }
 }
 
-div.container__list {
+div.container__list--home {
 
     @include tablet {
         position: absolute;
@@ -283,6 +288,16 @@ div.container__list {
 
     @media(min-width: 930px) {
         top: 30rem;
+        transform: translateX(6rem);
+    }
+}
+
+div.container__list {
+
+    @include tablet {
+        position: absolute;
+    }
+    @media(min-width: 930px) {
         transform: translateX(6rem);
     }
 }
@@ -421,7 +436,6 @@ div.container__list-state {
         margin: 1rem auto;
         padding: 2rem 5rem;
         transform: scaleY(0) translateX(-50%);
-        top: 25rem;
         left: 50%;
 
         img {
@@ -470,6 +484,12 @@ div.container__list-state {
             }
         }
 
+    }
+}
+
+.advanced__filter--home{
+    @include tablet {
+        top: 32rem;
     }
 }
 
