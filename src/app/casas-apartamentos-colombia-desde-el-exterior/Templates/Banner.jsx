@@ -86,7 +86,7 @@ export const Banner = (props) => {
     ]
     return (
         <section className="banner-section">
-            <SliderBanner banners={bannersTest} />
+            <SliderBanner banners={banners} />
             {/* <div className={`sticky-barSearch banner ${!main && 'bannermin'}`} aria-disabled={fairMode} >
                 <div className={`video`} aria-disabled={isFair}>
                     <div className='main-content'>

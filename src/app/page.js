@@ -57,7 +57,7 @@ export default async function HomePage() {
     return (
         <>
             <Scripts />
-            <BannerSection banners={bannersTest} />
+            <BannerSection banners={banners} />
             <PropertySection />
             <ServiceSection />
             <RecommendedProjects />
