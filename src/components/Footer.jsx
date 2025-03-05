@@ -118,7 +118,7 @@ export const Footer = () => {
                     </Tippy>
                 )}
             </section>
-            <Script src="https://widget.dapta.ai/dapta_agent_min.js?agentId=1e82e407-916d-422b-bc78-ad5f7228ffe4" />
+            {/* <Script src="https://widget.dapta.ai/dapta_agent_min.js?agentId=1e82e407-916d-422b-bc78-ad5f7228ffe4" /> */}
             <Link className="whatsapp-widget" href="https://wa.me/+15136479405" target="_blank">
                 <img src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="WhatsApp Logo" />
             </Link>
