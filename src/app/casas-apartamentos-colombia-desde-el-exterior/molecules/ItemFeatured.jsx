@@ -5,13 +5,11 @@ import React, { useContext } from 'react'
 import { MdLocationOn } from 'react-icons/md'
 import { useCurrency } from '../hooks/useCurrency'
 import { useFairMode } from '../hooks/useFairMode'
-import { FairMode } from '../Context/Mode'
 
 export const ItemFeatured = ({ item }) => {
     const { thumbnail, titulo, precio, precio_feria, ciudad, region, area_const, habitaciones, baños, slug } = item;
     const { convertedPrice, currency } = useFairMode(precio, precio_feria);
     const [formatePrice] = useCurrency();
-    const { fairMode } = useContext(FairMode);
 
     return (
         <div className='container-item-featured'>
@@ -23,7 +21,7 @@ export const ItemFeatured = ({ item }) => {
                 <p className='price'>Desde {formatePrice(convertedPrice.price)} {currency}</p>
                 <p className='ubication'><MdLocationOn className="icon" />{ciudad} - {region}</p>
                 <ul className='information'><li>Desde {area_const}m²</li> <li>{habitaciones} Hab</li> <li>{baños} Baños</li></ul>
-                <button className='btn-view' type='button'><Link href={`/casas-apartamentos-colombia-desde-el-exterior${fairMode ? "/feria/canada" : ""}/inmueble/${slug}`}>Ver Proyecto</Link></button>
+                <button className='btn-view' type='button'><Link href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${slug}`}>Ver Proyecto</Link></button>
             </article>
         </div>
     )

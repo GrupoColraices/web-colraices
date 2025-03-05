@@ -11,8 +11,13 @@
         .swiper-slide {
             height: auto;
             position: relative;
-            min-height: 600px;
-            max-height: 100vh;
+            min-height: 80dvh;
+            max-height: 100dvh;
+
+            a {
+                pointer-events: none;
+                cursor: default;
+            }
         }
 
         .swiper-button-prev,
@@ -29,12 +34,11 @@
                 font-size: 25px;
                 font-weight: 700;
                 color: $white;
-
             }
 
             &.swiper-button-disabled {
                 opacity: 1;
-                background-color: #8B8B8B;
+                background-color: #8b8b8b;
             }
         }
 
@@ -76,9 +80,14 @@
             }
 
             .swiper-slide {
-                background-size: cover;
+                background-size: contain;
                 background-position: center;
                 background-repeat: no-repeat;
+
+                a {  
+                    pointer-events: auto;
+                    cursor: pointer;  
+                }
             }
 
             .swiper-button-prev,
@@ -94,7 +103,7 @@
 
     .partners {
         max-width: 1200px;
-        margin: 8rem auto 0;
+        margin: 8rem auto 2rem;
     }
 
     @include laptop {
@@ -113,8 +122,9 @@
         }
     }
 
+
     div.banner-container {
-        height: 100%;
+        height: 600px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -133,7 +143,12 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.26) 8.9%, #000 100%);
+            /* background: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0) 95%,
+                rgba(255, 255, 255, 0.976) 97.5%,
+                rgba(255, 255, 255, 1) 100%
+            ); */
             z-index: 1;
             margin-inline: 2rem;
             border-radius: 2.5rem;
@@ -152,7 +167,7 @@
             font-weight: 700;
             text-align: center;
             color: $white;
-            margin: 0;
+            margin-top: 10rem;
         }
 
         p {
@@ -172,7 +187,7 @@
             border-radius: 26px;
             box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.15);
             cursor: pointer;
-            background-color: #FFB800;
+            background-color: #ffb800;
         }
 
         @include laptop {
@@ -182,6 +197,7 @@
             justify-content: space-between;
             padding-right: 6rem;
             border-radius: 0;
+            height: 100%;
 
             &::before {
                 margin-inline: 0;
@@ -198,6 +214,7 @@
                 }
 
                 h1.title-portal-inmobiliario {
+                    margin-top: 14rem;
                     max-width: 100%;
                 }
 
@@ -210,6 +227,6 @@
     }
 
     @include laptop {
-        top: -95px;
+        top: -20px;
     }
 }

@@ -13,10 +13,14 @@ export const SliderBanner = ({ banners }) => {
     background-image: none;
     @media (min-width: 930px) {
       background-image: ${({ imageUrl }) => imageUrl ? `url(${imageUrl})` : 'none'};
+      background-size: cover;
+      background-position: center;
     }
   `;
     const BannerContainer = styled.div`
     background-image: ${({ imageUrl }) => imageUrl ? `url(${imageUrl})` : 'none'};
+    background-size: cover;
+    background-position: center;
   @media (min-width: 930px) {
     background-image: none;
   }
@@ -24,31 +28,43 @@ export const SliderBanner = ({ banners }) => {
     return (
         <section className='container-flex'>
             <Swiper
-                pagination={{
-                    clickable: true,
-                }}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: true,
-                }}
+                observer={true}
+                observeParents={true}
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 5000, disableOnInteraction: true }}
                 slidesPerView={1}
                 spaceBetween={30}
                 navigation={true}
                 modules={[Pagination, Navigation, Autoplay]}
                 className="mySwiper"
             >
-                {banners?.map((item, index) => (
-                    <StyledSwiperSlide key={index} imageUrl={item.file}>
-                        <BannerContainer className='banner-container' imageUrl={item.responsive_image}>
-                            <div className="banner-title">
-                                <h1 className="title title-portal-inmobiliario">{item.title}</h1>
-                                {item.description && <p>{item.description}</p>}
-                                {item.button_text && <Link href={item.link} target={item.is_external === 1 ? '_blank' : '_self'}>{item.button_text}</Link>}
-                            </div>
-                        </BannerContainer>
-                    </StyledSwiperSlide>
-                ))}
-
+                    {banners?.map((item, index) => {
+                        const bannerContent = (
+                            <BannerContainer className='banner-container' imageUrl={item.responsive_image}>
+                                <div className="banner-title">
+                                    {item.button_text && item.title && <h1 className="title">{item.title}</h1>}
+                                    {item.description && <p>{item.description}</p>}
+                                </div>
+                            </BannerContainer>
+                        );
+    
+                        return (
+                            <StyledSwiperSlide key={index} imageUrl={item.file}>
+                                {item.is_external === "1" ? (
+                                    <a 
+                                        href={item.link} 
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{ textDecoration: 'none', display: 'block' }}
+                                    >
+                                        {bannerContent}
+                                    </a>
+                                ) : (
+                                    bannerContent
+                                )}
+                            </StyledSwiperSlide>
+                        );
+                    })}
             </Swiper>
         </section>
     )
