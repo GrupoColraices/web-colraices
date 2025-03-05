@@ -147,7 +147,7 @@ div.container__filter {
         grid-template-columns: 350px 230px 250px;
         margin: 3rem 0rem 0rem;
         padding: 0;
-        top: 14rem;
+        top: 22rem;
 
         div.container__buttons {
             grid-column: 3/3;
@@ -282,7 +282,7 @@ div.container__list {
     }
 
     @media(min-width: 930px) {
-        top: 22rem;
+        top: 30rem;
         transform: translateX(6rem);
     }
 }
