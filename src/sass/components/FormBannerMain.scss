@@ -4,14 +4,11 @@ div.container-banner-main {
     position: relative;
     width: 100%;
     max-width: 260px;
-    margin-top: 4rem;
     padding: 2rem;
     border-radius: 20px;
     background: rgba(241, 241, 241, 0.75);
     backdrop-filter: blur(5px);
     z-index: 2;
-    top: 50px;
-    left: -40px;
 
     h2 {
         max-width: 200px;
@@ -155,6 +152,7 @@ div.container-banner-main {
     }
 
     @include laptop {
+        left: calc(4.5rem - 9rem * ((100vw - 93rem) / 27rem));
         max-width: 360px;
         padding: 3rem 2rem 1.5rem;
 
@@ -171,6 +169,12 @@ div.container-banner-main {
         button.form-toggle-btn {
             display: none;
         }
+    }
+
+    @include desktop {
+        margin-top: 1rem;
+        margin-right: 4rem;
+        left: -4.5rem;
     }
 }
 

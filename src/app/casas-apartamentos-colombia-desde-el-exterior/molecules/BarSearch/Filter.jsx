@@ -79,12 +79,6 @@ export default function Filter({
                     isDropdown={isDropdownProperty}
                     toggleDropdown={setIsDropwnProperty}
                 />
-                <Select
-                    name={'state'}
-                    label={`${inputs.state !== '0' ? inputs.state : 'Estado'}`}
-                    isDropdown={isDropdownState}
-                    toggleDropdown={setIsDropdownState}
-                />
                 <div className="container__buttons">
                     <button type="submit" className="button__search">
                         <span>Buscar</span>
@@ -145,25 +139,6 @@ export default function Filter({
                 }
             </div>
 
-            <div className="container__list-state" id="result">
-                {isDropdownState &&
-                    <ul className="items__list">
-                        {optionsEstado?.map((option, index) =>
-                            <li key={index}>
-                                <input
-                                    id={`state__${option.value}`}
-                                    name='state'
-                                    type="checkbox"
-                                    value={option.value}
-                                    checked={inputs.state === option.value}
-                                    onChange={(e) => {
-                                        handleInputs({ name: e.target.name, value: e.target.checked ? e.target.value : '0' });
-                                        setIsDropdownState(!isDropdownState)
-                                    }} />
-                                <label htmlFor={`state__${option.value}`}>{option.label}</label>
-                            </li>)}
-                    </ul>}
-            </div>
 
             <div className={`advanced__filter ${filterCl && 'open'}`}>
                 <img src="/portal-inmobiliario/img/colraicesInmobiliario/icons/arrow_up.svg"
