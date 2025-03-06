@@ -9,7 +9,7 @@
     .inmRegion__grid {
         display: grid;
         max-width: 130rem;
-        margin: 0 auto;
+        margin: 6rem auto 0;
         gap: 2rem;
 
         @include tablet {

@@ -40,7 +40,8 @@ export default function Filter({
         return (search && name?.startsWith(search) || name === search);
     })
     const pathName  = usePathname();
-    const main = pathName === '/casas-apartamentos-colombia-desde-el-exterior';
+    const main = pathName === '/casas-apartamentos-colombia-desde-el-exterior' || 
+                 pathName.includes('/casas-apartamentos-colombia-desde-el-exterior/filtrados');
     return (
         <>
             <div className={`container__filter ${main ? 'container__filter--home' : ''}`}>
@@ -99,7 +100,7 @@ export default function Filter({
                     </button>
                 </div>
             </div>
-            <div className="container__search">
+            <div className={`container__search ${main ? 'container__search--home' : ''}`}>
                 <ul className={"list__options"}>
                     {filtered?.length === 0 && labelFilter?.length !== 0 && !labelFilter.includes(',') ?
                         <li>No se encontraron resultados</li>
