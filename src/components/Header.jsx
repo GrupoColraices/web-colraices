@@ -18,7 +18,7 @@ export const Header = () => {
     return (
         <header className="Header-container">
             <Link href="/">
-                <Image src="/logo-azul.png" alt="Logo Colraices" width={170} height={40} quality={100} className='logo-image-main' />
+                <Image src="/logo-nuevo.png" alt="Logo Colraices" width={170} height={40} quality={100} />
             </Link>
 
             <div className="navbar-links-desktop">
