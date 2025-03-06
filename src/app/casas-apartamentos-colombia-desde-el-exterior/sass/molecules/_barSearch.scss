@@ -222,6 +222,12 @@ div.container__search {
     }
 }
 
+div.container__search--home{
+    @include tablet {
+        top: 32rem;
+    }
+}
+
 div.container__list {
     min-width: 29.6rem;
     margin: 1rem 3.5rem;
