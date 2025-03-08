@@ -48,12 +48,12 @@ export default async function Home() {
 }
 
 export async function getinmFeatured() {
-    const fetching = await fetch(`${APIURL}properties?web_section=inmueble-estrella`)
+    const fetching = await fetch(`${APIURL}properties?web_section=inmueble-estrella`,{ next: { revalidate: 0 } })
     const response = await fetching.json()
     return response?.data
 }
 export async function getinmRecientes() {
-    const fetching = await fetch(`${APIURL}properties?web_section=favoritos`)
+    const fetching = await fetch(`${APIURL}properties?web_section=favoritos`,{ next: { revalidate: 0 } })
     const response = await fetching.json()
     return response?.data
 }
