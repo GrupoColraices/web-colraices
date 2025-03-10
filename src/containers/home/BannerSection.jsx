@@ -44,20 +44,17 @@ export const BannerSection = ({ banners }) => {
                             {index === 0 && <FormBannerMain />}
                         </BannerContainer>
                     );
-
                     return (
                         <StyledSwiperSlide key={index} imageUrl={item.file}>
-                            {item.is_external === "1" ? (
-                                <>
+                            {item.is_external === 1 ? (
                                     <a 
                                         href={item.link} 
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         style={{ textDecoration: 'none', display: 'block' }}
                                     >
-                                    </a>
                                     {bannerContent}
-                                </>
+                                    </a>
                             ) : (
                                 bannerContent
                             )}
