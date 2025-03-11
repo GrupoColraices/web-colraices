@@ -140,6 +140,7 @@ div.container-banner-main {
         border-radius: 5rem;
         cursor: pointer;
         background-color: $primary;
+        pointer-events: auto;
 
         .arrow {
             transition: transform 0.2s ease;
@@ -172,7 +173,7 @@ div.container-banner-main {
     }
 
     @include desktop {
-        margin-top: 1rem;
+        margin-top: 3rem;
         margin-right: 4rem;
         left: -4.5rem;
     }
