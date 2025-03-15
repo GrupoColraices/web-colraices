@@ -13,7 +13,7 @@ export const SliderLogosAllied = () => {
         '/img/historia/logo-bolivar.webp',
         '/img/historia/logo-londono-gomez.jpg',
         '/img/historia/logo-camu.png',
-        '/img/historia/logo-jaramillo-mora-rojo.webp',
+        '/img/historia/logo-constructora-colpatria-02.png',
         '/img/historia/logo-constructora-solanillas.jpg',
     ];
 
