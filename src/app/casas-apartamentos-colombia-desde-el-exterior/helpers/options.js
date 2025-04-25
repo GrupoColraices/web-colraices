@@ -46,12 +46,6 @@ export const infoContact = [
     address: 'Av Mediterráneo 5, 1G, Madrid, Spain 28007',
     map: ''
   },
-  {
-    id: 4,
-    office: 'Oficina Mühldorf, Alemania',
-    address: 'Katharinenplatz 57, Muhldorf Alemania.',
-    map: 'https://maps.app.goo.gl/419cNsRz3jsedZsN7'
-  }
 ]
 export const socialNetworks = [
   { id: 1, name: 'facebook', url: 'https://www.facebook.com/colraices', src: '/portal-inmobiliario/img/colraicesInmobiliario/icons/facebook.svg' },
