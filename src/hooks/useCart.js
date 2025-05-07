@@ -4,12 +4,13 @@ const useCart = () => {
     const [cart, setCart] = useState([])
 
     const addToCart = (product) => {
-        setCart((currentCart) => {
-            if (currentCart.find((item) => item.id === product.id)) {
-                return currentCart
-            }
-            return [...currentCart, product]
-        })
+        // setCart((currentCart) => {
+        //     if (currentCart.find((item) => item.id === product.id)) {
+        //         return currentCart
+        //     }
+        //     return [...currentCart, product]
+        // })
+        setCart([product])
     }
 
     const removeFromCart = (product) => {

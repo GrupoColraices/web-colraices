@@ -4,17 +4,21 @@ import { useState, useRef } from 'react'
 import Image from 'next/image'
 import { services } from '@/helpers/services'
 
-export const BannerSection = ({ handleAddToCard }) => {
+export const BannerSection = ({ handleAddToCard, services }) => {
     const [isOpen, setIsOpen] = useState(false)
     const financierosList = useRef()
     const buenaDataList = useRef()
     const inmobiliariosList = useRef()
 
-    const addToCart = (service, list) => {
-        handleAddToCard(service)
-        list.current.removeAttribute('open')
+    const addToCart = (service) => {
+        handleAddToCard({
+            id: service.id,
+            name: service.name,
+            price: parseInt(service.usd_value),
+        })
+        // list.current.removeAttribute('open')
     }
-
+    console.log(services)
     return (
         <section className="Pagos-banner">
             <h1>
@@ -30,16 +34,24 @@ export const BannerSection = ({ handleAddToCard }) => {
                 </div>
 
                 <div className={`Nav-services ${isOpen ? 'show' : ''}`}>
-                    <div className="Services-title">
+                    {/* <div className="Services-title">
                         <h4>Selecciona el servicio a pagar</h4>
                         <button className="Close-services" onClick={() => setIsOpen(false)}>
                             <Image src="/icons/close-services.svg" alt="Icon" width={24} height={24} />
                         </button>
-                    </div>
+                    </div> */}
+
                     <div className="Services-group container">
-                        <details ref={financierosList}>
+                        {services.map((service) => {
+                            return (
+                                <div className="test" onClick={() => addToCart(service)}>
+                                    {service.name}
+                                </div>
+                            )
+                        })}
+                        {/* <details ref={financierosList}>
                             <summary>
-                                Servicios financieros{' '}
+                                Servicios financieros
                                 <Image src="/icons/drop-down.svg" alt="Icon" width={16} height={16} />
                             </summary>
                             <ul>
@@ -49,8 +61,8 @@ export const BannerSection = ({ handleAddToCard }) => {
                                     </li>
                                 ))}
                             </ul>
-                        </details>
-                        <details ref={buenaDataList}>
+                        </details> */}
+                        {/* <details ref={buenaDataList}>
                             <summary>
                                 Otros servicios <Image src="/icons/drop-down.svg" alt="Icon" width={16} height={16} />
                             </summary>
@@ -61,8 +73,8 @@ export const BannerSection = ({ handleAddToCard }) => {
                                     </li>
                                 ))}
                             </ul>
-                        </details>
-                        <details ref={inmobiliariosList}>
+                        </details> */}
+                        {/* <details ref={inmobiliariosList}>
                             <summary>
                                 Inmobiliarios <Image src="/icons/drop-down.svg" alt="Icon" width={16} height={16} />
                             </summary>
@@ -73,7 +85,7 @@ export const BannerSection = ({ handleAddToCard }) => {
                                     </li>
                                 ))}
                             </ul>
-                        </details>
+                        </details> */}
                     </div>
                 </div>
             </div>
