@@ -86,7 +86,7 @@ export const Checkout = ({
     useEffect(() => {
         setBuyer(client)
 
-        setCurrency(!!paisesEuropeos[client.country] ? 'USD' : 'EUR')
+        setCurrency(!paisesEuropeos.includes(client.country) ? 'USD' : 'EUR')
     }, [client])
     console.log({ buyer })
     return (
