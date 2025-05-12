@@ -44,7 +44,7 @@ export const BannerSection = ({ handleAddToCard, services }) => {
                     <div className="Services-group container">
                         {services.map((service) => {
                             return (
-                                <div className="test" onClick={() => addToCart(service)}>
+                                <div key={service.id} className="test" onClick={() => addToCart(service)}>
                                     {service.name}
                                 </div>
                             )

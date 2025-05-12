@@ -16,19 +16,17 @@ export default function PagosPage() {
     const [services, setServices] = useState([])
     const client = searchParams.get('id')
     const service = searchParams.get('s')
-    console.log({ service })
 
     const init = async () => {
         if (client) {
-            console.log({ client })
-
             await getDataClient({ national_document_number: client }, setDataClient)
             await getServices((data) => {
                 setServices(data)
                 if (service) {
                     const add = data.find((s) => s.id == service)
+
                     handleAddToCard({
-                        id: service.id,
+                        id: add.id,
                         name: add.name,
                         price: parseInt(add.usd_value),
                     })
@@ -39,7 +37,7 @@ export default function PagosPage() {
     useEffect(() => {
         init()
     }, [])
-    console.log(dataClient)
+
     return (
         <>
             <BannerSection handleAddToCard={handleAddToCard} services={services} />
