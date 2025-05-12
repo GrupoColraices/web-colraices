@@ -66,6 +66,7 @@ export const Checkout = ({
     addQuantity,
     subQuantity,
     totalAmount,
+    countries,
     client = { id: '', service_id: '', name: '', address: '', country: '', email: '', document_type: '', document: '' },
 }) => {
     const [isPaypal, setIsPaypal] = useState(true)
@@ -88,7 +89,7 @@ export const Checkout = ({
 
         setCurrency(!paisesEuropeos.includes(client.country) ? 'USD' : 'EUR')
     }, [client])
-    console.log({ buyer })
+
     return (
         <section className="Checkout-container container">
             <h1>
@@ -142,14 +143,16 @@ export const Checkout = ({
                         onChange={handleChange}
                     />
                     <div className="Input-group">
-                        <input
-                            value={buyer.country}
-                            type="text"
-                            name="country"
-                            placeholder="País"
-                            required
-                            onChange={handleChange}
-                        />
+                        <select value={buyer.country} name="country" required onChange={handleChange}>
+                            <option value="Seleccione una opción">Seleccione una opción</option>
+                            {countries.map((country) => {
+                                return (
+                                    <option key={`country-${country.id}`} value={country.country_name}>
+                                        {country.country_name}
+                                    </option>
+                                )
+                            })}
+                        </select>
                         <input
                             value={buyer.email}
                             type="email"

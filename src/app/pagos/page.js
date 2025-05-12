@@ -2,7 +2,7 @@
 import { BannerSection } from '@/containers/pagos/BannerSection'
 import { Checkout } from '@/containers/pagos/Checkout'
 import useCart from '@/hooks/useCart'
-import { getDataClient, getServices } from '@/service/client'
+import { getCountries, getDataClient, getServices } from '@/service/client'
 import { useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
@@ -14,25 +14,27 @@ export default function PagosPage() {
     const searchParams = useSearchParams()
     const [dataClient, setDataClient] = useState([])
     const [services, setServices] = useState([])
+    const [countries, setCountries] = useState([])
     const client = searchParams.get('id')
     const service = searchParams.get('s')
 
     const init = async () => {
+        await getCountries(setCountries)
         if (client) {
             await getDataClient({ national_document_number: client }, setDataClient)
-            await getServices((data) => {
-                setServices(data)
-                if (service) {
-                    const add = data.find((s) => s.id == service)
-
-                    handleAddToCard({
-                        id: add.id,
-                        name: add.name,
-                        price: parseInt(add.usd_value),
-                    })
-                }
-            })
         }
+        await getServices((data) => {
+            setServices(data)
+            if (service) {
+                const add = data.find((s) => s.id == service)
+
+                handleAddToCard({
+                    id: add.id,
+                    name: add.name,
+                    price: parseInt(add.usd_value),
+                })
+            }
+        })
     }
     useEffect(() => {
         init()
@@ -53,6 +55,7 @@ export default function PagosPage() {
                     service_id: cart?.[0]?.id,
                 }}
                 cart={cart}
+                countries={countries}
                 removeFromCart={removeFromCart}
                 addQuantity={addQuantity}
                 subQuantity={subQuantity}

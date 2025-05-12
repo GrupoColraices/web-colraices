@@ -38,3 +38,22 @@ export const getServices = async (onSuccess) => {
         console.log(error)
     }
 }
+export const getCountries = async (onSuccess) => {
+    try {
+        console.log(process.env.NEXT_PUBLIC_API_URL)
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/countries`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        })
+        const data = await response.json()
+        if (data?.data) {
+            // toast.success(data.message)
+            onSuccess && onSuccess(data.data)
+        } else {
+            toast.error('No se pudo obtener el servicio')
+        }
+    } catch (error) {
+        toast.error(error.error)
+        console.log(error)
+    }
+}

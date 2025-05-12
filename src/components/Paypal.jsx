@@ -8,10 +8,9 @@ export const Paypal = ({ totalValue, description, buyer, currency_code }) => {
     const router = useRouter()
     const [orderID, setOrderID] = useState(null)
     const [success, setSuccess] = useState(false)
-    console.log({ currency_code }, '****************************')
+
     // check Approval
     const onApprove = (data, actions) => {
-        console.log(data, buyer)
         fetch(`${process.env.NEXT_PUBLIC_API_URL}/payment/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -54,14 +53,11 @@ export const Paypal = ({ totalValue, description, buyer, currency_code }) => {
                 paymentMethod: 'PAYPAL',
             }),
         })
-        console.log('error', actions, data)
         return actions.order.capture().then(async function (details) {
-            console.log(data)
             router.push('/pagos/confirmacion?message=DECLINED')
         })
     }
     const onCancel = (data, actions) => {
-        // console.log(data, buyer)
         fetch(`${process.env.NEXT_PUBLIC_API_URL}/payment/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -82,12 +78,6 @@ export const Paypal = ({ totalValue, description, buyer, currency_code }) => {
             .then((data) => console.log(data))
 
         router.push('/pagos/confirmacion?message=CANCELLED')
-        // console.log(actions, data)
-        // return router.push('/pagos/confirmacion?message=DECLINED')
-        // return actions.order.capture().then(async function (details) {
-        //     console.log(data)
-        //     router.push('/pagos/confirmacion?message=DECLINED')
-        // })
     }
     useEffect(() => {
         if (success) {
