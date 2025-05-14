@@ -5,8 +5,8 @@ import Image from 'next/image'
 import '@/sass/containers/pagos/Checkout.scss'
 import { Paypal } from '@/components/Paypal'
 import { useEffect, useState } from 'react'
-import { BASE_URL, payU, toSheets } from '@/helpers/services'
-const CLIENT_ID = 'Adte6S62A1esZ7eyOtOVZQpawbKDzeAf-W7ogg5Dc1w9l2CB1_J-jVNsKQG4Qe2Ocifb9PggybdrmpcB'
+import { BASE_URL, payU } from '@/helpers/services'
+const CLIENT_ID = process.env.NEXT_PUBLIC_CLIEN_ID
 const paisesEuropeos = [
     'Albania',
     'Alemania',
@@ -235,35 +235,38 @@ export const Checkout = ({
                         </div>
                         {cart.length > 0 ? (
                             <>
-                                {isPaypal && currency ? (
-                                    <PayPalScriptProvider
-                                        options={{
-                                            clientId: CLIENT_ID,
-                                            dataNamespace: 'paypal_sdk',
-                                            components: 'buttons',
-                                            currency,
-                                            intent: 'capture',
-                                        }}
-                                    >
-                                        <Paypal
-                                            totalValue={totalAmount(cart)}
-                                            description={'Compra de servicio'}
-                                            buyer={buyer}
-                                            currency_code={currency}
-                                        />
-                                    </PayPalScriptProvider>
-                                ) : (
-                                    <button
-                                        onClick={toSheets(
-                                            'https://script.google.com/macros/s/AKfycbz5snw6plTX2ylT1PXLfq3MxNrlMwzaPZLOQl79bA5x5g3HLycw5YLTRbHFKHSaFTQOZw/exec',
-                                            buyer,
-                                            totalAmount(cart),
-                                            'PayU'
-                                        )}
-                                    >
-                                        Pagar
-                                    </button>
-                                )}
+                                {
+                                    isPaypal && currency && (
+                                        <PayPalScriptProvider
+                                            options={{
+                                                clientId: CLIENT_ID,
+                                                dataNamespace: 'paypal_sdk',
+                                                components: 'buttons',
+                                                currency,
+                                                intent: 'capture',
+                                            }}
+                                        >
+                                            <Paypal
+                                                totalValue={totalAmount(cart)}
+                                                description={'Compra de servicio'}
+                                                buyer={buyer}
+                                                currency_code={currency}
+                                            />
+                                        </PayPalScriptProvider>
+                                    )
+                                    // : (
+                                    //     <button
+                                    //         onClick={toSheets(
+                                    //             'https://script.google.com/macros/s/AKfycbz5snw6plTX2ylT1PXLfq3MxNrlMwzaPZLOQl79bA5x5g3HLycw5YLTRbHFKHSaFTQOZw/exec',
+                                    //             buyer,
+                                    //             totalAmount(cart),
+                                    //             'PayU'
+                                    //         )}
+                                    //     >
+                                    //         Pagar
+                                    //     </button>
+                                    // )
+                                }
                             </>
                         ) : (
                             ''
