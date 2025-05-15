@@ -4,20 +4,74 @@ import { PayPalScriptProvider } from '@paypal/react-paypal-js'
 import Image from 'next/image'
 import '@/sass/containers/pagos/Checkout.scss'
 import { Paypal } from '@/components/Paypal'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BASE_URL, payU, toSheets } from '@/helpers/services'
-const CLIENT_ID = 'AWXeQTn3YEZJw_thO8-XrQgcwiMuqz1u_RQYf8nysU_aQY0uyNgClyEEESZklGd8CSHW7LAQCytmCaKt'
+const CLIENT_ID = 'Adte6S62A1esZ7eyOtOVZQpawbKDzeAf-W7ogg5Dc1w9l2CB1_J-jVNsKQG4Qe2Ocifb9PggybdrmpcB'
+const paisesEuropeos = [
+    'Albania',
+    'Alemania',
+    'Andorra',
+    'Armenia',
+    'Austria',
+    'Azerbaiyán',
+    'Bélgica',
+    'Bielorrusia',
+    'Bosnia y Herzegovina',
+    'Bulgaria',
+    'Ciudad del Vaticano',
+    'Chipre',
+    'Croacia',
+    'Dinamarca',
+    'Eslovaquia',
+    'Eslovenia',
+    'España',
+    'Estonia',
+    'Finlandia',
+    'Francia',
+    'Georgia',
+    'Grecia',
+    'Hungría',
+    'Irlanda',
+    'Islandia',
+    'Italia',
+    'Kazajistán',
+    'Kosovo',
+    'Letonia',
+    'Liechtenstein',
+    'Lituania',
+    'Luxemburgo',
+    'Malta',
+    'Moldavia',
+    'Mónaco',
+    'Montenegro',
+    'Noruega',
+    'Países Bajos',
+    'Polonia',
+    'Portugal',
+    'Reino Unido',
+    'República Checa',
+    'Rumanía',
+    'Rusia',
+    'San Marino',
+    'Serbia',
+    'Suecia',
+    'Suiza',
+    'Turquía',
+    'Ucrania',
+]
 
-export const Checkout = ({ cart, removeFromCart, addQuantity, subQuantity, totalAmount }) => {
+export const Checkout = ({
+    cart,
+    removeFromCart,
+    addQuantity,
+    subQuantity,
+    totalAmount,
+    countries,
+    client = { id: '', service_id: '', name: '', address: '', country: '', email: '', document_type: '', document: '' },
+}) => {
     const [isPaypal, setIsPaypal] = useState(true)
-    const [buyer, setBuyer] = useState({
-        name: '',
-        address: '',
-        country: '',
-        email: '',
-        document_type: '',
-        document: '',
-    })
+    const [buyer, setBuyer] = useState(client)
+    const [currency, setCurrency] = useState('')
     const signature = (string) => {
         return createHash('MD5').update(string).digest('hex')
     }
@@ -30,6 +84,11 @@ export const Checkout = ({ cart, removeFromCart, addQuantity, subQuantity, total
         }
         setBuyer(newValues)
     }
+    useEffect(() => {
+        setBuyer(client)
+
+        setCurrency(!paisesEuropeos.includes(client.country) ? 'USD' : 'EUR')
+    }, [client])
 
     return (
         <section className="Checkout-container container">
@@ -56,7 +115,7 @@ export const Checkout = ({ cart, removeFromCart, addQuantity, subQuantity, total
                             </div>
                             <div className="Service-info-value">
                                 <p>
-                                    <span>Valor: </span> ${service?.price || 0}USD
+                                    <span>Valor: </span> ${service?.price || 0} {currency}
                                 </p>
                                 <button onClick={() => removeFromCart(service)}>x</button>
                             </div>
@@ -67,18 +126,49 @@ export const Checkout = ({ cart, removeFromCart, addQuantity, subQuantity, total
             <form method="post" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/">
                 <fieldset>
                     <p>Datos personales</p>
-                    <input type="text" name="name" placeholder="Nombre completo" required onChange={handleChange} />
-                    <input type="text" name="address" placeholder="Dirección" required onChange={handleChange} />
+                    <input
+                        value={buyer.name}
+                        type="text"
+                        name="name"
+                        placeholder="Nombre completo"
+                        required
+                        onChange={handleChange}
+                    />
+                    <input
+                        value={buyer.address}
+                        type="text"
+                        name="address"
+                        placeholder="Dirección"
+                        required
+                        onChange={handleChange}
+                    />
                     <div className="Input-group">
-                        <input type="text" name="country" placeholder="País" required onChange={handleChange} />
-                        <input type="email" name="email" placeholder="Email" required onChange={handleChange} />
-                        <select name="document_type" required onChange={handleChange}>
+                        <select value={buyer.country} name="country" required onChange={handleChange}>
                             <option value="Seleccione una opción">Seleccione una opción</option>
-                            <option value="Cedula de ciudadania">Cedula de ciudadania</option>
+                            {countries.map((country) => {
+                                return (
+                                    <option key={`country-${country.id}`} value={country.country_name}>
+                                        {country.country_name}
+                                    </option>
+                                )
+                            })}
+                        </select>
+                        <input
+                            value={buyer.email}
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            required
+                            onChange={handleChange}
+                        />
+                        <select value={buyer.document_type} name="document_type" required onChange={handleChange}>
+                            <option value="Seleccione una opción">Seleccione una opción</option>
+                            <option value="Cédula de ciudadanía">Cédula de ciudadanía</option>
                             <option value="Documento país de residencia">Documento país de residencia</option>
                             <option value="Visa">Visa</option>
                         </select>
                         <input
+                            value={buyer.document}
                             type="number"
                             name="document"
                             placeholder="N° de documento"
@@ -94,12 +184,12 @@ export const Checkout = ({ cart, removeFromCart, addQuantity, subQuantity, total
                     <input name="amount" type="hidden" value={totalAmount(cart)} />
                     <input name="tax" type="hidden" value="0" />
                     <input name="taxReturnBase" type="hidden" value="0" />
-                    <input name="currency" type="hidden" value="USD" />
+                    <input name="currency" type="hidden" value={currency} />
                     <input
                         name="signature"
                         type="hidden"
                         value={signature(
-                            `${payU.apiKey}~${payU.merchantId}~${payU.referenceCode}~${totalAmount(cart)}~USD`
+                            `${payU.apiKey}~${payU.merchantId}~${payU.referenceCode}~${totalAmount(cart)}~${currency}`
                         )}
                     />
                     <input name="test" type="hidden" value="0" />
@@ -113,10 +203,10 @@ export const Checkout = ({ cart, removeFromCart, addQuantity, subQuantity, total
                             <input type="radio" checked={isPaypal} onChange={() => setIsPaypal(true)} />{' '}
                             <Image src="/icons/paypal-icon.svg" alt="Paypal" width={71} height={40} />
                         </label>
-                        <label>
+                        {/* <label>
                             <input type="radio" checked={!isPaypal} onChange={() => setIsPaypal(false)} />{' '}
                             <Image src="/icons/payu-icon.svg" alt="PayU" width={71} height={40} />
-                        </label>
+                        </label> */}
                     </div>
                     <div className="Payment-resume">
                         <p className="title">Detalles de compra</p>
@@ -125,29 +215,33 @@ export const Checkout = ({ cart, removeFromCart, addQuantity, subQuantity, total
                                 {cart.map((service) => (
                                     <div key={service.name} className="Resume-info">
                                         <p>{service.name}</p>
-                                        <span>$ {service.price} USD</span>
+                                        <span>
+                                            $ {service.price} {currency}
+                                        </span>
                                     </div>
                                 ))}
                             </>
                         ) : (
                             <div className="Resume-info">
                                 <p>Seleccione un servicio</p>
-                                <span>$ 0 USD</span>
+                                <span>$ 0 {currency}</span>
                             </div>
                         )}
                         <div className="Resume-info-total">
                             <p>Total</p>
-                            <span>$ {totalAmount(cart)} USD</span>
+                            <span>
+                                $ {totalAmount(cart)} {currency}
+                            </span>
                         </div>
                         {cart.length > 0 ? (
                             <>
-                                {isPaypal ? (
+                                {isPaypal && currency ? (
                                     <PayPalScriptProvider
                                         options={{
                                             clientId: CLIENT_ID,
                                             dataNamespace: 'paypal_sdk',
                                             components: 'buttons',
-                                            currency: 'USD',
+                                            currency,
                                             intent: 'capture',
                                         }}
                                     >
@@ -155,6 +249,7 @@ export const Checkout = ({ cart, removeFromCart, addQuantity, subQuantity, total
                                             totalValue={totalAmount(cart)}
                                             description={'Compra de servicio'}
                                             buyer={buyer}
+                                            currency_code={currency}
                                         />
                                     </PayPalScriptProvider>
                                 ) : (
