@@ -1,0 +1,317 @@
+@import '../../base/variables';
+@import '../../base/mixins';
+$encodedColor: "%23{$grayPlaceholder}";
+
+.campaing-form {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+
+    .title-wide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    h1 {
+        color: $primary;
+        text-align: center;
+        font-size: 1.6rem;
+        line-height: 2rem;
+        font-weight: 600;
+        width: 80%;
+        span {
+            color: $secondary;
+            display: block;
+        }
+    }
+
+    @include laptop {
+        padding: 4rem 0 0;
+
+        .title-wide img {
+            width: 350px;
+            height: auto;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 4rem;
+        }
+    }
+
+    .main-form{
+        margin: 2rem 1.3rem;
+        padding: 2rem 0;
+        width: 80%;
+        border-radius: 12px;
+        background-color: $white;
+        box-shadow: -2px 2px 6px 2px rgba(0, 0, 0, 0.12), 2px 2px 6px 2px rgba(0, 0, 0, 0.14);
+
+        .title-section {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            .title-section-title {
+                font-size: clamp(1.1rem, 0.5115rem + 2.6154vw, 2.8rem);
+                color: $primary;
+                text-align: center;
+    
+                span {
+                    color: $secondary;
+                }
+    
+                &::before,
+                &::after {
+                    position: absolute;
+                    content: '';
+                    top: 1.8rem;
+                    min-width: 9%;
+                    max-width: 80%;
+                    height: 2px;
+                    background-color: $secondary;
+                }
+    
+                &::before {
+                    left: 0;
+                }
+    
+                &::after {
+                    right: 0;
+                }
+            }
+        }
+
+        form {
+            margin-top: 1rem;
+
+            fieldset {
+                border: none;
+    
+                input {
+                    width: 100%;
+                    height: 40px;
+                    font-size: 14px;
+                    font-weight: 400;
+                    border-radius: 9px;
+                    border: 1px solid $secondary;
+                    background-color: $white;
+                    color: $grayPlaceholder;
+                    outline: none;
+                    padding-left: 1rem;
+    
+                    @include tablet {
+                        font-size: 15px;
+                        height: 38px;
+                        background-color: $white;
+                    }
+                }
+
+                input.react-international-phone-input {
+                    border-radius: 0px 9px 9px 0px;
+                }
+    
+                input.react-international-phone-input,
+                button.react-international-phone-country-selector-button {
+                    height: 40px;
+                    padding: 0 1rem;
+                    color: $grayPlaceholder;
+                    border: 1px solid $secondary;
+                    background-color: #F6F6F6;
+    
+                    @include tablet {
+                        height: 38px;
+                        background-color: $white;
+                    }
+                }
+
+                
+                select {
+                    width: 100%;
+                    height: 40px;
+                    border-radius: 9px;
+                    border: 1px solid $secondary;
+                    color: $grayPlaceholder;
+                    outline: none;
+                    padding-left: 1rem;
+                    appearance: none;
+                    background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path fill='#{$encodedColor}' d='M4 6l4 4 4-4'/></svg>");
+                    background-repeat: no-repeat;
+                    background-position: right 1.2rem center;
+                    background-size: 2rem;
+
+                    &.has-value {
+                        color: $black;
+                    }
+    
+                    &:disabled {
+                        opacity: 0.6;
+                        cursor: not-allowed;
+                    }
+    
+                    @include tablet {
+                        font-size: 15px;
+                        height: 38px;
+                        background-color: $white;
+                    }
+
+                    p.message-error {
+                        font-size: 12px;
+                        color: #bf1650;
+                        margin: 1rem 0 0;
+        
+                        &::before {
+                            display: inline;
+                            content: '⚠ ';
+                        }
+                    }
+                }
+
+                p.message-error {
+                    font-size: 12px;
+                    color: #bf1650;
+                    margin: 1rem 0 0;
+    
+                    &::before {
+                        display: inline;
+                        content: '⚠ ';
+                    }
+                }
+            }
+
+            fieldset.container-phone {
+                position: relative;
+        
+                p.tippy {
+                    position: absolute;
+                    font-size: 22px;
+                    color: $primary;
+                    top: 3px;
+                    right: 25px;
+                    margin: 1rem 0 0;
+                    cursor: pointer;
+                }
+            }
+
+            fieldset .checkbox-block {
+                display: flex;
+                align-items: flex-start;
+                position: relative;
+                line-height: 1.4;
+                padding-left: 1rem;
+                color: $grayPlaceholder;
+                font-weight: 500;
+                font-size: 14px;
+                
+                input[type="checkbox"] {
+                    width: 16px;
+                    height: 16px;
+                    min-width: 16px;
+                    margin-right: 10px;
+                    cursor: pointer;
+                    margin-top: 2px;
+                }
+                
+                label {
+                    flex: 1;
+                    cursor: pointer;
+                }
+                
+                p.message-error {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    margin: 0;
+                    font-size: 12px;
+                }
+                
+                @include tablet {
+                    font-size: 15px;
+                    
+                    input[type="checkbox"] {
+                        width: 17px;
+                        height: 17px;
+                        min-width: 17px;
+                    }
+                }
+            }
+
+            button.btn-send {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                column-gap: 0.5rem;
+                font-size: clamp(1.5625rem, 1.4554rem + 0.4762vw, 1.8125rem);
+                font-weight: 600;
+                color: $white;
+                margin: 1rem auto 0 auto;
+                padding: 1rem 3rem;
+                border-radius: 26px;
+                border: 1px solid $secondary;
+                background: linear-gradient(180deg, #CAA55E 0%, rgba(202, 165, 94, 0.50) 100%);
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                overflow: hidden;
+                z-index: 0;
+                cursor: pointer;
+    
+                &:hover {
+                    color: $white;
+                }
+    
+                &::before {
+                    height: 100%;
+                    width: 100%;
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transform: translateX(-100%);
+                    transition: all .3s;
+                    background: $primary-gradient;
+                    z-index: -1;
+    
+                }
+    
+                &:hover:before {
+                    transform: translateX(0);
+                }
+            }
+        }
+
+        @include tablet {
+            min-height: 456px;
+            max-width: 120rem;
+            margin: 4rem auto 10rem auto;
+            padding: 2rem 0 2rem 0;
+    
+            .title-section {
+                margin: 2rem auto 0 auto;
+                max-width: 680px;
+            }
+
+            form {
+                max-width: 710px;
+                margin: 3rem auto 0 auto;
+
+                button.btn-send {
+                    width: 90%;
+                    margin-top: 2rem;
+                    border-radius: 1rem;
+                }
+            }
+        }
+
+        @include desktop {
+            button.btn-send {
+                width: 100%;
+            }
+        }
+    }
+
+}

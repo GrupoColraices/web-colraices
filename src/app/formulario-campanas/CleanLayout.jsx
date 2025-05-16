@@ -3,8 +3,10 @@ import '../../sass/main.scss'
 
 export default function CleanLayout({ children }) {
   return (
-    <div className="clean-layout">
-      {children}
-    </div>
+    <section className="clean-layout">
+      <main>
+        {children}
+      </main>
+    </section>
   )
 }
