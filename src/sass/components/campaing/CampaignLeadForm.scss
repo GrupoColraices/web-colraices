@@ -328,7 +328,7 @@ $encodedColor: "%23{$grayPlaceholder}";
             }
         }
 
-        @media(max-width:400px) {
+        @media(max-width:450px) {
             .title-section {
                 .title-section-title {
                   font-size: 1.3rem;
@@ -337,4 +337,127 @@ $encodedColor: "%23{$grayPlaceholder}";
         }
     }
 
+}
+
+.campaing-form.success-view{
+
+    .logo-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    section{
+        padding-top: 8rem;
+        position: relative;
+        margin-bottom:0 auto 4rem;
+        overflow: hidden;
+        &::before {
+            position: absolute;
+            display: block;
+            content: url('/icons/semicircle-decorator.svg');
+            top: 0;
+            left: 0;
+        }
+        &::after {
+            position: absolute;
+            display: block;
+            content: url('/icons/semicircle-decorator.svg');
+            transform: scaleX(-1) rotate(-40deg);
+            bottom: -50px;
+            right: -5px;
+        }
+
+        h1 {
+            margin: 0 auto;
+            color: $primary;
+            text-align: center;
+            font-size: 2.2rem;
+            line-height: 26px;
+
+            span {
+                color: $secondary;
+                display: block;
+            }
+        }
+        p {
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+            text-wrap: balance;
+            text-align: center;
+            margin: 2rem 0;
+            font-weight: 500;
+            color: $font-slate;
+        }
+        picture {
+            display: none;
+        }
+    }
+
+    @include laptop{
+        .logo-wrapper img {
+            width: 350px;
+            height: auto;
+            margin-bottom: 2rem;
+        }
+
+        section {
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            margin: 0 auto 6rem;
+            padding-top: 0;
+            &::before {
+                display: none;
+            }
+            &::after {
+                display: none;
+            }
+
+            .response-text-block {
+                z-index: 2;
+                position: relative;
+                margin-left: 1rem;
+            }
+
+            h1 {
+                margin: 0;
+                text-align: left;
+                font-size: 4rem;
+                line-height: 48px;
+                width: 100%;
+            }
+            p {
+                font-size: 2.2rem;
+                line-height: 2.8rem;
+                text-align: left;
+                max-width: 55ch;
+                text-wrap: unset;
+            }
+            a {
+                margin: 0;
+                font-size: 16px;
+                max-width: fit-content;
+            }
+            picture {
+                display: block;
+                margin-top: -5rem;
+            }
+        }
+    }
+
+    @include desktop{
+        section {
+            .response-text-block {
+                margin-top: -8rem;
+            }
+        }
+    }
+
+    @media (min-width: 400px) and (max-width: 929px) {
+        section {
+            margin-top: 4rem;
+        }
+    }
 }

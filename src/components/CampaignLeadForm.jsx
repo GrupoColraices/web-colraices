@@ -11,6 +11,7 @@ import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/scale.css'
 import Logo from '../../public/logo.svg'
 import {optionsSchedule} from '@/app/casas-apartamentos-colombia-desde-el-exterior/helpers/options'
+import { InternalLink } from '@/components/InternalLink'
 
 export default function CampaignLeadForm() {
   const { register, handleSubmit, control, formState: { errors } } = useForm({
@@ -32,8 +33,7 @@ export default function CampaignLeadForm() {
       email: data.email,
       phone: data.phone,
       bestContactTime: data.schedule, // string
-      consent: data.consent,
-      path: window.location.pathname,
+      service_taken: 'campaign',
     }
     console.log('Payload a enviar:', payload)
     // Aquí iría la llamada fetch/fetcher al backend
@@ -46,11 +46,31 @@ export default function CampaignLeadForm() {
         <div className="logo-wrapper">
           <Image src={Logo} alt="Logo Colraices" width={150} height={50} />
         </div>
-        <h2>Gracias, tus datos se han registrado exitosamente.</h2>
-        <p>Con este primer paso, tu futuro en Colombia ya empezó a tomar forma. En breve te contactaremos.</p>
-        <button className="btn-send" onClick={() => window.location.href = '/cupo-de-credito'}>
-          Descubre tu cupo de crédito en 2 minutos
-        </button>
+        <section>
+            <div className='response-text-block'>
+                <h1>
+                    Gracias,<span> tus datos se han registrado exitosamente.</span>
+                </h1>
+                <p>
+                    Con este primer paso, tu futuro en Colombia ya empezó a tomar forma. En breve te contactaremos.
+                </p>
+                <InternalLink
+                    options={{
+                        type: 'anchor',
+                        href: 'https://colraices.com/cupocreditoalinstante',
+                    }}
+                >
+                    {' '}
+                    Descubre tu cupo de crédito en 2 minutos
+                </InternalLink>
+            </div>
+            <picture>
+                <img
+                    src="/img/financia/financia-tu-casa-banner.webp"
+                    alt="Mujer sonriendo mientras solicita financiación para su casa"
+                />
+            </picture>
+        </section>
       </section>
     )
   }
@@ -147,15 +167,3 @@ export default function CampaignLeadForm() {
     </section>
   )
 }
-
-/*
-Objeto `payload` enviado al backend:
-{
-  name: string,
-  email: string,
-  phone: string,
-  bestContactTime: string,
-  consent: boolean,
-  path: string
-}
-*/
