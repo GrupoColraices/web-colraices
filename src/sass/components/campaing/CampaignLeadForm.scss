@@ -335,6 +335,14 @@ $encodedColor: "%23{$grayPlaceholder}";
                 }
             }
         }
+
+        @media(max-width:399px) {
+            .title-section {
+                .title-section-title {
+                  font-size: 1.1rem;
+                }
+            }
+        }
     }
 
 }
