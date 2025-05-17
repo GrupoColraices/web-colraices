@@ -336,7 +336,7 @@ $encodedColor: "%23{$grayPlaceholder}";
             }
         }
 
-        @media(max-width:399px) {
+        @media(max-width:384px) {
             .title-section {
                 .title-section-title {
                   font-size: 1.1rem;
@@ -460,12 +460,6 @@ $encodedColor: "%23{$grayPlaceholder}";
             .response-text-block {
                 margin-top: -8rem;
             }
-        }
-    }
-
-    @media (min-width: 400px) and (max-width: 929px) {
-        section {
-            margin-top: 4rem;
         }
     }
 }
