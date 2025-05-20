@@ -17,6 +17,7 @@ export default function CampaignLeadForm() {
   const { register, handleSubmit, control, formState: { errors } } = useForm({
     defaultValues: {
       name: '',
+      last_name:'',
       email: '',
       phone: '',
       schedule: '',
@@ -30,9 +31,10 @@ export default function CampaignLeadForm() {
     // Objeto listo para envío al backend
     const payload = {
       name: data.name,
+      last_name: data.lastName,
       email: data.email,
       phone: data.phone,
-      bestContactTime: data.schedule, // string
+      best_contact_time: data.schedule, // string
       service_taken: 'campaign',
     }
     console.log('Payload a enviar:', payload)
@@ -89,25 +91,59 @@ export default function CampaignLeadForm() {
             <fieldset>
                 <input
                     type="text"
-                    placeholder="Nombre completo"
-                    {...register('name', { required: true })}
+                    placeholder="Nombre"
+                    maxLength={25}
+                    {...register('name', { 
+                        required: "Este campo es requerido",
+                        minLength:{
+                            value:2,
+                            message: "El nombre debe tener al menos 2 caracteres"
+                        }
+                    })}
                 />
-                {errors.name && <p className="message-error">Este campo es requerido</p>}
+                {errors.name && <p className="message-error">{errors.name?.message}</p>}
+            </fieldset>
+
+            <fieldset>
+                <input
+                    type="text"
+                    placeholder="Apellido"
+                    maxLength={30}
+                    {...register('lastName', { 
+                        required: "Este campo es requerido",
+                        minLength:{
+                            value:2,
+                            message: "El apellido debe tener al menos 2 caracteres"
+                        }
+                    })}
+                />
+                {errors.last_name && <p className="message-error">{errors.last_name?.message}</p>}
             </fieldset>
 
             <fieldset>
                 <input
                     type="email"
                     placeholder="Correo electrónico"
-                    {...register('email', { required: true })}
+                    maxLength={50}
+                    {...register('email', { 
+                        required: "Este campo es requerido",
+                        pattern: {
+                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                            message: "Correo electrónico inválido"
+                        },
+                        minLength: {
+                            value: 5,
+                            message: "El correo debe tener al menos 5 caracteres"
+                        }
+                    })}
                 />
-                {errors.email && <p className="message-error">Este campo es requerido</p>}
+                {errors.email && <p className="message-error">{errors.email?.message}</p>}
             </fieldset>
 
             <Controller
                 control={control}
                 name="phone"
-                rules={{ required: true, minLength: 8, maxLength: 15 }}
+                rules={{ required: true, minLength: 8, maxLength: 20 }}
                 render={({ field }) => (
                     <fieldset className="container-phone">
                             <PhoneInput
@@ -151,10 +187,10 @@ export default function CampaignLeadForm() {
             <fieldset>
                 <label className="checkbox-block">
                     <input
-                    type="checkbox"
-                    {...register('consent', { required: true })}
+                        type="checkbox"
+                        {...register('consent', { required: true })}
                     />
-                    He leído y acepto el tratamiento de mis datos personales.
+                    {' '}He leído y acepto el tratamiento de mis datos personales.
                 </label>
                 {errors.consent && <p className="message-error">Debes aceptar el tratamiento de datos</p>}
             </fieldset>
