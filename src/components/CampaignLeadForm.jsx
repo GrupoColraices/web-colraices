@@ -4,6 +4,7 @@ import { PhoneInput } from 'react-international-phone'
 import { BsQuestionCircle } from 'react-icons/bs'
 import Image from 'next/image'
 import Tippy from '@tippyjs/react'
+import AES from 'crypto-js/aes'
 import '@/sass/components/campaing/CampaignLeadForm.scss'
 import TitleSection from '@/app/casas-apartamentos-colombia-desde-el-exterior/components/TitleSection'
 import 'react-international-phone/style.css'
@@ -24,14 +25,16 @@ export default function CampaignLeadForm() {
       consent: false,
     }
   })
+  const secretKey = process.env.NEXT_PUBLIC_CRYPTO_KEY
   const [submitted, setSubmitted] = useState(false)
-  const [hasValue, setHasValue] = useState(false);
+  const [hasValue, setHasValue] = useState(false)
+  const [urlSafe, setUrlSafe] = useState(null)
+
 
   const onSubmit = (data) => {
-    // Objeto listo para envío al backend
     const payload = {
       name: data.name,
-      last_name: data.lastName,
+      last_name: data.last_name,
       email: data.email,
       phone: data.phone,
       best_contact_time: data.schedule, // string
@@ -39,6 +42,20 @@ export default function CampaignLeadForm() {
     }
     console.log('Payload a enviar:', payload)
     // Aquí iría la llamada fetch/fetcher al backend
+
+    const sendUrl = {
+      name: data.name,
+      last_name: data.last_name,
+      email: data.email,
+      phone: data.phone,
+    }
+
+    const encrypted = AES
+      .encrypt(JSON.stringify(sendUrl), secretKey)
+      .toString()
+
+    setUrlSafe(encodeURIComponent(encrypted))
+
     setSubmitted(true)
   }
 
@@ -59,7 +76,9 @@ export default function CampaignLeadForm() {
                 <InternalLink
                     options={{
                         type: 'anchor',
-                        href: 'https://colraices.com/cupocreditoalinstante',
+                        href: urlSafe
+                           ?  `http://localhost:5173/?data=${urlSafe}`//`https://colraices.com/cupocreditoalinstante?data=${urlSafe}`
+                           : 'https://colraices.com/cupocreditoalinstante',
                     }}
                 >
                     {' '}
@@ -109,7 +128,7 @@ export default function CampaignLeadForm() {
                     type="text"
                     placeholder="Apellido"
                     maxLength={30}
-                    {...register('lastName', { 
+                    {...register('last_name', { 
                         required: "Este campo es requerido",
                         minLength:{
                             value:2,
