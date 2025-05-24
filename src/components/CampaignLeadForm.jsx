@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import { PhoneInput } from 'react-international-phone'
 import { BsQuestionCircle } from 'react-icons/bs'
+import { useSearchParams } from 'next/navigation'
 import Image from 'next/image'
 import Tippy from '@tippyjs/react'
 import AES from 'crypto-js/aes'
@@ -26,37 +27,83 @@ export default function CampaignLeadForm() {
     }
   })
   const secretKey = process.env.NEXT_PUBLIC_CRYPTO_KEY
+  const searchParams = useSearchParams()
   const [submitted, setSubmitted] = useState(false)
   const [hasValue, setHasValue] = useState(false)
   const [urlSafe, setUrlSafe] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
+  const [tooltipContent, setTooltipContent] = useState('')
+  const [tooltipVisible, setTooltipVisible] = useState(false)
+  const entradaPorQr = searchParams.get('entrada_por_qr')
 
 
-  const onSubmit = (data) => {
-    const payload = {
-      name: data.name,
-      last_name: data.last_name,
-      email: data.email,
-      phone: data.phone,
-      best_contact_time: data.schedule, // string
-      service_taken: 'campaign',
+  const onSubmit = async (data) => {
+    setIsLoading(true)
+    setTooltipContent('Cargando…')
+    setTooltipVisible(true)
+    try{
+        const payload = {
+          name: data.name,
+          last_name: data.last_name,
+          email: data.email,
+          phone_number: data.phone,
+          best_contact_time: data.schedule,
+          ...(entradaPorQr && { entrada_por_qr: entradaPorQr }),
+        }
+        console.log('Payload a enviar:', payload)
+        // Aquí iría la llamada fetch/fetcher al backend
+
+        const response = await fetch(`${process.env.NEXT_PUBLIC_HUBSPOT_ENDPOINT}/v1/client/create/contact-campaign`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'client_id': process.env.NEXT_PUBLIC_CLIENT_SECRET_ID,
+              'secret_id': process.env.NEXT_PUBLIC_HUBSPOT_SECRET_ID,
+            },
+            body: JSON.stringify(payload),
+        })
+
+        const result = await response.json()
+
+        if (!response.ok) {
+            setTooltipContent('Error inesperado, intenta más tarde.')
+            return
+        }
+
+        if (!result.is_new_contact) {
+            // el cliente ya existe
+            setTooltipContent('Ya te encuentras registrado.')
+            return
+        }
+
+        // Si llegamos aquí, is_new_contact === true
+        setTooltipVisible(false)
+        setSubmitted(true)
+        setHubspotResponse(result)
+
+
+        const sendUrl = {
+          name: data.name,
+          last_name: data.last_name,
+          email: data.email,
+          phone: data.phone,
+        }
+
+        const encrypted = AES
+          .encrypt(JSON.stringify(sendUrl), secretKey)
+          .toString()
+
+        setUrlSafe(encodeURIComponent(encrypted))
+
+        setTooltipVisible(false)
+        setSubmitted(true)
+
+    } catch(error){
+        console.error('Error al enviar datos:', error)
+        setTooltipContent('Error inesperado, intenta más tarde.')
+    } finally{
+        setIsLoading(false)
     }
-    console.log('Payload a enviar:', payload)
-    // Aquí iría la llamada fetch/fetcher al backend
-
-    const sendUrl = {
-      name: data.name,
-      last_name: data.last_name,
-      email: data.email,
-      phone: data.phone,
-    }
-
-    const encrypted = AES
-      .encrypt(JSON.stringify(sendUrl), secretKey)
-      .toString()
-
-    setUrlSafe(encodeURIComponent(encrypted))
-
-    setSubmitted(true)
   }
 
   if (submitted) {
@@ -214,9 +261,18 @@ export default function CampaignLeadForm() {
                 {errors.consent && <p className="message-error">Debes aceptar el tratamiento de datos</p>}
             </fieldset>
 
-            <button className="btn-send" type="submit">
-                Enviar
-            </button>
+            <Tippy
+                content={tooltipContent}
+                visible={tooltipVisible}
+                onClickOutside={() => setTooltipVisible(false)}
+                placement="right"
+                animation="scale"
+                duration={200}
+            >
+                <button className="btn-send" type="submit" disabled={isLoading}>
+                    {isLoading ? 'Enviando…' : 'Enviar'}
+                </button>
+            </Tippy>
         </form>
       </div>
     </section>
