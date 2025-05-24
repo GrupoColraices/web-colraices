@@ -265,7 +265,7 @@ export default function CampaignLeadForm() {
                 content={tooltipContent}
                 visible={tooltipVisible}
                 onClickOutside={() => setTooltipVisible(false)}
-                placement="right"
+                placement="bottom"
                 animation="scale"
                 duration={200}
             >
