@@ -118,7 +118,7 @@ export default function CampaignLeadForm() {
                     options={{
                         type: 'anchor',
                         href: urlSafe
-                           ?  `http://localhost:5173/?data=${urlSafe}`//`https://colraices.com/cupocreditoalinstante?data=${urlSafe}`
+                           ?  `https://colraices.com/cupocreditoalinstante/?data=${urlSafe}`
                            : 'https://colraices.com/cupocreditoalinstante',
                     }}
                 >
