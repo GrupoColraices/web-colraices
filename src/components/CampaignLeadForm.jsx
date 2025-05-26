@@ -26,6 +26,13 @@ export default function CampaignLeadForm() {
       consent: false,
     }
   })
+
+  const createSendUrl = (data) => ({
+    name: data.name,
+    last_name: data.last_name,
+    email: data.email,
+    phone: data.phone,
+  });
   const secretKey = process.env.NEXT_PUBLIC_CRYPTO_KEY
   const searchParams = useSearchParams()
   const [submitted, setSubmitted] = useState(false)
@@ -76,25 +83,12 @@ export default function CampaignLeadForm() {
             return
         }
 
-        // Si llegamos aquí, is_new_contact === true
-        setTooltipVisible(false)
-        setSubmitted(true)
-        setHubspotResponse(result)
-
-
-        const sendUrl = {
-          name: data.name,
-          last_name: data.last_name,
-          email: data.email,
-          phone: data.phone,
-        }
-
+        const sendUrl = createSendUrl(data)
         const encrypted = AES
           .encrypt(JSON.stringify(sendUrl), secretKey)
           .toString()
 
         setUrlSafe(encodeURIComponent(encrypted))
-
         setTooltipVisible(false)
         setSubmitted(true)
 

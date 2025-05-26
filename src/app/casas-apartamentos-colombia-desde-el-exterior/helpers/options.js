@@ -107,10 +107,10 @@ export const optionsTime = [
 ]
 
 export const optionsSchedule = [
-    { id: 1, label: 'Mañanas (8:00 AM – 12:00 PM)', value: 'Mañana' },
-    { id: 2, label: 'Tardes (2:00 PM – 6:00 PM)', value: 'Tarde' },
-    { id: 3, label: 'Noches (7:00 PM – 9:00 PM)', value: 'Noche ' },
-    { id: 4, label: 'Flexible/Cualquier horario', value: 'Cualquier horario' },
+    { id: 1, label: 'Mañanas (8:00 AM – 12:00 PM)', value: 'Mañanas (8:00 AM – 12:00 PM)'},
+    { id: 2, label: 'Tardes (2:00 PM – 6:00 PM)', value: 'Tardes (2:00 PM – 6:00 PM)' },
+    { id: 3, label: 'Noches (7:00 PM – 9:00 PM)', value: 'Noches (7:00 PM – 9:00 PM)' },
+    { id: 4, label: 'Flexible/Cualquier horario', value: 'Flexible/Cualquier horario' },
 ]
 
 export const testimonios = [
