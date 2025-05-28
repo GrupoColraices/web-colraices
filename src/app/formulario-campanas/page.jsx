@@ -1,11 +1,10 @@
-'use client'
-import CleanLayout from './CleanLayout'
-import CampaignLeadForm from '../../components/CampaignLeadForm'
+import dynamic from 'next/dynamic'
+
+const CampaignLeadForm = dynamic(
+  () => import('../../components/CampaignLeadForm'),
+  { ssr: false }
+)
 
 export default function CampaingFormPage() {
-  return (
-    <CleanLayout>
-      <CampaignLeadForm />
-    </CleanLayout>
-  )
+  return <CampaignLeadForm />
 }
