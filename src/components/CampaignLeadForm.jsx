@@ -119,8 +119,8 @@ export default function CampaignLeadForm() {
                     options={{
                         type: 'anchor',
                         href: urlSafe
-                           ?  `https://colraices.com/cupocreditoalinstante/?data=${urlSafe}`
-                           : 'https://colraices.com/cupocreditoalinstante',
+                           ?  `${process.env.NEXT_PUBLIC_CDC_ENDPOINT}?data=${urlSafe}`
+                           : `${process.env.NEXT_PUBLIC_CDC_ENDPOINT}`,
                     }}
                 >
                     {' '}
