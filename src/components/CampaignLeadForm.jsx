@@ -64,7 +64,7 @@ export default function CampaignLeadForm() {
           email: data.email,
           phone_number: data.phone,
           best_contact_time: data.schedule,
-          pais: selectedCountry,
+          country_id: selectedCountry,
           ...(entradaPorQr && { entrada_por_qr: entradaPorQr }),
         }
         console.log('Payload a enviar:', payload)
@@ -266,7 +266,15 @@ export default function CampaignLeadForm() {
                         type="checkbox"
                         {...register('consent', { required: true })}
                     />
-                    {' '}He leído y acepto el tratamiento de mis datos personales.
+                    <span>
+                        He leído y acepto el <a 
+                            href="https://drive.google.com/file/d/14B-f-Y-ks_cOqjUXLBGGtsrzeQFnFOMu/view" 
+                            target="_blank" 
+                            rel="noreferrer"
+                        >
+                            tratamiento de mis datos personales
+                        </a>.
+                    </span>
                 </label>
                 {errors.consent && <p className="message-error">Debes aceptar el tratamiento de datos</p>}
             </fieldset>
