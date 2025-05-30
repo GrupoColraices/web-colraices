@@ -382,13 +382,13 @@ $encodedColor: "%23{$grayPlaceholder}";
         position: relative;
         width: 200px;               
         aspect-ratio: 3358 / 749;
-        margin: 0 auto 1rem;
+        margin: 0 auto 4rem;
     }
 
     section{
         padding-top: 8rem;
         position: relative;
-        margin:0 auto 4rem;
+        margin:0 auto 2rem;
         overflow: hidden;
         &::before {
             position: absolute;
@@ -449,7 +449,7 @@ $encodedColor: "%23{$grayPlaceholder}";
             max-width: 1200px;
             display: flex;
             align-items: center;
-            margin: 0 auto 6rem;
+            margin: 0 auto 1rem;
             padding-top: 0;
             &::before {
                 display: none;
@@ -485,7 +485,8 @@ $encodedColor: "%23{$grayPlaceholder}";
             }
             picture {
                 display: block;
-                margin-top: -5rem;
+                margin-top: -3rem;
+                width: 60%;
             }
         }
     }

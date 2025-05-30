@@ -117,6 +117,12 @@ export default function CampaignLeadForm() {
           <Image src={Logo} alt="Logo Colraices" fill quality={100} style={{objectFit:'contain'}} priority/>
         </div>
         <section>
+            <picture>
+                <img
+                    src="imagen-agradecimiento.png"
+                    alt="Imagen de una casa"
+                />
+            </picture>
             <div className='response-text-block'>
                 <h1>
                     Gracias,<span> tus datos se han registrado exitosamente.</span>
@@ -136,12 +142,6 @@ export default function CampaignLeadForm() {
                     Descubre tu cupo de crédito en 2 minutos
                 </InternalLink>
             </div>
-            <picture>
-                <img
-                    src="/img/financia/financia-tu-casa-banner.webp"
-                    alt="Mujer sonriendo mientras solicita financiación para su casa"
-                />
-            </picture>
         </section>
       </section>
     )
