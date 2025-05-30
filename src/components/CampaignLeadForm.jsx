@@ -12,7 +12,7 @@ import TitleSection from '@/app/casas-apartamentos-colombia-desde-el-exterior/co
 import 'react-international-phone/style.css'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/scale.css'
-import Logo from '../../public/logo.svg'
+import Logo from '../../public/logo-azul-03.png'
 import {optionsSchedule} from '@/app/casas-apartamentos-colombia-desde-el-exterior/helpers/options'
 import { InternalLink } from '@/components/InternalLink'
 
@@ -141,7 +141,9 @@ export default function CampaignLeadForm() {
   return (
     <section className="campaing-form">
       <div className="title-wide">
-        <Image src={Logo} alt="Logo Colraices" width={170} height={40} quality={100} />
+        <div className='logo-container'>
+            <Image src={Logo} alt="Logo Colraices" fill quality={100} style={{objectFit:'contain'}} priority/>
+        </div>
         <h1> 
             <span>Colombia siempre será tu casa. </span>Hoy puedes volver a ella transformando tu remesa en una inversión que construye futuro 
         </h1>
