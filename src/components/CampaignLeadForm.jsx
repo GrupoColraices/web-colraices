@@ -37,12 +37,20 @@ export default function CampaignLeadForm() {
   const secretKey = process.env.NEXT_PUBLIC_CRYPTO_KEY
   const searchParams = useSearchParams()
   const [submitted, setSubmitted] = useState(false)
+  const [selectedCountry, setSelectedCountry] = useState(null)
   const [hasValue, setHasValue] = useState(false)
   const [urlSafe, setUrlSafe] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const [tooltipContent, setTooltipContent] = useState('')
   const [tooltipVisible, setTooltipVisible] = useState(false)
   const entradaPorQr = searchParams.get('entrada_por_qr')
+
+  const getCountryNameInSpanish = (countryCode) => {
+    if (!countryCode) return ''
+    const code = countryCode.toUpperCase()
+    const displayNames = new Intl.DisplayNames(['es'], { type: 'region' })
+    return displayNames.of(code) ?? code
+  }
 
 
   const onSubmit = async (data) => {
@@ -56,6 +64,7 @@ export default function CampaignLeadForm() {
           email: data.email,
           phone_number: data.phone,
           best_contact_time: data.schedule,
+          pais: selectedCountry,
           ...(entradaPorQr && { entrada_por_qr: entradaPorQr }),
         }
         console.log('Payload a enviar:', payload)
@@ -211,7 +220,11 @@ export default function CampaignLeadForm() {
                     <fieldset className="container-phone">
                             <PhoneInput
                                 {...field}
-                                onChange={(v) => field.onChange(v)}
+                                 onChange={(phone, meta) => {
+                                    const countryInSpanish = getCountryNameInSpanish(meta?.country?.iso2)
+                                    setSelectedCountry(countryInSpanish)
+                                    field.onChange(phone)
+                                }}
                                 placeholder="Teléfono"
                             />
                             <Tippy
@@ -237,7 +250,7 @@ export default function CampaignLeadForm() {
                     defaultValue=""
                     className={hasValue ? 'has-value' : ''}
                 >
-                <option value="" disabled>Selecciona tu mejor horario</option>
+                <option value="" disabled>¿Cuál es tu mejor horario para contactarte?</option>
                 {optionsSchedule.map(opt => (
                     <option key={opt.id} value={opt.value}>
                     {opt.label}
