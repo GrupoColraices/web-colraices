@@ -114,7 +114,7 @@ export default function CampaignLeadForm() {
     return (
       <section className="campaing-form success-view">
         <div className="logo-wrapper">
-          <Image src={Logo} alt="Logo Colraices" width={150} height={50} />
+          <Image src={Logo} alt="Logo Colraices" fill quality={100} style={{objectFit:'contain'}} priority/>
         </div>
         <section>
             <div className='response-text-block'>

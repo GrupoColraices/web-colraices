@@ -378,12 +378,17 @@ $encodedColor: "%23{$grayPlaceholder}";
         flex-direction: column;
         align-items: center;
         text-align: center;
+
+        position: relative;
+        width: 200px;               
+        aspect-ratio: 3358 / 749;
+        margin: 0 auto 1rem;
     }
 
     section{
         padding-top: 8rem;
         position: relative;
-        margin-bottom:0 auto 4rem;
+        margin:0 auto 4rem;
         overflow: hidden;
         &::before {
             position: absolute;
@@ -427,11 +432,17 @@ $encodedColor: "%23{$grayPlaceholder}";
         }
     }
 
-    @include laptop{
-        .logo-wrapper img {
-            width: 350px;
-            height: auto;
+    @include tablet {
+        .logo-wrapper {
+            width: 300px;
             margin-bottom: 2rem;
+        }
+
+    }
+
+    @include laptop{
+        .logo-wrapper {
+            width: 400px;
         }
 
         section {
