@@ -33,6 +33,7 @@ export default function CampaignLeadForm() {
     last_name: data.last_name,
     email: data.email,
     phone: data.phone,
+    country_id: selectedCountry,
   });
   const secretKey = process.env.NEXT_PUBLIC_CRYPTO_KEY
   const searchParams = useSearchParams()
@@ -67,7 +68,6 @@ export default function CampaignLeadForm() {
           country_id: selectedCountry,
           ...(entradaPorQr && { entrada_por_qr: entradaPorQr }),
         }
-        console.log('Payload a enviar:', payload)
         // Aquí iría la llamada fetch/fetcher al backend
 
         const response = await fetch(`${process.env.NEXT_PUBLIC_HUBSPOT_ENDPOINT}/v1/client/create/contact-campaign`, {
