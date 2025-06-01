@@ -12,7 +12,7 @@ import TitleSection from '@/app/casas-apartamentos-colombia-desde-el-exterior/co
 import 'react-international-phone/style.css'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/scale.css'
-import Logo from '../../public/logo.svg'
+import Logo from '../../public/logo-azul-03.png'
 import {optionsSchedule} from '@/app/casas-apartamentos-colombia-desde-el-exterior/helpers/options'
 import { InternalLink } from '@/components/InternalLink'
 
@@ -33,16 +33,25 @@ export default function CampaignLeadForm() {
     last_name: data.last_name,
     email: data.email,
     phone: data.phone,
+    country_id: selectedCountry,
   });
   const secretKey = process.env.NEXT_PUBLIC_CRYPTO_KEY
   const searchParams = useSearchParams()
   const [submitted, setSubmitted] = useState(false)
+  const [selectedCountry, setSelectedCountry] = useState(null)
   const [hasValue, setHasValue] = useState(false)
   const [urlSafe, setUrlSafe] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const [tooltipContent, setTooltipContent] = useState('')
   const [tooltipVisible, setTooltipVisible] = useState(false)
   const entradaPorQr = searchParams.get('entrada_por_qr')
+
+  const getCountryNameInSpanish = (countryCode) => {
+    if (!countryCode) return ''
+    const code = countryCode.toUpperCase()
+    const displayNames = new Intl.DisplayNames(['es'], { type: 'region' })
+    return displayNames.of(code) ?? code
+  }
 
 
   const onSubmit = async (data) => {
@@ -56,9 +65,9 @@ export default function CampaignLeadForm() {
           email: data.email,
           phone_number: data.phone,
           best_contact_time: data.schedule,
+          country_id: selectedCountry,
           ...(entradaPorQr && { entrada_por_qr: entradaPorQr }),
         }
-        console.log('Payload a enviar:', payload)
         // Aquí iría la llamada fetch/fetcher al backend
 
         const response = await fetch(`${process.env.NEXT_PUBLIC_HUBSPOT_ENDPOINT}/v1/client/create/contact-campaign`, {
@@ -105,9 +114,15 @@ export default function CampaignLeadForm() {
     return (
       <section className="campaing-form success-view">
         <div className="logo-wrapper">
-          <Image src={Logo} alt="Logo Colraices" width={150} height={50} />
+          <Image src={Logo} alt="Logo Colraices" fill quality={100} style={{objectFit:'contain'}} priority/>
         </div>
         <section>
+            <picture>
+                <img
+                    src="imagen-agradecimiento.png"
+                    alt="Imagen de una casa"
+                />
+            </picture>
             <div className='response-text-block'>
                 <h1>
                     Gracias,<span> tus datos se han registrado exitosamente.</span>
@@ -127,12 +142,6 @@ export default function CampaignLeadForm() {
                     Descubre tu cupo de crédito en 2 minutos
                 </InternalLink>
             </div>
-            <picture>
-                <img
-                    src="/img/financia/financia-tu-casa-banner.webp"
-                    alt="Mujer sonriendo mientras solicita financiación para su casa"
-                />
-            </picture>
         </section>
       </section>
     )
@@ -141,7 +150,9 @@ export default function CampaignLeadForm() {
   return (
     <section className="campaing-form">
       <div className="title-wide">
-        <Image src={Logo} alt="Logo Colraices" width={170} height={40} quality={100} />
+        <div className='logo-container'>
+            <Image src={Logo} alt="Logo Colraices" fill quality={100} style={{objectFit:'contain'}} priority/>
+        </div>
         <h1> 
             <span>Colombia siempre será tu casa. </span>Hoy puedes volver a ella transformando tu remesa en una inversión que construye futuro 
         </h1>
@@ -209,7 +220,11 @@ export default function CampaignLeadForm() {
                     <fieldset className="container-phone">
                             <PhoneInput
                                 {...field}
-                                onChange={(v) => field.onChange(v)}
+                                 onChange={(phone, meta) => {
+                                    const countryInSpanish = getCountryNameInSpanish(meta?.country?.iso2)
+                                    setSelectedCountry(countryInSpanish)
+                                    field.onChange(phone)
+                                }}
                                 placeholder="Teléfono"
                             />
                             <Tippy
@@ -235,7 +250,7 @@ export default function CampaignLeadForm() {
                     defaultValue=""
                     className={hasValue ? 'has-value' : ''}
                 >
-                <option value="" disabled>Selecciona tu mejor horario</option>
+                <option value="" disabled>¿Cuál es tu mejor horario para contactarte?</option>
                 {optionsSchedule.map(opt => (
                     <option key={opt.id} value={opt.value}>
                     {opt.label}
@@ -251,7 +266,15 @@ export default function CampaignLeadForm() {
                         type="checkbox"
                         {...register('consent', { required: true })}
                     />
-                    {' '}He leído y acepto el tratamiento de mis datos personales.
+                    <span>
+                        He leído y acepto el <a 
+                            href="https://drive.google.com/file/d/14B-f-Y-ks_cOqjUXLBGGtsrzeQFnFOMu/view" 
+                            target="_blank" 
+                            rel="noreferrer"
+                        >
+                            tratamiento de mis datos personales
+                        </a>.
+                    </span>
                 </label>
                 {errors.consent && <p className="message-error">Debes aceptar el tratamiento de datos</p>}
             </fieldset>
