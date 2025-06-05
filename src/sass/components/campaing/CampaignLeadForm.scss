@@ -59,6 +59,13 @@ $encodedColor: "%23{$grayPlaceholder}";
         }
     }
 
+    @media(max-width:480px){
+        .whatsapp-widget {
+            bottom: 15px;
+            right: 20px;
+        }
+    }
+
     .main-form{
         margin: 4rem 1.3rem 0.5rem;
         padding: 2rem 0;
@@ -307,6 +314,12 @@ $encodedColor: "%23{$grayPlaceholder}";
                     transform: translateX(0);
                 }
             }
+
+            .tooltip-centered {
+                .tippy-box {
+                    text-align: center;
+                }
+            }
         }
 
         @include tablet {
@@ -496,6 +509,13 @@ $encodedColor: "%23{$grayPlaceholder}";
             .response-text-block {
                 margin-top: -8rem;
             }
+        }
+    }
+
+    @media(max-width:480px){
+        .whatsapp-widget {
+            bottom: 15px;
+            right: 20px;
         }
     }
 }

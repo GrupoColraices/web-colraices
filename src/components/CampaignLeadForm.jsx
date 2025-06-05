@@ -285,7 +285,11 @@ export default function CampaignLeadForm() {
             </fieldset>
 
             <Tippy
-                content={tooltipContent}
+                content={
+                    <div style={{ textAlign: 'center' }}>
+                        {tooltipContent}
+                    </div>
+                }
                 visible={tooltipVisible}
                 onClickOutside={() => setTooltipVisible(false)}
                 placement="bottom"
