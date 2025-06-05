@@ -89,7 +89,7 @@ export default function CampaignLeadForm() {
 
         if (!result.is_new_contact) {
             // el cliente ya existe
-            setTooltipContent('Ya te encuentras registrado.')
+            setTooltipContent('Ups! Ya estás registrado. Iniciemos el acompañamiento en el botón WhatsApp')
             return
         }
 
