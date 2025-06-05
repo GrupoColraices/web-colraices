@@ -4,6 +4,7 @@ import { useForm, Controller } from 'react-hook-form'
 import { PhoneInput } from 'react-international-phone'
 import { BsQuestionCircle } from 'react-icons/bs'
 import { useSearchParams } from 'next/navigation'
+import Link from 'next/link'
 import Image from 'next/image'
 import Tippy from '@tippyjs/react'
 import AES from 'crypto-js/aes'
@@ -35,6 +36,7 @@ export default function CampaignLeadForm() {
     phone: data.phone,
     country_id: selectedCountry,
   });
+  const linkWhatsapp = "https://api.whatsapp.com/send/?phone=%2B15136479405&text=Hola%2C%20quiero%20reactivarme%20y%20continuar%20con%20el%20acompa%C3%B1amiento.&type=phone_number&app_absent=0"
   const secretKey = process.env.NEXT_PUBLIC_CRYPTO_KEY
   const searchParams = useSearchParams()
   const [submitted, setSubmitted] = useState(false)
@@ -143,6 +145,9 @@ export default function CampaignLeadForm() {
                 </InternalLink>
             </div>
         </section>
+        <Link className="whatsapp-widget" href={linkWhatsapp} target="_blank">
+                <img src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="WhatsApp Logo" />
+       </Link>
       </section>
     )
   }
@@ -293,6 +298,9 @@ export default function CampaignLeadForm() {
             </Tippy>
         </form>
       </div>
+      <Link className="whatsapp-widget" href={linkWhatsapp} target="_blank">
+                <img src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="WhatsApp Logo" />
+      </Link>
     </section>
   )
 }
