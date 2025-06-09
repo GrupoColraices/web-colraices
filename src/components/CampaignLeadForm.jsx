@@ -37,6 +37,7 @@ export default function CampaignLeadForm() {
     country_id: selectedCountry,
   });
   const linkWhatsapp = "https://api.whatsapp.com/send/?phone=%2B15136479405&text=Hola%2C%20quiero%20reactivarme%20y%20continuar%20con%20el%20acompa%C3%B1amiento.&type=phone_number&app_absent=0"
+  const linkWhatsappSucess = "https://api.whatsapp.com/send?phone=15136479405&text=Hola%20soy%20colombiano%20en%20el%20exterior%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20para%20realizar%20cupo%20de%20cr%C3%A9dito"
   const secretKey = process.env.NEXT_PUBLIC_CRYPTO_KEY
   const searchParams = useSearchParams()
   const [submitted, setSubmitted] = useState(false)
@@ -145,7 +146,7 @@ export default function CampaignLeadForm() {
                 </InternalLink>
             </div>
         </section>
-        <Link className="whatsapp-widget" href={linkWhatsapp} target="_blank">
+        <Link className="whatsapp-widget" href={linkWhatsappSucess} target="_blank">
                 <img src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="WhatsApp Logo" />
        </Link>
       </section>
