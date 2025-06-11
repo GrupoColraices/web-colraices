@@ -1,9 +1,7 @@
 import '../sass/main.scss'
-import { Footer } from '../components/Footer'
 import { Montserrat } from 'next/font/google'
-import { Header } from '@/components/Header'
 import { Providers } from './providers'
-import { FormRequestAssistence } from '@/components/FormRequestAssistence'
+import { ConditionalLayout } from './ConditionalLayout'
 const montserrat = Montserrat({
     subsets: ['latin'],
     weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
@@ -15,10 +13,9 @@ export default function RootLayout({ children }) {
         <html lang="en" suppressHydrationWarning>
             <body className={montserrat.className}>
                 <Providers>
-                    <Header />
-                    {children}
-                    <FormRequestAssistence />
-                    <Footer />
+                    <ConditionalLayout>
+                        {children}
+                    </ConditionalLayout>
                 </Providers>
             </body>
         </html>
