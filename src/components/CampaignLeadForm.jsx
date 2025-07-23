@@ -73,12 +73,10 @@ export default function CampaignLeadForm() {
         }
         // Aquí iría la llamada fetch/fetcher al backend
 
-        const response = await fetch(`${process.env.NEXT_PUBLIC_HUBSPOT_ENDPOINT}/v1/client/create/contact-campaign`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_SMART_CREDITS_ENDPOINT}/contact-campaign`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              'client_id': process.env.NEXT_PUBLIC_CLIENT_SECRET_ID,
-              'secret_id': process.env.NEXT_PUBLIC_HUBSPOT_SECRET_ID,
             },
             body: JSON.stringify(payload),
         })
