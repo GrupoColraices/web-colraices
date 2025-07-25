@@ -6,7 +6,7 @@ import '@/sass/containers/pagos/Checkout.scss'
 import { Paypal } from '@/components/Paypal'
 import { useEffect, useState } from 'react'
 import { BASE_URL, payU } from '@/helpers/services'
-const CLIENT_ID = process.env.NEXT_PUBLIC_CLIEN_ID
+const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID
 const paisesEuropeos = [
     'Albania',
     'Alemania',
@@ -89,6 +89,20 @@ export const Checkout = ({
 
         setCurrency(!paisesEuropeos.includes(client.country) ? 'USD' : 'EUR')
     }, [client])
+
+    // Validar que todos los datos necesarios del comprador estén completos
+    const isBuyerDataComplete = () => {
+        return (
+            buyer.name &&
+            buyer.email &&
+            buyer.address &&
+            buyer.country &&
+            buyer.country !== 'Seleccione una opción' &&
+            buyer.document_type &&
+            buyer.document_type !== 'Seleccione una opción' &&
+            buyer.document
+        )
+    }
 
     return (
         <section className="Checkout-container container">
@@ -235,8 +249,22 @@ export const Checkout = ({
                         </div>
                         {cart.length > 0 ? (
                             <>
+                                {!isBuyerDataComplete() && (
+                                    <div className="Validation-message">
+                                        <p
+                                            style={{
+                                                color: '#ff6b6b',
+                                                fontSize: '1.4rem',
+                                                textAlign: 'center',
+                                                margin: '1rem 0',
+                                            }}
+                                        >
+                                            Por favor, completa todos los datos personales antes de proceder al pago.
+                                        </p>
+                                    </div>
+                                )}
                                 {
-                                    isPaypal && currency && (
+                                    isPaypal && currency && isBuyerDataComplete() && CLIENT_ID && (
                                         <PayPalScriptProvider
                                             options={{
                                                 clientId: CLIENT_ID,
