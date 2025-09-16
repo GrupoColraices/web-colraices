@@ -1,7 +1,7 @@
 .card {
     width: 280px;
     min-width: 280px;
-    height: 350px;
+    height: 370px;
     background-color: #ffffff;
     border-radius: 16px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -12,6 +12,7 @@
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .card:hover {
@@ -121,6 +122,71 @@
     color: #ffffff;
     font-size: 12px;
     font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para botones personalizados en las cards */
+.customButton {
+    background-color: #e00208;
+    color: #ffffff;
+    border: none;
+    padding: 8px 0px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-decoration: underline;
+    width: 210px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.customButton:hover {
+    background-color: #c00206;
+}
+
+.customButton:active {
+    background-color: #a00205;
+}
+
+.customButtonLast {
+    background-color: #e00208;
+    color: #ffffff;
+    border: none;
+    padding: 8px 0px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-decoration: underline;
+    width: 210px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    margin-top: 2px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.customButtonLast:hover {
+    background-color: #c00206;
+}
+
+.customButtonLast:active {
+    background-color: #a00205;
 }
 
 .buttonsContainer {
@@ -175,6 +241,12 @@
     .description {
         font-size: 11px;
     }
+
+    .customButton,
+    .customButtonLast {
+        width: 190px;
+        font-size: 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -204,5 +276,12 @@
     .button {
         padding: 6px 10px;
         font-size: 10px;
+    }
+
+    .customButton,
+    .customButtonLast {
+        width: 100%;
+        font-size: 10px;
+        padding: 6px 0px;
     }
 }

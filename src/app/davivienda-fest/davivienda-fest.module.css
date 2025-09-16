@@ -1,6 +1,7 @@
 .pageContainer {
     min-height: 100vh;
     background-color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .contentWrapper {
@@ -34,6 +35,23 @@
     border-radius: 8px;
     margin: 0;
 }
+.mainTitleBlue {
+    font-size: 44px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    background-color: #2a3f77;
+    /* -webkit-background-clip: text; */
+    /* -webkit-text-fill-color: transparent; */
+    /* background-clip: text; */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 8px;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
 
 .cardsContainer {
     width: 100%;
@@ -46,6 +64,24 @@
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
+}
+.descriptionContent {
+    /* font-size: 16px; */
+    font-weight: 600;
+    text-align: center;
+    color: #2a3f77;
+    font-size: 28px;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+.descriptionContentRed {
+    /* font-size: 16px; */
+    font-weight: 800;
+    text-align: center;
+    color: #e00208;
+    font-size: 28px;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Responsive design */
