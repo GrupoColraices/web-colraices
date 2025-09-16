@@ -3,7 +3,7 @@ import { ContextLikeProvider } from '../../app/casas-apartamentos-colombia-desde
 import { InmReciente } from '../../app/casas-apartamentos-colombia-desde-el-exterior/Templates/InmReciente'
 import TitleSection from '../../app/casas-apartamentos-colombia-desde-el-exterior/components/TitleSection'
 import ItemReciente from '../../app/casas-apartamentos-colombia-desde-el-exterior/molecules/ItemReciente'
-import styles from '../../app/davivienda-fest/davivienda-fest.module.css'
+import styles from '../../app/globalfestdavivienda/globalfestdavivienda.module.css'
 // Importar los estilos del carrusel
 import '../../app/casas-apartamentos-colombia-desde-el-exterior/sass/app.scss'
 

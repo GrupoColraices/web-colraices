@@ -1,12 +1,12 @@
 'use client'
 import { useState } from 'react'
-import BeneficiosCard from '../../components/davivienda-fest/BeneficiosCard'
-import FormularioContacto from '../../components/davivienda-fest/FormularioContacto'
-import CarruselPersonalizado from '../../components/davivienda-fest/CarruselPersonalizado'
-import ArticulosSection from '../../components/davivienda-fest/ArticulosSection'
-import ModalFormulario from '../../components/davivienda-fest/ModalFormulario'
-import styles from './davivienda-fest.module.css'
-import cardStyles from '../../components/davivienda-fest/BeneficiosCard.module.css'
+import BeneficiosCard from '../../components/globalfestdavivienda/BeneficiosCard'
+import FormularioContacto from '../../components/globalfestdavivienda/FormularioContacto'
+import CarruselPersonalizado from '../../components/globalfestdavivienda/CarruselPersonalizado'
+import ArticulosSection from '../../components/globalfestdavivienda/ArticulosSection'
+import ModalFormulario from '../../components/globalfestdavivienda/ModalFormulario'
+import styles from './globalfestdavivienda.module.css'
+import cardStyles from '../../components/globalfestdavivienda/BeneficiosCard.module.css'
 
 export default function ClientPage({ inmRecientes, articles }) {
     const [isModalOpen, setIsModalOpen] = useState(false)

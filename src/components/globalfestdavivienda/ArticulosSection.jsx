@@ -5,7 +5,7 @@ import CardArticleMedium from '@/components/blog/CardArticleMedium'
 import CardArticleSm from '@/components/blog/CardArticleSm'
 import Line from '@/components/Line'
 import ResponsivePagination from 'react-responsive-pagination'
-import styles from '../../app/davivienda-fest/davivienda-fest.module.css'
+import styles from '../../app/globalfestdavivienda/globalfestdavivienda.module.css'
 import './ArticulosSection.css' // Override de alineación
 // Importar estilos del blog originales
 import '@/sass/containers/blog/ArticlesSection.scss'

@@ -19,7 +19,8 @@ export const Footer = () => {
     // Mensajes personalizados por página
     const getWhatsAppMessage = () => {
         const pageMessages = {
-            '/davivienda-fest': 'Hola, estoy interesado en el Global Fest de Davivienda y quiero más información',
+            '/globalfestdavivienda': 'Hola, estoy interesado en el Global Fest de Davivienda y quiero más información',
+            '/davivienda-fest': 'Hola, estoy interesado en el Global Fest de Davivienda y quiero más información', // Mantener compatibilidad
             // Aquí se pueden agregar más páginas fácilmente:
             // '/otra-pagina': "Mensaje específico para otra página",
         }
