@@ -1,0 +1,543 @@
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.backgroundImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.bgImg {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* Sección de texto */
+.textSection {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 50px;
+}
+
+.mainText {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #2a3f77;
+    /* margin-bottom: 20px; */
+    line-height: 1.4;
+    text-align: center;
+}
+
+.textLine {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #2a3f77;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: inherit;
+    font-weight: inherit;
+    font-weight: 700;
+}
+.textLineMin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #2a3f77;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: inherit;
+    font-weight: inherit;
+    font-size: 28px;
+}
+
+.arrow {
+    color: #e00208;
+    margin-right: 8px;
+}
+
+.highlight {
+    background-color: #e00208;
+    color: white;
+    padding: 0px 12px;
+    border-radius: 4px;
+    font-size: 28px;
+    /* display: inline-block; */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoSection {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.withText {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2a3f77;
+    margin: 0;
+}
+
+.logos {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.daviviendaLogo {
+    font-family: 'Montserrat', sans-serif;
+    color: #e00208;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+.andText {
+    font-family: 'Montserrat', sans-serif;
+    color: #2a3f77;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.colraicesLogo {
+    font-family: 'Montserrat', sans-serif;
+    color: #2a3f77;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.creditText {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #2a3f77;
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.highlightBlue {
+    background-color: #2a3f77;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+}
+
+/* Sección del formulario */
+.formSection {
+    flex: 1;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.formHeader {
+    margin-bottom: 25px;
+}
+
+.formTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin: 0 0 5px 0;
+    text-align: center;
+    font-weight: 800;
+}
+
+.contactText {
+    font-family: 'Montserrat', sans-serif;
+    color: #e00208;
+    /* font-weight: bold; */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #2a3f77;
+    border-radius: 4.68px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #e00208;
+    box-shadow: 0 0 0 2px rgba(224, 2, 8, 0.1);
+}
+
+.phoneGroup {
+    display: flex;
+    gap: 10px;
+}
+
+.countryCode {
+    width: 80px;
+    padding: 12px 10px;
+    border: 2px solid #2a3f77;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+}
+
+.phoneInput {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #2a3f77;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.phoneInput:focus {
+    outline: none;
+    border-color: #e00208;
+    box-shadow: 0 0 0 2px rgba(224, 2, 8, 0.1);
+}
+.countryCode:focus {
+    outline: none;
+    border-color: #e00208;
+    box-shadow: 0 0 0 2px rgba(224, 2, 8, 0.1);
+}
+.checkboxGroup {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Checkbox personalizado */
+.customCheckbox {
+    width: 100%;
+}
+
+.hiddenCheckbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #4d4d4d;
+    line-height: 1.4;
+}
+
+.customCheckboxBox {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 1.4px solid #e00208;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: relative;
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: all 0.2s ease;
+}
+
+.checkmark {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Estado checked */
+.hiddenCheckbox:checked + .checkboxContainer .customCheckboxBox {
+    background-color: #e00208;
+    border-color: #e00208;
+}
+
+.hiddenCheckbox:checked + .checkboxContainer .checkmark {
+    display: block;
+}
+
+/* Estado hover */
+.checkboxContainer:hover .customCheckboxBox {
+    border-color: #c00206;
+    box-shadow: 0 0 0 2px rgba(224, 2, 8, 0.1);
+}
+
+.checkboxText {
+    flex: 1;
+}
+
+.link {
+    /* color: #e00208; */
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    display: inline;
+}
+
+.link:hover {
+    color: #c00206;
+    text-decoration: underline;
+}
+
+.link:focus {
+    outline: 2px solid #e00208;
+    outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 40px;
+    }
+
+    .content {
+        gap: 40px;
+    }
+
+    .mainText {
+        /* font-size: 32px; */
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .textLine {
+        font-size: 32px;
+        font-weight: 800;
+    }
+
+    .highlight {
+        font-weight: 900;
+    }
+
+    .highlightBlue {
+        font-weight: 900;
+    }
+
+    .daviviendaLogo {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .withText {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .andText {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .colraicesLogo {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .creditText {
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        height: auto;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 0;
+    }
+
+    .textSection {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .formSection {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .mainText {
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    .textLine {
+        font-size: 32px;
+        font-weight: 800;
+    }
+
+    .highlight {
+        font-weight: 900;
+    }
+
+    .highlightBlue {
+        font-weight: 900;
+    }
+
+    .daviviendaLogo {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .withText {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .andText {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .colraicesLogo {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .creditText {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .logoSection {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .formSection {
+        padding: 20px;
+    }
+
+    .mainText {
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    .textLine {
+        font-size: 32px;
+        font-weight: 800;
+    }
+
+    .highlight {
+        font-weight: 900;
+    }
+
+    .highlightBlue {
+        font-weight: 900;
+    }
+
+    .daviviendaLogo {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .withText {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .andText {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .colraicesLogo {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .creditText {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .phoneGroup {
+        flex-direction: column;
+    }
+
+    .countryCode {
+        width: 100%;
+    }
+}
