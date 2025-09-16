@@ -46,6 +46,7 @@ export default function ClientPage({ inmRecientes, articles }) {
 
                     {/* Card 2 - Teléfono simple */}
                     <BeneficiosCard
+                        isMiddleCard={true}
                         title="Tu cupo de crédito, en segundos y sin costo."
                         highlightText=""
                         description={
@@ -54,22 +55,25 @@ export default function ClientPage({ inmRecientes, articles }) {
                                     Puedes autogestionarlo en línea en minutos, o hacerlo con el acompañamiento de un
                                     asesor Colraices que te guiará 24h
                                 </p>
-                                <button
-                                    onClick={(e) => {
-                                        e.preventDefault()
-                                        window.open(
-                                            'https://colraices.com/cupocreditodavivienda/?utm_source=chatgpt.com',
-                                            '_blank'
-                                        )
-                                    }}
-                                    className={cardStyles.customButton}
-                                >
-                                    Quiero autogestionarme
-                                    <img src="/globalfestdavivienda/cursor.svg" alt="Cursor" />
-                                </button>
-                                <button className={cardStyles.customButtonLast} onClick={handleOpenModal}>
-                                    Acompañamiento de asesor <img src="/globalfestdavivienda/cursor.svg" alt="Cursor" />
-                                </button>
+                                <div className={cardStyles.buttonsContainer}>
+                                    <button
+                                        onClick={(e) => {
+                                            e.preventDefault()
+                                            window.open(
+                                                'https://colraices.com/cupocreditodavivienda/?utm_source=chatgpt.com',
+                                                '_blank'
+                                            )
+                                        }}
+                                        className={cardStyles.customButton}
+                                    >
+                                        Quiero autogestionarme
+                                        <img src="/globalfestdavivienda/cursor.svg" alt="Cursor" />
+                                    </button>
+                                    <button className={cardStyles.customButtonLast} onClick={handleOpenModal}>
+                                        Acompañamiento de asesor{' '}
+                                        <img src="/globalfestdavivienda/cursor.svg" alt="Cursor" />
+                                    </button>
+                                </div>
                             </div>
                         }
                         imageContent={<img src="/globalfestdavivienda/hand-phone.png" alt="Teléfono" />}

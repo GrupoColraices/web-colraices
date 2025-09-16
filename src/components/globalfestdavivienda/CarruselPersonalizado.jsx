@@ -2,6 +2,7 @@
 import { ContextLikeProvider } from '../../app/casas-apartamentos-colombia-desde-el-exterior/Context/Like'
 import ItemReciente from '../../app/casas-apartamentos-colombia-desde-el-exterior/molecules/ItemReciente'
 import styles from '../../app/globalfestdavivienda/globalfestdavivienda.module.css'
+import carruselStyles from './CarruselPersonalizado.module.css'
 // Importar los estilos del carrusel
 import '../../app/casas-apartamentos-colombia-desde-el-exterior/sass/app.scss'
 
@@ -20,8 +21,8 @@ export default function CarruselPersonalizado({ inmRecientes }) {
                 <p className={styles.descriptionContent}>Gratis, rápido y sin complicaciones.</p>
             </div>
 
-            {/* Solo el carrusel con estilos originales */}
-            <section className="slider-recientes">
+            {/* Carrusel con estilos personalizados de Davivienda */}
+            <section className={`slider-recientes ${carruselStyles.carruselDavivienda}`}>
                 <ItemReciente inmRecientes={inmRecientes} />
             </section>
         </ContextLikeProvider>

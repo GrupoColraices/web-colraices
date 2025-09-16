@@ -4,6 +4,7 @@ export const navbarLinks = [
     { label: 'Encontramos tu casa', href: '/encontramos-tu-inmueble', isExternal: false },
     { label: 'Financia tu casa', href: '/financia-tu-casa', isExternal: false },
     { label: 'Tour de la vivienda', href: '/casas-apartamentos-colombia-desde-el-exterior', isExternal: false },
+    { label: 'Global Fest Davivienda', href: '/globalfestdavivienda', isExternal: false },
     { label: 'Blog', href: '/blog', isExternal: false },
 ]
 
@@ -188,170 +189,165 @@ export const stepTitles = [
 export const logosCompaniesConstruction = [
     {
         id: 1,
-        src: "/img/historia/logo-habi.webp"
+        src: '/img/historia/logo-habi.webp',
     },
     {
         id: 2,
-        src: "/img/historia/logo-gojom.webp"
+        src: '/img/historia/logo-gojom.webp',
     },
     {
         id: 3,
-        src: "/img/historia/logo-grupo-platinium-itimo.webp"
+        src: '/img/historia/logo-grupo-platinium-itimo.webp',
     },
     {
         id: 4,
-        src: "/img/historia/logo-bolivar.webp"
+        src: '/img/historia/logo-bolivar.webp',
     },
     {
         id: 5,
-        src: '/img/historia/logo-buendia.webp'
+        src: '/img/historia/logo-buendia.webp',
     },
     {
         id: 6,
-        src: '/img/historia/logo-camu.png'
+        src: '/img/historia/logo-camu.png',
     },
     {
         id: 7,
-        src: '/img/historia/logo-ciencuadras.png'
+        src: '/img/historia/logo-ciencuadras.png',
     },
     {
         id: 8,
-        src: '/img/historia/logo-colpatria.png'
+        src: '/img/historia/logo-colpatria.png',
     },
     {
         id: 9,
-        src: '/img/historia/logo-contex.png'
+        src: '/img/historia/logo-contex.png',
     },
     {
         id: 10,
-        src: '/img/historia/logo-constructora-centenario.webp'
+        src: '/img/historia/logo-constructora-centenario.webp',
     },
     {
         id: 11,
-        src: '/img/historia/logo-cupula.png'
+        src: '/img/historia/logo-cupula.png',
     },
     {
         id: 12,
-        src: '/img/historia/logo-espacios-libres.webp'
+        src: '/img/historia/logo-espacios-libres.webp',
     },
     {
         id: 13,
-        src: '/img/historia/logo-jaramillo-mora-rojo.webp'
+        src: '/img/historia/logo-jaramillo-mora-rojo.webp',
     },
     {
         id: 14,
-        src: '/img/historia/logo-jm.png'
+        src: '/img/historia/logo-jm.png',
     },
     {
         id: 15,
-        src: '/img/historia/logo-londono-gomez.jpg'
+        src: '/img/historia/logo-londono-gomez.jpg',
     },
     {
         id: 16,
-        src: '/img/historia/logo-optimo.webp'
+        src: '/img/historia/logo-optimo.webp',
     },
     {
         id: 17,
-        src: '/img/historia/logo-prodesa.webp'
+        src: '/img/historia/logo-prodesa.webp',
     },
     {
         id: 18,
-        src: '/img/historia/logo-recinto.png'
+        src: '/img/historia/logo-recinto.png',
     },
-
-
 ]
 
 export const timelineItems = [
     {
         id: 1,
-        year: "2004",
-        text: "Nace Colraices en España y Colombia",
-        position: "left"
+        year: '2004',
+        text: 'Nace Colraices en España y Colombia',
+        position: 'left',
     },
     {
         id: 2,
-        year: "2009",
-        text: "De España a europa: !cruzamos fronteras!",
-        position: "right"
-
+        year: '2009',
+        text: 'De España a europa: !cruzamos fronteras!',
+        position: 'right',
     },
     {
         id: 3,
-        year: "2009",
-        text: "Llegamos a America Latina",
-        position: "left"
-
+        year: '2009',
+        text: 'Llegamos a America Latina',
+        position: 'left',
     },
     {
         id: 4,
-        year: "2017",
-        text: "Nace nuestro modelo de franquicias",
-        position: "right"
+        year: '2017',
+        text: 'Nace nuestro modelo de franquicias',
+        position: 'right',
     },
     {
         id: 5,
-        year: "2019-2020",
-        text: "Rediseñamos Colraices para los desafíos de la era digital.",
-        position: "left"
+        year: '2019-2020',
+        text: 'Rediseñamos Colraices para los desafíos de la era digital.',
+        position: 'left',
     },
     {
         id: 6,
-        year: "2022",
-        text: "Ampliamos nuestro portafolio de servicios",
-        position: "right"
+        year: '2022',
+        text: 'Ampliamos nuestro portafolio de servicios',
+        position: 'right',
     },
     {
         id: 7,
-        year: "2023",
-        text: "Ampliamos nuestra oferta de inmuebles, damos la bienvenida a nuevas constructoras aliadas",
-        position: "left"
-    }
-
+        year: '2023',
+        text: 'Ampliamos nuestra oferta de inmuebles, damos la bienvenida a nuevas constructoras aliadas',
+        position: 'left',
+    },
 ]
 
 export const chooseItems = [
     {
         id: 1,
-        text: "Una de las tasas de interés más bajas en Colombia",
-        icon: "/leasing-bancolombia/icons/rates.svg",
+        text: 'Una de las tasas de interés más bajas en Colombia',
+        icon: '/leasing-bancolombia/icons/rates.svg',
     },
     {
         id: 2,
-        text: "Aplica para colombianos en el exterior",
-        icon: "/leasing-bancolombia/icons/map.svg",
+        text: 'Aplica para colombianos en el exterior',
+        icon: '/leasing-bancolombia/icons/map.svg',
     },
     {
         id: 3,
-        text: "Disponible para vivienda NO VIS",
-        icon: "/leasing-bancolombia/icons/home.svg",
+        text: 'Disponible para vivienda NO VIS',
+        icon: '/leasing-bancolombia/icons/home.svg',
     },
     {
         id: 4,
-        text: "Financia hasta el 80% de tu vivienda",
-        icon: "/leasing-bancolombia/icons/finance.svg",
+        text: 'Financia hasta el 80% de tu vivienda',
+        icon: '/leasing-bancolombia/icons/finance.svg',
     },
     {
         id: 5,
-        text: "Disponible durante 2024 en proyectos financiados por Bancolombia",
-        icon: "/leasing-bancolombia/icons/available.svg",
-    }
+        text: 'Disponible durante 2024 en proyectos financiados por Bancolombia',
+        icon: '/leasing-bancolombia/icons/available.svg',
+    },
 ]
 
 export const cardItems = [
     {
         id: 1,
-        icon: "/leasing-bancolombia/icons/contract.svg",
-        text: "La casa es tuya al finalizar el contrato"
+        icon: '/leasing-bancolombia/icons/contract.svg',
+        text: 'La casa es tuya al finalizar el contrato',
     },
     {
         id: 2,
-        icon: "/leasing-bancolombia/icons/home-circle.svg",
-        text: "Para vivienda nueva y usada"
+        icon: '/leasing-bancolombia/icons/home-circle.svg',
+        text: 'Para vivienda nueva y usada',
     },
     {
         id: 3,
-        icon: "/leasing-bancolombia/icons/map-circle.svg",
-        text: "En proyectos en toda Colombia"
-    }
+        icon: '/leasing-bancolombia/icons/map-circle.svg',
+        text: 'En proyectos en toda Colombia',
+    },
 ]

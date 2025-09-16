@@ -22,7 +22,17 @@
 .bgImg {
     width: 100%;
     height: 100%;
-    /* object-fit: cover; */
+    object-fit: cover;
+}
+
+/* Imagen de escritorio - visible por defecto */
+.bgImgDesktop {
+    display: block;
+}
+
+/* Imagen móvil - oculta por defecto */
+.bgImgMobile {
+    display: none;
 }
 
 .content {
@@ -417,6 +427,15 @@
         padding: 20px;
     }
 
+    /* Cambiar imagen de fondo en tablets */
+    .bgImgDesktop {
+        display: none;
+    }
+
+    .bgImgMobile {
+        display: block;
+    }
+
     .content {
         flex-direction: column;
         gap: 30px;
@@ -426,6 +445,7 @@
     .textSection {
         max-width: 100%;
         text-align: center;
+        margin-top: 20px;
     }
 
     .formSection {
@@ -434,103 +454,133 @@
     }
 
     .mainText {
-        font-size: 32px;
+        font-size: 24px;
         font-weight: bold;
     }
 
     .textLine {
-        font-size: 32px;
+        font-size: 24px;
         font-weight: 800;
+    }
+
+    .textLineMin {
+        font-size: 20px;
     }
 
     .highlight {
         font-weight: 900;
+        font-size: 20px;
     }
 
     .highlightBlue {
         font-weight: 900;
+        font-size: 20px;
     }
 
     .daviviendaLogo {
-        font-size: 18px;
-        font-weight: bold;
-    }
-
-    .withText {
-        font-size: 18px;
-        font-weight: bold;
-    }
-
-    .andText {
         font-size: 16px;
         font-weight: bold;
     }
 
+    .withText {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .andText {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
     .colraicesLogo {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: bold;
     }
 
     .creditText {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 500;
     }
 
     .logoSection {
         justify-content: center;
+        margin: 20px 0;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 15px;
+        padding: 10px 20px;
+    }
+
+    .content {
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .textSection {
+        margin-top: 10px;
     }
 
     .formSection {
-        padding: 20px;
+        padding: 20px 15px;
+        margin: 0 15px;
+        max-width: calc(100% - 30px);
     }
 
     .mainText {
-        font-size: 32px;
+        font-size: 20px;
         font-weight: bold;
     }
 
     .textLine {
-        font-size: 32px;
+        font-size: 20px;
         font-weight: 800;
+    }
+
+    .textLineMin {
+        font-size: 18px;
     }
 
     .highlight {
         font-weight: 900;
+        font-size: 18px;
+        padding: 0px 8px;
     }
 
     .highlightBlue {
         font-weight: 900;
+        font-size: 18px;
+        padding: 2px 6px;
     }
 
     .daviviendaLogo {
-        font-size: 18px;
+        font-size: 14px;
         font-weight: bold;
     }
 
     .withText {
-        font-size: 18px;
+        font-size: 14px;
         font-weight: bold;
     }
 
     .andText {
-        font-size: 16px;
+        font-size: 12px;
         font-weight: bold;
     }
 
     .colraicesLogo {
-        font-size: 18px;
+        font-size: 14px;
         font-weight: bold;
     }
 
     .creditText {
-        font-size: 18px;
+        font-size: 14px;
         font-weight: 500;
+    }
+
+    .logoSection {
+        margin: 15px 0;
     }
 
     .phoneGroup {
@@ -539,5 +589,9 @@
 
     .countryCode {
         width: 100%;
+    }
+
+    .formTitle {
+        font-size: 14px;
     }
 }

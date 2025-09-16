@@ -8,6 +8,7 @@ export default function BeneficiosCard({
     buttons = [],
     highlightText = null,
     gradient = 'linear-gradient(180deg, rgba(42,63,119,0) -10%, #2A3F77 58%, #2A3F77 100%)',
+    isMiddleCard = false,
 }) {
     return (
         <div className={styles.card}>
@@ -18,7 +19,7 @@ export default function BeneficiosCard({
             <div className={styles.overlay} style={{ background: gradient }}></div>
 
             {/* Contenido de texto */}
-            <div className={styles.content}>
+            <div className={isMiddleCard ? styles.contentMiddle : styles.content}>
                 <div className={styles.titleContainer}>
                     <h2 className={styles.title}>
                         <span>{title}</span>

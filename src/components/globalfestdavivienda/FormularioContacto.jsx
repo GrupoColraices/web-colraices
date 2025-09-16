@@ -7,10 +7,20 @@ export default function FormularioContacto() {
         <div className={styles.container}>
             {/* Imagen de fondo */}
             <div className={styles.backgroundImage}>
+                {/* Imagen para desktop */}
                 <img
                     src="/globalfestdavivienda/fondo-pc.jpg"
-                    alt="Fondo Davivienda"
-                    className={styles.bgImg}
+                    alt="Fondo Davivienda Desktop"
+                    className={`${styles.bgImg} ${styles.bgImgDesktop}`}
+                    onError={(e) => {
+                        e.target.style.display = 'none'
+                    }}
+                />
+                {/* Imagen para móvil */}
+                <img
+                    src="/globalfestdavivienda/fondo-movil.svg"
+                    alt="Fondo Davivienda Móvil"
+                    className={`${styles.bgImg} ${styles.bgImgMobile}`}
                     onError={(e) => {
                         e.target.style.display = 'none'
                     }}
