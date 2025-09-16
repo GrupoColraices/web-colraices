@@ -73,6 +73,17 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.input:disabled {
+    background-color: #f9fafb;
+    color: #6b7280;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.input:disabled::placeholder {
+    color: #9ca3af;
+}
+
 /* Estilos específicos para select */
 .selectInput {
     cursor: pointer;
@@ -95,6 +106,13 @@
 .selectInput option:disabled {
     color: #999;
     font-style: italic;
+}
+
+.selectInput:disabled {
+    background-color: #f9fafb;
+    color: #6b7280;
+    cursor: not-allowed;
+    opacity: 0.7;
 }
 
 .phoneGroup {
@@ -198,6 +216,26 @@
     box-shadow: 0 0 0 2px rgba(224, 2, 8, 0.1);
 }
 
+/* Estado deshabilitado del checkbox */
+.hiddenCheckbox:disabled + .checkboxContainer {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.hiddenCheckbox:disabled + .checkboxContainer .customCheckboxBox {
+    background-color: #f9fafb;
+    border-color: #d1d5db;
+}
+
+.hiddenCheckbox:disabled + .checkboxContainer:hover .customCheckboxBox {
+    border-color: #d1d5db;
+    box-shadow: none;
+}
+
+.hiddenCheckbox:disabled + .checkboxContainer .checkboxText {
+    color: #6b7280;
+}
+
 .checkboxText {
     flex: 1;
     font-size: 12px;
@@ -229,35 +267,50 @@
 .submitButton {
     width: 100%;
     padding: 15px;
-    background: #e00208;
-    color: white;
-    border: none;
-    border-radius: 4.68px;
+    background: transparent; /* Sin background por defecto */
+    color: #9ca3af; /* Texto gris claro cuando deshabilitado */
+    border: 2px solid #e5e7eb; /* Borde gris cuando deshabilitado */
+    border-radius: 8px;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    cursor: not-allowed;
+    transition: all 0.3s ease;
     margin-top: 10px;
 }
 
-.submitButton:hover {
-    background: #c00206;
+/* Estado activo - cuando todos los campos están completos */
+.submitButton:not(:disabled) {
+    background: transparent; /* Sin background, solo borde */
+    color: #e00208; /* Texto rojo */
+    border-color: #e00208; /* Borde rojo */
+    cursor: pointer;
 }
 
-.submitButton:active {
-    background: #a00205;
+.submitButton:not(:disabled):hover {
+    background: #e00208; /* Background rojo solo en hover */
+    color: white; /* Texto blanco en hover */
+    border-color: #e00208;
+    box-shadow: 0 4px 8px rgba(224, 2, 8, 0.3);
+    transform: translateY(-1px);
 }
 
+.submitButton:not(:disabled):active {
+    background: #c00206; /* Background rojo más oscuro en active */
+    color: white;
+    border-color: #c00206;
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(224, 2, 8, 0.2);
+}
+
+/* Estado deshabilitado explícito */
 .submitButton:disabled {
-    background: #ccc !important;
-    cursor: not-allowed;
-    opacity: 0.7;
-    color: #666 !important;
-}
-
-.submitButton:disabled:hover {
-    background: #ccc !important;
+    background: transparent !important; /* Sin background cuando deshabilitado */
+    color: #9ca3af !important; /* Texto gris */
+    border-color: #e5e7eb !important; /* Borde gris */
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+    transform: none !important;
 }
 
 /* Vista de éxito */
@@ -319,24 +372,6 @@
     font-size: 13px;
     margin: 0;
     font-weight: 600;
-    text-align: center;
-}
-
-/* Indicador de validación */
-.validationInfo {
-    background: rgba(42, 63, 119, 0.1);
-    border: 1px solid rgba(42, 63, 119, 0.3);
-    border-radius: 4.68px;
-    padding: 8px;
-    margin: 10px 0;
-}
-
-.validationText {
-    color: #2a3f77;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    margin: 0;
-    font-weight: 500;
     text-align: center;
 }
 
@@ -424,6 +459,7 @@
     .submitButton {
         font-size: 14px;
         padding: 12px;
+        border-radius: 6px;
     }
 
     .messageError {
@@ -450,10 +486,6 @@
 
     .errorMessage {
         font-size: 12px;
-    }
-
-    .validationText {
-        font-size: 11px;
     }
 
     .selectInput {

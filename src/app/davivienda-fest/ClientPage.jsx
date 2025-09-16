@@ -41,7 +41,7 @@ export default function ClientPage({ inmRecientes, articles }) {
                                 </span>
                             </div>
                         }
-                        imageContent={<img src="/davivienda-fest/house.svg" alt="Casa" />}
+                        imageContent={<img src="/davivienda-fest/house.png" alt="Casa" />}
                     />
 
                     {/* Card 2 - Teléfono simple */}
@@ -72,7 +72,7 @@ export default function ClientPage({ inmRecientes, articles }) {
                                 </button>
                             </div>
                         }
-                        imageContent={<img src="/davivienda-fest/hand-phone.svg" alt="Teléfono" />}
+                        imageContent={<img src="/davivienda-fest/hand-phone.png" alt="Teléfono" />}
                     />
 
                     {/* Card 3 - Edificios */}
@@ -88,7 +88,7 @@ export default function ClientPage({ inmRecientes, articles }) {
                                 </p>
                             </div>
                         }
-                        imageContent={<img src="/davivienda-fest/hand-house.svg" alt="Edificios" />}
+                        imageContent={<img src="/davivienda-fest/hand-house.png" alt="Edificios" />}
                     />
                 </div>
             </div>

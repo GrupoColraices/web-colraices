@@ -18,6 +18,7 @@ export default function FormularioContactoDatos({
         handleSubmit,
         control,
         formState: { errors },
+        watch,
     } = useForm({
         defaultValues: {
             nombres: '',
@@ -28,6 +29,24 @@ export default function FormularioContactoDatos({
             aceptaTerminos: false,
         },
     })
+
+    // Observar todos los campos para determinar si el formulario está completo
+    const watchedFields = watch()
+
+    // Función para verificar si todos los campos están completos
+    const isFormComplete = () => {
+        const { nombres, apellidos, email, telefono, interes, aceptaTerminos } = watchedFields
+        return (
+            nombres?.trim() &&
+            apellidos?.trim() &&
+            email?.trim() &&
+            telefono?.trim() &&
+            interes?.trim() &&
+            aceptaTerminos &&
+            selectedCountry &&
+            Object.keys(errors).length === 0
+        )
+    }
 
     const [selectedCountry, setSelectedCountry] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
@@ -138,7 +157,7 @@ export default function FormularioContactoDatos({
                     <p className={styles.successMessage}>
                         Con este primer paso, tu futuro en Colombia ya empezó a tomar forma. En breve te contactaremos.
                     </p>
-                    {urlSafe && (
+                    {/* {urlSafe && (
                         <a
                             href={`${process.env.NEXT_PUBLIC_CDC_ENDPOINT}?data=${urlSafe}`}
                             target="_blank"
@@ -147,7 +166,7 @@ export default function FormularioContactoDatos({
                         >
                             Descubre tu cupo de crédito en 2 minutos
                         </a>
-                    )}
+                    )} */}
                 </div>
             </div>
         )
@@ -172,6 +191,7 @@ export default function FormularioContactoDatos({
                         placeholder="Nombres"
                         className={styles.input}
                         maxLength={25}
+                        disabled={isLoading}
                         {...register('nombres', {
                             required: 'Este campo es requerido',
                             minLength: {
@@ -190,6 +210,7 @@ export default function FormularioContactoDatos({
                         placeholder="Apellidos"
                         className={styles.input}
                         maxLength={30}
+                        disabled={isLoading}
                         {...register('apellidos', {
                             required: 'Este campo es requerido',
                             minLength: {
@@ -208,6 +229,7 @@ export default function FormularioContactoDatos({
                         placeholder="Correo electrónico"
                         className={styles.input}
                         maxLength={50}
+                        disabled={isLoading}
                         {...register('email', {
                             required: 'Este campo es requerido',
                             pattern: {
@@ -243,12 +265,15 @@ export default function FormularioContactoDatos({
                             <PhoneInput
                                 {...field}
                                 onChange={(phone, meta) => {
-                                    const countryInSpanish = getCountryNameInSpanish(meta?.country?.iso2)
-                                    setSelectedCountry(countryInSpanish)
-                                    field.onChange(phone)
+                                    if (!isLoading) {
+                                        const countryInSpanish = getCountryNameInSpanish(meta?.country?.iso2)
+                                        setSelectedCountry(countryInSpanish)
+                                        field.onChange(phone)
+                                    }
                                 }}
                                 placeholder="Teléfono"
                                 className={styles.phoneInputAdvanced}
+                                disabled={isLoading}
                                 style={{
                                     '--react-international-phone-text-color': '#333',
                                     '--react-international-phone-selected-dropdown-item-background-color':
@@ -266,6 +291,7 @@ export default function FormularioContactoDatos({
                 <div className={styles.fieldContainer}>
                     <select
                         className={`${styles.input} ${styles.selectInput}`}
+                        disabled={isLoading}
                         {...register('interes', {
                             required: 'Por favor, selecciona tu horario preferido de contacto',
                         })}
@@ -289,6 +315,7 @@ export default function FormularioContactoDatos({
                             type="checkbox"
                             id="terms"
                             className={styles.hiddenCheckbox}
+                            disabled={isLoading}
                             {...register('aceptaTerminos', { required: 'Debes aceptar el tratamiento de datos' })}
                         />
                         <label htmlFor="terms" className={styles.checkboxContainer}>
@@ -313,21 +340,8 @@ export default function FormularioContactoDatos({
                     </div>
                 )}
 
-                {/* Indicador de campos faltantes */}
-                {Object.keys(errors).length > 0 && (
-                    <div className={styles.validationInfo}>
-                        <p className={styles.validationText}>
-                            Por favor, completa todos los campos obligatorios para continuar.
-                        </p>
-                    </div>
-                )}
-
                 {/* Botón de envío */}
-                <button
-                    type="submit"
-                    className={styles.submitButton}
-                    disabled={isLoading || Object.keys(errors).length > 0}
-                >
+                <button type="submit" className={styles.submitButton} disabled={isLoading || !isFormComplete()}>
                     {isLoading ? 'Enviando...' : 'Enviar'}
                 </button>
             </form>
