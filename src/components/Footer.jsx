@@ -15,7 +15,29 @@ import { usePathname } from 'next/navigation'
 
 export const Footer = () => {
     const router = usePathname()
-    const linkWhatsapp = "https://api.whatsapp.com/send/?phone=%2B15136479405&text=Hola%2C%20soy%20colombiano%20en%20Espa%C3%B1a%20y%20me%20gustar%C3%ADa%20obtener%20los%20beneficios%20del%20Tour%20de%20la%20Vivienda.&type=phone_number&app_absent=0"
+
+    // Mensajes personalizados por página
+    const getWhatsAppMessage = () => {
+        const pageMessages = {
+            '/globalfestdavivienda': 'Hola, estoy interesado en el Global Fest de Davivienda y quiero más información',
+            // Aquí se pueden agregar más páginas fácilmente:
+            // '/otra-pagina': "Mensaje específico para otra página",
+        }
+
+        // Buscar si la ruta actual coincide con alguna página personalizada
+        const customMessage = Object.keys(pageMessages).find((path) => router.includes(path))
+
+        if (customMessage) {
+            return pageMessages[customMessage]
+        }
+
+        // Mensaje por defecto para otras páginas
+        return 'Hola, soy colombiano en España y me gustaría obtener los beneficios del Tour de la Vivienda.'
+    }
+
+    const linkWhatsapp = `https://api.whatsapp.com/send/?phone=%2B15136479405&text=${encodeURIComponent(
+        getWhatsAppMessage()
+    )}&type=phone_number&app_absent=0`
     const paths = ['filtrados', 'inmueble']
     const showButtonUP = paths.some((path) => router.includes(`/casas-apartamentos-colombia-desde-el-exterior/${path}`))
     const showButton = router.includes('/casas-apartamentos-colombia-desde-el-exterior')

@@ -1,0 +1,517 @@
+/* Formulario de contacto reutilizable */
+.formSection {
+    flex: 1;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.formHeader {
+    margin-bottom: 25px;
+}
+
+.formTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin: 0 0 5px 0;
+    text-align: center;
+    font-weight: 800;
+}
+
+.titleText {
+    color: #2a3f77;
+}
+
+.contactText {
+    color: #e00208;
+    font-weight: 800;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.fieldContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.messageError {
+    color: #e00208;
+    font-size: 12px;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #2a3f77;
+    border-radius: 4.68px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #e00208;
+    box-shadow: 0 0 0 2px rgba(224, 2, 8, 0.1);
+}
+
+.input::placeholder {
+    color: #999;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.input:disabled {
+    background-color: #f9fafb;
+    color: #6b7280;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.input:disabled::placeholder {
+    color: #9ca3af;
+}
+
+/* Estilos específicos para select */
+.selectInput {
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23999" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.selectInput option {
+    color: #333;
+    background: white;
+    font-family: 'Montserrat', sans-serif;
+    padding: 8px;
+}
+
+.selectInput option:disabled {
+    color: #999;
+    font-style: italic;
+}
+
+.selectInput:disabled {
+    background-color: #f9fafb;
+    color: #6b7280;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.phoneGroup {
+    display: flex;
+    gap: 10px;
+}
+
+.countryCode {
+    width: 80px;
+    padding: 12px 8px;
+    border: 2px solid #2a3f77;
+    border-radius: 4.68px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #333;
+    background: white;
+    box-sizing: border-box;
+}
+
+.countryCode:focus {
+    outline: none;
+    border-color: #e00208;
+    box-shadow: 0 0 0 2px rgba(224, 2, 8, 0.1);
+}
+
+.phoneInput {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #2a3f77;
+    border-radius: 4.68px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.phoneInput:focus {
+    outline: none;
+    border-color: #e00208;
+    box-shadow: 0 0 0 2px rgba(224, 2, 8, 0.1);
+}
+
+.checkboxGroup {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.customCheckbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.hiddenCheckbox {
+    display: none;
+}
+
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.customCheckboxBox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #2a3f77;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.checkmark {
+    display: none;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Estado checked */
+.hiddenCheckbox:checked + .checkboxContainer .customCheckboxBox {
+    background-color: #e00208;
+    border-color: #e00208;
+}
+
+.hiddenCheckbox:checked + .checkboxContainer .checkmark {
+    display: block;
+}
+
+/* Estado hover */
+.checkboxContainer:hover .customCheckboxBox {
+    border-color: #c00206;
+    box-shadow: 0 0 0 2px rgba(224, 2, 8, 0.1);
+}
+
+/* Estado deshabilitado del checkbox */
+.hiddenCheckbox:disabled + .checkboxContainer {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.hiddenCheckbox:disabled + .checkboxContainer .customCheckboxBox {
+    background-color: #f9fafb;
+    border-color: #d1d5db;
+}
+
+.hiddenCheckbox:disabled + .checkboxContainer:hover .customCheckboxBox {
+    border-color: #d1d5db;
+    box-shadow: none;
+}
+
+.hiddenCheckbox:disabled + .checkboxContainer .checkboxText {
+    color: #6b7280;
+}
+
+.checkboxText {
+    flex: 1;
+    font-size: 12px;
+    color: #333;
+    line-height: 1.4;
+}
+
+.link {
+    background: none;
+    border: none;
+    color: #e00208;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+.link:hover {
+    color: #c00206;
+}
+
+.link:focus {
+    outline: 2px solid #e00208;
+    outline-offset: 2px;
+}
+
+.submitButton {
+    width: 100%;
+    padding: 15px;
+    background: transparent; /* Sin background por defecto */
+    color: #9ca3af; /* Texto gris claro cuando deshabilitado */
+    border: 2px solid #e5e7eb; /* Borde gris cuando deshabilitado */
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: not-allowed;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+/* Estado activo - cuando todos los campos están completos */
+.submitButton:not(:disabled) {
+    background: transparent; /* Sin background, solo borde */
+    color: #e00208; /* Texto rojo */
+    border-color: #e00208; /* Borde rojo */
+    cursor: pointer;
+}
+
+.submitButton:not(:disabled):hover {
+    background: #e00208; /* Background rojo solo en hover */
+    color: white; /* Texto blanco en hover */
+    border-color: #e00208;
+    box-shadow: 0 4px 8px rgba(224, 2, 8, 0.3);
+    transform: translateY(-1px);
+}
+
+.submitButton:not(:disabled):active {
+    background: #c00206; /* Background rojo más oscuro en active */
+    color: white;
+    border-color: #c00206;
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(224, 2, 8, 0.2);
+}
+
+/* Estado deshabilitado explícito */
+.submitButton:disabled {
+    background: transparent !important; /* Sin background cuando deshabilitado */
+    color: #9ca3af !important; /* Texto gris */
+    border-color: #e5e7eb !important; /* Borde gris */
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* Vista de éxito */
+.successView {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 30px;
+    min-height: 250px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.successTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #2a3f77;
+    margin: 0 auto 20px auto;
+    font-weight: 700;
+    max-width: 100%;
+    text-align: center;
+    width: 100%;
+}
+
+.successSubtitle {
+    color: #e00208;
+    font-weight: 800;
+}
+
+.successMessage {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+    margin: 0 auto 20px auto;
+    max-width: 100%;
+    text-align: center;
+    width: 100%;
+}
+
+.creditButton {
+    display: inline-block;
+    background: #e00208;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 4.68px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.creditButton:hover {
+    background: #c00206;
+}
+
+/* Mensajes de error */
+.errorContainer {
+    background: rgba(224, 2, 8, 0.1);
+    border: 1px solid #e00208;
+    border-radius: 4.68px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.errorMessage {
+    color: #e00208;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    margin: 0;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Estilos para teléfono internacional */
+.phoneContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Personalización del componente PhoneInput */
+.phoneInputAdvanced {
+    width: 100%;
+}
+
+/* Sobrescribir estilos por defecto del PhoneInput */
+.phoneInputAdvanced :global(.react-international-phone-input-container) {
+    /* border: 2px solid #2a3f77 !important; */
+    /* border-radius: 4.68px !important; */
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 14px !important;
+    background: white !important;
+    box-sizing: border-box !important;
+}
+
+/* Estilos adicionales para asegurar que se apliquen */
+.phoneContainer :global(.react-international-phone-input-container) {
+    border: 2px solid #2a3f77 !important;
+    border-radius: 4.68px !important;
+}
+
+.phoneInputAdvanced :global(.react-international-phone-input-container:focus-within) {
+    border-color: #e00208 !important;
+    box-shadow: 0 0 0 2px rgba(224, 2, 8, 0.1) !important;
+}
+
+.phoneContainer :global(.react-international-phone-input-container:focus-within) {
+    border-color: #e00208 !important;
+    box-shadow: 0 0 0 2px rgba(224, 2, 8, 0.1) !important;
+}
+
+.phoneInputAdvanced :global(.react-international-phone-input) {
+    border: none !important;
+    outline: none !important;
+    padding: 12px 15px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 14px !important;
+    color: #333 !important;
+    background: transparent !important;
+}
+
+.phoneInputAdvanced :global(.react-international-phone-input::placeholder) {
+    color: #999 !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .formSection {
+        max-width: 100%;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .formTitle {
+        font-size: 14px;
+    }
+
+    .input,
+    .phoneInput {
+        font-size: 12px;
+        padding: 10px 12px;
+    }
+
+    .countryCode {
+        width: 70px;
+        padding: 10px 6px;
+        font-size: 12px;
+    }
+
+    .checkboxText {
+        font-size: 11px;
+    }
+
+    .submitButton {
+        font-size: 14px;
+        padding: 12px;
+        border-radius: 6px;
+    }
+
+    .messageError {
+        font-size: 11px;
+    }
+
+    .phoneInputAdvanced :global(.react-international-phone-input) {
+        padding: 10px 12px !important;
+        font-size: 12px !important;
+    }
+
+    .successView {
+        padding: 40px 20px;
+        min-height: 200px;
+    }
+
+    .successTitle {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .successMessage {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .creditButton {
+        font-size: 13px;
+        padding: 12px 16px;
+    }
+
+    .errorMessage {
+        font-size: 12px;
+    }
+
+    .selectInput {
+        font-size: 12px;
+        padding: 10px 12px;
+        background-position: right 8px center;
+        background-size: 10px;
+    }
+}

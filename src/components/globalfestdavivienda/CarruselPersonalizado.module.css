@@ -1,0 +1,114 @@
+/* ===================================================== */
+/* PERSONALIZACIONES DEL CARRUSEL PARA DAVIVIENDA FEST */
+/* ===================================================== */
+
+/* Contenedor específico para el carrusel personalizado */
+.carruselDavivienda {
+    /* Flechas de navegación - COLOR ROJO */
+    --swiper-navigation-color: #e00208;
+}
+
+.carruselDavivienda :global(.swiper-button-next),
+.carruselDavivienda :global(.swiper-button-prev) {
+    color: #e00208 !important;
+}
+
+.carruselDavivienda :global(.swiper-button-next::after),
+.carruselDavivienda :global(.swiper-button-prev::after) {
+    color: #e00208 !important;
+    font-weight: 800 !important;
+}
+
+/* Títulos de propiedades - COLOR ROJO */
+.carruselDavivienda :global(.itemReciente__content--main--title) {
+    color: #e00208 !important;
+}
+
+/* Precios de propiedades - COLOR AZUL */
+.carruselDavivienda :global(.itemReciente__content--main--precio) {
+    color: #2a3f77 !important;
+}
+
+/* Precio de feria - mantener el estilo pero con azul de fondo */
+.carruselDavivienda :global(.itemReciente__content--main--precio-feria) {
+    background-color: #2a3f77 !important;
+    color: white !important;
+}
+
+/* Hover effects para las flechas */
+.carruselDavivienda :global(.swiper-button-next:hover),
+.carruselDavivienda :global(.swiper-button-prev:hover) {
+    color: #c00206 !important;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+/* Paginación personalizada */
+.carruselDavivienda :global(.swiper-pagination-bullet-active) {
+    background-color: #e00208 !important;
+}
+
+/* Efecto de gradiente rojo en las imágenes - intensidad alta sin curva */
+.carruselDavivienda :global(.itemReciente__img--img) {
+    position: relative;
+    overflow: hidden;
+}
+
+.carruselDavivienda :global(.itemReciente__img--img::after) {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+    height: calc(100% + 50px);
+    background: linear-gradient(180deg, rgba(224, 2, 8, 0) 0%, rgba(224, 2, 8, 0.85) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Asegurar que el contenido sobre la imagen tenga z-index mayor */
+.carruselDavivienda :global(.itemReciente__img--footer) {
+    z-index: 2 !important;
+}
+
+/* Hover effect en las imágenes para intensificar el gradiente */
+.carruselDavivienda :global(.itemReciente__main:hover .itemReciente__img--img::after) {
+    background: linear-gradient(180deg, rgba(224, 2, 8, 0) 0%, rgba(224, 2, 8, 0.9) 100%);
+    transition: background 0.3s ease;
+    bottom: -50px;
+    height: calc(100% + 50px);
+}
+
+/* Responsive - ajustes para móviles */
+@media (max-width: 768px) {
+    .carruselDavivienda :global(.swiper-button-next),
+    .carruselDavivienda :global(.swiper-button-prev) {
+        color: #e00208 !important;
+    }
+
+    .carruselDavivienda :global(.swiper-button-next::after),
+    .carruselDavivienda :global(.swiper-button-prev::after) {
+        font-size: 3rem !important;
+    }
+
+    /* Gradiente completo en móviles */
+    .carruselDavivienda :global(.itemReciente__img--img::after) {
+        bottom: -30px;
+        height: calc(100% + 30px);
+        background: linear-gradient(180deg, rgba(224, 2, 8, 0) 0%, rgba(224, 2, 8, 0.8) 100%);
+    }
+}
+
+@media (max-width: 480px) {
+    .carruselDavivienda :global(.swiper-button-next::after),
+    .carruselDavivienda :global(.swiper-button-prev::after) {
+        font-size: 2.5rem !important;
+    }
+
+    /* Gradiente completo en pantallas muy pequeñas */
+    .carruselDavivienda :global(.itemReciente__img--img::after) {
+        bottom: -20px;
+        height: calc(100% + 20px);
+        background: linear-gradient(180deg, rgba(224, 2, 8, 0) 0%, rgba(224, 2, 8, 0.75) 100%);
+    }
+}
