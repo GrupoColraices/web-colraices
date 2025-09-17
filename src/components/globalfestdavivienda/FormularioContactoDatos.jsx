@@ -324,7 +324,16 @@ export default function FormularioContactoDatos({
                             </span>
                             <span className={styles.checkboxText}>
                                 He leído y aceptado el{' '}
-                                <button type="button" className={styles.link}>
+                                <button
+                                    onClick={() =>
+                                        window.open(
+                                            'https://drive.google.com/file/d/14B-f-Y-ks_cOqjUXLBGGtsrzeQFnFOMu/view',
+                                            '_blank'
+                                        )
+                                    }
+                                    type="button"
+                                    className={styles.link}
+                                >
                                     tratamiento de mis datos personales
                                 </button>
                             </span>

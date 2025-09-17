@@ -57,10 +57,7 @@ export default function ClientPage({ inmRecientes, articles }) {
                                 <button
                                     onClick={(e) => {
                                         e.preventDefault()
-                                        window.open(
-                                            'https://colraices.com/cupocreditodavivienda/?utm_source=chatgpt.com',
-                                            '_blank'
-                                        )
+                                        window.open('https://colraices.com/cupocreditodavivienda/', '_blank')
                                     }}
                                     className={cardStyles.customButton}
                                 >
