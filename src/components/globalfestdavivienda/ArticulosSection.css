@@ -1,0 +1,179 @@
+/* ========================================= */
+/* ESTILOS PERSONALIZADOS DAVIVIENDA FEST   */
+/* Solo afectan a .davivienda-articles       */
+/* ========================================= */
+
+/* Override para alinear artículos con el resto de componentes Davivienda */
+.davivienda-articles {
+    max-width: 122rem !important; /* Mismo que slider-recientes */
+    margin: 4rem auto !important; /* Consistente con el carrusel */
+}
+
+/* Ajustar padding en responsive para que coincida */
+@media (min-width: 930px) {
+    .davivienda-articles .article-container {
+        padding: 50px 0 0 0 !important;
+    }
+}
+
+@media (max-width: 929px) {
+    .davivienda-articles .article-container {
+        padding: 50px 20px 0 20px !important; /* Padding lateral en móvil */
+    }
+}
+
+/* ========================================= */
+/* PERSONALIZACIONES ADICIONALES            */
+/* Agrega aquí tus estilos personalizados   */
+/* ========================================= */
+
+/* Personalizar título "Artículos" - ROJO como en la imagen */
+.davivienda-articles section h2 {
+    color: #e00208 !important; /* ROJO Davivienda */
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    text-align: left !important; /* No centrado */
+    padding-bottom: 10px !important;
+    margin-bottom: 0 !important;
+}
+
+/* Personalizar la línea decorativa - alineada a la izquierda */
+.davivienda-articles .line1 {
+    margin: 0 0 30px 0 !important; /* Alineada a la izquierda, no centrada */
+}
+
+.davivienda-articles .line1 .line2 {
+    background: #e00208 !important; /* Línea roja */
+    height: 2px !important;
+}
+
+/* Ejemplo: Personalizar el grid de artículos */
+.davivienda-articles .container-cards-article {
+    gap: 30px; /* Más espacio entre cards */
+}
+
+/* NO personalizar las cards - mantener diseño original (sin bordes, sombras o efectos) */
+
+/* SOLO cambios de colores - mantener layout original */
+
+/* Personalizar títulos de las cards - ROJO como en la imagen */
+.davivienda-articles .card-article-large .texts .title,
+.davivienda-articles .card-article-medium .texts .title,
+.davivienda-articles .card-article-small .texts .title {
+    color: #e00208 !important; /* ROJO Davivienda */
+    font-weight: 600 !important; /* Peso original */
+    margin: 0 !important; /* Margin original */
+}
+
+/* Personalizar descripción de las cards - mantener original */
+.davivienda-articles .card-article-large .texts .description,
+.davivienda-articles .card-article-medium .texts .description,
+.davivienda-articles .card-article-small .texts .description {
+    margin: 0.5rem 0 !important; /* Margin original */
+    line-height: normal !important; /* Line-height original */
+}
+
+/* Personalizar autor/fecha - AZUL DAVIVIENDA y BOLD */
+.davivienda-articles .card-article-large .texts .author,
+.davivienda-articles .card-article-medium .texts .author,
+.davivienda-articles .card-article-small .texts .author {
+    color: #2a3f77 !important; /* AZUL Davivienda */
+    font-weight: 700 !important; /* BOLD como solicitado */
+    margin: 0 !important; /* Margin original */
+}
+
+/* Mantener spacing original de las cards - solo ajustar mínimos necesarios */
+.davivienda-articles .card-article-large .texts,
+.davivienda-articles .card-article-medium .texts,
+.davivienda-articles .card-article-small .texts {
+    gap: 2px !important; /* Gap original del diseño */
+}
+
+/* Personalizar paginación */
+.davivienda-articles .container-pagination {
+    padding-top: 50px !important;
+    padding-bottom: 60px !important; /* Espacio debajo del paginador */
+    display: flex !important;
+    justify-content: center !important;
+}
+
+/* Estilos personalizados para la paginación de Davivienda */
+.davivienda-articles .pagination {
+    justify-content: center !important;
+    display: flex !important;
+    padding-left: 0 !important;
+    list-style: none !important;
+    margin: 0 !important;
+    gap: 8px !important;
+}
+
+/* Estilos base para todos los botones de paginación */
+.davivienda-articles .pagination button,
+.davivienda-articles .pagination .page-item .page-link {
+    position: relative !important;
+    display: block !important;
+    margin: 0 0.5rem !important;
+    min-height: 40px !important;
+    min-width: 40px !important;
+    border-radius: 5px !important;
+    border: 1px solid #e00208 !important; /* Rojo Davivienda */
+    text-align: center !important;
+    line-height: 40px !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #e00208 !important; /* Texto rojo */
+    background: white !important;
+    box-shadow: 2px 2px 6px 0px rgba(224, 2, 8, 0.25) !important; /* Sombra roja */
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+/* Efecto hover */
+.davivienda-articles .pagination button:hover,
+.davivienda-articles .pagination .page-item .page-link:hover {
+    background: #f5f5f5 !important;
+    border-color: #c00206 !important;
+    color: #c00206 !important;
+}
+
+/* Página activa/seleccionada */
+.davivienda-articles .pagination button[aria-current='page'],
+.davivienda-articles .pagination .page-item.active .page-link {
+    background: #e00208 !important; /* Fondo rojo */
+    color: white !important; /* Texto blanco */
+    border-color: #e00208 !important;
+}
+
+/* Botones deshabilitados */
+.davivienda-articles .pagination .page-item.disabled .page-link {
+    color: #6c757d !important;
+    background: #f8f9fa !important;
+    border-color: #dee2e6 !important;
+    pointer-events: none !important;
+    cursor: auto !important;
+}
+
+/* Responsive */
+@media (min-width: 930px) {
+    .davivienda-articles .pagination button,
+    .davivienda-articles .pagination .page-item .page-link {
+        min-width: 43px !important;
+        min-height: 37px !important;
+        font-size: 22px !important;
+        line-height: 37px !important;
+    }
+}
+
+/* RESPONSIVE: Mantener personalizaciones en todos los breakpoints */
+@media (min-width: 768px) {
+    .davivienda-articles .container-cards-article {
+        gap: 25px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .davivienda-articles .container-cards-article {
+        gap: 35px;
+    }
+}
