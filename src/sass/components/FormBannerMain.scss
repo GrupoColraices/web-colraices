@@ -8,7 +8,8 @@ div.container-banner-main {
     border-radius: 20px;
     background: rgba(241, 241, 241, 0.75);
     backdrop-filter: blur(5px);
-    z-index: 2;
+    z-index: 9999;
+    pointer-events: auto;
 
     h2 {
         max-width: 200px;
