@@ -5,7 +5,6 @@ section.container-credit-request {
     margin-top: 6rem;
 
     div.content-credit-request {
-
         div.content-text {
             width: 96%;
             display: flex;
@@ -13,7 +12,7 @@ section.container-credit-request {
             row-gap: 0.5rem;
             border-radius: 0px 70px 0px 0px;
             padding: 3rem 2rem;
-            background-image: url("/gestionamos-tu-credito/img/background-credit-request.webp");
+            background-image: url('/gestionamos-tu-credito/img/background-credit-request.webp');
             background-size: cover;
             background-repeat: no-repeat;
 
@@ -80,7 +79,6 @@ section.container-credit-request {
                     width: clamp(330px, 90%, 420px);
                 }
             }
-
         }
     }
 
@@ -94,7 +92,6 @@ section.container-credit-request {
     }
 
     @include laptop {
-
         div.content-credit-request {
             width: 100%;
             min-height: 690px;
@@ -102,7 +99,7 @@ section.container-credit-request {
             justify-content: space-around;
             align-items: center;
             border-radius: 0px 70px 0px 0px;
-            background-image: url("/gestionamos-tu-credito/img/background-credit-request.webp");
+            background-image: url('/gestionamos-tu-credito/img/background-credit-request.webp');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -129,6 +126,7 @@ section.container-credit-request {
                     height: 570px;
                     width: 310px;
                     display: block;
+                    margin-right: -26px;
                 }
 
                 div.content-items {
@@ -145,12 +143,11 @@ section.container-credit-request {
                         width: 100%;
                     }
 
-                    p:nth-of-type(-n+2) {
+                    p:nth-of-type(-n + 2) {
                         max-width: 300px;
                     }
                 }
             }
-
         }
 
         .partners-managing-your-credit {

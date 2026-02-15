@@ -1,13 +1,13 @@
-'use client';
-import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Virtual } from 'swiper';
-import 'swiper/css/virtual';
-import '@/sass/components/SliderLogos.scss';
+'use client'
+import Image from 'next/image'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Navigation, Virtual } from 'swiper'
+import 'swiper/css/virtual'
+import '@/sass/components/SliderLogos.scss'
 
 export const SliderLogos = () => {
     const constructionCompanies = [
-        '/icons/bancolombia_icon.svg',
+        // '/icons/bancolombia_icon.svg',
         '/icons/davivienda_icon.svg',
         '/icons/bancounion_icon.svg',
         '/img/historia/logo-camacol-valle.webp',
@@ -29,7 +29,7 @@ export const SliderLogos = () => {
         '/img/historia/logo-constructora-centenario.webp',
         '/img/historia/logo-cupula.png',
         '/img/historia/logo-jm.png',
-    ];
+    ]
 
     return (
         <Swiper
@@ -52,7 +52,7 @@ export const SliderLogos = () => {
                 930: {
                     slidesPerView: 7,
                     spaceBetween: 20,
-                    centeredSlides: false
+                    centeredSlides: false,
                 },
             }}
             virtual={true}
@@ -63,6 +63,5 @@ export const SliderLogos = () => {
                 </SwiperSlide>
             ))}
         </Swiper>
-
-    );
-};
+    )
+}

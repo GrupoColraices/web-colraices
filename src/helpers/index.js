@@ -10,12 +10,12 @@ export const navbarLinks = [
 
 //!Home banner section partners logos
 export const partners = [
-    {
-        id: 1,
-        icon: '/icons/bancolombia_gray_icon.svg',
-        hover: '/icons/bancolombia_icon.svg',
-        name: 'Bancolombia',
-    },
+    // {
+    //     id: 1,
+    //     icon: '/icons/bancolombia_gray_icon.svg',
+    //     hover: '/icons/bancolombia_icon.svg',
+    //     name: 'Bancolombia',
+    // },
     {
         id: 2,
         icon: '/icons/davivienda_gray_icon.svg',

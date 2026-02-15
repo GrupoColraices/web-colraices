@@ -1,4 +1,3 @@
-
 import TitleSection from '../components/TitleSection'
 import ItemEligenos from '../molecules/ItemEligenos'
 
@@ -23,20 +22,21 @@ export const Eligenos = () => {
         '/img/historia/logo-constructora-centenario.webp',
         '/img/historia/logo-cupula.png',
         '/img/historia/logo-jm.png',
-
-
-
     ]
     return (
-        <main className='eligenos'>
-            <div className='section__title'>
+        <main className="eligenos">
+            <div className="section__title">
                 <TitleSection title={'Por qué elegirnos'} shadow={true}>
-                    Encontrarás un servicio de calidad que te acompañará de forma personalizada en el proceso de comprar tu casa en Colombia desde el exterior. Te ofrecemos las mejores oportunidades para invertir y crecer económicamente.
+                    Encontrarás un servicio de calidad que te acompañará de forma personalizada en el proceso de comprar
+                    tu casa en Colombia desde el exterior. Te ofrecemos las mejores oportunidades para invertir y crecer
+                    económicamente.
                 </TitleSection>
             </div>
-            <div className='eligenos__container'>
+            <div className="eligenos__container">
                 <ItemEligenos
-                    description={'Invierte de forma segura y confiable en nuestros proyectos inmobiliarios, respaldados por importantes constructoras aliadas en Colombia.'}
+                    description={
+                        'Invierte de forma segura y confiable en nuestros proyectos inmobiliarios, respaldados por importantes constructoras aliadas en Colombia.'
+                    }
                     img={'/portal-inmobiliario/img/eligenos/aliados.webp'}
                     slideshow={constructionCompanies}
                     slidesView={2}
@@ -47,7 +47,9 @@ export const Eligenos = () => {
                     <span>Nuestras</span> constructoras aliadas
                 </ItemEligenos>
                 <ItemEligenos
-                    description={'Nuestros inmuebles nuevos y usados pasan por un riguroso proceso de verificación para garantizar su calidad y características específicas. Con Colraices, invierte con confianza y seguridad en la propiedad que deseas.'}
+                    description={
+                        'Nuestros inmuebles nuevos y usados pasan por un riguroso proceso de verificación para garantizar su calidad y características específicas. Con Colraices, invierte con confianza y seguridad en la propiedad que deseas.'
+                    }
                     img={'/portal-inmobiliario/img/eligenos/inmuebles.webp'}
                     customClass={'housing'}
                     fair={true}
@@ -56,20 +58,19 @@ export const Eligenos = () => {
                     <span>mejores condiciones</span>
                 </ItemEligenos>
                 <ItemEligenos
-                    description={'Accede fácilmente a créditos de nuestros bancos aliados reconocidos a nivel nacional e internacional por sus beneficios y trayectoria en apoyo a los colombianos en el exterior. Confía en Colraices para hacer una inversión segura y exitosa.'}
-                    img={'/portal-inmobiliario/img/eligenos/constructoras.webp'}
-                    slideshow={['/portal-inmobiliario/img/aliados/2.webp', '/portal-inmobiliario/img/aliados/1.svg', '/portal-inmobiliario/img/aliados/11.webp']
+                    description={
+                        'Accede fácilmente a créditos de nuestros bancos aliados reconocidos a nivel nacional e internacional por sus beneficios y trayectoria en apoyo a los colombianos en el exterior. Confía en Colraices para hacer una inversión segura y exitosa.'
                     }
+                    img={'/portal-inmobiliario/img/eligenos/constructoras.webp'}
+                    slideshow={['/portal-inmobiliario/img/aliados/1.svg', '/portal-inmobiliario/img/aliados/11.webp']}
                     slidesView={3}
                     slidesViewDesktop={3}
                     spaceBetween={10}
                 >
                     Nuestros aliados
                     <span>financieros</span>
-
                 </ItemEligenos>
             </div>
-
         </main>
     )
 }
