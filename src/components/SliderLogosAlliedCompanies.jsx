@@ -1,13 +1,13 @@
-'use client';
-import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Virtual } from 'swiper';
-import 'swiper/css/virtual';
-import '@/sass/components/SliderLogos.scss';
+'use client'
+import Image from 'next/image'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Navigation, Virtual } from 'swiper'
+import 'swiper/css/virtual'
+import '@/sass/components/SliderLogos.scss'
 
 export const SliderLogosAllied = () => {
     const fairCompanies = [
-        '/icons/bancolombia_icon.svg',
+        // '/icons/bancolombia_icon.svg',
         '/icons/davivienda_icon.svg',
         '/icons/bancounion_icon.svg',
         '/img/historia/logo-bolivar.webp',
@@ -15,7 +15,7 @@ export const SliderLogosAllied = () => {
         '/img/historia/logo-camu.png',
         '/img/historia/logo-constructora-colpatria-02.png',
         '/img/historia/logo-constructora-solanillas.jpg',
-    ];
+    ]
 
     return (
         <Swiper
@@ -38,7 +38,7 @@ export const SliderLogosAllied = () => {
                 930: {
                     slidesPerView: 7,
                     spaceBetween: 20,
-                    centeredSlides: false
+                    centeredSlides: false,
                 },
             }}
             virtual={true}
@@ -49,6 +49,5 @@ export const SliderLogosAllied = () => {
                 </SwiperSlide>
             ))}
         </Swiper>
-
-    );
-};
+    )
+}
