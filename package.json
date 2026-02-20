@@ -30,7 +30,7 @@
     "react-photo-album": "^2.4.0",
     "react-responsive-pagination": "^2.4.2",
     "react-web-share": "^2.0.2",
-    "swiper": "^9.3.0",
+    "swiper": "^12.1.2",
     "swr": "^2.2.4",
     "tippy.js": "^6.3.7",
     "yet-another-react-lightbox": "^3.19.0"
