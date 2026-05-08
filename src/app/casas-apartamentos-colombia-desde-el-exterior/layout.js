@@ -5,6 +5,7 @@ import '../casas-apartamentos-colombia-desde-el-exterior/sass/app.scss'
 import Script from 'next/script'
 import { FairModeContextProvider } from './Context/Mode'
 import TourNavbar from './components/TourNavbar'
+import NewFooter from './components/NewFooter'
 
 export const metadata = {
     title: 'Compra tu casa en Colombia desde el exterior | Portal Inmobiliario',
@@ -47,6 +48,8 @@ export default function Layout({ children }) {
                         <main className="tour-layout-content">
                             <Animation>{children}</Animation>
                         </main>
+
+                        <NewFooter />
                     </FairModeContextProvider>
                 </FiltroContextProvider>
             </ContextLikeProvider>
