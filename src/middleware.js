@@ -1,57 +1,127 @@
-/**
- * Middleware function to redirect users based on their geolocation.
- *
- * This middleware uses the IPAPI to determine the user's country and redirects
- * them to a specific page if they are from a specific country.
- *
- * @param {Request} request - The incoming request object
- * @returns {NextResponse} - The response object
- *
- * Example:
- * If a user from Canada accesses the `/casas-apartamentos-colombia-desde-el-exterior` page,
- * they will be redirected to `/casas-apartamentos-colombia-desde-el-exterior/canada`.
- *
- * Note: This middleware will redirect users to a page with their country code as a
- * URL parameter. For example, users from the United States will be redirected to
- * `/casas-apartamentos-colombia-desde-el-exterior/united-states`, and so on.
- */
+import { NextResponse } from "next/server";
 
-import { NextResponse } from "next/server"
+const TOUR_BASE_PATH = "/casas-apartamentos-colombia-desde-el-exterior";
 
-const GEOLOCATION_API = "https://ipinfo.io"
-const TOKEN = "0b05297d792e01"
+const ALLOWED_TOUR_PATHS = [
+  TOUR_BASE_PATH,
+  `${TOUR_BASE_PATH}/filtrados`,
+  `${TOUR_BASE_PATH}/inmueble`,
+];
+
+const GEOLOCATION_API = "https://ipinfo.io";
+const TOKEN = "0b05297d792e01";
+
 const countryNames = {
-    // "ES": "españa",
-    // "CH": "suiza",
-    // "DE": "alemania",
-    // "GB": "reino-unido",
-    "CA": "canada",
-    // "PA": "panamá",
-    // "MX": "méxico",
-    // "CR": "costa-rica",
-    // "PE": "perú",
-    // "US": "estados-unidos",
-    // "AE": "emiratos-árabes-unidos"
+  CA: "canada",
 };
-export async function middleware(req) {
-    const ip = req.headers.get('x-forwarded-for')?.split(',').shift() || req.ip || req.headers.get('x-real-ip') || req.nextUrl.hostname;
 
-    try {
-        // const testIP = "184.71.130.183"
-        const geoResponse = await fetch(`${GEOLOCATION_API}/${ip}/json?token=${TOKEN}`);
-        const geoData = await geoResponse.json();
-        const country = countryNames[geoData.country];
+function isTourEnvironment(request) {
+  const host = request.headers.get("host") || "";
 
-        if (country) {
-            return NextResponse.redirect(new URL(`/casas-apartamentos-colombia-desde-el-exterior/feria/${country}`, req.url));
-        }
+  return (
+    process.env.TOUR_LOCKDOWN_ENABLED === "true" ||
+    host.includes("tour.colraices.com")
+  );
+}
 
-    } catch (error) {
-        console.error("Error fetching geolocation", error);
-    }
+function isPublicAsset(pathname) {
+  return (
+    pathname.startsWith("/_next") ||
+    pathname.startsWith("/favicon") ||
+    pathname.startsWith("/robots") ||
+    pathname.startsWith("/sitemap") ||
+    pathname.startsWith("/portal-inmobiliario") ||
+    pathname.startsWith("/images") ||
+    pathname.startsWith("/img") ||
+    pathname.startsWith("/icons") ||
+    pathname.startsWith("/assets") ||
+    /\.[a-zA-Z0-9]+$/.test(pathname)
+  );
+}
+
+function isAllowedTourPath(pathname) {
+  return ALLOWED_TOUR_PATHS.some((allowedPath) => {
+    return pathname === allowedPath || pathname.startsWith(`${allowedPath}/`);
+  });
+}
+
+async function handleExistingGeolocationRedirect(request) {
+  const { pathname } = request.nextUrl;
+
+  if (pathname !== TOUR_BASE_PATH) {
     return NextResponse.next();
+  }
 
+  const ip =
+    request.headers.get("x-forwarded-for")?.split(",").shift() ||
+    request.ip ||
+    request.headers.get("x-real-ip") ||
+    request.nextUrl.hostname;
+
+  try {
+    const geoResponse = await fetch(
+      `${GEOLOCATION_API}/${ip}/json?token=${TOKEN}`
+    );
+
+    const geoData = await geoResponse.json();
+    const country = countryNames[geoData.country];
+
+    if (country) {
+      return NextResponse.redirect(
+        new URL(`${TOUR_BASE_PATH}/feria/${country}`, request.url)
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching geolocation", error);
+  }
+
+  return NextResponse.next();
 }
+
+export async function middleware(request) {
+  const { pathname } = request.nextUrl;
+
+  if (isPublicAsset(pathname)) {
+    return NextResponse.next();
+  }
+
+  if (pathname.startsWith("/api")) {
+    return NextResponse.next();
+  }
+
+  /**
+   * Si NO estamos en el entorno aislado del Tour,
+   * la Web Actual sigue funcionando igual que antes.
+   */
+  if (!isTourEnvironment(request)) {
+    return handleExistingGeolocationRedirect(request);
+  }
+
+  /**
+   * Si el usuario entra a la raíz del entorno Tour,
+   * lo mandamos al listado principal del Tour.
+   */
+  if (pathname === "/") {
+    return NextResponse.redirect(new URL(TOUR_BASE_PATH, request.url));
+  }
+
+  /**
+   * En el entorno Tour solo se permiten:
+   * - Listado de inmuebles
+   * - Resultados / filtros
+   * - Detalle de inmueble
+   */
+  if (isAllowedTourPath(pathname)) {
+    return NextResponse.next();
+  }
+
+  /**
+   * Cualquier otra ruta queda inaccesible
+   * SOLO desde el entorno Tour.
+   */
+  return NextResponse.redirect(new URL(TOUR_BASE_PATH, request.url));
+}
+
 export const config = {
-    matcher: "/casas-apartamentos-colombia-desde-el-exterior"
-}
+  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
+};
