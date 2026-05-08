@@ -3,16 +3,21 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
-const NEW_WEB_URL = process.env.NEXT_PUBLIC_NEW_WEB_URL || ''
-const NEW_WEB_TOUR_URL = process.env.NEXT_PUBLIC_NEW_WEB_TOUR_URL || ''
+const HOME_URL = process.env.NEXT_PUBLIC_HOME_URL || '#'
+const FINANZAS_URL = process.env.NEXT_PUBLIC_FINANZAS_URL || '#'
+const INMUEBLES_URL = process.env.NEXT_PUBLIC_INMUEBLES_URL || '#'
+const LEGAL_MIGRACION_URL = process.env.NEXT_PUBLIC_LEGAL_MIGRACION_URL || '#'
+const TOUR_VIVIENDA_URL = process.env.NEXT_PUBLIC_TOUR_VIVIENDA_URL || '#'
+const BLOG_URL = process.env.NEXT_PUBLIC_BLOG_URL || '#'
+const CONTACTO_URL = process.env.NEXT_PUBLIC_CONTACTO_URL || '#'
 
 const navLinks = [
-    { label: 'Home', href: `${NEW_WEB_URL}/` },
-    { label: 'Finanzas', href: `${NEW_WEB_URL}/finanzas` },
-    { label: 'Inmuebles', href: `${NEW_WEB_URL}/inmuebles` },
-    { label: 'Legal y Migración', href: `${NEW_WEB_URL}/legal-migracion` },
-    { label: 'Tour de la Vivienda', href: NEW_WEB_TOUR_URL, active: true },
-    { label: 'Blog', href: `${NEW_WEB_URL}/blog` },
+    { label: 'Home', href: HOME_URL },
+    { label: 'Finanzas', href: FINANZAS_URL },
+    { label: 'Inmuebles', href: INMUEBLES_URL },
+    { label: 'Legal y Migración', href: LEGAL_MIGRACION_URL },
+    { label: 'Tour de la Vivienda', href: TOUR_VIVIENDA_URL, active: true },
+    { label: 'Blog', href: BLOG_URL },
 ]
 
 export default function TourNavbar() {
@@ -21,7 +26,7 @@ export default function TourNavbar() {
     return (
         <header className="tour-new-navbar">
             <div className="tour-new-navbar__container">
-                <Link href={`${NEW_WEB_URL}/`} className="tour-new-navbar__logo">
+                <Link href={HOME_URL} className="tour-new-navbar__logo">
                     <img
                         src="/logo-nuevo.png"
                         alt="Colraices"
@@ -48,7 +53,7 @@ export default function TourNavbar() {
                 </nav>
 
                 <Link
-                    href={`${NEW_WEB_URL}/contacto`}
+                    href={CONTACTO_URL}
                     className="tour-new-navbar__cta"
                 >
                     Solicitar Asesoría
@@ -84,7 +89,7 @@ export default function TourNavbar() {
                     ))}
 
                     <Link
-                        href={`${NEW_WEB_URL}/contacto`}
+                        href={CONTACTO_URL}
                         onClick={() => setIsOpen(false)}
                         className="tour-new-navbar__mobile-cta"
                     >
