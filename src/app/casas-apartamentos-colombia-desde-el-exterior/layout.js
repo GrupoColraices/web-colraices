@@ -4,6 +4,7 @@ import { Animation } from '../casas-apartamentos-colombia-desde-el-exterior/mole
 import '../casas-apartamentos-colombia-desde-el-exterior/sass/app.scss'
 import Script from 'next/script'
 import { FairModeContextProvider } from './Context/Mode'
+import TourNavbar from './components/TourNavbar'
 
 export const metadata = {
     title: 'Compra tu casa en Colombia desde el exterior | Portal Inmobiliario',
@@ -17,6 +18,7 @@ export const metadata = {
     google: 'translete',
     copyright: 'momentumdigital.com.co',
 }
+
 export default function Layout({ children }) {
     return (
         <>
@@ -33,12 +35,18 @@ export default function Layout({ children }) {
           })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');`,
                 }}
             />
+
             {/* HubSpot Script */}
             <Script id="hs-script-loader" async defer src="//js.hs-scripts.com/39709027.js" />
+
             <ContextLikeProvider>
                 <FiltroContextProvider>
                     <FairModeContextProvider>
-                        <Animation>{children}</Animation>
+                        <TourNavbar />
+
+                        <main className="tour-layout-content">
+                            <Animation>{children}</Animation>
+                        </main>
                     </FairModeContextProvider>
                 </FiltroContextProvider>
             </ContextLikeProvider>
