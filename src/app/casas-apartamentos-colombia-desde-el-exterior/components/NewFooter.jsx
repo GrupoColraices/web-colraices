@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import {
     FaFacebookF,
@@ -17,6 +16,9 @@ import '../sass/components/_newFooter.scss'
 ================================ */
 
 const NEW_WEB_URL = 'https://colraices.com'
+
+// Cambia esta ruta por el logo blanco real que tengas en /public
+const FOOTER_LOGO = '/logoWhite.svg'
 
 const FOOTER_LINKS = {
     home: `${NEW_WEB_URL}/`,
@@ -47,149 +49,85 @@ const CONTACT_LINKS = {
 
 export default function NewFooter() {
     return (
-        <footer className="new-footer">
-            <div className="new-footer__container">
-                <div className="new-footer__grid">
-                    <div className="new-footer__brand">
+        <footer className="tour-new-footer">
+            <div className="tour-new-footer__container">
+                <div className="tour-new-footer__top">
+                    <div className="tour-new-footer__brand">
                         <Link
                             href={FOOTER_LINKS.home}
-                            className="new-footer__logo-link"
+                            className="tour-new-footer__logo-link"
                         >
-                            <Image
-                                src="/logo-foote.png"
-                                alt="Colraices Logo"
-                                fill
-                                sizes="(max-width: 640px) 190px, (max-width: 1024px) 240px, 271px"
-                                className="new-footer__logo"
-                                priority
+                            <img
+                                src={FOOTER_LOGO}
+                                alt="Colraices"
+                                className="tour-new-footer__logo"
                             />
                         </Link>
 
-                        <div className="new-footer__description">
-                            <p>
-                                El ecosistema de soluciones para colombianos en
-                                el exterior.
-                            </p>
+                        <p className="tour-new-footer__text">
+                            El ecosistema de soluciones para colombianos en el exterior.
+                        </p>
 
-                            <p className="new-footer__phone">
-                                <Link href={CONTACT_LINKS.phone}>
-                                    Teléfono: (57) 601 328 8939
-                                </Link>
-                            </p>
+                        <div className="tour-new-footer__contact">
+                            <Link href={CONTACT_LINKS.phone}>
+                                Teléfono: (57) 601 328 8939
+                            </Link>
 
-                            <p className="new-footer__email">
-                                <Link href={CONTACT_LINKS.email}>
-                                    info@colraices.co
-                                </Link>
-                            </p>
+                            <Link href={CONTACT_LINKS.email}>
+                                info@colraices.co
+                            </Link>
                         </div>
 
-                        <div className="new-footer__socials">
-                            <Link
-                                href={SOCIAL_LINKS.facebook}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Facebook"
-                                className="new-footer__social-link"
-                            >
-                                <FaFacebookF size={14} />
+                        <div className="tour-new-footer__socials">
+                            <Link href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                <FaFacebookF />
                             </Link>
 
-                            <Link
-                                href={SOCIAL_LINKS.instagram}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Instagram"
-                                className="new-footer__social-link"
-                            >
-                                <FaInstagram size={14} />
+                            <Link href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <FaInstagram />
                             </Link>
 
-                            <Link
-                                href={SOCIAL_LINKS.whatsapp}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="WhatsApp"
-                                className="new-footer__social-link"
-                            >
-                                <FaWhatsapp size={14} />
+                            <Link href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                                <FaWhatsapp />
                             </Link>
 
-                            <Link
-                                href={SOCIAL_LINKS.youtube}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="YouTube"
-                                className="new-footer__social-link"
-                            >
-                                <FaYoutube size={14} />
+                            <Link href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                                <FaYoutube />
                             </Link>
 
-                            <Link
-                                href={SOCIAL_LINKS.linkedin}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="LinkedIn"
-                                className="new-footer__social-link"
-                            >
-                                <FaLinkedinIn size={14} />
+                            <Link href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <FaLinkedinIn />
                             </Link>
                         </div>
                     </div>
 
-                    <div className="new-footer__column">
-                        <h3 className="new-footer__title">Servicios</h3>
-
-                        <div className="new-footer__links">
-                            <Link href={FOOTER_LINKS.finanzas}>Finanzas</Link>
-                            <Link href={FOOTER_LINKS.inmuebles}>Inmuebles</Link>
-                            <Link href={FOOTER_LINKS.legalMigracion}>
-                                Legal y Migración
-                            </Link>
-                            <Link href={FOOTER_LINKS.tourVivienda}>
-                                Tour de la Vivienda
-                            </Link>
-                        </div>
+                    <div className="tour-new-footer__column">
+                        <h3>Servicios</h3>
+                        <Link href={FOOTER_LINKS.finanzas}>Finanzas</Link>
+                        <Link href={FOOTER_LINKS.inmuebles}>Inmuebles</Link>
+                        <Link href={FOOTER_LINKS.legalMigracion}>Legal y Migración</Link>
+                        <Link href={FOOTER_LINKS.tourVivienda}>Tour de la Vivienda</Link>
                     </div>
 
-                    <div className="new-footer__column">
-                        <h3 className="new-footer__title">Empresa</h3>
-
-                        <div className="new-footer__links">
-                            <Link href={FOOTER_LINKS.quienesSomos}>
-                                Quiénes somos
-                            </Link>
-                            <Link href={FOOTER_LINKS.trabajaConNosotros}>
-                                Trabaja con nosotros
-                            </Link>
-                        </div>
+                    <div className="tour-new-footer__column">
+                        <h3>Empresa</h3>
+                        <Link href={FOOTER_LINKS.quienesSomos}>Quiénes somos</Link>
+                        <Link href={FOOTER_LINKS.trabajaConNosotros}>Trabaja con nosotros</Link>
                     </div>
 
-                    <div className="new-footer__column">
-                        <h3 className="new-footer__title">Recursos</h3>
-
-                        <div className="new-footer__links">
-                            <Link href={FOOTER_LINKS.blog}>Blog</Link>
-                        </div>
+                    <div className="tour-new-footer__column">
+                        <h3>Recursos</h3>
+                        <Link href={FOOTER_LINKS.blog}>Blog</Link>
                     </div>
                 </div>
 
-                <div className="new-footer__divider">
-                    <div className="new-footer__bottom">
-                        <p className="new-footer__copyright">
-                            © 2026 Colraices. Colombia y España. Todos los
-                            derechos reservados.
-                        </p>
+                <div className="tour-new-footer__bottom">
+                    <p>© 2026 Colraices. Colombia y España. Todos los derechos reservados.</p>
 
-                        <div className="new-footer__legal">
-                            <Link href={FOOTER_LINKS.politicaPrivacidad}>
-                                Política de privacidad
-                            </Link>
-                            <Link href={FOOTER_LINKS.terminosUso}>
-                                Términos de uso
-                            </Link>
-                            <Link href={FOOTER_LINKS.cookies}>Cookies</Link>
-                        </div>
+                    <div className="tour-new-footer__legal">
+                        <Link href={FOOTER_LINKS.politicaPrivacidad}>Política de privacidad</Link>
+                        <Link href={FOOTER_LINKS.terminosUso}>Términos de uso</Link>
+                        <Link href={FOOTER_LINKS.cookies}>Cookies</Link>
                     </div>
                 </div>
             </div>
