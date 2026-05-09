@@ -8,7 +8,7 @@ export default function FeaturedProperties({ inmFeatured }) {
     return (
         <>
             <section className='container-fair-mode'>
-                <h1>Juntos llegamos a los<span> Colombianos en el exterior</span></h1>
+                <h1>Ahora la vivienda en Colombia<span> llega hasta tu país de residencia</span></h1>
                 <div className='container-slider-fair'>
                     <SliderLogosAllied/>
                 </div>
