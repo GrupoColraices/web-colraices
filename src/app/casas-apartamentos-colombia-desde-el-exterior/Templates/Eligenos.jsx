@@ -59,7 +59,7 @@ export const Eligenos = () => {
                 </ItemEligenos>
                 <ItemEligenos
                     description={
-                        'Trabajamos junto a bancos aliados para ayudarte a obtener la financiación que se ajusta a tu perfil y a lo que quieres lograr en Colombia. Puedes empezar desde el exterior gratis. Revisar viabilidad de un cta a CDC con texto Inicia ahora. Si no es posible no incluir parte en azul'
+                        'Trabajamos junto a bancos aliados para ayudarte a obtener la financiación que se ajusta a tu perfil y a lo que quieres lograr en Colombia. Puedes empezar desde el exterior gratis.'
                     }
                     img={'/portal-inmobiliario/img/eligenos/constructoras.webp'}
                     slideshow={['/portal-inmobiliario/img/aliados/1.svg', '/portal-inmobiliario/img/aliados/11.webp']}

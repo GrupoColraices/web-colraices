@@ -8,11 +8,8 @@ export const Testimoniales = () => {
 
     return (
         <section className="container-testimonial">
-            <TitleSection span={"Experiencias"}>
-                Estamos para apoyarte a que logres
-                tu objetivo, invirtiendo de la forma más
-                confiable y segura en tu futuro, en tu
-                patrimonio familiar.
+            <TitleSection span={"Testimonios"}>
+                Estas historias tienen algo en común: colombianos que decidieron transformar su esfuerzo en el exterior en patrimonio en Colombia.
             </TitleSection>
             <section className="testimoniales-cards">
                 {testimoniales?.map((testimonial) => (
