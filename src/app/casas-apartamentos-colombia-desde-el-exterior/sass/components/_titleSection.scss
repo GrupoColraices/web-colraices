@@ -20,8 +20,9 @@
             position: absolute;
             content: '';
             top: 1.7rem;
-            min-width: 9%;
-            max-width: 80%;
+            width: clamp(2.8rem, 7vw, 7rem);
+            min-width: unset;
+            max-width: unset;
             height: 2px;
             background-color: $secundario;
         }
@@ -60,8 +61,9 @@
             &::before,
             &::after {
                 top: 2.7rem;
-                min-width: 15%;
-                max-width: 80%;
+                width: clamp(4rem, 8vw, 9rem);
+                min-width: unset;
+                max-width: unset;
             }
         }
 
@@ -72,7 +74,30 @@
             text-align: center;
             margin-top: 0;
         }
+    }
+}
 
+/* Ajuste para pantallas medianas donde el título ocupa mucho ancho */
+@media (min-width: 768px) and (max-width: 1200px) {
+    .title-section {
+        .title-section-title {
+            &::before,
+            &::after {
+                width: clamp(3rem, 5vw, 5.5rem);
+            }
+        }
+    }
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 767px) {
+    .title-section {
+        .title-section-title {
+            &::before,
+            &::after {
+                width: clamp(2.5rem, 8vw, 4.5rem);
+            }
+        }
     }
 }
 
