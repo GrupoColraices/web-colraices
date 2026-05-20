@@ -3,13 +3,20 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
-const HOME_URL = process.env.NEXT_PUBLIC_HOME_URL || '#'
-const FINANZAS_URL = process.env.NEXT_PUBLIC_FINANZAS_URL || '#'
-const INMUEBLES_URL = process.env.NEXT_PUBLIC_INMUEBLES_URL || '#'
-const LEGAL_MIGRACION_URL = process.env.NEXT_PUBLIC_LEGAL_MIGRACION_URL || '#'
-const TOUR_VIVIENDA_URL = process.env.NEXT_PUBLIC_TOUR_VIVIENDA_URL || '#'
-const BLOG_URL = process.env.NEXT_PUBLIC_BLOG_URL || '#'
-const CONTACTO_URL = process.env.NEXT_PUBLIC_CONTACTO_URL || '#'
+const NEW_COLRAICES_URL = (
+    process.env.NEXT_PUBLIC_NEW_COLRAICES_URL || 'https://colraices.com'
+).replace(/\/$/, '')
+const TOUR_URL = process.env.NEXT_PUBLIC_TOUR_URL || 'https://tour.colraices.com'
+
+const newWebUrl = (path = '') => `${NEW_COLRAICES_URL}${path}`
+
+const HOME_URL = newWebUrl('/')
+const FINANZAS_URL = newWebUrl('/finanzas')
+const INMUEBLES_URL = newWebUrl('/inmuebles')
+const LEGAL_MIGRACION_URL = newWebUrl('/legal-migracion')
+const TOUR_VIVIENDA_URL = TOUR_URL
+const BLOG_URL = newWebUrl('/blog')
+const CONTACTO_URL = newWebUrl('/contacto')
 
 const navLinks = [
     { label: 'Home', href: HOME_URL },

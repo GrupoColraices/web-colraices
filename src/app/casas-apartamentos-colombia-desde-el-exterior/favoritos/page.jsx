@@ -1,11 +1,7 @@
-import InmFavoritos from "./favoritos"
+import { redirect } from 'next/navigation'
 
-export const metadata = {
-    title: 'Compra tu casa en Colombia desde el exterior | Inmuebles favoritos'
-}
-export default function pageFavoritos() {
+const TOUR_BASE_PATH = '/casas-apartamentos-colombia-desde-el-exterior'
 
-    return (
-        <InmFavoritos />
-    )
+export default function PageFavoritos() {
+    redirect(TOUR_BASE_PATH)
 }

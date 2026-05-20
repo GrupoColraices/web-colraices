@@ -16,7 +16,9 @@ import '../sass/components/_newFooter.scss'
    Cambiar aquí cuando tengas las URLs finales
 ================================ */
 
-const NEW_WEB_URL = 'https://colraices.com'
+const NEW_WEB_URL = (
+    process.env.NEXT_PUBLIC_NEW_COLRAICES_URL || 'https://colraices.com'
+).replace(/\/$/, '')
 
 const FOOTER_LINKS = {
     home: `${NEW_WEB_URL}/`,
@@ -33,11 +35,11 @@ const FOOTER_LINKS = {
 }
 
 const SOCIAL_LINKS = {
-    facebook: 'https://facebook.com',
-    instagram: 'https://instagram.com',
+    facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL || NEW_WEB_URL,
+    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || NEW_WEB_URL,
     whatsapp: 'https://wa.me/576013288939',
-    youtube: 'https://youtube.com',
-    linkedin: 'https://linkedin.com',
+    youtube: process.env.NEXT_PUBLIC_YOUTUBE_URL || NEW_WEB_URL,
+    linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || NEW_WEB_URL,
 }
 
 const CONTACT_LINKS = {
