@@ -9,42 +9,40 @@ import {
     FaYoutube,
     FaLinkedinIn,
 } from 'react-icons/fa'
+import {
+    OFFICIAL_CONTACT_URLS,
+    OFFICIAL_FOOTER_URLS,
+    OFFICIAL_LEGAL_URLS,
+    OFFICIAL_MARKETING_URLS,
+    OFFICIAL_SOCIAL_URLS,
+} from '@/lib/officialUrls'
 import '../sass/components/_newFooter.scss'
 
-/* ================================
-   LINKS NUEVA WEB COLRAICES
-   Cambiar aquí cuando tengas las URLs finales
-================================ */
-
-const NEW_WEB_URL = (
-    process.env.NEXT_PUBLIC_NEW_COLRAICES_URL || 'https://colraices.com'
-).replace(/\/$/, '')
-
 const FOOTER_LINKS = {
-    home: `${NEW_WEB_URL}/`,
-    finanzas: `${NEW_WEB_URL}/finanzas`,
-    inmuebles: `${NEW_WEB_URL}/inmuebles`,
-    legalMigracion: `${NEW_WEB_URL}/legal-migracion`,
-    tourVivienda: `${NEW_WEB_URL}/tour-vivienda`,
-    quienesSomos: `${NEW_WEB_URL}/quienes-somos`,
-    trabajaConNosotros: `${NEW_WEB_URL}/trabaja-con-nosotros`,
-    blog: `${NEW_WEB_URL}/blog`,
-    politicaPrivacidad: `${NEW_WEB_URL}/politica-de-privacidad`,
-    terminosUso: `${NEW_WEB_URL}/terminos-de-uso`,
-    cookies: `${NEW_WEB_URL}/cookies`,
+    home: OFFICIAL_MARKETING_URLS.inicio,
+    finanzas: OFFICIAL_MARKETING_URLS.hubFinanzas,
+    inmuebles: OFFICIAL_MARKETING_URLS.hubInmueble,
+    legalMigracion: OFFICIAL_MARKETING_URLS.hubLegalMigratorio,
+    tourVivienda: OFFICIAL_MARKETING_URLS.tourVivienda,
+    quienesSomos: OFFICIAL_MARKETING_URLS.nosotros,
+    trabajaConNosotros: OFFICIAL_FOOTER_URLS.trabajaConNosotros,
+    blog: OFFICIAL_MARKETING_URLS.blog,
+    politicaPrivacidad: OFFICIAL_LEGAL_URLS.politicaPrivacidad,
+    terminosUso: OFFICIAL_LEGAL_URLS.terminosUso,
+    cookies: OFFICIAL_LEGAL_URLS.cookies,
 }
 
 const SOCIAL_LINKS = {
-    facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL || NEW_WEB_URL,
-    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || NEW_WEB_URL,
-    whatsapp: 'https://wa.me/576013288939',
-    youtube: process.env.NEXT_PUBLIC_YOUTUBE_URL || NEW_WEB_URL,
-    linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || NEW_WEB_URL,
+    facebook: OFFICIAL_SOCIAL_URLS.facebook,
+    instagram: OFFICIAL_SOCIAL_URLS.instagram,
+    whatsapp: OFFICIAL_CONTACT_URLS.whatsapp,
+    youtube: OFFICIAL_SOCIAL_URLS.youtube,
+    linkedin: OFFICIAL_SOCIAL_URLS.linkedin,
 }
 
 const CONTACT_LINKS = {
-    phone: 'tel:+576013288939',
-    email: 'mailto:info@colraices.co',
+    phone: OFFICIAL_CONTACT_URLS.phone,
+    email: OFFICIAL_CONTACT_URLS.email,
 }
 
 export default function NewFooter() {

@@ -2,11 +2,8 @@ import { NextResponse } from "next/server";
 
 const TOUR_BASE_PATH = "/casas-apartamentos-colombia-desde-el-exterior";
 
-const ALLOWED_TOUR_PATHS = [
-  TOUR_BASE_PATH,
-  `${TOUR_BASE_PATH}/filtrados`,
-  `${TOUR_BASE_PATH}/inmueble`,
-];
+const TOUR_FILTERS_PATH = `${TOUR_BASE_PATH}/filtrados`;
+const TOUR_PROPERTY_PATH = `${TOUR_BASE_PATH}/inmueble`;
 
 const GEOLOCATION_API = "https://ipinfo.io";
 const TOKEN = "0b05297d792e01";
@@ -39,10 +36,22 @@ function isPublicAsset(pathname) {
   );
 }
 
+function hasSubPathSegmentCount(pathname, basePath, minSegments, maxSegments) {
+  if (!pathname.startsWith(`${basePath}/`)) {
+    return false;
+  }
+
+  const segments = pathname.slice(basePath.length + 1).split("/").filter(Boolean);
+
+  return segments.length >= minSegments && segments.length <= maxSegments;
+}
+
 function isAllowedTourPath(pathname) {
-  return ALLOWED_TOUR_PATHS.some((allowedPath) => {
-    return pathname === allowedPath || pathname.startsWith(`${allowedPath}/`);
-  });
+  return (
+    pathname === TOUR_BASE_PATH ||
+    hasSubPathSegmentCount(pathname, TOUR_FILTERS_PATH, 1, 3) ||
+    hasSubPathSegmentCount(pathname, TOUR_PROPERTY_PATH, 1, 1)
+  );
 }
 
 async function handleExistingGeolocationRedirect(request) {

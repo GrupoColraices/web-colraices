@@ -2,29 +2,15 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-
-const NEW_COLRAICES_URL = (
-    process.env.NEXT_PUBLIC_NEW_COLRAICES_URL || 'https://colraices.com'
-).replace(/\/$/, '')
-const TOUR_URL = process.env.NEXT_PUBLIC_TOUR_URL || 'https://tour.colraices.com'
-
-const newWebUrl = (path = '') => `${NEW_COLRAICES_URL}${path}`
-
-const HOME_URL = newWebUrl('/')
-const FINANZAS_URL = newWebUrl('/finanzas')
-const INMUEBLES_URL = newWebUrl('/inmuebles')
-const LEGAL_MIGRACION_URL = newWebUrl('/legal-migracion')
-const TOUR_VIVIENDA_URL = TOUR_URL
-const BLOG_URL = newWebUrl('/blog')
-const CONTACTO_URL = newWebUrl('/contacto')
+import { OFFICIAL_CONTACT_URLS, OFFICIAL_MARKETING_URLS } from '@/lib/officialUrls'
 
 const navLinks = [
-    { label: 'Home', href: HOME_URL },
-    { label: 'Finanzas', href: FINANZAS_URL },
-    { label: 'Inmuebles', href: INMUEBLES_URL },
-    { label: 'Legal y Migración', href: LEGAL_MIGRACION_URL },
-    { label: 'Tour de la Vivienda', href: TOUR_VIVIENDA_URL, active: true },
-    { label: 'Blog', href: BLOG_URL },
+    { label: 'Home', href: OFFICIAL_MARKETING_URLS.inicio },
+    { label: 'Finanzas', href: OFFICIAL_MARKETING_URLS.hubFinanzas },
+    { label: 'Inmuebles', href: OFFICIAL_MARKETING_URLS.hubInmueble },
+    { label: 'Legal y Migración', href: OFFICIAL_MARKETING_URLS.hubLegalMigratorio },
+    { label: 'Tour de la Vivienda', href: OFFICIAL_MARKETING_URLS.tourVivienda, active: true },
+    { label: 'Blog', href: OFFICIAL_MARKETING_URLS.blog },
 ]
 
 export default function TourNavbar() {
@@ -33,7 +19,7 @@ export default function TourNavbar() {
     return (
         <header className="tour-new-navbar">
             <div className="tour-new-navbar__container">
-                <Link href={HOME_URL} className="tour-new-navbar__logo">
+                <Link href={OFFICIAL_MARKETING_URLS.inicio} className="tour-new-navbar__logo">
                     <img
                         src="/logo-nuevo.png"
                         alt="Colraices"
@@ -60,7 +46,7 @@ export default function TourNavbar() {
                 </nav>
 
                 <Link
-                    href={CONTACTO_URL}
+                    href={OFFICIAL_CONTACT_URLS.asesoria}
                     className="tour-new-navbar__cta"
                 >
                     Solicitar Asesoría
@@ -96,7 +82,7 @@ export default function TourNavbar() {
                     ))}
 
                     <Link
-                        href={CONTACTO_URL}
+                        href={OFFICIAL_CONTACT_URLS.asesoria}
                         onClick={() => setIsOpen(false)}
                         className="tour-new-navbar__mobile-cta"
                     >
