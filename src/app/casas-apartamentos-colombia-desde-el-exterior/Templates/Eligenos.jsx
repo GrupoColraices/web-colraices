@@ -35,7 +35,7 @@ export const Eligenos = () => {
             <div className="eligenos__container">
                 <ItemEligenos
                     description={
-                        'Invierte de forma segura y confiable en nuestros proyectos inmobiliarios, respaldados por importantes constructoras aliadas en Colombia.'
+                        'Trabajamos junto a constructoras en distintas ciudades de Colombia para acercarte proyectos y oportunidades de vivienda hasta el exterior.'
                     }
                     img={'/portal-inmobiliario/img/eligenos/aliados.webp'}
                     slideshow={constructionCompanies}
@@ -48,7 +48,7 @@ export const Eligenos = () => {
                 </ItemEligenos>
                 <ItemEligenos
                     description={
-                        'Nuestros inmuebles nuevos y usados pasan por un riguroso proceso de verificación para garantizar su calidad y características específicas. Con Colraices, invierte con confianza y seguridad en la propiedad que deseas.'
+                        'Hay proyectos para invertir. Hay proyectos para volver. Vivienda nueva y usada en distintas ciudades de Colombia para colombianos que viven fuera del pais.'
                     }
                     img={'/portal-inmobiliario/img/eligenos/inmuebles.webp'}
                     customClass={'housing'}
@@ -59,7 +59,7 @@ export const Eligenos = () => {
                 </ItemEligenos>
                 <ItemEligenos
                     description={
-                        'Accede fácilmente a créditos de nuestros bancos aliados reconocidos a nivel nacional e internacional por sus beneficios y trayectoria en apoyo a los colombianos en el exterior. Confía en Colraices para hacer una inversión segura y exitosa.'
+                        'Trabajamos junto a bancos aliados para ayudarte a obtener la financiación que se ajusta a tu perfil y a lo que quieres lograr en Colombia. Puedes empezar desde el exterior gratis.'
                     }
                     img={'/portal-inmobiliario/img/eligenos/constructoras.webp'}
                     slideshow={['/portal-inmobiliario/img/aliados/1.svg', '/portal-inmobiliario/img/aliados/11.webp']}
@@ -67,8 +67,8 @@ export const Eligenos = () => {
                     slidesViewDesktop={3}
                     spaceBetween={10}
                 >
-                    Nuestros aliados
-                    <span>financieros</span>
+                    Sí puedes financiar vivienda
+                    <span>en Colombia</span>
                 </ItemEligenos>
             </div>
         </main>
