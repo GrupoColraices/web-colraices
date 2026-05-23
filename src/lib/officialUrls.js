@@ -1,23 +1,29 @@
+const OFFICIAL_URL_BASE = (
+    process.env.NEXT_PUBLIC_URL_BASE_NUEVA_WEB || 'https://colraices-web.vercel.app'
+).replace(/\/$/, '')
+
+const officialUrl = (path = '') => `${OFFICIAL_URL_BASE}${path}`
+
 export const OFFICIAL_MARKETING_URLS = Object.freeze({
-    inicio: 'https://www.colraices.com',
-    nosotros: 'https://www.colraices.com/nosotros',
-    blog: 'https://www.colraices.com/blog',
-    tourVivienda: 'https://www.colraices.com/tour-de-la-vivienda',
-    hubFinanzas: 'https://www.colraices.com/finanzas-y-credito',
-    brujulaFinanciera: 'https://www.colraices.com/brujula-financiera',
-    brujulaCrediticia: 'https://www.colraices.com/brujula-crediticia',
-    buenaData: 'https://www.colraices.com/buena-data',
-    monetizacion: 'https://www.colraices.com/monetizacion',
-    credito: 'https://www.colraices.com/credito-para-colombianos-en-el-exterior',
-    hubInmueble: 'https://www.colraices.com/inversion-inmobiliaria',
-    llaveInmobiliaria: 'https://www.colraices.com/llave-inmobiliaria',
-    brujulaInmobiliaria: 'https://www.colraices.com/brujula-inmobiliaria',
-    hubLegalMigratorio: 'https://www.colraices.com/legal-y-migratorio',
-    asesoriaMigratoria: 'https://www.colraices.com/asesoria-migratoria',
-    representacionLegal: 'https://www.colraices.com/representacion-legal-en-colombia',
-    serviciosFiscales: 'https://www.colraices.com/servicios-fiscales',
-    pensiones: 'https://www.colraices.com/pensiones',
-    asesoriaEmprendimiento: 'https://www.colraices.com/emprender-en-colombia',
+    inicio: officialUrl(),
+    nosotros: officialUrl('/nosotros'),
+    blog: officialUrl('/blog'),
+    tourVivienda: officialUrl('/tour-de-la-vivienda'),
+    hubFinanzas: officialUrl('/finanzas-y-credito'),
+    brujulaFinanciera: officialUrl('/brujula-financiera'),
+    brujulaCrediticia: officialUrl('/brujula-crediticia'),
+    buenaData: officialUrl('/buena-data'),
+    monetizacion: officialUrl('/monetizacion'),
+    credito: officialUrl('/credito-para-colombianos-en-el-exterior'),
+    hubInmueble: officialUrl('/inversion-inmobiliaria'),
+    llaveInmobiliaria: officialUrl('/llave-inmobiliaria'),
+    brujulaInmobiliaria: officialUrl('/brujula-inmobiliaria'),
+    hubLegalMigratorio: officialUrl('/legal-y-migratorio'),
+    asesoriaMigratoria: officialUrl('/asesoria-migratoria'),
+    representacionLegal: officialUrl('/representacion-legal-en-colombia'),
+    serviciosFiscales: officialUrl('/servicios-fiscales'),
+    pensiones: officialUrl('/pensiones'),
+    asesoriaEmprendimiento: officialUrl('/emprender-en-colombia'),
 })
 
 export const OFFICIAL_CONTACT_URLS = Object.freeze({
@@ -35,11 +41,11 @@ export const OFFICIAL_SOCIAL_URLS = Object.freeze({
 })
 
 export const OFFICIAL_LEGAL_URLS = Object.freeze({
-    politicaPrivacidad: `${OFFICIAL_MARKETING_URLS.inicio}/politica-de-privacidad`,
-    terminosUso: `${OFFICIAL_MARKETING_URLS.inicio}/terminos-de-uso`,
-    cookies: `${OFFICIAL_MARKETING_URLS.inicio}/cookies`,
+    politicaPrivacidad: officialUrl('/politica-de-privacidad'),
+    terminosUso: officialUrl('/terminos-de-uso'),
+    cookies: officialUrl('/cookies'),
 })
 
 export const OFFICIAL_FOOTER_URLS = Object.freeze({
-    trabajaConNosotros: `${OFFICIAL_MARKETING_URLS.inicio}/trabaja-con-nosotros`,
+    trabajaConNosotros: officialUrl('/trabaja-con-nosotros'),
 })
