@@ -30,14 +30,15 @@ export const OFFICIAL_CONTACT_URLS = Object.freeze({
     asesoria: OFFICIAL_MARKETING_URLS.tourVivienda,
     phone: 'tel:+576013288939',
     email: 'mailto:info@colraices.co',
-    whatsapp: 'https://wa.me/576013288939',
+    whatsapp:
+        'https://api.whatsapp.com/send/?phone=15136479405&text=Hola%2C+Colraices.+Estoy+fuera+de+Colombia%2C+vengo+desde+la+p%C3%A1gina+web+y+quiero+orientaci%C3%B3n+para+transformar+mi+remesa+en+patrimonio+a+largo+plazo&type=phone_number&app_absent=0',
 })
 
 export const OFFICIAL_SOCIAL_URLS = Object.freeze({
-    facebook: OFFICIAL_MARKETING_URLS.inicio,
-    instagram: OFFICIAL_MARKETING_URLS.inicio,
-    youtube: OFFICIAL_MARKETING_URLS.inicio,
-    linkedin: OFFICIAL_MARKETING_URLS.inicio,
+    facebook: 'https://www.facebook.com/colraices',
+    instagram: 'https://www.instagram.com/colraices/',
+    youtube: 'https://www.youtube.com/@colraices_canal_oficial',
+    linkedin: 'https://www.linkedin.com/company/colraices',
 })
 
 export const OFFICIAL_LEGAL_URLS = Object.freeze({
