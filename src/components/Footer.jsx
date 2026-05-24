@@ -5,7 +5,7 @@ import {
     infoContact,
     linksFooter,
     socialNetworks,
-} from '../app/casas-apartamentos-colombia-desde-el-exterior/helpers/options'
+} from '../app/tour-de-la-vivienda/helpers/options'
 import Link from 'next/link'
 import '@/sass/components/Footer.scss'
 import { FaHeart } from 'react-icons/fa'
@@ -39,8 +39,8 @@ export const Footer = () => {
         getWhatsAppMessage()
     )}&type=phone_number&app_absent=0`
     const paths = ['filtrados', 'inmueble']
-    const showButtonUP = paths.some((path) => router.includes(`/casas-apartamentos-colombia-desde-el-exterior/${path}`))
-    const showButton = router.includes('/casas-apartamentos-colombia-desde-el-exterior')
+    const showButtonUP = paths.some((path) => router.includes(`/tour-de-la-vivienda/${path}`))
+    const showButton = router.includes('/tour-de-la-vivienda')
     useEffect(() => {
         const adjustChatbotButton = () => {
             const chatbotButton = document.querySelector('.dapta-chatbot-button')
@@ -134,7 +134,7 @@ export const Footer = () => {
                     <Tippy animation="scale" theme={'dark'} content="Ir a favoritos">
                         <Link
                             className="favorites-widget"
-                            href="/casas-apartamentos-colombia-desde-el-exterior/favoritos"
+                            href="/tour-de-la-vivienda/favoritos"
                         >
                             <FaHeart color="#F9635c" size={30} />
                         </Link>

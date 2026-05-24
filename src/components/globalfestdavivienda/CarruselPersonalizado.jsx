@@ -1,10 +1,10 @@
 'use client'
-import { ContextLikeProvider } from '../../app/casas-apartamentos-colombia-desde-el-exterior/Context/Like'
-import ItemReciente from '../../app/casas-apartamentos-colombia-desde-el-exterior/molecules/ItemReciente'
+import { ContextLikeProvider } from '../../app/tour-de-la-vivienda/Context/Like'
+import ItemReciente from '../../app/tour-de-la-vivienda/molecules/ItemReciente'
 import styles from '../../app/globalfestdavivienda/globalfestdavivienda.module.css'
 import carruselStyles from './CarruselPersonalizado.module.css'
 // Importar los estilos del carrusel
-import '../../app/casas-apartamentos-colombia-desde-el-exterior/sass/app.scss'
+import '../../app/tour-de-la-vivienda/sass/app.scss'
 
 export default function CarruselPersonalizado({ inmRecientes }) {
     return (

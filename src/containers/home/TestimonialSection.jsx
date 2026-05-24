@@ -1,6 +1,6 @@
 import { CardTestimonial } from '@/components/molecules/CardTestimonial'
 import '@/sass/containers/home/TestimonialSection.scss'
-import { testimonios } from '@/app/casas-apartamentos-colombia-desde-el-exterior/helpers/options'
+import { testimonios } from '@/app/tour-de-la-vivienda/helpers/options'
 import { TitleLine } from '@/components/TitleLine'
 
 export const TestimonialSection = () => {

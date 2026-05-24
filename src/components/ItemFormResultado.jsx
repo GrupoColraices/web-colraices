@@ -12,10 +12,10 @@ import LinearProgress from '@mui/material/LinearProgress';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import 'react-international-phone/style.css';
-import TitleSection from "../app/casas-apartamentos-colombia-desde-el-exterior/components/TitleSection";
-import { scrollSection } from "../app/casas-apartamentos-colombia-desde-el-exterior/helpers/actionScroll";
-import { onlyNumbers, peso, reverseFormat } from "../app/casas-apartamentos-colombia-desde-el-exterior/helpers/formatCurrency";
-import { optionsProperty, optionsState, optionsTime } from '../app/casas-apartamentos-colombia-desde-el-exterior/helpers/options';
+import TitleSection from "../app/tour-de-la-vivienda/components/TitleSection";
+import { scrollSection } from "../app/tour-de-la-vivienda/helpers/actionScroll";
+import { onlyNumbers, peso, reverseFormat } from "../app/tour-de-la-vivienda/helpers/formatCurrency";
+import { optionsProperty, optionsState, optionsTime } from '../app/tour-de-la-vivienda/helpers/options';
 import '@/sass/components/molecules/ItemFormResultado.scss'
 
 

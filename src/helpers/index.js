@@ -4,7 +4,7 @@ export const navbarLinks = [
     { label: 'Encontramos tu casa', href: '/encontramos-tu-inmueble', isExternal: false },
     { label: 'Financia tu casa', href: '/financia-tu-casa', isExternal: false },
     { label: 'Global Fest Davivienda', href: '/globalfestdavivienda', isExternal: false },
-    { label: 'Tour de la vivienda', href: '/casas-apartamentos-colombia-desde-el-exterior', isExternal: false },
+    { label: 'Tour de la vivienda', href: '/tour-de-la-vivienda', isExternal: false },
     { label: 'Blog', href: '/blog', isExternal: false },
 ]
 
