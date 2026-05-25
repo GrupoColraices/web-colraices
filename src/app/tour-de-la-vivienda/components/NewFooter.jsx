@@ -27,7 +27,7 @@ const FOOTER_LINKS = {
     quienesSomos: OFFICIAL_MARKETING_URLS.nosotros,
     trabajaConNosotros: OFFICIAL_FOOTER_URLS.trabajaConNosotros,
     blog: OFFICIAL_MARKETING_URLS.blog,
-    politicaPrivacidad: OFFICIAL_LEGAL_URLS.politicaPrivacidad,
+    politicaPrivacidad: '/tour-de-la-vivienda/politica-de-privacidad',
     terminosUso: OFFICIAL_LEGAL_URLS.terminosUso,
     cookies: OFFICIAL_LEGAL_URLS.cookies,
 }

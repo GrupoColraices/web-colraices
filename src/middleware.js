@@ -8,6 +8,7 @@ const LEGACY_TOUR_BASE_PATH = [
 
 const TOUR_FILTERS_PATH = `${TOUR_BASE_PATH}/filtrados`;
 const TOUR_PROPERTY_PATH = `${TOUR_BASE_PATH}/inmueble`;
+const TOUR_PRIVACY_POLICY_PATH = `${TOUR_BASE_PATH}/politica-de-privacidad`;
 const TOUR_FAVORITES_PATHS = new Set([
   `${TOUR_BASE_PATH}/favoritos`,
   `${TOUR_BASE_PATH}/favoritos/para-ti`,
@@ -76,6 +77,7 @@ function redirectLegacyTourPath(request) {
 function isAllowedTourPath(pathname) {
   return (
     pathname === TOUR_BASE_PATH ||
+    pathname === TOUR_PRIVACY_POLICY_PATH ||
     TOUR_FAVORITES_PATHS.has(pathname) ||
     pathname === TOUR_FAIR_COUNTRY_PATH ||
     hasSubPathSegmentCount(pathname, TOUR_FILTERS_PATH, 1, 3) ||
