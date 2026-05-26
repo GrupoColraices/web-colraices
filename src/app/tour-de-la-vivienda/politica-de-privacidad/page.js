@@ -4,6 +4,8 @@ export const metadata = {
         'Consulta la política de privacidad, tratamiento de datos personales, derechos de los titulares y canales de contacto de Colraices.',
 }
 
+export const dynamic = 'force-dynamic'
+
 const sections = [
     {
         title: '1. Responsable del Tratamiento de Datos',
