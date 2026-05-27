@@ -1,4 +1,4 @@
-import TitleSection from '@/app/casas-apartamentos-colombia-desde-el-exterior/components/TitleSection'
+import TitleSection from '@/app/tour-de-la-vivienda/components/TitleSection'
 import { LeasingCard } from '@/components/leasing-bancolombia/LeasingCard'
 import { cardItems } from '@/helpers'
 import "@/sass/containers/leasing-bancolombia/LeasingBenefits.scss"

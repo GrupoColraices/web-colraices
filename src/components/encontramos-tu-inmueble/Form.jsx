@@ -7,8 +7,8 @@ import {
     optionsProperty,
     optionsState,
     optionsTime,
-} from '@/app/casas-apartamentos-colombia-desde-el-exterior/helpers/options'
-import { peso, reverseFormat } from '@/app/casas-apartamentos-colombia-desde-el-exterior/helpers/formatCurrency'
+} from '@/app/tour-de-la-vivienda/helpers/options'
+import { peso, reverseFormat } from '@/app/tour-de-la-vivienda/helpers/formatCurrency'
 import { Fieldset } from './Fieldset'
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'

@@ -27,7 +27,7 @@ const RecommendedProjects = () => {
             if (idx === index - 1 || (index === 0 && idx === projectsApi.length - 1)) position = "lastSlide";
             return (
               <article className={position} key={idx}>
-                <Link target='_blank' href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${currentProject?.slug}`}>
+                <Link target='_blank' href={`/tour-de-la-vivienda/inmueble/${currentProject?.slug}`}>
                   <img src={item?.imagenes[0]} alt={item?.imagenes[0]} className="project-img" />
                   <button className='name-project'>{item?.titulo}</button>
                 </Link>
@@ -60,7 +60,7 @@ const RecommendedProjects = () => {
 
       <div className='container-text-btn'>
 
-        <Link target='_blank' href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${currentProject?.slug}`} className='btn-recommended-desktop'>
+        <Link target='_blank' href={`/tour-de-la-vivienda/inmueble/${currentProject?.slug}`} className='btn-recommended-desktop'>
           <button className='btn-gold-rounded-desktop'>Inmueble Destacado</button>
         </Link>
 
@@ -71,7 +71,7 @@ const RecommendedProjects = () => {
         </div>
 
         <div className='offer'>
-          <Link target='_blank' href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${currentProject?.slug}`} >
+          <Link target='_blank' href={`/tour-de-la-vivienda/inmueble/${currentProject?.slug}`} >
             <button className='offer-btn'>
               Ofertas del mes
               <svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
@@ -80,7 +80,7 @@ const RecommendedProjects = () => {
             </button>
           </Link>
 
-          <Link target='_blank' href={`/casas-apartamentos-colombia-desde-el-exterior/inmueble/${currentProject?.slug}`} >
+          <Link target='_blank' href={`/tour-de-la-vivienda/inmueble/${currentProject?.slug}`} >
             <button className='star-btn'>
               Inmueble Estrella
               <svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">

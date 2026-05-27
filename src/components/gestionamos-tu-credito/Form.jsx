@@ -10,7 +10,7 @@ import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/scale.css'
 import 'react-international-phone/style.css'
 import '@/sass/components/gestionamos-tu-credito/Form.scss'
-import TitleSection from '@/app/casas-apartamentos-colombia-desde-el-exterior/components/TitleSection'
+import TitleSection from '@/app/tour-de-la-vivienda/components/TitleSection'
 import { usePathname } from 'next/navigation';
 
 export const Form = () => {

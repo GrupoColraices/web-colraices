@@ -1,5 +1,5 @@
 import ClientPage from './ClientPage'
-import { APIURL } from '../casas-apartamentos-colombia-desde-el-exterior/config'
+import { APIURL } from '../tour-de-la-vivienda/config'
 
 export default async function DaviviendaFest() {
     const inmRecientes = await getinmRecientes()

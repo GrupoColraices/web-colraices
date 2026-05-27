@@ -1,11 +1,11 @@
 'use client'
-import { ContextLikeProvider } from '../../app/casas-apartamentos-colombia-desde-el-exterior/Context/Like'
-import { InmReciente } from '../../app/casas-apartamentos-colombia-desde-el-exterior/Templates/InmReciente'
-import TitleSection from '../../app/casas-apartamentos-colombia-desde-el-exterior/components/TitleSection'
-import ItemReciente from '../../app/casas-apartamentos-colombia-desde-el-exterior/molecules/ItemReciente'
+import { ContextLikeProvider } from '../../app/tour-de-la-vivienda/Context/Like'
+import { InmReciente } from '../../app/tour-de-la-vivienda/Templates/InmReciente'
+import TitleSection from '../../app/tour-de-la-vivienda/components/TitleSection'
+import ItemReciente from '../../app/tour-de-la-vivienda/molecules/ItemReciente'
 import styles from '../../app/globalfestdavivienda/globalfestdavivienda.module.css'
 // Importar los estilos del carrusel
-import '../../app/casas-apartamentos-colombia-desde-el-exterior/sass/app.scss'
+import '../../app/tour-de-la-vivienda/sass/app.scss'
 
 export default function PropiedadesSection({ inmRecientes, useOriginalCarousel = false }) {
     return (
