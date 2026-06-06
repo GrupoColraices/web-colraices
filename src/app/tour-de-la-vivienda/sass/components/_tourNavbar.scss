@@ -198,3 +198,172 @@
         display: none;
     }
 }
+
+.tour-contact-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 120px 16px 24px;
+    background: rgba(10, 10, 10, 0.5);
+}
+
+.tour-contact-modal__dialog {
+    width: 100%;
+    max-width: 600px;
+    max-height: calc(100dvh - 140px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 16px 0 16px 0;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
+.tour-contact-modal__header {
+    position: relative;
+    min-height: 134px;
+    background: #2a3f77;
+    padding: 38px 32px 24px;
+    color: #ffffff;
+}
+
+.tour-contact-modal__header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.tour-contact-modal__header p {
+    margin: 14px 0 0;
+    font-size: 15px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.tour-contact-modal__close {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    border: 0;
+    background: transparent;
+    color: #ffc107;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.tour-contact-modal__form {
+    padding: 30px 32px 34px;
+}
+
+.tour-contact-modal__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 16px;
+}
+
+.tour-contact-modal__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tour-contact-modal__field--full {
+    grid-column: 1 / -1;
+}
+
+.tour-contact-modal__field span {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2a3f77;
+}
+
+.tour-contact-modal__field input,
+.tour-contact-modal__field select {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #ffffff;
+    padding: 0 16px;
+    color: #0a0a0a;
+    font-size: 14px;
+    outline: none;
+}
+
+.tour-contact-modal__field input:focus,
+.tour-contact-modal__field select:focus {
+    border-color: #2a3f77;
+}
+
+.tour-contact-modal__privacy {
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #2a3f77;
+}
+
+.tour-contact-modal__privacy input {
+    width: 14px;
+    height: 14px;
+}
+
+.tour-contact-modal__submit {
+    margin-top: 26px;
+    width: 100%;
+    height: 52px;
+    border: 0;
+    border-radius: 8px;
+    background: #ffc107;
+    color: #2a3f77;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.tour-contact-modal__submit:hover {
+    background: #e9af00;
+}
+
+.tour-contact-modal__success {
+    margin: 0 0 14px;
+    color: #2a3f77;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.tour-contact-modal__error {
+    margin: 0 0 14px;
+    color: #b42318;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+@media (max-width: 640px) {
+    .tour-contact-modal {
+        padding-top: 86px;
+    }
+
+    .tour-contact-modal__dialog {
+        max-height: calc(100dvh - 104px);
+    }
+
+    .tour-contact-modal__header {
+        padding: 34px 24px 22px;
+    }
+
+    .tour-contact-modal__form {
+        padding: 26px 24px 30px;
+    }
+
+    .tour-contact-modal__grid {
+        grid-template-columns: 1fr;
+    }
+}
