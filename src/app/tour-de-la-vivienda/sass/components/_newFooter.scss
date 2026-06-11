@@ -104,7 +104,6 @@
             }
         }
 
-        /* Estos van DESPUÉS del reset de p para ganar en cascade */
         .new-footer__description-text {
             margin-bottom: 20px !important;
         }
@@ -305,13 +304,18 @@
         }
 
         &__grid {
-            grid-template-columns: 376px 188px 188px 188px !important;
+            grid-template-columns: 396px 188px 188px 130px !important;
             justify-content: space-between !important;
             gap: 48px !important;
         }
 
+        &__logo-link {
+            width: 280px !important;
+            height: 48px !important;
+        }
+
         &__description {
-            max-width: 424px !important;
+            max-width: 396px !important;
             margin-top: 4px !important;
             font-size: 13.12px !important;
             line-height: 21px !important;
@@ -335,6 +339,18 @@
             }
         }
 
+        &__social-link {
+            width: 30px !important;
+            height: 30px !important;
+            min-width: 30px !important;
+            min-height: 30px !important;
+
+            svg {
+                width: 12px !important;
+                height: 12px !important;
+            }
+        }
+
         &__title {
             font-size: 11.52px !important;
         }
@@ -352,7 +368,7 @@
         }
 
         &__divider {
-            margin-top: 56px !important;
+            margin-top: 24px !important;
             border-top-color: rgba(255, 255, 255, 0.07) !important;
         }
 
