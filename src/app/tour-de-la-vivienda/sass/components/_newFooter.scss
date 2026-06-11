@@ -88,6 +88,8 @@
             font-size: inherit !important;
             line-height: inherit !important;
             font-weight: inherit !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
         a {
@@ -101,14 +103,19 @@
                 color: #ffffff !important;
             }
         }
-    }
 
-    &__phone {
-        margin-top: 8px !important;
-    }
+        /* Estos van DESPUÉS del reset de p para ganar en cascade */
+        .new-footer__description-text {
+            margin-bottom: 20px !important;
+        }
 
-    &__email {
-        margin-top: 4px !important;
+        .new-footer__phone {
+            margin-top: 0 !important;
+        }
+
+        .new-footer__email {
+            margin-top: 20px !important;
+        }
     }
 
     &__socials {
@@ -304,11 +311,28 @@
         }
 
         &__description {
-            max-width: 240px !important;
-            margin-top: 12px !important;
+            max-width: 424px !important;
+            margin-top: 4px !important;
             font-size: 13.12px !important;
             line-height: 21px !important;
             letter-spacing: 0 !important;
+
+            p {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .new-footer__description-text {
+                margin-bottom: 20px !important;
+            }
+
+            .new-footer__phone {
+                margin-top: 0 !important;
+            }
+
+            .new-footer__email {
+                margin-top: 20px !important;
+            }
         }
 
         &__title {

@@ -11,8 +11,6 @@ import {
 } from 'react-icons/fa'
 import {
     OFFICIAL_CONTACT_URLS,
-    OFFICIAL_FOOTER_URLS,
-    OFFICIAL_LEGAL_URLS,
     OFFICIAL_MARKETING_URLS,
     OFFICIAL_SOCIAL_URLS,
 } from '@/lib/officialUrls'
@@ -25,11 +23,8 @@ const FOOTER_LINKS = {
     legalMigracion: OFFICIAL_MARKETING_URLS.hubLegalMigratorio,
     tourVivienda: OFFICIAL_MARKETING_URLS.tourVivienda,
     quienesSomos: OFFICIAL_MARKETING_URLS.nosotros,
-    trabajaConNosotros: OFFICIAL_FOOTER_URLS.trabajaConNosotros,
     blog: OFFICIAL_MARKETING_URLS.blog,
-    politicaPrivacidad: '/tour-de-la-vivienda/politica-de-privacidad',
-    terminosUso: OFFICIAL_LEGAL_URLS.terminosUso,
-    cookies: OFFICIAL_LEGAL_URLS.cookies,
+    politicaPrivacidad: process.env.NEXT_PUBLIC_PRIVACY_POLICY_URL,
 }
 
 const SOCIAL_LINKS = {
@@ -66,14 +61,20 @@ export default function NewFooter() {
                         </Link>
 
                         <div className="new-footer__description">
-                            <p>
+                            <p className="new-footer__description-text">
                                 El ecosistema de soluciones para colombianos en
                                 el exterior.
                             </p>
 
+                            <p className="new-footer__phone new-footer__phone--first">
+                                <Link href="tel:+19293228886">
+                                    Línea Comercial: (+1) 929 322 8886
+                                </Link>
+                            </p>
+
                             <p className="new-footer__phone">
-                                <Link href={CONTACT_LINKS.phone}>
-                                    Teléfono: (57) 601 328 8939
+                                <Link href="tel:+576019176737">
+                                    Línea Casa Matriz: (+57) 601 917 6737
                                 </Link>
                             </p>
 
@@ -159,9 +160,6 @@ export default function NewFooter() {
                             <Link href={FOOTER_LINKS.quienesSomos}>
                                 Quiénes somos
                             </Link>
-                            <Link href={FOOTER_LINKS.trabajaConNosotros}>
-                                Trabaja con nosotros
-                            </Link>
                         </div>
                     </div>
 
@@ -182,13 +180,13 @@ export default function NewFooter() {
                         </p>
 
                         <div className="new-footer__legal">
-                            <Link href={FOOTER_LINKS.politicaPrivacidad}>
+                            <Link
+                                href={FOOTER_LINKS.politicaPrivacidad}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Política de privacidad
                             </Link>
-                            <Link href={FOOTER_LINKS.terminosUso}>
-                                Términos de uso
-                            </Link>
-                            <Link href={FOOTER_LINKS.cookies}>Cookies</Link>
                         </div>
                     </div>
                 </div>
